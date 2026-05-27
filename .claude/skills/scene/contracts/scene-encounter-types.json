@@ -1,0 +1,443 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene Encounter Types",
+  "description": "Catalog of all 7 encounter types with input schemas, output schemas, and examples. Single source of truth for encounter structure.",
+  "encounters": {
+    "combat": {
+      "name": "Combat Encounter",
+      "input_schema": {
+        "required": ["enemies", "difficulty", "initiative_roll"],
+        "properties": {
+          "enemies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["enemy_id", "name", "hp", "ac", "attack_bonus", "damage"],
+              "properties": {
+                "enemy_id": { "type": "string" },
+                "name": { "type": "string" },
+                "hp": { "type": "integer", "minimum": 1 },
+                "ac": { "type": "integer", "minimum": 1 },
+                "attack_bonus": { "type": "integer" },
+                "damage": { "type": "string", "description": "Damage expression e.g. 1d8+3" }
+              }
+            },
+            "description": "Array of enemy combatants"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard", "deadly"],
+            "description": "Encounter difficulty per CR calculation"
+          },
+          "initiative_roll": {
+            "type": "boolean",
+            "description": "Whether initiative must be rolled at start"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "casualties", "loot", "rounds_fought"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["victory", "failure", "critical_failure"] },
+          "casualties": { "type": "array", "description": "Per scene-outcome-contract casualties schema" },
+          "loot": { "type": "object", "description": "Per scene-outcome-contract loot schema" },
+          "rounds_fought": { "type": "integer", "minimum": 0 }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Goblin Ambush",
+            "difficulty": "medium",
+            "objectives": ["Defeat the goblins", "Protect the wagon"],
+            "enemies": [
+              { "enemy_id": "goblin-01", "name": "Goblin", "hp": 7, "ac": 15, "attack_bonus": 4, "damage": "1d6+2" },
+              { "enemy_id": "goblin-02", "name": "Goblin", "hp": 7, "ac": 15, "attack_bonus": 4, "damage": "1d6+2" }
+            ],
+            "difficulty": "medium",
+            "initiative_roll": true
+          },
+          "output": {
+            "outcome_code": "victory",
+            "casualties": [{ "character_id": "pc-fighter-01", "hp_change": -8, "conditions": [] }],
+            "loot": { "items": [{ "item_id": "shortsword-01", "name": "Shortsword", "quantity": 1 }], "gold": 12 },
+            "rounds_fought": 3
+          }
+        }
+      ]
+    },
+    "social": {
+      "name": "Social Encounter",
+      "input_schema": {
+        "required": ["npcs", "disposition"],
+        "properties": {
+          "npcs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["npc_id", "name", "disposition", "persuasion_dc"],
+              "properties": {
+                "npc_id": { "type": "string" },
+                "name": { "type": "string" },
+                "disposition": { "type": "string", "enum": ["friendly", "neutral", "hostile"] },
+                "persuasion_dc": { "type": "integer", "minimum": 1 }
+              }
+            },
+            "description": "Array of NPCs in the social encounter"
+          },
+          "disposition": {
+            "type": "string",
+            "enum": ["friendly", "neutral", "hostile"],
+            "description": "Overall starting disposition of the encounter"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "disposition_change", "information_gained"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "failure", "critical_failure"] },
+          "disposition_change": { "type": "string", "enum": ["improved", "unchanged", "worsened"] },
+          "information_gained": { "type": "array", "items": { "type": "string" }, "description": "Facts or quest hooks revealed" }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Tavern in Phandalin",
+            "difficulty": "easy",
+            "objectives": ["Learn about the Redbrand hideout"],
+            "npcs": [
+              { "npc_id": "npc-bartender-01", "name": "Toblen Stonehill", "disposition": "friendly", "persuasion_dc": 10 }
+            ],
+            "disposition": "friendly"
+          },
+          "output": {
+            "outcome_code": "success",
+            "disposition_change": "improved",
+            "information_gained": ["Redbrand hideout is beneath Tresendar Manor", "The leader is called Glasstaff"]
+          }
+        }
+      ]
+    },
+    "challenge": {
+      "name": "Challenge Encounter",
+      "input_schema": {
+        "required": ["type", "DC", "consequence_type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["trap", "puzzle", "environmental", "skill_challenge"],
+            "description": "Category of challenge"
+          },
+          "DC": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30,
+            "description": "Difficulty Class for the primary check"
+          },
+          "consequence_type": {
+            "type": "string",
+            "enum": ["damage", "condition", "blocked_path", "alarm", "none"],
+            "description": "What happens on failure"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "check_results", "consequences_applied"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "failure", "critical_failure"] },
+          "check_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["character_id", "roll", "total", "success"],
+              "properties": {
+                "character_id": { "type": "string" },
+                "roll": { "type": "integer" },
+                "total": { "type": "integer" },
+                "success": { "type": "boolean" }
+              }
+            }
+          },
+          "consequences_applied": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Cragmaw Cave Entrance",
+            "difficulty": "medium",
+            "objectives": ["Detect and disarm the snare trap"],
+            "type": "trap",
+            "DC": 12,
+            "consequence_type": "damage"
+          },
+          "output": {
+            "outcome_code": "failure",
+            "check_results": [
+              { "character_id": "pc-rogue-01", "roll": 8, "total": 11, "success": false }
+            ],
+            "consequences_applied": ["1d6 bludgeoning damage to pc-rogue-01"]
+          }
+        }
+      ]
+    },
+    "merchant": {
+      "name": "Merchant Encounter",
+      "input_schema": {
+        "required": ["merchant_id", "inventory", "price_modifier"],
+        "properties": {
+          "merchant_id": {
+            "type": "string",
+            "description": "Unique identifier for the merchant NPC"
+          },
+          "inventory": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["item_id", "name", "base_price", "quantity_available"],
+              "properties": {
+                "item_id": { "type": "string" },
+                "name": { "type": "string" },
+                "base_price": { "type": "number", "minimum": 0 },
+                "quantity_available": { "type": "integer", "minimum": 0 }
+              }
+            },
+            "description": "Items available for purchase"
+          },
+          "price_modifier": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 3.0,
+            "description": "Multiplier on base prices (1.0 = standard)"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "transactions", "gold_spent", "gold_earned"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "encounter_skipped"] },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["action", "item_id", "quantity", "price"],
+              "properties": {
+                "action": { "type": "string", "enum": ["buy", "sell"] },
+                "item_id": { "type": "string" },
+                "quantity": { "type": "integer", "minimum": 1 },
+                "price": { "type": "number", "minimum": 0 }
+              }
+            }
+          },
+          "gold_spent": { "type": "number", "minimum": 0 },
+          "gold_earned": { "type": "number", "minimum": 0 }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Barthen's Provisions",
+            "difficulty": "easy",
+            "objectives": ["Buy supplies for the journey"],
+            "merchant_id": "npc-barthen-01",
+            "inventory": [
+              { "item_id": "rope-50ft", "name": "Rope (50 ft)", "base_price": 1, "quantity_available": 5 },
+              { "item_id": "torch-01", "name": "Torch", "base_price": 0.01, "quantity_available": 20 }
+            ],
+            "price_modifier": 1.0
+          },
+          "output": {
+            "outcome_code": "success",
+            "transactions": [
+              { "action": "buy", "item_id": "rope-50ft", "quantity": 1, "price": 1 }
+            ],
+            "gold_spent": 1,
+            "gold_earned": 0
+          }
+        }
+      ]
+    },
+    "rest": {
+      "name": "Rest Encounter",
+      "input_schema": {
+        "required": ["location", "rest_type"],
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Where the party is resting"
+          },
+          "rest_type": {
+            "type": "string",
+            "enum": ["short", "long"],
+            "description": "Short rest (1 hour) or long rest (8 hours)"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "hp_recovered", "spell_slots_recovered", "hit_dice_spent", "interrupted"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "failure"] },
+          "hp_recovered": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["character_id", "hp_change"],
+              "properties": {
+                "character_id": { "type": "string" },
+                "hp_change": { "type": "integer", "minimum": 0 }
+              }
+            }
+          },
+          "spell_slots_recovered": { "type": "boolean" },
+          "hit_dice_spent": { "type": "integer", "minimum": 0 },
+          "interrupted": { "type": "boolean", "description": "Whether the rest was interrupted by an encounter" }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Campsite outside Cragmaw Cave",
+            "difficulty": "easy",
+            "objectives": ["Recover HP before entering the cave"],
+            "location": "Campsite outside Cragmaw Cave",
+            "rest_type": "short"
+          },
+          "output": {
+            "outcome_code": "success",
+            "hp_recovered": [
+              { "character_id": "pc-fighter-01", "hp_change": 8 }
+            ],
+            "spell_slots_recovered": false,
+            "hit_dice_spent": 1,
+            "interrupted": false
+          }
+        }
+      ]
+    },
+    "travel": {
+      "name": "Travel Encounter",
+      "input_schema": {
+        "required": ["origin", "destination", "terrain", "distance_miles"],
+        "properties": {
+          "origin": {
+            "type": "string",
+            "description": "Starting location name"
+          },
+          "destination": {
+            "type": "string",
+            "description": "Target location name"
+          },
+          "terrain": {
+            "type": "string",
+            "enum": ["road", "forest", "mountain", "swamp", "desert", "plains", "underground"],
+            "description": "Primary terrain type for the journey"
+          },
+          "distance_miles": {
+            "type": "number",
+            "minimum": 0.1,
+            "description": "Distance in miles"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "travel_time_hours", "random_encounters", "discoveries"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "failure"] },
+          "travel_time_hours": { "type": "number", "minimum": 0 },
+          "random_encounters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["encounter_type", "description"],
+              "properties": {
+                "encounter_type": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            },
+            "description": "Random encounters triggered during travel"
+          },
+          "discoveries": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Locations or points of interest discovered"
+          }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Triboar Trail",
+            "difficulty": "medium",
+            "objectives": ["Reach Phandalin safely"],
+            "origin": "Neverwinter",
+            "destination": "Phandalin",
+            "terrain": "road",
+            "distance_miles": 50
+          },
+          "output": {
+            "outcome_code": "success",
+            "travel_time_hours": 16,
+            "random_encounters": [
+              { "encounter_type": "combat", "description": "Goblin ambush on the trail" }
+            ],
+            "discoveries": ["Cragmaw Cave entrance spotted"]
+          }
+        }
+      ]
+    },
+    "item-use": {
+      "name": "Item Use Encounter",
+      "input_schema": {
+        "required": ["character_id", "item_id", "target"],
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Character using the item"
+          },
+          "item_id": {
+            "type": "string",
+            "description": "Item being used"
+          },
+          "target": {
+            "type": "string",
+            "enum": ["self", "ally", "enemy", "environment"],
+            "description": "Target of item usage"
+          }
+        }
+      },
+      "output_schema": {
+        "required": ["outcome_code", "effect_applied", "item_consumed"],
+        "properties": {
+          "outcome_code": { "type": "string", "enum": ["success", "failure"] },
+          "effect_applied": {
+            "type": "object",
+            "required": ["effect_type", "value"],
+            "properties": {
+              "effect_type": { "type": "string", "enum": ["healing", "damage", "buff", "debuff", "utility"] },
+              "value": { "type": ["number", "string"], "description": "Effect magnitude or description" }
+            }
+          },
+          "item_consumed": { "type": "boolean", "description": "Whether the item was consumed by use" }
+        }
+      },
+      "examples": [
+        {
+          "input": {
+            "location": "Mid-combat",
+            "difficulty": "easy",
+            "objectives": ["Heal wounded fighter"],
+            "character_id": "pc-cleric-01",
+            "item_id": "potion-of-healing-01",
+            "target": "ally"
+          },
+          "output": {
+            "outcome_code": "success",
+            "effect_applied": { "effect_type": "healing", "value": 7 },
+            "item_consumed": true
+          }
+        }
+      ]
+    }
+  }
+}

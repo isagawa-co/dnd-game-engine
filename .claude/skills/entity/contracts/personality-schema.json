@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Personality Layer",
+  "description": "Personality schema for Tier 2+ entities",
+  "type": "object",
+  "properties": {
+    "voice_archetype": {
+      "type": "string",
+      "enum": ["aggressive", "cautious", "cunning", "honorable", "cowardly", "charismatic", "gruff", "cheerful", "grim", "mystical"],
+      "description": "How the NPC speaks and interacts"
+    },
+    "motivation": {
+      "type": "string",
+      "enum": ["power", "wealth", "knowledge", "protection", "revenge", "loyalty", "survival", "ambition", "redemption", "discovery"],
+      "description": "Primary driving force"
+    },
+    "personality_traits": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 3,
+      "description": "Key personality traits"
+    },
+    "ideals": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 2,
+      "description": "What this NPC believes in"
+    },
+    "bonds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 2,
+      "description": "Relationships or attachments"
+    },
+    "flaws": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 2,
+      "description": "Weaknesses or vices"
+    },
+    "morale": {
+      "type": "object",
+      "properties": {
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "moderate", "high"],
+          "description": "Confidence in combat/social situations"
+        },
+        "loyalty": {
+          "type": "string",
+          "description": "Loyalty to allies or causes"
+        },
+        "surrender_condition": {
+          "type": "string",
+          "description": "When this NPC will flee or surrender"
+        },
+        "emotional_state": {
+          "type": "string",
+          "enum": ["content", "anxious", "angry", "fearful", "excited", "calm"],
+          "description": "Current mood"
+        }
+      }
+    }
+  },
+  "required": ["voice_archetype", "motivation"],
+  "additionalProperties": false,
+  "validation_rules": [
+    {
+      "rule_id": "PERS-001",
+      "description": "voice_archetype must be valid",
+      "validation": "voice_archetype in enum list",
+      "error_message": "Invalid voice archetype"
+    },
+    {
+      "rule_id": "PERS-002",
+      "description": "motivation must be valid",
+      "validation": "motivation in enum list",
+      "error_message": "Invalid motivation"
+    },
+    {
+      "rule_id": "PERS-003",
+      "description": "personality_traits max 3 items",
+      "validation": "len(personality_traits) <= 3",
+      "error_message": "Too many personality traits (max 3)"
+    },
+    {
+      "rule_id": "PERS-004",
+      "description": "morale.confidence must be low/moderate/high",
+      "validation": "morale.confidence in [low, moderate, high]",
+      "error_message": "Invalid confidence level"
+    }
+  ]
+}

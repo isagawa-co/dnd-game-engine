@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Campaign Action Contract",
+  "description": "Input schema for campaign loop — defines required fields for game-play to dispatch to campaign-loop",
+  "type": "object",
+  "required": ["campaign_id", "current_arc_id", "iteration_count", "arc_state"],
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "description": "Unique identifier for the active campaign"
+    },
+    "current_arc_id": {
+      "type": "string",
+      "description": "Arc identifier to execute within the campaign"
+    },
+    "iteration_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of scenes/turns to run in this dispatch"
+    },
+    "arc_state": {
+      "type": "object",
+      "required": ["quests", "npcs"],
+      "properties": {
+        "quests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["quest_id", "status"],
+            "properties": {
+              "quest_id": {
+                "type": "string",
+                "description": "Unique identifier for the quest"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["active", "completed", "failed", "hidden"],
+                "description": "Current quest status"
+              },
+              "objectives": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "List of quest objectives"
+              }
+            }
+          },
+          "description": "Active and completed quests in the current arc"
+        },
+        "npcs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["npc_id", "disposition"],
+            "properties": {
+              "npc_id": {
+                "type": "string",
+                "description": "Unique identifier for the NPC"
+              },
+              "disposition": {
+                "type": "string",
+                "enum": ["friendly", "neutral", "hostile", "unknown"],
+                "description": "NPC disposition toward the party"
+              }
+            }
+          },
+          "description": "NPCs involved in the current arc"
+        },
+        "factions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "faction_id": { "type": "string" },
+              "standing": { "type": "string", "enum": ["allied", "neutral", "hostile"] }
+            }
+          },
+          "description": "Faction standings in the current arc"
+        },
+        "loot": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "item_id": { "type": "string" },
+              "quantity": { "type": "integer", "minimum": 1 }
+            }
+          },
+          "description": "Available loot pool for the current arc"
+        }
+      },
+      "additionalProperties": true,
+      "description": "Full arc state including quests, NPCs, factions, loot, and other arc-specific data"
+    }
+  }
+}

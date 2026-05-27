@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene Outcome Contract",
+  "description": "Output schema for scene dispatcher — defines the result returned after resolving an encounter",
+  "type": "object",
+  "required": ["scene_id", "encounter_type", "outcome_code", "casualties", "loot", "time_spent", "state_changes"],
+  "properties": {
+    "scene_id": {
+      "type": "string",
+      "description": "Unique identifier for the resolved scene"
+    },
+    "encounter_type": {
+      "type": "string",
+      "enum": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"],
+      "description": "Type of encounter that was resolved"
+    },
+    "outcome_code": {
+      "type": "string",
+      "enum": ["victory", "success", "failure", "critical_failure", "encounter_skipped"],
+      "description": "Result code indicating how the encounter concluded"
+    },
+    "casualties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["character_id", "hp_change", "conditions"],
+        "properties": {
+          "character_id": {
+            "type": "string",
+            "description": "Identifier for the affected party member"
+          },
+          "hp_change": {
+            "type": "number",
+            "description": "Net HP change for this character (negative = damage taken)"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Conditions applied to this character (e.g., poisoned, unconscious)"
+          }
+        }
+      },
+      "description": "List of party member state changes from the encounter"
+    },
+    "loot": {
+      "type": "object",
+      "required": ["items", "gold"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["item_id", "name", "quantity"],
+            "properties": {
+              "item_id": {
+                "type": "string",
+                "description": "Unique identifier for the item"
+              },
+              "name": {
+                "type": "string",
+                "description": "Display name of the item"
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Number of this item gained"
+              }
+            }
+          },
+          "description": "Items gained from the encounter"
+        },
+        "gold": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Gold pieces gained from the encounter"
+        }
+      },
+      "description": "Items and gold gained from the encounter"
+    },
+    "time_spent": {
+      "type": "number",
+      "minimum": 0,
+      "description": "In-game time spent on this encounter in minutes"
+    },
+    "state_changes": {
+      "type": "object",
+      "properties": {
+        "party_changes": {
+          "type": "object",
+          "description": "Mutations to party-level state (e.g., morale, reputation)",
+          "additionalProperties": true
+        },
+        "campaign_changes": {
+          "type": "object",
+          "description": "Mutations to campaign-level state (e.g., quest progress, world facts)",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "description": "Any mutations to party or campaign state resulting from the encounter"
+    }
+  }
+}

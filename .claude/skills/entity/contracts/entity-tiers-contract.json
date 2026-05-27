@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Entity Tiers Contract",
+  "description": "4-tier entity architecture for D&D 5e",
+  "tiers": [
+    {
+      "entity_type": "stat_block",
+      "tier": 1,
+      "description": "Combat-only entity with basic stats",
+      "extends": null,
+      "required_fields": ["id", "name", "entity_type", "size_type", "ac", "hp", "hit_dice", "ability_scores", "speed", "actions", "challenge"],
+      "optional_fields": ["alignment", "senses", "languages", "damage_resistances", "damage_immunities", "damage_vulnerabilities", "condition_immunities"],
+      "typical_size_lines": "30-80"
+    },
+    {
+      "entity_type": "named_monster",
+      "tier": 2,
+      "description": "Boss monster with personality layer",
+      "extends": "stat_block",
+      "required_fields": ["personality"],
+      "optional_fields": [],
+      "typical_size_lines": "80-150",
+      "personality_required": ["voice_archetype", "motivation"]
+    },
+    {
+      "entity_type": "npc",
+      "tier": 3,
+      "description": "Social-focused NPC with relationships and goals",
+      "extends": "named_monster",
+      "required_fields": ["social"],
+      "optional_fields": [],
+      "typical_size_lines": "100-200",
+      "social_required": ["occupation"],
+      "social_optional": ["class", "alignment", "relationships", "goals", "fears", "secrets"]
+    },
+    {
+      "entity_type": "pc",
+      "tier": 4,
+      "description": "Full player character with class mechanics",
+      "extends": "npc",
+      "required_fields": ["character_class", "level"],
+      "optional_fields": ["experience", "hit_dice_detail", "class_features", "proficiencies", "spell_slots", "inventory", "encumbrance", "saving_throw_proficiencies", "expertise"],
+      "typical_size_lines": "200-400"
+    }
+  ],
+  "ability_score_fields": ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+}

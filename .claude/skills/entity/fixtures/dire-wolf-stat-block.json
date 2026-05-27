@@ -1,0 +1,37 @@
+{
+  "entity_type": "stat_block",
+  "id": "dire-wolf",
+  "name": "Dire Wolf",
+  "size_type": "large",
+  "alignment": "unaligned",
+  "ac": 14,
+  "hp": 37,
+  "hit_dice": "5d10+10",
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 15,
+    "constitution": 15,
+    "intelligence": 3,
+    "wisdom": 12,
+    "charisma": 7
+  },
+  "speed": { "walk": 50 },
+  "senses": { "passive_perception": 13 },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "type": "melee_attack",
+      "attack_bonus": 5,
+      "damage_roll": "2d6+3",
+      "damage_type": "piercing",
+      "reach": 5,
+      "special": "DC 13 STR save or target is knocked prone"
+    }
+  ],
+  "challenge": "1"
+}

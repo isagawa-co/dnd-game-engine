@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Arc Progression Contract",
+  "description": "Defines arc completion rules: encounter thresholds, story beat markers, plot flag checks, and completion conditions with AND/OR logic",
+  "type": "object",
+  "required": ["encounter_threshold", "required_story_beats", "required_plot_flags", "completion_conditions"],
+  "properties": {
+    "encounter_threshold": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 10,
+      "description": "Minimum encounters required before arc can complete"
+    },
+    "required_story_beats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Story beats that must be completed for arc progression (e.g., boss_defeated, artifact_acquired)"
+    },
+    "required_plot_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Plot flags that must be set true for arc completion (e.g., goblins_defeated, gundren_rescued)"
+    },
+    "completion_conditions": {
+      "type": "object",
+      "required": ["operator", "rules"],
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": ["AND", "OR"],
+          "description": "Logical operator combining the rules"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "value"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["encounter_threshold", "story_beat", "plot_flag", "nested"],
+                "description": "Rule type to evaluate"
+              },
+              "value": {
+                "description": "Value to check — integer for threshold, string for beat/flag, nested conditions object for nested"
+              },
+              "operator": {
+                "type": "string",
+                "enum": ["AND", "OR"],
+                "description": "Operator for nested conditions (only when type=nested)"
+              },
+              "rules": {
+                "type": "array",
+                "description": "Sub-rules for nested conditions (only when type=nested)"
+              }
+            }
+          },
+          "description": "Array of rules combined by the operator"
+        }
+      },
+      "description": "Completion logic combining encounter_threshold, story_beats, and plot_flags with AND/OR operators"
+    },
+    "arc_time_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Optional: in-game days before arc auto-completes"
+    }
+  },
+  "examples": [
+    {
+      "encounter_threshold": 10,
+      "required_story_beats": ["boss_defeated", "artifact_acquired"],
+      "required_plot_flags": ["goblins_defeated", "gundren_rescued"],
+      "completion_conditions": {
+        "operator": "AND",
+        "rules": [
+          { "type": "encounter_threshold", "value": 10 },
+          {
+            "type": "nested",
+            "operator": "OR",
+            "rules": [
+              { "type": "story_beat", "value": "boss_defeated" },
+              { "type": "plot_flag", "value": "gundren_rescued" }
+            ]
+          }
+        ]
+      },
+      "arc_time_limit": 30
+    }
+  ]
+}

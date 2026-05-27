@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Entity Validation Contract",
+  "description": "Validation rules for D&D 5e entities",
+  "validation_rules": [
+    {
+      "rule_id": "ENT-VAL-001",
+      "description": "Ability scores must be 3-20",
+      "applies_to": "Tier 1+",
+      "validation": "for each ability in [STR, DEX, CON, INT, WIS, CHA]: 3 <= ability <= 20",
+      "error_message": "Ability score out of range (3-20)"
+    },
+    {
+      "rule_id": "ENT-VAL-002",
+      "description": "HP must be > 0",
+      "applies_to": "Tier 1+",
+      "validation": "hp > 0",
+      "error_message": "Entity must have positive HP"
+    },
+    {
+      "rule_id": "ENT-VAL-003",
+      "description": "AC must be >= 10 and <= 25",
+      "applies_to": "Tier 1+",
+      "validation": "10 <= ac <= 25",
+      "error_message": "AC out of range (10-25)"
+    },
+    {
+      "rule_id": "ENT-VAL-004",
+      "description": "Proficiency bonus must match character level",
+      "applies_to": "Tier 4 PC",
+      "validation": "proficiency_bonus == 2 + floor((level - 1) / 4)",
+      "error_message": "Proficiency bonus doesn't match level"
+    },
+    {
+      "rule_id": "ENT-VAL-005",
+      "description": "Spell slots must not exceed max for class/level",
+      "applies_to": "Tier 4 PC spellcaster",
+      "validation": "for each spell_level: spell_slots[level] <= max_slots[class][level][pc_level]",
+      "error_message": "Spell slots exceed maximum for class and level"
+    },
+    {
+      "rule_id": "ENT-VAL-006",
+      "description": "Inventory weight must not exceed encumbrance limit",
+      "applies_to": "Tier 4 PC",
+      "validation": "inventory.total_weight <= strength * 15",
+      "error_message": "Inventory exceeds weight capacity"
+    },
+    {
+      "rule_id": "ENT-VAL-007",
+      "description": "Hit dice count must equal character level",
+      "applies_to": "Tier 4 PC",
+      "validation": "hit_dice.maximum == level",
+      "error_message": "Hit dice count doesn't match level"
+    },
+    {
+      "rule_id": "ENT-VAL-008",
+      "description": "Hit dice type must match class",
+      "applies_to": "Tier 4 PC",
+      "validation": "hit_dice.type == class_hit_die[character_class]",
+      "error_message": "Hit die type doesn't match character class"
+    }
+  ],
+  "class_hit_dice": {
+    "barbarian": "d12",
+    "fighter": "d10",
+    "paladin": "d10",
+    "ranger": "d10",
+    "bard": "d8",
+    "cleric": "d8",
+    "druid": "d8",
+    "monk": "d8",
+    "rogue": "d8",
+    "warlock": "d8",
+    "sorcerer": "d6",
+    "wizard": "d6"
+  },
+  "proficiency_bonus_table": {
+    "1-4": 2,
+    "5-8": 3,
+    "9-12": 4,
+    "13-16": 5,
+    "17-20": 6
+  }
+}

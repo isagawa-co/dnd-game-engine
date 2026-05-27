@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Creation Outcome Contract",
+  "description": "Output schema for character-creation-loop — defines what character creation returns to /game-play with complete PC objects ready for campaign play",
+  "type": "object",
+  "required": ["party", "party_valid", "created_at"],
+  "properties": {
+    "party": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "name", "race", "class", "level", "xp",
+          "ability_scores", "hp_current", "hp_max",
+          "skill_proficiencies", "equipment"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique PC identifier (UUID v4)"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "PC name"
+          },
+          "race": {
+            "type": "string",
+            "enum": [
+              "human", "elf", "dwarf", "halfling", "gnome",
+              "half-elf", "half-orc", "tiefling", "dragonborn"
+            ],
+            "description": "PC race from extended race registry"
+          },
+          "class": {
+            "type": "string",
+            "enum": [
+              "barbarian", "bard", "cleric", "druid", "fighter",
+              "monk", "paladin", "ranger", "rogue", "sorcerer",
+              "warlock", "wizard"
+            ],
+            "description": "PC class from extended class registry"
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1,
+            "description": "Starting level (default 1)"
+          },
+          "xp": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "Starting experience points (default 0)"
+          },
+          "ability_scores": {
+            "type": "object",
+            "required": ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
+            "properties": {
+              "STR": { "type": "integer", "minimum": 1, "maximum": 30 },
+              "DEX": { "type": "integer", "minimum": 1, "maximum": 30 },
+              "CON": { "type": "integer", "minimum": 1, "maximum": 30 },
+              "INT": { "type": "integer", "minimum": 1, "maximum": 30 },
+              "WIS": { "type": "integer", "minimum": 1, "maximum": 30 },
+              "CHA": { "type": "integer", "minimum": 1, "maximum": 30 }
+            },
+            "description": "Ability scores with racial modifiers applied"
+          },
+          "hp_current": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Current HP (equals hp_max at creation)"
+          },
+          "hp_max": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Maximum HP (hit die max + CON modifier at level 1)"
+          },
+          "skill_proficiencies": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Proficient skills per class and background"
+          },
+          "equipment": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Starting equipment per class"
+          },
+          "spellbook": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Known spells (present only for caster classes)"
+          }
+        }
+      },
+      "description": "Array of complete PC objects ready for campaign play"
+    },
+    "party_valid": {
+      "type": "boolean",
+      "description": "Party passed validation (1-6 PCs, valid races/classes, all required fields present)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of party creation"
+    }
+  },
+  "examples": [
+    {
+      "party": [
+        {
+          "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "name": "Arya",
+          "race": "elf",
+          "class": "rogue",
+          "level": 1,
+          "xp": 0,
+          "ability_scores": { "STR": 10, "DEX": 17, "CON": 12, "INT": 14, "WIS": 13, "CHA": 8 },
+          "hp_current": 9,
+          "hp_max": 9,
+          "skill_proficiencies": ["acrobatics", "athletics", "deception", "stealth"],
+          "equipment": ["rapier", "shortbow", "quiver of 20 arrows", "burglar's pack", "leather armor", "two daggers", "thieves' tools"]
+        },
+        {
+          "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+          "name": "Thorin",
+          "race": "dwarf",
+          "class": "fighter",
+          "level": 1,
+          "xp": 0,
+          "ability_scores": { "STR": 16, "DEX": 12, "CON": 16, "INT": 10, "WIS": 13, "CHA": 8 },
+          "hp_current": 13,
+          "hp_max": 13,
+          "skill_proficiencies": ["athletics", "intimidation"],
+          "equipment": ["chain mail", "longsword", "shield", "light crossbow", "20 bolts", "dungeoneer's pack"]
+        },
+        {
+          "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+          "name": "Elara",
+          "race": "human",
+          "class": "cleric",
+          "level": 1,
+          "xp": 0,
+          "ability_scores": { "STR": 14, "DEX": 10, "CON": 13, "INT": 11, "WIS": 16, "CHA": 12 },
+          "hp_current": 9,
+          "hp_max": 9,
+          "skill_proficiencies": ["insight", "medicine", "religion"],
+          "equipment": ["mace", "scale mail", "shield", "light crossbow", "20 bolts", "priest's pack", "holy symbol"],
+          "spellbook": ["sacred flame", "spare the dying", "thaumaturgy", "bless", "cure wounds", "shield of faith"]
+        }
+      ],
+      "party_valid": true,
+      "created_at": "2026-05-27T16:00:00Z"
+    }
+  ]
+}

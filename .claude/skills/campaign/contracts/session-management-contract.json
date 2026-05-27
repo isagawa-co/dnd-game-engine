@@ -1,0 +1,131 @@
+{
+  "contract_id": "session-management",
+  "version": "1.0.0",
+  "description": "Session management contract — state structure, load/save, time tracking, long rest",
+
+  "session_state_schema": {
+    "session_id": "string (UUID)",
+    "campaign_id": "string (UUID)",
+    "arc_id": "string (UUID)",
+    "session_start_time": "ISO timestamp",
+    "session_end_time": "ISO timestamp or null",
+    "session_duration_hours": "float >= 0",
+    "party": {
+      "type": "array",
+      "items": {
+        "pc_id": "string",
+        "pc_name": "string",
+        "xp_start_of_session": "integer >= 0",
+        "xp_end_of_session": "integer >= 0",
+        "xp_earned_this_session": "integer >= 0",
+        "hit_points_start": "integer >= 0",
+        "hit_points_end": "integer >= 0",
+        "hit_points_healed": "integer >= 0",
+        "spell_slots_spent": "integer >= 0"
+      }
+    },
+    "scenes_visited": {
+      "type": "array",
+      "items": {
+        "scene_id": "string",
+        "scene_name": "string",
+        "scene_type": "string",
+        "outcome": "string",
+        "time_spent": "float (hours)",
+        "xp_earned": "integer >= 0",
+        "loot_earned": "array of strings",
+        "npc_interactions": "array of strings (optional)",
+        "timestamp": "ISO timestamp"
+      }
+    },
+    "inventory_changes": {
+      "type": "array",
+      "items": {
+        "action": "string (add|use|remove|trade)",
+        "item": "string (item_id)",
+        "source": "string",
+        "scene": "string (scene_id, optional)"
+      }
+    },
+    "npc_interactions": {
+      "type": "array",
+      "items": {
+        "npc_id": "string",
+        "scene_id": "string",
+        "interaction_type": "string",
+        "relationship_before": "string",
+        "relationship_after": "string",
+        "flags_set": "array of strings"
+      }
+    }
+  },
+
+  "time_tracking": {
+    "session_hours": {
+      "description": "Wall-clock time from session start, incremented by scene durations",
+      "increment_by": "scene.time_spent (1-4 hours per scene)"
+    },
+    "campaign_days": {
+      "description": "Days elapsed since arc start",
+      "increment_by": "hours_elapsed / 24 after each scene"
+    },
+    "threshold_hours": 8
+  },
+
+  "long_rest_trigger": {
+    "condition": "session_duration_hours >= 8",
+    "effects": [
+      "heal_full_hp",
+      "restore_spell_slots",
+      "reset_hit_dice",
+      "clear_conditions_except_permanent"
+    ],
+    "post_rest": "reset session_duration_hours to 0, record long_rest_timestamp"
+  },
+
+  "load_protocol": {
+    "steps": [
+      "load campaign.json from disk",
+      "load arc.json from disk",
+      "validate both files against schemas",
+      "calculate last_rest_time from arc.last_long_rest_timestamp",
+      "initialize session.json with empty scenes_visited",
+      "return loaded state to campaign loop"
+    ]
+  },
+
+  "save_protocol": {
+    "steps": [
+      "prepare session.json update with scene result",
+      "prepare arc.json update with XP/loot/NPC changes",
+      "prepare campaign.json update if needed",
+      "write all files atomically (all-or-nothing)",
+      "log save event with timestamp"
+    ]
+  },
+
+  "atomic_write_protocol": {
+    "steps": [
+      "prepare updated JSON in memory",
+      "write to temporary .tmp file",
+      "validate temporary file against schema",
+      "if valid: rename .tmp to .json (atomic)",
+      "if invalid: delete .tmp, raise error"
+    ]
+  },
+
+  "validation_rules": {
+    "session_constraints": [
+      "session_duration_hours >= 0",
+      "party array length == active_party_size",
+      "each PC xp_earned >= 0",
+      "scenes_visited chronologically ordered"
+    ],
+    "arc_consistency": [
+      "arc.xp_total consistent with session XP sum",
+      "arc.inventory includes session inventory_changes items",
+      "arc.npc_states match latest session npc_interactions",
+      "arc.active_quests match session quest flags"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Creation Action Contract",
+  "description": "Input schema for character-creation-loop — defines required fields for /game-play to dispatch character creation",
+  "type": "object",
+  "required": ["party_size", "mode", "characters"],
+  "properties": {
+    "party_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6,
+      "description": "Number of PCs to create (1-6)"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["wizard", "random", "preset"],
+      "description": "Creation mode: wizard (manual input), random (generated), preset (load from template)"
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "race", "class"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "PC name"
+          },
+          "race": {
+            "type": "string",
+            "enum": [
+              "human", "elf", "dwarf", "halfling", "gnome",
+              "half-elf", "half-orc", "tiefling", "dragonborn"
+            ],
+            "description": "Valid race from extended race registry"
+          },
+          "class": {
+            "type": "string",
+            "enum": [
+              "barbarian", "bard", "cleric", "druid", "fighter",
+              "monk", "paladin", "ranger", "rogue", "sorcerer",
+              "warlock", "wizard"
+            ],
+            "description": "Valid class from extended class registry"
+          },
+          "ability_scores": {
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 3,
+                  "maximum": 18
+                },
+                "minItems": 6,
+                "maxItems": 6
+              }
+            ],
+            "description": "Pre-rolled ability scores [STR, DEX, CON, INT, WIS, CHA], or null to roll during creation"
+          }
+        }
+      },
+      "description": "Array of character definitions, one per PC"
+    }
+  },
+  "examples": [
+    {
+      "party_size": 3,
+      "mode": "wizard",
+      "characters": [
+        { "name": "Arya", "race": "elf", "class": "rogue", "ability_scores": null },
+        { "name": "Thorin", "race": "dwarf", "class": "fighter", "ability_scores": [16, 12, 14, 10, 13, 8] },
+        { "name": "Elara", "race": "human", "class": "cleric", "ability_scores": null }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "entity_type": "pc",
+  "id": "sildar-hallwinter",
+  "name": "Sildar Hallwinter",
+  "size_type": "medium",
+  "alignment": "lawful good",
+  "ac": 16,
+  "hp": 22,
+  "hit_dice": "2d10+4",
+  "ability_scores": {
+    "strength": 14,
+    "dexterity": 11,
+    "constitution": 14,
+    "intelligence": 10,
+    "wisdom": 12,
+    "charisma": 13
+  },
+  "speed": { "walk": 30 },
+  "senses": { "passive_perception": 11 },
+  "languages": ["Common"],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "actions": [
+    {
+      "name": "Longsword",
+      "type": "melee_attack",
+      "attack_bonus": 4,
+      "damage_roll": "1d8+2",
+      "damage_type": "slashing",
+      "reach": 5
+    }
+  ],
+  "challenge": "2",
+  "character_class": "fighter",
+  "level": 2,
+  "experience": 300,
+  "hit_dice_detail": {
+    "type": "d10",
+    "current": 2,
+    "maximum": 2
+  },
+  "class_features": [
+    {
+      "name": "Fighting Style",
+      "description": "Defense (+1 AC while wearing armor)",
+      "granted_by": "fighter",
+      "level_gained": 1
+    },
+    {
+      "name": "Second Wind",
+      "description": "Regain 1d10 + fighter level HP as bonus action (1/short rest)",
+      "granted_by": "fighter",
+      "level_gained": 1
+    }
+  ],
+  "proficiencies": {
+    "saving_throws": ["strength", "constitution"],
+    "skills": ["athletics", "perception"],
+    "languages": ["Common"],
+    "weapons": ["simple", "martial"],
+    "armor": ["light", "medium", "heavy", "shields"]
+  },
+  "spell_slots": {},
+  "inventory": [
+    { "item_id": "longsword", "name": "Longsword", "quantity": 1, "weight": 3 },
+    { "item_id": "chain-mail", "name": "Chain Mail", "quantity": 1, "weight": 55 },
+    { "item_id": "shield", "name": "Shield", "quantity": 1, "weight": 6 }
+  ],
+  "encumbrance": {
+    "current_weight": 64,
+    "max_weight": 210,
+    "encumbered": false
+  },
+  "saving_throw_proficiencies": ["strength", "constitution"],
+  "personality": {
+    "voice_archetype": "honorable",
+    "motivation": "loyalty",
+    "personality_traits": ["Loyal", "Brave", "Gruff but fair"],
+    "ideals": ["Duty to friends", "Justice"],
+    "bonds": ["Sworn to protect Gundren Rockseeker", "Owes life debt to the party"],
+    "flaws": ["Stubborn about his promises"],
+    "morale": {
+      "confidence": "high",
+      "loyalty": "Unswervingly loyal to those he calls friend",
+      "surrender_condition": "Fights to the death for those he's sworn to protect",
+      "emotional_state": "anxious"
+    }
+  },
+  "social": {
+    "class": "noble",
+    "occupation": "Member of the Lords' Alliance",
+    "alignment": "lawful good",
+    "relationships": [
+      { "npc_id": "gundren-rockseeker", "type": "ally", "strength": "strong" }
+    ],
+    "goals": {
+      "short_term": "Rescue Gundren Rockseeker",
+      "long_term": "Bring order to the region through the Lords' Alliance"
+    },
+    "fears": ["Failing those who depend on him"],
+    "secrets": ["Knows about a Lords' Alliance agent in Phandalin"]
+  }
+}

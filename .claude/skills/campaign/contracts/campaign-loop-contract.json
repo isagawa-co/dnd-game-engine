@@ -1,0 +1,94 @@
+{
+  "contract_id": "campaign-loop",
+  "version": "1.0.0",
+  "description": "Campaign loop orchestration contract — main cycle, scene dispatch, state transitions",
+
+  "campaign_state_schema": {
+    "campaign_id": "string (UUID)",
+    "campaign_name": "string",
+    "created_at": "ISO timestamp",
+    "total_encounters": "integer >= 0",
+    "total_arcs_completed": "integer >= 0",
+    "party": "array of PC objects",
+    "world_state": {
+      "factions": "dict of faction_id -> faction state",
+      "global_flags": "dict of flag_name -> boolean"
+    },
+    "metadata": "dict (campaign-specific data)"
+  },
+
+  "state_machine": {
+    "states": ["playing", "rest", "level_up", "quest_complete", "arc_complete", "campaign_complete"],
+    "transitions": {
+      "playing": {
+        "scene_completes_arc_done": "arc_complete",
+        "scene_completes_campaign_done": "campaign_complete",
+        "xp_threshold_met": "level_up",
+        "quest_conditions_met": "quest_complete",
+        "default": "playing"
+      },
+      "rest": {"after_rest": "playing"},
+      "level_up": {"after_level_calc": "playing"},
+      "quest_complete": {"after_update": "playing"},
+      "arc_complete": {"return_to_home": "terminal"},
+      "campaign_complete": {"return_to_home": "terminal"}
+    }
+  },
+
+  "scene_dispatch_protocol": {
+    "input_schema": {
+      "scene_id": "string",
+      "scene_type": "string (one of scene_types)",
+      "party": "array of PC objects",
+      "environment": {
+        "location": "string",
+        "weather": "string",
+        "time_of_day": "string"
+      },
+      "encounter": {
+        "enemies": "array of enemy objects (optional)",
+        "difficulty": "string (easy|medium|hard|deadly)",
+        "description": "string"
+      },
+      "npc_context": {
+        "known_npcs": "array of NPC objects",
+        "relationship_flags": "dict of npc_id -> relationship state"
+      }
+    },
+    "output_schema": {
+      "outcome": "string (victory|defeat|draw|escape|social_success|social_failure|completed)",
+      "xp_earned": "integer >= 0",
+      "loot": "array of item objects",
+      "time_spent_hours": "float (1-4)",
+      "party_state_after": "array of updated PC objects",
+      "npc_state_changes": "dict of npc_id -> updated NPC fields",
+      "flags_set": "dict of flag_name -> value"
+    }
+  },
+
+  "scene_types": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"],
+
+  "win_conditions": {
+    "arc_complete": {
+      "conditions": ["all_quests_done", "story_goal_reached"],
+      "operator": "AND"
+    },
+    "campaign_complete": {
+      "conditions": ["all_arcs_done"],
+      "operator": "AND"
+    }
+  },
+
+  "loop_flow": [
+    "load_campaign_and_arc",
+    "check_time_for_long_rest",
+    "display_scene_options",
+    "get_player_decision",
+    "dispatch_to_scene_loop",
+    "receive_scene_outcome",
+    "update_arc_state",
+    "check_win_conditions",
+    "save_state_to_disk",
+    "repeat_or_end"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Campaign Outcome Contract",
+  "description": "Output schema for campaign loop — defines the result after executing scenes within an arc",
+  "type": "object",
+  "required": ["arc_id", "arc_complete", "scenes_executed", "encounters_total", "xp_gained", "loot", "state_changes"],
+  "properties": {
+    "arc_id": {
+      "type": "string",
+      "description": "Arc that was executed"
+    },
+    "arc_complete": {
+      "type": "boolean",
+      "description": "Whether the arc meets its completion criteria"
+    },
+    "scenes_executed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of scenes run in this dispatch"
+    },
+    "encounters_total": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total encounters in the arc"
+    },
+    "xp_gained": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total XP earned from scenes"
+    },
+    "loot": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "quantity"],
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "description": "Unique identifier for the item"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Number of items acquired"
+          },
+          "gold": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Gold value if currency"
+          }
+        }
+      },
+      "description": "Items and gold acquired during the arc"
+    },
+    "state_changes": {
+      "type": "object",
+      "properties": {
+        "party_state": {
+          "type": "object",
+          "description": "Mutations to apply to party state (HP, conditions, resources)",
+          "additionalProperties": true
+        },
+        "arc_state": {
+          "type": "object",
+          "description": "Mutations to apply to arc state (quest progress, NPC dispositions)",
+          "additionalProperties": true
+        },
+        "campaign_state": {
+          "type": "object",
+          "description": "Mutations to apply to campaign state (plot flags, faction standings)",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "description": "Mutations to apply across party, arc, and campaign state"
+    },
+    "next_arc_id": {
+      "type": "string",
+      "description": "If arc is complete, the ID of the next arc to load"
+    }
+  }
+}

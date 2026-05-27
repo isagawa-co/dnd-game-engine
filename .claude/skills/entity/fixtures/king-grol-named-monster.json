@@ -1,0 +1,58 @@
+{
+  "entity_type": "named_monster",
+  "id": "king-grol",
+  "name": "King Grol",
+  "size_type": "medium",
+  "alignment": "chaotic evil",
+  "ac": 16,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "ability_scores": {
+    "strength": 15,
+    "dexterity": 14,
+    "constitution": 13,
+    "intelligence": 8,
+    "wisdom": 11,
+    "charisma": 9
+  },
+  "speed": { "walk": 30 },
+  "senses": { "darkvision": 60, "passive_perception": 10 },
+  "languages": ["Common", "Goblin"],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "type": "melee_attack",
+      "attack_bonus": 4,
+      "damage_roll": "2d8+2",
+      "damage_type": "piercing",
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "type": "ranged_attack",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing",
+      "range": "30/120"
+    }
+  ],
+  "challenge": "3",
+  "personality": {
+    "voice_archetype": "aggressive",
+    "motivation": "power",
+    "personality_traits": ["Domineering", "Proud", "Cunning"],
+    "ideals": ["Strength is the only law"],
+    "bonds": ["His tribe depends on him"],
+    "flaws": ["Overconfident in his own strength"],
+    "morale": {
+      "confidence": "high",
+      "loyalty": "Demands absolute loyalty from his officers",
+      "surrender_condition": "Never surrenders; fights to the death",
+      "emotional_state": "content"
+    }
+  }
+}

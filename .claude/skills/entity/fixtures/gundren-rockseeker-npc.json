@@ -1,0 +1,66 @@
+{
+  "entity_type": "npc",
+  "id": "gundren-rockseeker",
+  "name": "Gundren Rockseeker",
+  "size_type": "small",
+  "alignment": "lawful good",
+  "ac": 16,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "ability_scores": {
+    "strength": 12,
+    "dexterity": 10,
+    "constitution": 14,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 10
+  },
+  "speed": { "walk": 25 },
+  "senses": { "darkvision": 60, "passive_perception": 12 },
+  "languages": ["Common", "Dwarvish"],
+  "damage_resistances": ["poison"],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "actions": [
+    {
+      "name": "Warhammer",
+      "type": "melee_attack",
+      "attack_bonus": 3,
+      "damage_roll": "1d8+1",
+      "damage_type": "bludgeoning",
+      "reach": 5
+    }
+  ],
+  "challenge": "1",
+  "personality": {
+    "voice_archetype": "cautious",
+    "motivation": "discovery",
+    "personality_traits": ["Determined", "Cautious", "Resourceful"],
+    "ideals": ["Family legacy", "Fair dealing"],
+    "bonds": ["Sworn to find Wave Echo Cave", "Brothers Nundro and Tharden"],
+    "flaws": ["Too trusting of old friends"],
+    "morale": {
+      "confidence": "moderate",
+      "loyalty": "Deeply loyal to family and friends",
+      "surrender_condition": "When outnumbered 3:1 and no escape",
+      "emotional_state": "anxious"
+    }
+  },
+  "social": {
+    "class": "artisan",
+    "occupation": "Mine owner and prospector",
+    "alignment": "lawful good",
+    "relationships": [
+      { "npc_id": "sildar-hallwinter", "type": "ally", "strength": "strong" },
+      { "npc_id": "king-grol", "type": "enemy", "strength": "strong" },
+      { "npc_id": "nundro-rockseeker", "type": "ally", "strength": "strong" }
+    ],
+    "goals": {
+      "short_term": "Reach Phandalin safely and locate Wave Echo Cave",
+      "long_term": "Restore the Phandelver's Pact and reopen the mine"
+    },
+    "fears": ["Losing his brothers", "The Black Spider"],
+    "secrets": ["Knows the location of Wave Echo Cave entrance"]
+  }
+}

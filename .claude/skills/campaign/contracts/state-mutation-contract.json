@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "State Mutation Contract",
+  "description": "Defines atomic state mutations applied after scene execution. Each mutation type has validation rules ensuring data integrity across party, campaign, arc, and session state.",
+  "mutations": {
+    "party": {
+      "description": "Mutations to party member state — HP, conditions, spell slots",
+      "mutation_types": {
+        "hp_change": {
+          "required_fields": ["character_id", "amount"],
+          "fields": {
+            "character_id": { "type": "string", "description": "Target character identifier" },
+            "amount": { "type": "integer", "description": "HP delta (positive = heal, negative = damage)" },
+            "source": { "type": "string", "description": "What caused the HP change (e.g., combat, rest, potion)" }
+          },
+          "validation": {
+            "amount_must_be_integer": true,
+            "result_clamped_to_0_max_hp": true,
+            "cannot_exceed_max_hp": true
+          }
+        },
+        "condition_apply": {
+          "required_fields": ["character_id", "condition"],
+          "fields": {
+            "character_id": { "type": "string" },
+            "condition": {
+              "type": "string",
+              "enum": ["blinded", "charmed", "deafened", "frightened", "grappled", "incapacitated", "invisible", "paralyzed", "petrified", "poisoned", "prone", "restrained", "stunned", "unconscious", "exhaustion"],
+              "description": "D&D 5e condition to apply"
+            },
+            "duration_rounds": { "type": "integer", "minimum": 0, "description": "Duration in rounds (0 = permanent until removed)" },
+            "source": { "type": "string" }
+          },
+          "validation": {
+            "condition_must_be_valid_enum": true,
+            "duration_must_be_non_negative": true,
+            "cannot_stack_same_condition": true
+          }
+        },
+        "condition_remove": {
+          "required_fields": ["character_id", "condition"],
+          "fields": {
+            "character_id": { "type": "string" },
+            "condition": { "type": "string" }
+          },
+          "validation": {
+            "condition_must_exist_on_character": true
+          }
+        },
+        "spell_slot_recovery": {
+          "required_fields": ["character_id", "slot_level", "amount"],
+          "fields": {
+            "character_id": { "type": "string" },
+            "slot_level": { "type": "integer", "minimum": 1, "maximum": 9, "description": "Spell slot level to recover" },
+            "amount": { "type": "integer", "minimum": 1, "description": "Number of slots to recover" }
+          },
+          "validation": {
+            "slot_level_must_be_1_to_9": true,
+            "amount_must_be_positive": true,
+            "cannot_exceed_max_slots_for_level": true
+          }
+        }
+      }
+    },
+    "campaign": {
+      "description": "Mutations to campaign-level state — time, XP, loot",
+      "mutation_types": {
+        "time_passage": {
+          "required_fields": ["hours"],
+          "fields": {
+            "hours": { "type": "number", "minimum": 0, "description": "In-game hours to advance" },
+            "reason": { "type": "string", "description": "Why time passed (travel, rest, scene)" }
+          },
+          "validation": {
+            "hours_must_be_non_negative": true,
+            "hours_must_be_numeric": true
+          }
+        },
+        "xp_gain": {
+          "required_fields": ["amount"],
+          "fields": {
+            "amount": { "type": "integer", "minimum": 0, "description": "XP to award to the party" },
+            "source": { "type": "string", "description": "Source of XP (combat, quest, discovery)" },
+            "split_mode": { "type": "string", "enum": ["equal", "individual"], "default": "equal", "description": "How to distribute XP among party members" }
+          },
+          "validation": {
+            "amount_must_be_non_negative_integer": true,
+            "split_mode_must_be_valid_enum": true
+          }
+        },
+        "loot_addition": {
+          "required_fields": ["items"],
+          "fields": {
+            "items": {
+              "type": "array",
+              "items": {
+                "required_fields": ["item_id", "quantity"],
+                "fields": {
+                  "item_id": { "type": "string" },
+                  "quantity": { "type": "integer", "minimum": 1 },
+                  "name": { "type": "string" },
+                  "rarity": { "type": "string", "enum": ["common", "uncommon", "rare", "very_rare", "legendary"] }
+                }
+              }
+            },
+            "gold": { "type": "integer", "minimum": 0, "description": "Gold pieces to add to party treasury" }
+          },
+          "validation": {
+            "item_id_must_be_string": true,
+            "quantity_must_be_positive_integer": true,
+            "gold_must_be_non_negative": true
+          }
+        }
+      }
+    },
+    "arc": {
+      "description": "Mutations to arc-level state — quests, NPC relationships, faction reputation, plot flags",
+      "mutation_types": {
+        "quest_status_change": {
+          "required_fields": ["quest_id", "new_status"],
+          "fields": {
+            "quest_id": { "type": "string" },
+            "new_status": { "type": "string", "enum": ["active", "completed", "failed", "hidden"], "description": "New quest status" },
+            "reason": { "type": "string", "description": "Why the status changed" }
+          },
+          "validation": {
+            "quest_id_must_exist": true,
+            "new_status_must_be_valid_enum": true,
+            "completed_quests_cannot_revert_to_active": true
+          }
+        },
+        "npc_relationship_change": {
+          "required_fields": ["npc_id", "disposition"],
+          "fields": {
+            "npc_id": { "type": "string" },
+            "disposition": { "type": "string", "enum": ["friendly", "neutral", "hostile", "unknown"], "description": "New NPC disposition toward the party" },
+            "relationship_delta": { "type": "integer", "minimum": -100, "maximum": 100, "description": "Numeric relationship score change" }
+          },
+          "validation": {
+            "npc_id_must_be_string": true,
+            "disposition_must_be_valid_enum": true,
+            "relationship_delta_must_be_integer": true
+          }
+        },
+        "faction_reputation_change": {
+          "required_fields": ["faction_id", "standing"],
+          "fields": {
+            "faction_id": { "type": "string" },
+            "standing": { "type": "string", "enum": ["allied", "neutral", "hostile"], "description": "New faction standing" },
+            "reputation_delta": { "type": "integer", "minimum": -100, "maximum": 100, "description": "Numeric reputation score change" }
+          },
+          "validation": {
+            "faction_id_must_be_string": true,
+            "standing_must_be_valid_enum": true,
+            "reputation_delta_must_be_integer": true
+          }
+        },
+        "plot_flag_set": {
+          "required_fields": ["flag_name", "value"],
+          "fields": {
+            "flag_name": { "type": "string", "description": "Plot flag identifier (e.g., goblins_defeated, gundren_rescued)" },
+            "value": { "type": "boolean", "description": "Plot flag value (must be boolean)" }
+          },
+          "validation": {
+            "flag_name_must_be_string": true,
+            "value_must_be_boolean": true
+          }
+        }
+      }
+    },
+    "session": {
+      "description": "Mutations to session-level state — time tracking, scene completion records",
+      "mutation_types": {
+        "session_time_tracking": {
+          "required_fields": ["elapsed_minutes"],
+          "fields": {
+            "elapsed_minutes": { "type": "number", "minimum": 0, "description": "Real-time minutes elapsed in session" },
+            "scene_count": { "type": "integer", "minimum": 0, "description": "Number of scenes completed in this session" }
+          },
+          "validation": {
+            "elapsed_minutes_must_be_non_negative": true,
+            "scene_count_must_be_non_negative_integer": true
+          }
+        },
+        "scene_completion_record": {
+          "required_fields": ["scene_id", "encounter_type", "outcome"],
+          "fields": {
+            "scene_id": { "type": "string", "description": "Unique identifier for the completed scene" },
+            "encounter_type": { "type": "string", "enum": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"], "description": "Type of encounter in the scene" },
+            "outcome": { "type": "string", "enum": ["success", "failure", "partial", "fled", "skipped"], "description": "Scene outcome" },
+            "timestamp": { "type": "string", "format": "date-time", "description": "When the scene completed" },
+            "mutations_applied": { "type": "array", "items": { "type": "string" }, "description": "List of mutation types applied during this scene" }
+          },
+          "validation": {
+            "scene_id_must_be_string": true,
+            "encounter_type_must_be_valid_enum": true,
+            "outcome_must_be_valid_enum": true
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "party_hp_change": {
+        "character_id": "fighter-01",
+        "amount": -8,
+        "source": "goblin_ambush"
+      },
+      "campaign_xp_gain": {
+        "amount": 150,
+        "source": "combat",
+        "split_mode": "equal"
+      },
+      "campaign_loot_addition": {
+        "items": [
+          { "item_id": "potion-healing", "quantity": 2, "name": "Potion of Healing", "rarity": "common" }
+        ],
+        "gold": 25
+      },
+      "arc_quest_status_change": {
+        "quest_id": "rescue-gundren",
+        "new_status": "active",
+        "reason": "Party discovered clue about Gundren's location"
+      },
+      "arc_plot_flag_set": {
+        "flag_name": "goblins_defeated",
+        "value": true
+      },
+      "session_scene_completion": {
+        "scene_id": "scene-001-ambush",
+        "encounter_type": "combat",
+        "outcome": "success",
+        "timestamp": "2026-05-27T12:00:00Z",
+        "mutations_applied": ["hp_change", "xp_gain", "loot_addition", "plot_flag_set"]
+      }
+    }
+  ]
+}

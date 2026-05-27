@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Creation Party Validation Contract",
+  "description": "Validation rules for a complete party before returning to /game-play — ensures party size, race/class validity, ability scores in range, HP calculated correctly",
+  "type": "object",
+  "required": ["party_size_min", "party_size_max", "required_races", "required_classes", "ability_score_min", "ability_score_max", "hp_validation_rules", "required_pc_fields", "skill_validation", "equipment_validation", "return_format"],
+  "properties": {
+    "party_size_min": {
+      "type": "integer",
+      "const": 1,
+      "description": "Minimum number of PCs in a valid party"
+    },
+    "party_size_max": {
+      "type": "integer",
+      "const": 6,
+      "description": "Maximum number of PCs in a valid party"
+    },
+    "required_races": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "All PC races must be in the extended race registry",
+      "enum_values": [
+        "human", "elf", "dwarf", "halfling", "gnome",
+        "half-elf", "half-orc", "tiefling", "dragonborn"
+      ]
+    },
+    "required_classes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "All PC classes must be in the extended class registry",
+      "enum_values": [
+        "barbarian", "bard", "cleric", "druid", "fighter",
+        "monk", "paladin", "ranger", "rogue", "sorcerer",
+        "warlock", "wizard"
+      ]
+    },
+    "ability_score_min": {
+      "type": "integer",
+      "const": 3,
+      "description": "Minimum ability score (base roll minimum: 3d6 lowest)"
+    },
+    "ability_score_max": {
+      "type": "integer",
+      "const": 20,
+      "description": "Maximum ability score (includes racial bonuses, capped at 20)"
+    },
+    "hp_validation_rules": {
+      "type": "object",
+      "required": ["formula", "level_1_formula", "hit_die_by_class"],
+      "properties": {
+        "formula": {
+          "type": "string",
+          "const": "class_hit_die + CON_modifier + level_bonuses",
+          "description": "General HP formula for any level"
+        },
+        "level_1_formula": {
+          "type": "string",
+          "const": "class_hit_die_max + CON_modifier",
+          "description": "Level 1 HP: max hit die value + Constitution modifier"
+        },
+        "hit_die_by_class": {
+          "type": "object",
+          "properties": {
+            "barbarian": { "type": "integer", "const": 12 },
+            "bard": { "type": "integer", "const": 8 },
+            "cleric": { "type": "integer", "const": 8 },
+            "druid": { "type": "integer", "const": 8 },
+            "fighter": { "type": "integer", "const": 10 },
+            "monk": { "type": "integer", "const": 8 },
+            "paladin": { "type": "integer", "const": 10 },
+            "ranger": { "type": "integer", "const": 10 },
+            "rogue": { "type": "integer", "const": 8 },
+            "sorcerer": { "type": "integer", "const": 6 },
+            "warlock": { "type": "integer", "const": 8 },
+            "wizard": { "type": "integer", "const": 6 }
+          },
+          "description": "Maximum hit die value per class"
+        }
+      },
+      "description": "HP calculation rules: HP = class_hit_die + CON_modifier + level bonuses (for level 1: CON_modifier)"
+    },
+    "required_pc_fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "const": [
+        "id", "name", "race", "class", "level", "xp",
+        "ability_scores", "hp_current", "hp_max",
+        "skill_proficiencies", "equipment"
+      ],
+      "description": "Every PC object must contain all of these fields"
+    },
+    "skill_validation": {
+      "type": "object",
+      "required": ["skills_per_class"],
+      "properties": {
+        "skills_per_class": {
+          "type": "object",
+          "properties": {
+            "barbarian": {
+              "choose": 2,
+              "from": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"]
+            },
+            "bard": {
+              "choose": 3,
+              "from": ["any"]
+            },
+            "cleric": {
+              "choose": 2,
+              "from": ["history", "insight", "medicine", "persuasion", "religion"]
+            },
+            "druid": {
+              "choose": 2,
+              "from": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"]
+            },
+            "fighter": {
+              "choose": 2,
+              "from": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "perception", "survival"]
+            },
+            "monk": {
+              "choose": 2,
+              "from": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"]
+            },
+            "paladin": {
+              "choose": 2,
+              "from": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"]
+            },
+            "ranger": {
+              "choose": 3,
+              "from": ["animal handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"]
+            },
+            "rogue": {
+              "choose": 4,
+              "from": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"]
+            },
+            "sorcerer": {
+              "choose": 2,
+              "from": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"]
+            },
+            "warlock": {
+              "choose": 2,
+              "from": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"]
+            },
+            "wizard": {
+              "choose": 2,
+              "from": ["arcana", "history", "insight", "investigation", "medicine", "religion"]
+            }
+          },
+          "description": "Number of skill proficiencies and valid choices per class"
+        }
+      },
+      "description": "Skill proficiency validation: each PC's skills must be valid for their class"
+    },
+    "equipment_validation": {
+      "type": "object",
+      "required": ["rule"],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "const": "each_pc_has_starting_equipment_for_class",
+          "description": "Every PC must have starting equipment appropriate to their class"
+        },
+        "minimum_items": {
+          "type": "integer",
+          "const": 1,
+          "description": "Each PC must have at least 1 equipment item"
+        }
+      },
+      "description": "Equipment validation: starting equipment per class validated"
+    },
+    "return_format": {
+      "type": "object",
+      "required": ["valid", "errors"],
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "description": "True if party passes all validation rules"
+        },
+        "errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of validation error messages (empty if valid)"
+        }
+      },
+      "description": "Return format: { valid: boolean, errors: [...] } if invalid"
+    }
+  },
+  "examples": [
+    {
+      "party_size_min": 1,
+      "party_size_max": 6,
+      "required_races": ["human", "elf", "dwarf", "halfling", "gnome", "half-elf", "half-orc", "tiefling", "dragonborn"],
+      "required_classes": ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"],
+      "ability_score_min": 3,
+      "ability_score_max": 20,
+      "hp_validation_rules": {
+        "formula": "class_hit_die + CON_modifier + level_bonuses",
+        "level_1_formula": "class_hit_die_max + CON_modifier",
+        "hit_die_by_class": {
+          "barbarian": 12, "bard": 8, "cleric": 8, "druid": 8,
+          "fighter": 10, "monk": 8, "paladin": 10, "ranger": 10,
+          "rogue": 8, "sorcerer": 6, "warlock": 8, "wizard": 6
+        }
+      },
+      "required_pc_fields": ["id", "name", "race", "class", "level", "xp", "ability_scores", "hp_current", "hp_max", "skill_proficiencies", "equipment"],
+      "skill_validation": {
+        "skills_per_class": {
+          "rogue": { "choose": 4, "from": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"] },
+          "fighter": { "choose": 2, "from": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "perception", "survival"] }
+        }
+      },
+      "equipment_validation": {
+        "rule": "each_pc_has_starting_equipment_for_class",
+        "minimum_items": 1
+      },
+      "return_format": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  ]
+}

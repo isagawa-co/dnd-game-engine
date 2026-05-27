@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene Dispatch Contract",
+  "description": "Dispatch table mapping encounter_type to sub-loop skill paths. Pure routing rules — no code.",
+  "dispatch_table": {
+    "combat": {
+      "skill_path": ".claude/skills/combat/",
+      "description": "Combat sub-loop — initiative, turns, attack/damage resolution"
+    },
+    "social": {
+      "skill_path": ".claude/skills/social/",
+      "description": "Social sub-loop — NPC dialogue, persuasion, deception, intimidation"
+    },
+    "challenge": {
+      "skill_path": ".claude/skills/challenge/",
+      "description": "Challenge sub-loop — skill checks, traps, puzzles, environmental hazards"
+    },
+    "merchant": {
+      "skill_path": ".claude/skills/merchant/",
+      "description": "Merchant sub-loop — buy, sell, trade, barter"
+    },
+    "rest": {
+      "skill_path": ".claude/skills/rest/",
+      "description": "Rest sub-loop — short rest, long rest, hit dice recovery, spell slot recovery"
+    },
+    "travel": {
+      "skill_path": ".claude/skills/travel/",
+      "description": "Travel sub-loop — overland movement, random encounters, navigation, foraging"
+    },
+    "item-use": {
+      "skill_path": ".claude/skills/item-use/",
+      "description": "Item-use sub-loop — consumable usage, equipment interaction, attunement"
+    }
+  },
+  "type": "object",
+  "required": ["encounter_type"],
+  "properties": {
+    "encounter_type": {
+      "type": "string",
+      "enum": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"],
+      "description": "Encounter type key used to look up the target sub-loop in dispatch_table"
+    }
+  },
+  "validation_rules": {
+    "encounter_type_must_exist": {
+      "rule": "encounter_type must be a key in dispatch_table",
+      "valid_types": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"]
+    },
+    "input_must_match_action_contract": {
+      "rule": "Input data must conform to scene-action-contract.json schema",
+      "contract_ref": ".claude/skills/scene/contracts/scene-action-contract.json"
+    },
+    "output_must_match_outcome_contract": {
+      "rule": "Output data must conform to scene-outcome-contract.json schema",
+      "contract_ref": ".claude/skills/scene/contracts/scene-outcome-contract.json"
+    }
+  },
+  "examples": [
+    {
+      "encounter_type": "combat",
+      "resolved_skill_path": ".claude/skills/combat/",
+      "description": "Dispatches a combat encounter to the combat sub-loop skill"
+    }
+  ]
+}
