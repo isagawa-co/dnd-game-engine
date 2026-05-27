@@ -1,0 +1,29 @@
+{
+  "contract_name": "travel-outcome",
+  "version": "1.0",
+  "description": "Output schema for travel encounter results",
+  "outcome_schema": {
+    "encounter_id": "string",
+    "result_code": "string — arrived | lost | interrupted | forced_camp",
+    "distance_covered": "number — miles traveled",
+    "time_elapsed": "string — travel time (e.g., '8 hours', '2 days')",
+    "segments": [
+      {
+        "segment_number": "number",
+        "hours": "number",
+        "encounter_triggered": "boolean",
+        "encounter_type": "string — combat | social | none",
+        "encounter_result": "string — summary if encounter occurred",
+        "navigation_result": "string — on_course | lost | not_applicable"
+      }
+    ],
+    "encounters_triggered": "number — total random encounters",
+    "forage_result": {
+      "attempted": "boolean",
+      "success": "boolean",
+      "rations_found": "number"
+    },
+    "location_updated": "string — new current location",
+    "party_conditions": ["string — any conditions gained during travel (exhaustion, etc.)"]
+  }
+}

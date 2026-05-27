@@ -25,6 +25,8 @@
 |----------|------|
 | Input | → [[contracts/scene-action-contract.json]] |
 | Output | → [[contracts/scene-outcome-contract.json]] |
+| Dispatch | → [[contracts/scene-dispatch-contract.json]] |
+| Encounter Types | → [[contracts/scene-encounter-types.json]] |
 
 ## Resolution Flow
 
@@ -44,12 +46,12 @@
 | Type | Sub-Loop | Skill | Status |
 |------|----------|-------|--------|
 | combat | combat-loop | → [[.claude/skills/combat/SKILL.md]] | built |
-| social | social-loop | — | stub |
+| social | social-loop | → [[.claude/skills/social/SKILL.md]] | built |
 | challenge | challenge-loop | → [[.claude/skills/challenge/SKILL.md]] | built |
-| merchant | merchant-loop | — | stub |
+| merchant | merchant-loop | → [[.claude/skills/merchant/SKILL.md]] | built |
 | rest | rest-loop | → [[.claude/skills/rest/SKILL.md]] | built |
-| travel | travel-loop | — | stub |
-| item-use | item-use-loop | — | stub |
+| travel | travel-loop | → [[.claude/skills/travel/SKILL.md]] | built |
+| item-use | item-use-loop | → [[.claude/skills/item-use/SKILL.md]] | built |
 
 ## Action Prompt Integration
 

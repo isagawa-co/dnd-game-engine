@@ -1,0 +1,26 @@
+{
+  "contract_name": "item-use-outcome",
+  "version": "1.0",
+  "description": "Output schema for non-combat item use results",
+  "outcome_schema": {
+    "encounter_id": "string",
+    "result_code": "string — success | failed_check | invalid_item | no_charges | not_attuned | wrong_class",
+    "effect_applied": "string — description of the effect that was applied",
+    "effect_details": {
+      "hp_change": "number — healing or damage applied (0 if none)",
+      "buff_applied": "string — buff name if applicable (null otherwise)",
+      "buff_duration": "string — duration of buff (null if none)",
+      "condition_added": "string — condition applied (null if none)",
+      "condition_removed": "string — condition removed (null if none)"
+    },
+    "item_consumed": "boolean — whether the item was consumed/destroyed",
+    "charges_remaining": "number — remaining charges after use (null if not applicable)",
+    "inventory_updated": "boolean — whether inventory state changed",
+    "check_result": {
+      "check_type": "string — arcana | none",
+      "dc": "number",
+      "roll": "number",
+      "passed": "boolean"
+    }
+  }
+}

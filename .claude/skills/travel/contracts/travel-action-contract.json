@@ -1,0 +1,30 @@
+{
+  "contract_name": "travel-action",
+  "version": "1.0",
+  "description": "Input schema for travel encounter actions",
+  "action_schema": {
+    "encounter_id": "string — unique travel segment identifier",
+    "origin": "string — starting location name or id",
+    "destination": "string — target location name or id",
+    "distance_miles": "number — distance in miles (if known)",
+    "pace": "string — fast | normal | slow",
+    "mode": "string — foot | mount | vehicle",
+    "terrain": "string — road | trail | wilderness | dangerous",
+    "watch_order": ["string — character_ids in watch rotation"],
+    "forage": "boolean — whether party is foraging during travel",
+    "navigation_roll": "number — Survival check result for off-road navigation (null if on road)",
+    "encounter_roll": "number — d20 roll for random encounter check"
+  },
+  "required_fields": ["origin", "destination", "pace"],
+  "pace_rules": {
+    "fast": { "mph": 4, "miles_per_day": 30, "effect": "-5 passive Perception" },
+    "normal": { "mph": 3, "miles_per_day": 24, "effect": "none" },
+    "slow": { "mph": 2, "miles_per_day": 18, "effect": "Can use Stealth" }
+  },
+  "encounter_thresholds": {
+    "road": 18,
+    "trail": 16,
+    "wilderness": 14,
+    "dangerous": 12
+  }
+}

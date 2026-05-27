@@ -1,0 +1,26 @@
+{
+  "contract_name": "social-action",
+  "version": "1.0",
+  "description": "Input schema for social encounter actions",
+  "action_schema": {
+    "encounter_id": "string — unique encounter identifier",
+    "npc_id": "string — NPC entity identifier",
+    "npc_name": "string — NPC display name",
+    "disposition": "string — current NPC attitude: hostile | unfriendly | neutral | friendly | helpful",
+    "topics": [
+      {
+        "topic_id": "string",
+        "description": "string — what the topic is about",
+        "dc": "number — difficulty class for the check",
+        "skill": "string — recommended skill: persuasion | deception | intimidation | insight",
+        "information": "string — what is revealed on success"
+      }
+    ],
+    "approach": "string — player's chosen approach: persuade | deceive | intimidate | insight | custom",
+    "skill_used": "string — the ability check skill used",
+    "roll": "number — the player's d20 roll result (including modifiers)",
+    "dc": "number — the DC for this specific check",
+    "character_id": "string — which PC is making the check"
+  },
+  "required_fields": ["encounter_id", "npc_id", "approach", "skill_used", "roll", "dc", "character_id"]
+}

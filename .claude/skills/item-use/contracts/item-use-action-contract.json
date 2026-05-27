@@ -1,0 +1,25 @@
+{
+  "contract_name": "item-use-action",
+  "version": "1.0",
+  "description": "Input schema for non-combat item use actions",
+  "action_schema": {
+    "encounter_id": "string — unique action identifier",
+    "character_id": "string — PC using the item",
+    "item_id": "string — item identifier from inventory",
+    "item_name": "string — item display name",
+    "item_type": "string — potion | scroll | magic_item | mundane",
+    "target": "string — target of the item (self | character_id | object)",
+    "context": "string — exploration | social | rest | travel",
+    "spell_level": "number — for scrolls, the spell level (null otherwise)",
+    "attunement_required": "boolean — whether the item requires attunement",
+    "charges_remaining": "number — current charges (null if not applicable)",
+    "arcana_roll": "number — Arcana check for scroll casting above max spell level (null if not needed)"
+  },
+  "required_fields": ["character_id", "item_id", "item_type", "target"],
+  "item_type_rules": {
+    "potion": "Apply effect immediately. Consume item. No check required.",
+    "scroll": "Check class spell list. If spell level > max slot level, Arcana check DC 10 + spell level. On fail, scroll destroyed with no effect.",
+    "magic_item": "Check attunement (max 3 per PC). Check charges. Apply effect. Decrement charges if applicable.",
+    "mundane": "Apply situational effect. Item not consumed unless expendable (torch, oil, rations)."
+  }
+}

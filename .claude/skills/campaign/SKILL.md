@@ -65,6 +65,17 @@ The campaign loop executes 5 sequential steps per campaign session:
 
 Your role is to read the prescriptive skills and contracts, then MAKE DECISIONS as the Dungeon Master. You don't execute Python code — you understand the D&D rules, read the JSON contracts, and narrate/decide outcomes.
 
+## Contracts
+
+| Contract | File | Purpose |
+|----------|------|---------|
+| Campaign Loop | -> [[contracts/campaign-loop-contract.json]] | 5-tier state hierarchy and loop orchestration |
+| Campaign Action | -> [[contracts/campaign-action-contract.json]] | Input schema for campaign actions |
+| Campaign Outcome | -> [[contracts/campaign-outcome-contract.json]] | Output schema for campaign results |
+| Arc Progression | -> [[contracts/arc-progression-contract.json]] | Arc completion conditions and transitions |
+| Session Management | -> [[contracts/session-management-contract.json]] | Session save/load/resume contracts |
+| State Mutation | -> [[contracts/state-mutation-contract.json]] | Atomic state update rules and validation |
+
 ## Action Prompt Integration
 
 At every decision point where the user must choose, read and follow `.claude/skills/action-prompt/SKILL.md`. This ensures consistent presentation across all game loops. See `contracts/action-prompt-contract.json` for context-specific default actions.

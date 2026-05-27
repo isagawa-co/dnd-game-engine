@@ -1,0 +1,29 @@
+{
+  "contract_name": "social-outcome",
+  "version": "1.0",
+  "description": "Output schema for social encounter results",
+  "outcome_schema": {
+    "encounter_id": "string",
+    "result_code": "string — strong_success | success | failure | critical_failure",
+    "disposition_change": "number — shift in NPC attitude (-1, 0, or +1)",
+    "new_disposition": "string — updated NPC attitude after shift",
+    "information_revealed": [
+      "string — each piece of information the NPC shared"
+    ],
+    "quest_updates": [
+      {
+        "quest_id": "string",
+        "update_type": "string — new | progress | complete",
+        "details": "string"
+      }
+    ],
+    "npc_reaction": "string — brief description of NPC's emotional response",
+    "follow_up_available": "boolean — whether more conversation is possible"
+  },
+  "result_code_rules": {
+    "strong_success": "roll >= DC + 5 — disposition +1, all topic info revealed",
+    "success": "roll >= DC — disposition +1, primary info revealed",
+    "failure": "roll < DC — no shift, no info revealed",
+    "critical_failure": "roll < DC - 5 — disposition -1, NPC may become hostile"
+  }
+}

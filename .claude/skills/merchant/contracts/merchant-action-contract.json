@@ -1,0 +1,26 @@
+{
+  "contract_name": "merchant-action",
+  "version": "1.0",
+  "description": "Input schema for merchant encounter actions",
+  "action_schema": {
+    "encounter_id": "string — unique encounter identifier",
+    "merchant_id": "string — merchant NPC identifier",
+    "merchant_name": "string — merchant display name",
+    "action": "string — buy | sell | barter | browse | leave",
+    "item_id": "string — item being transacted (null for browse/leave)",
+    "item_name": "string — item display name",
+    "quantity": "number — how many (default 1)",
+    "base_price": "number — PHB base price in gold",
+    "price_modifier": "number — local economy multiplier (0.8-1.5)",
+    "roll": "number — Persuasion check result for barter (null if not bartering)",
+    "character_id": "string — which PC is making the transaction"
+  },
+  "required_fields": ["encounter_id", "merchant_id", "action"],
+  "action_rules": {
+    "buy": "Requires item_id, quantity. Final price = base_price * price_modifier * quantity. Deduct from party_gold.",
+    "sell": "Requires item_id, quantity. Sell price = base_price * 0.5 * quantity. Add to party_gold.",
+    "barter": "Requires item_id, roll. DC 15 Persuasion. Success = 10% discount. Beat by 5+ = 20% discount.",
+    "browse": "No fields required. Display full inventory.",
+    "leave": "No fields required. End encounter."
+  }
+}

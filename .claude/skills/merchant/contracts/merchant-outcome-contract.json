@@ -1,0 +1,24 @@
+{
+  "contract_name": "merchant-outcome",
+  "version": "1.0",
+  "description": "Output schema for merchant encounter results",
+  "outcome_schema": {
+    "encounter_id": "string",
+    "action": "string — buy | sell | barter | browse | leave",
+    "result_code": "string — success | insufficient_funds | item_not_found | barter_success | barter_fail | browsed | left",
+    "transaction_log": [
+      {
+        "action": "string — bought | sold",
+        "item_name": "string",
+        "quantity": "number",
+        "unit_price": "number",
+        "total_price": "number",
+        "discount_applied": "number — percentage discount (0 if none)"
+      }
+    ],
+    "gold_change": "number — net gold change (positive = gained, negative = spent)",
+    "items_added": ["string — item names added to party inventory"],
+    "items_removed": ["string — item names removed from party inventory"],
+    "party_gold_after": "number — party gold balance after transaction"
+  }
+}
