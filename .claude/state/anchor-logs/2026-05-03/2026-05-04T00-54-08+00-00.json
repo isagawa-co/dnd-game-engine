@@ -1,0 +1,55 @@
+{
+  "anchor_timestamp": "2026-05-04T00:54:08+00:00",
+  "actions_count": 8,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T00:53:43Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:53:49Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom datetime import datetime\nfrom pathlib import P",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:53:52Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom datetime import datetime\nfrom pathlib import P",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:54:04Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/campaign/\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:54:08Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:54:11Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport hashlib\nwith open('D:/my_ai_projects/project_test_repos/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:54:11Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:54:15Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:\\my_ai_projects\\project",
+      "session": "current"
+    }
+  ]
+}

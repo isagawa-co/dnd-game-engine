@@ -1,0 +1,35 @@
+{
+  "anchor_timestamp": "2026-05-01T12:06:40Z",
+  "actions_count": 14,
+  "violations_found": 2,
+  "violations": [
+    {
+      "timestamp": "2026-05-01T12:05:06Z",
+      "tool": "Bash",
+      "violation": "foreground cd usage",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c ..."
+    },
+    {
+      "timestamp": "2026-05-01T12:05:10Z",
+      "tool": "Bash",
+      "violation": "foreground cd usage",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << EOF..."
+    }
+  ],
+  "actions": [
+    {"timestamp": "2026-05-01T12:03:49Z", "tool": "Bash", "entry": "echo actions.jsonl"},
+    {"timestamp": "2026-05-01T12:04:37Z", "tool": "Bash", "entry": "ls rules-engine tasks"},
+    {"timestamp": "2026-05-01T12:05:02Z", "tool": "Edit", "entry": "Edit rules.py"},
+    {"timestamp": "2026-05-01T12:05:06Z", "tool": "Bash", "entry": "Bash: cd + python3 [VIOLATION]"},
+    {"timestamp": "2026-05-01T12:05:10Z", "tool": "Bash", "entry": "Bash: cd + python3 [VIOLATION]"},
+    {"timestamp": "2026-05-01T12:05:25Z", "tool": "Bash", "entry": "grep two_weapon_fighting"},
+    {"timestamp": "2026-05-01T12:05:27Z", "tool": "Bash", "entry": "python3 from src.rules import"},
+    {"timestamp": "2026-05-01T12:05:31Z", "tool": "Bash", "entry": "ls rules-engine tasks"},
+    {"timestamp": "2026-05-01T12:05:34Z", "tool": "Bash", "entry": "ls rules-engine tasks"},
+    {"timestamp": "2026-05-01T12:05:38Z", "tool": "Bash", "entry": "wc -l tasks"},
+    {"timestamp": "2026-05-01T12:05:57Z", "tool": "Bash", "entry": "ls grep tasks"},
+    {"timestamp": "2026-05-01T12:06:33Z", "tool": "Bash", "entry": "hashlib protocol"},
+    {"timestamp": "2026-05-01T12:06:34Z", "tool": "Bash", "entry": "hashlib protocol"},
+    {"timestamp": "2026-05-01T12:06:40Z", "tool": "Bash", "entry": "mkdir anchor-logs"}
+  ]
+}

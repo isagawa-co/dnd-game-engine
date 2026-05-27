@@ -1,0 +1,30 @@
+{
+  "anchor_timestamp": "2026-05-01T12:35:00Z",
+  "actions_count": 23,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-01T12:32:47Z", "tool": "Bash", "entry": "Diagnostic: protocol hash verification"},
+    {"timestamp": "2026-05-01T12:32:51Z", "tool": "Bash", "entry": "Diagnostic: workflow state analysis"},
+    {"timestamp": "2026-05-01T12:32:54Z", "tool": "Bash", "entry": "Diagnostic: grep test functions for rules"},
+    {"timestamp": "2026-05-01T12:32:59Z", "tool": "Bash", "entry": "Diagnostic: list task files in rules-engine"},
+    {"timestamp": "2026-05-01T12:33:02Z", "tool": "Bash", "entry": "Diagnostic: run pytest on rules tests"},
+    {"timestamp": "2026-05-01T12:33:03Z", "tool": "Bash", "entry": "Diagnostic: grep REQ-RULES-027/028"},
+    {"timestamp": "2026-05-01T12:33:06Z", "tool": "Bash", "entry": "Diagnostic: find markdown files"},
+    {"timestamp": "2026-05-01T12:33:07Z", "tool": "Bash", "entry": "Diagnostic: analyze workflow state"},
+    {"timestamp": "2026-05-01T12:33:08Z", "tool": "Bash", "entry": "Diagnostic: grep REQ-RULES-027/028 continuation"},
+    {"timestamp": "2026-05-01T12:33:10Z", "tool": "Bash", "entry": "Diagnostic: grep in backlog"},
+    {"timestamp": "2026-05-01T12:33:15Z", "tool": "Bash", "entry": "Diagnostic: grep in game-dev tasks"},
+    {"timestamp": "2026-05-01T12:33:17Z", "tool": "Bash", "entry": "Diagnostic: find gdd files"},
+    {"timestamp": "2026-05-01T12:33:19Z", "tool": "Bash", "entry": "Diagnostic: find gdd files continuation"},
+    {"timestamp": "2026-05-01T12:33:24Z", "tool": "Bash", "entry": "Diagnostic: grep test functions for concentration"},
+    {"timestamp": "2026-05-01T12:33:27Z", "tool": "Bash", "entry": "Diagnostic: grep REQ-RULES-027/028 in tests"},
+    {"timestamp": "2026-05-01T12:33:33Z", "tool": "Bash", "entry": "Diagnostic: grep test functions"},
+    {"timestamp": "2026-05-01T12:33:35Z", "tool": "Bash", "entry": "Diagnostic: grep test functions and REQ-RULES"},
+    {"timestamp": "2026-05-01T12:33:47Z", "tool": "Bash", "entry": "Diagnostic: run pytest on rules tests"},
+    {"timestamp": "2026-05-01T12:33:50Z", "tool": "Bash", "entry": "Diagnostic: grep concentration in tests"},
+    {"timestamp": "2026-05-01T12:33:52Z", "tool": "Bash", "entry": "Diagnostic: python hash computation"},
+    {"timestamp": "2026-05-01T12:33:55Z", "tool": "Bash", "entry": "Diagnostic: grep REQ-RULES-027/028 context"},
+    {"timestamp": "2026-05-01T12:34:00Z", "tool": "Bash", "entry": "Diagnostic: grep test functions final"},
+    {"timestamp": "2026-05-01T12:34:01Z", "tool": "Bash", "entry": "Diagnostic: mkdir anchor-logs"}
+  ]
+}

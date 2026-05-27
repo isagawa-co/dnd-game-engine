@@ -1,0 +1,51 @@
+{
+  "id": "sildar-hallwinter",
+  "name": "Sildar Hallwinter",
+  "size_type": "medium",
+  "alignment": "lawful good",
+  "armor_class": 16,
+  "hp": {
+    "maximum": 27,
+    "hit_dice": "5d8+5"
+  },
+  "ability_scores": {
+    "strength": 15,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 10,
+    "wisdom": 11,
+    "charisma": 10
+  },
+  "saving_throws": {
+    "strength": 4,
+    "constitution": 3
+  },
+  "skills": {
+    "athletics": 4,
+    "perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": ["Common"],
+  "challenge": "1",
+  "speed": {
+    "walk": 30
+  },
+  "actions": [
+    {
+      "name": "Longsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands.",
+      "attack_bonus": 4,
+      "damage_roll": "1d8+2",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Heavy Crossbow",
+      "description": "Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage.",
+      "attack_bonus": 2,
+      "damage_roll": "1d10",
+      "damage_type": "piercing"
+    }
+  ]
+}

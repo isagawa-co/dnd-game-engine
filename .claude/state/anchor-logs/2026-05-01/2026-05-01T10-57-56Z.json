@@ -1,0 +1,73 @@
+{
+  "anchor_timestamp": "2026-05-01T10:57:56.531222Z",
+  "actions_count": 11,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T10:56:43Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && bash -c 'env -u CLAUDECODE",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:56:45Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lht \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/ai-dnd-game",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:56:48Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && (env -u CLAUDECODE bash ./",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:10Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 20 && cat \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai-projects-proj",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:12Z",
+      "tool": "Bash",
+      "entry": "Bash: ps aux | grep -i \"run-task\\|claude\" | grep -v grep | head -10",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:15Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python -c \"import hashlib;",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:37Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/tasks/ai-dnd-game\" -type f 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:40Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/tasks\" -maxdepth 2 -type f -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:48Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:51Z",
+      "tool": "Edit",
+      "entry": "Edit: dice.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:57:52Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

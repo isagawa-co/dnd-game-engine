@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Leveling Contract",
+  "description": "Defines input/output contract for PC level-up mechanics including XP thresholds, ability score increases, feature grants, and spell slot progression.",
+  "version": "1.0",
+  "input_schema": {
+    "type": "object",
+    "required": ["character", "xp_gained"],
+    "properties": {
+      "character": {
+        "type": "object",
+        "description": "Current Tier 4 PC entity"
+      },
+      "xp_gained": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "hp_roll": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Manual hit die roll. If null, use average."
+      },
+      "asi_choices": {
+        "type": "object",
+        "description": "Ability score increases when ASI available. Keys are ability names, values are increase amounts. Total must equal 2.",
+        "example": { "STR": 2 }
+      }
+    }
+  },
+  "output_schema": {
+    "type": "object",
+    "required": ["leveled_up", "new_level", "hp_gained", "new_features", "new_spell_slots", "proficiency_bonus", "asi_applied", "errors"],
+    "properties": {
+      "leveled_up": { "type": "boolean" },
+      "new_level": { "type": "integer", "minimum": 1, "maximum": 20 },
+      "new_xp": { "type": "integer" },
+      "hp_gained": { "type": "integer", "minimum": 0 },
+      "new_features": { "type": "array", "items": { "type": "object" } },
+      "new_spell_slots": { "type": "object" },
+      "proficiency_bonus": { "type": "integer", "minimum": 2, "maximum": 6 },
+      "asi_applied": { "type": "boolean" },
+      "errors": { "type": "array", "items": { "type": "string" } }
+    }
+  },
+  "validation_rules": [
+    {
+      "rule_id": "LVL-001",
+      "description": "XP thresholds follow standard 5e progression table",
+      "data": "XP_THRESHOLDS constant"
+    },
+    {
+      "rule_id": "LVL-002",
+      "description": "Proficiency bonus = 2 + floor((level - 1) / 4)",
+      "validation": "proficiency_bonus == 2 + (level - 1) // 4"
+    },
+    {
+      "rule_id": "LVL-003",
+      "description": "Ability Score Increase available at levels 4, 8, 12, 16, 19",
+      "validation": "level in [4, 8, 12, 16, 19]"
+    },
+    {
+      "rule_id": "LVL-004",
+      "description": "HP gain per level = hit_die_roll + CON modifier, minimum 1",
+      "validation": "hp_gained == max(hit_die_roll + con_modifier, 1)"
+    },
+    {
+      "rule_id": "LVL-005",
+      "description": "Hit dice count must equal character level",
+      "validation": "hit_dice_detail.maximum == level"
+    },
+    {
+      "rule_id": "LVL-006",
+      "description": "Spell slots must match class/level table for spellcasters",
+      "validation": "spell_slots == get_spell_slots(class, level)"
+    }
+  ],
+  "xp_thresholds": {
+    "2": 300,
+    "3": 900,
+    "4": 2700,
+    "5": 6500,
+    "6": 14000,
+    "7": 23000,
+    "8": 34000,
+    "9": 48000,
+    "10": 64000,
+    "11": 85000,
+    "12": 100000,
+    "13": 120000,
+    "14": 140000,
+    "15": 165000,
+    "16": 195000,
+    "17": 225000,
+    "18": 265000,
+    "19": 305000,
+    "20": 355000
+  },
+  "spell_slot_tables": {
+    "full_caster": {
+      "description": "Bard, Cleric, Druid, Sorcerer, Wizard",
+      "1":  { "1": 2 },
+      "2":  { "1": 3 },
+      "3":  { "1": 4, "2": 2 },
+      "4":  { "1": 4, "2": 3 },
+      "5":  { "1": 4, "2": 3, "3": 2 },
+      "6":  { "1": 4, "2": 3, "3": 3 },
+      "7":  { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "8":  { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "9":  { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "10": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "11": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "12": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1 },
+      "13": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "14": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1 },
+      "15": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "16": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1 },
+      "17": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "18": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 1 },
+      "19": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 1 },
+      "20": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1 }
+    },
+    "half_caster": {
+      "description": "Paladin, Ranger (start at level 2)",
+      "1":  {},
+      "2":  { "1": 2 },
+      "3":  { "1": 3 },
+      "4":  { "1": 3 },
+      "5":  { "1": 4, "2": 2 },
+      "6":  { "1": 4, "2": 2 },
+      "7":  { "1": 4, "2": 3 },
+      "8":  { "1": 4, "2": 3 },
+      "9":  { "1": 4, "2": 3, "3": 2 },
+      "10": { "1": 4, "2": 3, "3": 2 },
+      "11": { "1": 4, "2": 3, "3": 3 },
+      "12": { "1": 4, "2": 3, "3": 3 },
+      "13": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "14": { "1": 4, "2": 3, "3": 3, "4": 1 },
+      "15": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "16": { "1": 4, "2": 3, "3": 3, "4": 2 },
+      "17": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "18": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 1 },
+      "19": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+      "20": { "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 }
+    },
+    "warlock": {
+      "description": "Warlock pact magic (short rest recovery)",
+      "1":  { "1": 1 },
+      "2":  { "1": 2 },
+      "3":  { "2": 2 },
+      "4":  { "2": 2 },
+      "5":  { "3": 2 },
+      "6":  { "3": 2 },
+      "7":  { "4": 2 },
+      "8":  { "4": 2 },
+      "9":  { "5": 2 },
+      "10": { "5": 2 },
+      "11": { "5": 3 },
+      "12": { "5": 3 },
+      "13": { "5": 3 },
+      "14": { "5": 3 },
+      "15": { "5": 3 },
+      "16": { "5": 3 },
+      "17": { "5": 4 },
+      "18": { "5": 4 },
+      "19": { "5": 4 },
+      "20": { "5": 4 }
+    }
+  },
+  "examples": [
+    {
+      "name": "Fighter level 1 to 2",
+      "input": {
+        "character": { "character_class": "fighter", "level": 1, "xp": 0, "hp": 12 },
+        "xp_gained": 300,
+        "hp_roll": null
+      },
+      "execution": "check_level_up(1, 0, 300) -> hp_gain = avg(d10) + CON mod -> grant features",
+      "output": {
+        "leveled_up": true,
+        "new_level": 2,
+        "hp_gained": 8,
+        "new_features": [{ "name": "Action Surge", "level_gained": 2 }],
+        "new_spell_slots": {},
+        "proficiency_bonus": 2,
+        "asi_applied": false,
+        "errors": []
+      }
+    },
+    {
+      "name": "Wizard level 3 to 4 with ASI",
+      "input": {
+        "character": { "character_class": "wizard", "level": 3, "xp": 2500, "hp": 18 },
+        "xp_gained": 500,
+        "hp_roll": null,
+        "asi_choices": { "INT": 2 }
+      },
+      "execution": "check_level_up(3, 2500, 500) -> hp_gain -> check_asi(4) -> apply ASI -> update spell slots",
+      "output": {
+        "leveled_up": true,
+        "new_level": 4,
+        "hp_gained": 5,
+        "new_features": [],
+        "new_spell_slots": { "1": 4, "2": 3 },
+        "proficiency_bonus": 2,
+        "asi_applied": true,
+        "errors": []
+      }
+    }
+  ],
+  "dependencies": {
+    "uses": ["entity-system (Tier 4 validation, calculate_proficiency_bonus)", "atomic-ops (dice_roll for HP rolls)"],
+    "used_by": ["campaign-loop", "scene-loop", "game-session"]
+  }
+}

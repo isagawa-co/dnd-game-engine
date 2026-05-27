@@ -1,0 +1,26 @@
+{
+  "anchor_timestamp": "2026-05-01T13:01:00Z",
+  "actions_count": 55,
+  "violations_found": 1,
+  "violations": [
+    {
+      "action_number": 5,
+      "type": "Bash foreground cd usage",
+      "pattern": "cd \"D:/...\" && env -u CLAUDECODE claude -",
+      "severity": "HIGH",
+      "rule_violated": "RULE ZERO - Foreground Bash cd Usage",
+      "recorded_via": "/kernel/learn with lesson entry",
+      "status": "resolved"
+    }
+  ],
+  "actions_summary": {
+    "bash_commands": 41,
+    "write_operations": 13,
+    "read_operations": 1
+  },
+  "key_actions": [
+    "Batch execute-pipeline calls: 005-014 spawned",
+    "Multiple task-builder outputs: 000-index.md, gate-contract.md, task files",
+    "Scene-loop and npc-social tasks being decomposed in background"
+  ]
+}

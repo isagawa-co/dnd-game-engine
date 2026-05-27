@@ -1,0 +1,139 @@
+{
+  "anchor_timestamp": "2026-05-27T01:49:14Z",
+  "actions_count": 22,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-27T01:45:47Z",
+      "tool": "Bash",
+      "entry": "Bash: : > \".claude/state/actions.jsonl\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:03Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, datetime\nnow = datetime.datetime.now(datetime.timezone.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:05Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('.claude/protocols/game-eng",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:10Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks/dnd",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:17Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev\" -name \"session-contract*\" -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:18Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev\" -path \"*/game-session*\" -na",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:25Z",
+      "tool": "Write",
+      "entry": "Write: test_item_use_contract.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:37Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/content/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:41Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/campaigns",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:46:44Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/content/l",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:47:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:47:13Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.claude/s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:47:27Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 600 && grep -n \"=== Iteration\\|Task done\\|\\[TASK\\]\\|ALL_TASKS_COMPLETE\\|AB",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:47:29Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, datetime\nnow = datetime.datetime.now(datetime.timezone.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:06Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport sys\nsys.path.insert(0, 'projects/ai-dnd-game/.claude/skills/g",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:11Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport sys\nsys.path.insert(0, 'projects/ai-dnd-game/.claude/skills/g",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('.claude/protocols/game-eng",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:42Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -l /tmp/run-task-debug.log && echo \"---\" && grep -n \"=== Iteration\\|\\[TASK\\] ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:47Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -v \"^+\" /tmp/run-task-debug.log | grep -v \"^++ \" | grep -v \"^+++ \" 2>&1",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:53Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -v \"^+\" /tmp/run-task-debug.log | grep -v \"^++ \" | grep -v \"^+++ \" | grep -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:48:58Z",
+      "tool": "Bash",
+      "entry": "Bash: tail -20 /tmp/run-task-debug.log | grep -v \"^+\" | grep -v \"^++ \"",
+      "session": "current"
+    }
+  ]
+}

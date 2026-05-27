@@ -1,0 +1,13 @@
+{
+  "id": "shortsword",
+  "name": "Shortsword",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 2,
+  "weapon": {
+    "damage_roll": "1d6",
+    "damage_type": "piercing",
+    "properties": ["finesse", "light"]
+  },
+  "description": "A short, light blade favored by rogues and dual-wielders. Finesse allows use of Dexterity for attack and damage rolls."
+}

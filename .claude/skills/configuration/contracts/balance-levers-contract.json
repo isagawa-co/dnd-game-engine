@@ -1,0 +1,208 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Balance Levers Configuration",
+  "description": "Difficulty multipliers, XP curves, treasure scales, encounter settings. All mechanical balance adjustments are configuration-driven.",
+  "type": "object",
+  "properties": {
+    "difficulty_multiplier": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 2.0,
+      "default": 1.0,
+      "description": "Multiplier applied to monster damage, AC, HP, and encounter difficulty scaling (0.5=easy, 1.0=normal, 2.0=hard)"
+    },
+    "xp_curve": {
+      "type": "string",
+      "enum": ["slow", "medium", "fast"],
+      "default": "medium",
+      "description": "XP progression rate (slow=+25% XP to level, medium=standard 5e, fast=-25% XP to level)"
+    },
+    "treasure_scale": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 2.0,
+      "default": 1.0,
+      "description": "Multiplier on all encounter loot values (0.5=half treasure, 1.0=standard, 2.0=double)"
+    },
+    "encounter_difficulty_mode": {
+      "type": "string",
+      "enum": ["auto", "manual"],
+      "default": "auto",
+      "description": "auto=system calculates encounter difficulty, manual=DM chooses"
+    },
+    "deadly_threshold_multiplier": {
+      "type": "number",
+      "minimum": 0.75,
+      "maximum": 1.5,
+      "default": 1.0,
+      "description": "Multiplier on deadly encounter XP threshold (affects when encounters are labeled deadly)"
+    },
+    "rest_healing": {
+      "type": "string",
+      "enum": ["full", "partial", "none"],
+      "default": "full",
+      "description": "full=short rest heals half HP + restores spell slots, partial=HP only, none=no auto-heal"
+    },
+    "spell_availability": {
+      "type": "string",
+      "enum": ["standard", "limited", "abundant"],
+      "default": "standard",
+      "description": "standard=full 5e spell list, limited=curated spells only, abundant=more spell slots"
+    },
+    "magic_item_rarity_adjustment": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 2.0,
+      "default": 1.0,
+      "description": "Multiplier on magic item rarity (1.0=standard, 2.0=more rare items appear)"
+    },
+    "critical_hit_damage": {
+      "type": "string",
+      "enum": ["standard", "max", "extra_die"],
+      "default": "standard",
+      "description": "standard=roll damage dice twice, max=roll damage and take max, extra_die=roll damage+add one extra die"
+    }
+  },
+  "required": [
+    "difficulty_multiplier",
+    "xp_curve",
+    "treasure_scale",
+    "encounter_difficulty_mode",
+    "rest_healing",
+    "spell_availability"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "name": "Standard 5e Balance",
+      "config": {
+        "difficulty_multiplier": 1.0,
+        "xp_curve": "medium",
+        "treasure_scale": 1.0,
+        "encounter_difficulty_mode": "auto",
+        "deadly_threshold_multiplier": 1.0,
+        "rest_healing": "full",
+        "spell_availability": "standard",
+        "magic_item_rarity_adjustment": 1.0,
+        "critical_hit_damage": "standard"
+      }
+    },
+    {
+      "name": "Easy Mode (narrative focus)",
+      "config": {
+        "difficulty_multiplier": 0.5,
+        "xp_curve": "fast",
+        "treasure_scale": 0.75,
+        "encounter_difficulty_mode": "auto",
+        "deadly_threshold_multiplier": 0.75,
+        "rest_healing": "full",
+        "spell_availability": "abundant",
+        "magic_item_rarity_adjustment": 1.5,
+        "critical_hit_damage": "standard"
+      }
+    },
+    {
+      "name": "Hard Mode (high-level challenge)",
+      "config": {
+        "difficulty_multiplier": 1.5,
+        "xp_curve": "slow",
+        "treasure_scale": 1.2,
+        "encounter_difficulty_mode": "manual",
+        "deadly_threshold_multiplier": 1.2,
+        "rest_healing": "partial",
+        "spell_availability": "limited",
+        "magic_item_rarity_adjustment": 0.75,
+        "critical_hit_damage": "max"
+      }
+    },
+    {
+      "name": "Very Hard Mode",
+      "config": {
+        "difficulty_multiplier": 2.0,
+        "xp_curve": "slow",
+        "treasure_scale": 1.0,
+        "encounter_difficulty_mode": "manual",
+        "deadly_threshold_multiplier": 1.5,
+        "rest_healing": "none",
+        "spell_availability": "limited",
+        "magic_item_rarity_adjustment": 0.5,
+        "critical_hit_damage": "max"
+      }
+    },
+    {
+      "name": "Custom (treasure-rich, easy combat)",
+      "config": {
+        "difficulty_multiplier": 0.75,
+        "xp_curve": "medium",
+        "treasure_scale": 2.0,
+        "encounter_difficulty_mode": "auto",
+        "deadly_threshold_multiplier": 1.0,
+        "rest_healing": "full",
+        "spell_availability": "standard",
+        "magic_item_rarity_adjustment": 2.0,
+        "critical_hit_damage": "extra_die"
+      }
+    }
+  ],
+  "validation_rules": [
+    {
+      "rule_id": "BAL-001",
+      "description": "difficulty_multiplier must be 0.5 to 2.0",
+      "validation": "0.5 <= difficulty_multiplier <= 2.0",
+      "error_message": "Difficulty multiplier out of range [0.5, 2.0]"
+    },
+    {
+      "rule_id": "BAL-002",
+      "description": "treasure_scale must be 0.5 to 2.0",
+      "validation": "0.5 <= treasure_scale <= 2.0",
+      "error_message": "Treasure scale out of range [0.5, 2.0]"
+    },
+    {
+      "rule_id": "BAL-003",
+      "description": "difficulty_multiplier >= 1.5 implies deadly encounters are frequent",
+      "validation": "if difficulty_multiplier >= 1.5: warn('deadly encounters frequent')",
+      "severity": "warning"
+    }
+  ],
+  "difficulty_multiplier_effects": {
+    "0.5": {
+      "label": "Easy",
+      "monster_damage": "50%",
+      "monster_ac_adjustment": -1,
+      "monster_hp_adjustment": "-20%",
+      "encounter_xp_threshold": "50% lower"
+    },
+    "1.0": {
+      "label": "Standard",
+      "monster_damage": "100%",
+      "monster_ac_adjustment": 0,
+      "monster_hp_adjustment": "0%",
+      "encounter_xp_threshold": "standard"
+    },
+    "1.5": {
+      "label": "Hard",
+      "monster_damage": "150%",
+      "monster_ac_adjustment": 1,
+      "monster_hp_adjustment": "+20%",
+      "encounter_xp_threshold": "+50% higher"
+    },
+    "2.0": {
+      "label": "Very Hard",
+      "monster_damage": "200%",
+      "monster_ac_adjustment": 2,
+      "monster_hp_adjustment": "+50%",
+      "encounter_xp_threshold": "+100% (doubled)"
+    }
+  },
+  "xp_curve_multipliers": {
+    "slow": 1.25,
+    "medium": 1.0,
+    "fast": 0.75
+  },
+  "treasure_scale_effects": {
+    "0.5": { "label": "Half", "loot_multiplier": 0.5, "magic_item_drop_rate": 0.5 },
+    "1.0": { "label": "Standard", "loot_multiplier": 1.0, "magic_item_drop_rate": 0.65 },
+    "1.5": { "label": "Abundant", "loot_multiplier": 1.5, "magic_item_drop_rate": 0.75 },
+    "2.0": { "label": "Very Abundant", "loot_multiplier": 2.0, "magic_item_drop_rate": 1.0 }
+  }
+}

@@ -1,0 +1,54 @@
+======================================================================
+D&D GAME ENGINE - REAL PIPELINE EXECUTOR
+Start time: Tue, May 26, 2026  5:02:34 PM
+Repository: /d/my_ai_projects/project_test_repos/game-dev
+======================================================================
+
+[1/19] Processing: Item 001
+  Path: projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+  [OK] Backlog file verified
+  Executing: /kernel/execute-pipeline projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+  [OK] Pipeline completed successfully
+  Output (first 500 chars): ---
+
+```
+PIPELINE COMPLETE
+
+Backlog: projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+Tasks: dnd-state-model (11 total, 11 completed, 0 skipped)
+Execution: PASS
+Exit code: 0
+
+Completed tasks:
+- 001-build-campaign-schema (inline)
+- 002-build-arc-schema (inline)
+- 003-build-session-schema (inline)
+- 004-build-scene-schema (inline)
+- 005-build-combat-state-schema (inline)
+- 006-build-state-validation-contract (inline)
+- 007-build-immutability-rules-contract (inlin
+
+[2/19] Processing: Item 002
+  Path: projects/ai-dnd-game/backlog/002-dnd-build-content-system.md
+  [OK] Backlog file verified
+  Executing: /kernel/execute-pipeline projects/ai-dnd-game/backlog/002-dnd-build-content-system.md
+  [OK] Pipeline completed successfully
+  Output (first 500 chars): ## Pipeline Complete: 002-dnd-build-content-system
+
+**Result: PASS** — 106/106 validation checks passed.
+
+### Deliverables
+
+| Category | Count | Status |
+|----------|-------|--------|
+| Content schemas | 6 | All valid JSON Schema draft-07 |
+| Catalog (Tier 1) | 1 | Pack counts match manifest |
+| SKILL.md | 1 | 3-tier architecture documented |
+| Manifest (Tier 2) | 1 | 24 monsters, 3 spells, 18 items |
+| Monster files (Tier 3) | 24 | All required fields present |
+| Spell files (Tier 3) | 3 | All 
+
+[3/19] Processing: Item 003
+  Path: projects/ai-dnd-game/backlog/003-dnd-build-atomic-ops.md
+  [OK] Backlog file verified
+  Executing: /kernel/execute-pipeline projects/ai-dnd-game/backlog/003-dnd-build-atomic-ops.md

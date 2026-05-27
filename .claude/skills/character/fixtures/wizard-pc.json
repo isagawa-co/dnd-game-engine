@@ -1,0 +1,79 @@
+{
+  "entity_type": "pc",
+  "id": "elara-moonwhisper",
+  "name": "Elara Moonwhisper",
+  "character_class": "wizard",
+  "level": 1,
+  "xp": 0,
+  "ac": 12,
+  "hp": 7,
+  "speed": 30,
+  "ability_scores": {
+    "strength": 8,
+    "dexterity": 14,
+    "constitution": 13,
+    "intelligence": 15,
+    "wisdom": 12,
+    "charisma": 10
+  },
+  "hit_dice_detail": {
+    "type": "d6",
+    "current": 1,
+    "maximum": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["intelligence", "wisdom"],
+    "skills": ["arcana", "investigation"],
+    "weapons": ["daggers", "darts", "slings", "quarterstaffs", "light_crossbows"],
+    "armor": []
+  },
+  "class_features": [
+    {
+      "name": "Spellcasting",
+      "description": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.",
+      "granted_by": "wizard",
+      "level_gained": 1
+    },
+    {
+      "name": "Arcane Recovery",
+      "description": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover.",
+      "granted_by": "wizard",
+      "level_gained": 1
+    }
+  ],
+  "spell_slots": {
+    "1": 2
+  },
+  "inventory": [
+    { "item_id": "quarterstaff", "name": "Quarterstaff", "quantity": 1, "weight": 4 },
+    { "item_id": "component_pouch", "name": "Component Pouch", "quantity": 1, "weight": 2 },
+    { "item_id": "spellbook", "name": "Spellbook", "quantity": 1, "weight": 3 }
+  ],
+  "gold": 40,
+  "encumbrance": {
+    "current_weight": 9,
+    "max_weight": 120,
+    "encumbered": false
+  },
+  "personality": {
+    "voice_archetype": "mystical",
+    "motivation": "knowledge",
+    "personality_traits": ["curious", "bookish"],
+    "ideals": "the pursuit of knowledge is its own reward",
+    "bonds": "the arcane academy",
+    "flaws": "absent_minded",
+    "morale": { "confidence": "moderate" }
+  },
+  "social": {
+    "occupation": "sage",
+    "relationships": [],
+    "goals": ["uncover ancient magical secrets", "master the arcane arts"],
+    "fears": ["losing her spellbook"],
+    "secrets": []
+  },
+  "conditions": [],
+  "race": "elf",
+  "background": "sage",
+  "creation_method": "standard_array"
+}

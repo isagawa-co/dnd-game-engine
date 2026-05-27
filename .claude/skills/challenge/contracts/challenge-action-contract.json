@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "challenge-action-contract",
+  "title": "Challenge Action Contract",
+  "description": "Input contract for challenge resolution — defines what data flows into the challenge loop when a PC attempts an environmental obstacle or skill challenge.",
+  "type": "object",
+  "required": ["challenge_type", "actor_pc", "skill_used", "difficulty_class", "roll_result"],
+  "properties": {
+    "challenge_type": {
+      "type": "string",
+      "enum": [
+        "climb", "swim", "jump", "balance", "push_pull",
+        "hide", "sneak",
+        "pick_lock", "break_door", "disable_trap",
+        "investigate", "arcana", "history", "religion", "nature",
+        "perception", "insight"
+      ],
+      "description": "The type of challenge being attempted. Categories: physical (climb/swim/jump/balance/push_pull), stealth (hide/sneak), locks (pick_lock/break_door/disable_trap), knowledge (investigate/arcana/history/religion/nature), perception (perception/insight)."
+    },
+    "challenge_name": {
+      "type": "string",
+      "description": "Human-readable name for the challenge (e.g., 'Climb Cliff Face', 'Locked Chest')."
+    },
+    "actor_pc": {
+      "type": "string",
+      "description": "ID of the PC attempting the challenge (e.g., 'pc-1', 'pc-rogue')."
+    },
+    "skill_used": {
+      "type": "string",
+      "enum": [
+        "athletics", "acrobatics", "sleight_of_hand",
+        "stealth", "investigation",
+        "arcana", "history", "religion", "nature",
+        "perception", "insight"
+      ],
+      "description": "The skill used for the ability check."
+    },
+    "difficulty_class": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30,
+      "description": "The DC to beat for this challenge."
+    },
+    "attempt_number": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Which attempt this is (retries after failure may have disadvantage)."
+    },
+    "bonus_modifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "value"],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Source of the modifier (e.g., 'athletics_proficiency', 'strength_modifier')."
+          },
+          "value": {
+            "type": "integer",
+            "description": "Numeric value of the modifier."
+          }
+        }
+      },
+      "description": "List of bonus modifiers applied to the check."
+    },
+    "roll_result": {
+      "type": "object",
+      "required": ["d20_roll", "modifiers_total", "total"],
+      "properties": {
+        "d20_roll": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20,
+          "description": "The raw d20 roll value."
+        },
+        "modifiers_total": {
+          "type": "integer",
+          "description": "Sum of all modifiers applied."
+        },
+        "total": {
+          "type": "integer",
+          "description": "Final result: d20_roll + modifiers_total."
+        }
+      },
+      "description": "The ability check roll result."
+    }
+  },
+  "additionalProperties": false
+}

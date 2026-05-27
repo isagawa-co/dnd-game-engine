@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Saving Throw Contract",
+  "description": "Saving throw contract for D&D 5e: d20 + ability_mod + proficiency vs DC",
+  "version": "1.0",
+  "operation": "saving_throw",
+  "input_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Saving Throw Input",
+    "type": "object",
+    "properties": {
+      "ability_score": {
+        "type": "integer",
+        "minimum": 3,
+        "maximum": 20,
+        "description": "Ability score (STR, DEX, CON, INT, WIS, CHA)"
+      },
+      "proficiency": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6,
+        "description": "Proficiency bonus (0 = not proficient, 2-6 = proficient at levels 1-20)"
+      },
+      "dc": {
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 30,
+        "description": "Difficulty class (5=trivial, 10=easy, 15=moderate, 20=hard, 25=very hard, 30=nearly impossible)"
+      },
+      "advantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 take higher"
+      },
+      "disadvantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 take lower"
+      }
+    },
+    "required": ["ability_score", "proficiency", "dc", "advantage", "disadvantage"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Saving Throw Output",
+    "type": "object",
+    "properties": {
+      "roll": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "description": "The d20 result (after advantage/disadvantage applied)"
+      },
+      "ability_mod": {
+        "type": "integer",
+        "minimum": -4,
+        "maximum": 5,
+        "description": "Ability modifier: (ability_score - 10) / 2 rounded down"
+      },
+      "proficiency_bonus": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6,
+        "description": "Proficiency bonus applied (0 if not proficient)"
+      },
+      "total": {
+        "type": "integer",
+        "minimum": -3,
+        "maximum": 31,
+        "description": "roll + ability_mod + proficiency_bonus"
+      },
+      "dc": {
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 30
+      },
+      "success": {
+        "type": "boolean",
+        "description": "true if total >= dc"
+      }
+    },
+    "required": ["roll", "ability_mod", "proficiency_bonus", "total", "dc", "success"],
+    "additionalProperties": false
+  },
+  "validation_rules": [
+    {
+      "rule_id": "CHECK-001",
+      "description": "ability_score must be 3-20",
+      "validation": "3 <= ability_score <= 20",
+      "error_message": "Ability score out of range"
+    },
+    {
+      "rule_id": "CHECK-002",
+      "description": "proficiency must be 0 or 2-6 per level",
+      "validation": "proficiency in [0, 2, 3, 4, 5, 6]",
+      "error_message": "Proficiency bonus invalid"
+    },
+    {
+      "rule_id": "CHECK-003",
+      "description": "dc must be 5-30",
+      "validation": "5 <= dc <= 30",
+      "error_message": "DC out of range"
+    },
+    {
+      "rule_id": "CHECK-004",
+      "description": "advantage and disadvantage cannot both be true",
+      "validation": "NOT (advantage AND disadvantage)",
+      "error_message": "Cannot have both advantage and disadvantage"
+    }
+  ],
+  "formulas": {
+    "ability_modifier": "(ability_score - 10) / 2 rounded down (integer division)",
+    "total": "roll + ability_mod + proficiency_bonus",
+    "success": "total >= dc"
+  },
+  "examples": [
+    {
+      "name": "CON save vs poison (CON 14, proficient +2, DC 13)",
+      "input": { "ability_score": 14, "proficiency": 2, "dc": 13, "advantage": false, "disadvantage": false },
+      "execution": "Roll d20 -> 9, ability_mod = (14-10)/2 = 2, prof = 2, total = 9+2+2 = 13, success = (13>=13) = true",
+      "output": { "roll": 9, "ability_mod": 2, "proficiency_bonus": 2, "total": 13, "dc": 13, "success": true }
+    },
+    {
+      "name": "DEX save vs fireball (DEX 10, not proficient, DC 15)",
+      "input": { "ability_score": 10, "proficiency": 0, "dc": 15, "advantage": false, "disadvantage": false },
+      "execution": "Roll d20 -> 12, ability_mod = (10-10)/2 = 0, prof = 0, total = 12+0+0 = 12, success = (12>=15) = false",
+      "output": { "roll": 12, "ability_mod": 0, "proficiency_bonus": 0, "total": 12, "dc": 15, "success": false }
+    },
+    {
+      "name": "WIS save with advantage (WIS 16, proficient +3, DC 14)",
+      "input": { "ability_score": 16, "proficiency": 3, "dc": 14, "advantage": true, "disadvantage": false },
+      "execution": "Roll 2d20 -> [5, 17], select higher = 17, ability_mod = (16-10)/2 = 3, prof = 3, total = 17+3+3 = 23, success = (23>=14) = true",
+      "output": { "roll": 17, "ability_mod": 3, "proficiency_bonus": 3, "total": 23, "dc": 14, "success": true }
+    }
+  ],
+  "dependencies": {
+    "uses": ["dice_roll"],
+    "used_by": ["combat_loop", "scene_loop"]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "entity_type": "pc",
+  "id": "grimm-shadowstep",
+  "name": "Grimm Shadowstep",
+  "character_class": "rogue",
+  "level": 1,
+  "xp": 0,
+  "ac": 14,
+  "hp": 9,
+  "speed": 25,
+  "ability_scores": {
+    "strength": 10,
+    "dexterity": 16,
+    "constitution": 12,
+    "intelligence": 13,
+    "wisdom": 11,
+    "charisma": 14
+  },
+  "hit_dice_detail": {
+    "type": "d8",
+    "current": 1,
+    "maximum": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["dexterity", "intelligence"],
+    "skills": ["stealth", "perception", "investigation", "deception"],
+    "weapons": ["simple", "hand_crossbows", "longswords", "rapiers", "shortswords"],
+    "armor": ["light"]
+  },
+  "expertise": ["stealth", "perception"],
+  "class_features": [
+    {
+      "name": "Sneak Attack",
+      "description": "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll.",
+      "granted_by": "rogue",
+      "level_gained": 1
+    },
+    {
+      "name": "Expertise",
+      "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+      "granted_by": "rogue",
+      "level_gained": 1
+    },
+    {
+      "name": "Thieves' Cant",
+      "description": "You have learned thieves' cant, a secret mix of dialect, jargon, and code.",
+      "granted_by": "rogue",
+      "level_gained": 1
+    }
+  ],
+  "spell_slots": {},
+  "inventory": [
+    { "item_id": "rapier", "name": "Rapier", "quantity": 1, "weight": 2 },
+    { "item_id": "shortbow", "name": "Shortbow", "quantity": 1, "weight": 2 },
+    { "item_id": "leather_armor", "name": "Leather Armor", "quantity": 1, "weight": 10 },
+    { "item_id": "thieves_tools", "name": "Thieves' Tools", "quantity": 1, "weight": 1 }
+  ],
+  "gold": 40,
+  "encumbrance": {
+    "current_weight": 15,
+    "max_weight": 150,
+    "encumbered": false
+  },
+  "personality": {
+    "voice_archetype": "cunning",
+    "motivation": "wealth",
+    "personality_traits": ["resourceful", "secretive"],
+    "ideals": "freedom above all",
+    "bonds": "the thieves guild",
+    "flaws": "greedy",
+    "morale": { "confidence": "moderate" }
+  },
+  "social": {
+    "occupation": "criminal",
+    "relationships": [],
+    "goals": ["amass a fortune", "pay off old debts"],
+    "fears": ["being caught"],
+    "secrets": ["has a bounty in another city"]
+  },
+  "conditions": [],
+  "race": "halfling",
+  "background": "criminal",
+  "creation_method": "4d6_drop_lowest"
+}

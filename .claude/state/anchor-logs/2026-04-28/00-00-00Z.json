@@ -1,0 +1,13 @@
+{
+  "anchor_timestamp": "2026-04-29T00:00:00Z",
+  "actions_count": 6,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-04-28T23:44:24Z", "tool": "Bash", "entry": "Bash: ls packs/playbooks/"},
+    {"timestamp": "2026-04-28T23:45:13Z", "tool": "Write", "entry": "Write: power-run.json"},
+    {"timestamp": "2026-04-28T23:45:25Z", "tool": "Bash", "entry": "Bash: python validate power-run.json schema"},
+    {"timestamp": "2026-04-28T23:45:38Z", "tool": "Bash", "entry": "Bash: test -f power-run.json"},
+    {"timestamp": "2026-04-28T23:45:39Z", "tool": "Bash", "entry": "Bash: python validate power-run.json"},
+    {"timestamp": "2026-04-28T23:45:42Z", "tool": "Bash", "entry": "Bash: python validate power-run.json fields"}
+  ]
+}

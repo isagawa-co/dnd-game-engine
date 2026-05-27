@@ -1,0 +1,47 @@
+{
+  "contract_name": "state-evaluation",
+  "version": "1.0",
+  "description": "Decision rules for mapping campaign state to loop system. Rules are evaluated in priority order; first matching condition wins.",
+  "decision_rules": [
+    {
+      "condition": "campaign.party == null OR campaign.party.length == 0",
+      "output": "character-creation-loop",
+      "priority": 0
+    },
+    {
+      "condition": "status == 'wipe' OR status == 'complete'",
+      "output": "game-over",
+      "priority": 1
+    },
+    {
+      "condition": "combat.active == true",
+      "output": "combat-loop",
+      "priority": 2
+    },
+    {
+      "condition": "social.active == true",
+      "output": "social-loop",
+      "priority": 3
+    },
+    {
+      "condition": "challenge.active == true",
+      "output": "challenge-loop",
+      "priority": 4
+    },
+    {
+      "condition": "rest.active == true",
+      "output": "rest-loop",
+      "priority": 5
+    },
+    {
+      "condition": "travel.active == true",
+      "output": "travel-loop",
+      "priority": 6
+    },
+    {
+      "condition": "else",
+      "output": "narration-skill",
+      "priority": 99
+    }
+  ]
+}

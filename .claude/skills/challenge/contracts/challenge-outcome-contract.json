@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "challenge-outcome-contract",
+  "title": "Challenge Outcome Contract",
+  "description": "Output contract for challenge resolution — defines the result structure returned after resolving a challenge attempt.",
+  "type": "object",
+  "required": ["challenge_type", "success", "result_code", "margin", "consequence", "state_mutations"],
+  "properties": {
+    "challenge_type": {
+      "type": "string",
+      "description": "The type of challenge that was attempted."
+    },
+    "success": {
+      "type": "boolean",
+      "description": "Whether the challenge was overcome (true for success/partial_success, false for failure/critical_failure)."
+    },
+    "result_code": {
+      "type": "string",
+      "enum": ["success", "partial_success", "failure", "critical_failure"],
+      "description": "Outcome classification: success (roll >= DC), partial_success (roll = DC-2 to DC-1), failure (roll < DC-2), critical_failure (d20 roll = 1)."
+    },
+    "margin": {
+      "type": "integer",
+      "description": "Difference between total roll and DC (positive = above DC, negative = below DC)."
+    },
+    "challenge_name": {
+      "type": "string",
+      "description": "Human-readable name of the challenge."
+    },
+    "consequence": {
+      "type": "object",
+      "required": ["type", "narrative"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["none", "damage", "exhaustion", "time_loss", "enemy_alert"],
+          "description": "Type of consequence applied."
+        },
+        "damage_amount": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Damage dealt on failure (e.g., fall damage, trap damage)."
+        },
+        "exhaustion_level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6,
+          "default": 0,
+          "description": "Exhaustion levels gained on failure."
+        },
+        "time_cost_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Time spent on failed or partial attempts."
+        },
+        "narrative": {
+          "type": "string",
+          "description": "Narrative description of the outcome."
+        }
+      },
+      "description": "Consequence applied based on outcome."
+    },
+    "state_mutations": {
+      "type": "object",
+      "properties": {
+        "party_location": {
+          "type": "string",
+          "description": "New party location after challenge (if changed)."
+        },
+        "pc_hp_changes": {
+          "type": "object",
+          "description": "Map of PC ID to HP change amount.",
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "obstacle_cleared": {
+          "type": "boolean",
+          "description": "Whether the obstacle is now cleared."
+        }
+      },
+      "description": "State changes to apply after challenge resolution."
+    }
+  },
+  "additionalProperties": false
+}

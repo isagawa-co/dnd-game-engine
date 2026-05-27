@@ -1,0 +1,13 @@
+{
+  "id": "spear",
+  "name": "Spear",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 3,
+  "weapon": {
+    "damage_roll": "1d6",
+    "damage_type": "piercing",
+    "properties": ["thrown", "versatile"]
+  },
+  "description": "A simple polearm that can be thrown (range 20/60) or wielded with two hands (1d8 when versatile)."
+}

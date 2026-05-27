@@ -1,0 +1,1761 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-05-27T12:51:06.287406+00:00",
+  "total_races": 41,
+  "sources": [
+    "PHB",
+    "Volo's",
+    "Xanathar's",
+    "Mordenkainen's",
+    "Tasha's"
+  ],
+  "races": [
+    {
+      "id": "dragonborn",
+      "name": "Dragonborn",
+      "ability_score_increases": {
+        "strength": 2,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Draconic"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Draconic Ancestry",
+          "description": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type."
+        },
+        {
+          "name": "Breath Weapon",
+          "description": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type. DC 8 + CON modifier + proficiency bonus, 2d6 damage (scales at 6th: 3d6, 11th: 4d6, 16th: 5d6).",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Damage Resistance",
+          "description": "You have resistance to the damage type associated with your draconic ancestry."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB"
+    },
+    {
+      "id": "dwarf-hill",
+      "name": "Dwarf (Hill)",
+      "ability_score_increases": {
+        "constitution": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Dwarvish"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [
+          "battleaxe",
+          "handaxe",
+          "light hammer",
+          "warhammer"
+        ],
+        "tools": [
+          "smith's tools",
+          "brewer's supplies",
+          "mason's tools"
+        ]
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Dwarven Resilience",
+          "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Stonecunning",
+          "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus."
+        },
+        {
+          "name": "Dwarven Toughness",
+          "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "dwarf"
+    },
+    {
+      "id": "dwarf-mountain",
+      "name": "Dwarf (Mountain)",
+      "ability_score_increases": {
+        "constitution": 2,
+        "strength": 2
+      },
+      "size": "medium",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Dwarvish"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [
+          "battleaxe",
+          "handaxe",
+          "light hammer",
+          "warhammer"
+        ],
+        "tools": [
+          "smith's tools",
+          "brewer's supplies",
+          "mason's tools"
+        ]
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Dwarven Resilience",
+          "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Stonecunning",
+          "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus."
+        },
+        {
+          "name": "Dwarven Armor Training",
+          "description": "You have proficiency with light and medium armor."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "dwarf"
+    },
+    {
+      "id": "elf-dark",
+      "name": "Elf (Dark/Drow)",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception"
+        ],
+        "weapons": [
+          "rapier",
+          "shortsword",
+          "hand crossbow"
+        ],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Superior Darkvision",
+          "description": "You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+        },
+        {
+          "name": "Sunlight Sensitivity",
+          "description": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target, or what you are trying to perceive is in direct sunlight."
+        },
+        {
+          "name": "Drow Magic",
+          "description": "You know the dancing lights cantrip. At 3rd level you can cast faerie fire once per long rest. At 5th level you can cast darkness once per long rest. Charisma is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "elf"
+    },
+    {
+      "id": "elf-high",
+      "name": "Elf (High)",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "intelligence": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception"
+        ],
+        "weapons": [
+          "longsword",
+          "shortsword",
+          "shortbow",
+          "longbow"
+        ],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+        },
+        {
+          "name": "Cantrip",
+          "description": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "elf"
+    },
+    {
+      "id": "elf-wood",
+      "name": "Elf (Wood)",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 35,
+      "languages": [
+        "Common",
+        "Elvish"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception"
+        ],
+        "weapons": [
+          "longsword",
+          "shortsword",
+          "shortbow",
+          "longbow"
+        ],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Keen Senses",
+          "description": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+        },
+        {
+          "name": "Mask of the Wild",
+          "description": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "elf"
+    },
+    {
+      "id": "gnome-forest",
+      "name": "Gnome (Forest)",
+      "ability_score_increases": {
+        "intelligence": 2,
+        "dexterity": 1
+      },
+      "size": "small",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Gnomish"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "name": "Natural Illusionist",
+          "description": "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+        },
+        {
+          "name": "Speak with Small Beasts",
+          "description": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "gnome"
+    },
+    {
+      "id": "gnome-rock",
+      "name": "Gnome (Rock)",
+      "ability_score_increases": {
+        "intelligence": 2,
+        "constitution": 1
+      },
+      "size": "small",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Gnomish"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": [
+          "tinker's tools"
+        ]
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Gnome Cunning",
+          "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "name": "Artificer's Lore",
+          "description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus."
+        },
+        {
+          "name": "Tinker",
+          "description": "You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp)."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "gnome"
+    },
+    {
+      "id": "half-elf",
+      "name": "Half-Elf",
+      "ability_score_increases": {
+        "charisma": 2
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Choice",
+          "Choice"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Skill Versatility",
+          "description": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "name": "Flexible Ability Scores",
+          "description": "In addition to +2 CHA, you may increase two other ability scores of your choice by 1."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB"
+    },
+    {
+      "id": "half-orc",
+      "name": "Half-Orc",
+      "ability_score_increases": {
+        "strength": 2,
+        "constitution": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Orc"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Intimidation"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Menacing",
+          "description": "You gain proficiency in the Intimidation skill."
+        },
+        {
+          "name": "Relentless Endurance",
+          "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        },
+        {
+          "name": "Savage Attacks",
+          "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB"
+    },
+    {
+      "id": "halfling-lightfoot",
+      "name": "Halfling (Lightfoot)",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "charisma": 1
+      },
+      "size": "small",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Halfling"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Lucky",
+          "description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Brave",
+          "description": "You have advantage on saving throws against being frightened."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "description": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "name": "Naturally Stealthy",
+          "description": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "halfling"
+    },
+    {
+      "id": "halfling-stout",
+      "name": "Halfling (Stout)",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "constitution": 1
+      },
+      "size": "small",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Halfling"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Lucky",
+          "description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Brave",
+          "description": "You have advantage on saving throws against being frightened."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "description": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "name": "Stout Resilience",
+          "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        }
+      ],
+      "subraces": [],
+      "source": "PHB",
+      "parent": "halfling"
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "ability_score_increases": {
+        "strength": 1,
+        "dexterity": 1,
+        "constitution": 1,
+        "intelligence": 1,
+        "wisdom": 1,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Versatile",
+          "description": "+1 to all ability scores. Humans gain a broad spread of natural talent."
+        },
+        {
+          "name": "Extra Language",
+          "description": "You can speak, read, and write one extra language of your choice."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "tiefling",
+      "name": "Tiefling",
+      "ability_score_increases": {
+        "charisma": 2,
+        "intelligence": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Infernal"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Hellish Resistance",
+          "description": "You have resistance to fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "description": "You know the thaumaturgy cantrip. At 3rd level you can cast hellish rebuke as a 2nd-level spell once per long rest. At 5th level you can cast darkness once per long rest. Charisma is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "source": "PHB"
+    },
+    {
+      "id": "centaur",
+      "name": "Centaur",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "strength": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 40,
+      "languages": [
+        "Common",
+        "Sylvan"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Fey",
+          "description": "Your creature type is fey, rather than humanoid."
+        },
+        {
+          "name": "Charge",
+          "description": "If you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, you can immediately follow that attack with a bonus action, making one attack against the target with your hooves."
+        },
+        {
+          "name": "Hooves",
+          "description": "Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit, you deal 1d4 + your Strength modifier bludgeoning damage."
+        },
+        {
+          "name": "Equine Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push or drag. Any climb that requires hands and feet is especially difficult for you; each foot of movement costs you 4 extra feet."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "eladrin",
+      "name": "Eladrin",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+        },
+        {
+          "name": "Fey Step",
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. The additional effect of Fey Step depends on your current season (Autumn: charm, Winter: frighten, Spring: teleport ally, Summer: fire damage).",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "fairy",
+      "name": "Fairy",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "dexterity": 1,
+        "charisma": 1
+      },
+      "size": "small",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Sylvan"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Fairy Magic",
+          "description": "You know the druidcraft cantrip. At 3rd level you can cast faerie fire once per long rest. At 5th level you can cast enlarge/reduce once per long rest. Your spellcasting ability is your choice of Intelligence, Wisdom, or Charisma.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        },
+        {
+          "name": "Flight",
+          "description": "You have a flying speed equal to your walking speed. You can't use this flying speed while wearing medium or heavy armor."
+        },
+        {
+          "name": "Flexible Ability Scores",
+          "description": "In addition to +1 DEX and +1 CHA, you may rearrange these increases to other ability scores of your choice following Tasha's rules."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "shadar-kai",
+      "name": "Shadar-kai",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "constitution": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fey Ancestry",
+          "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+        },
+        {
+          "name": "Necrotic Resistance",
+          "description": "You have resistance to necrotic damage."
+        },
+        {
+          "name": "Blessing of the Raven Queen",
+          "description": "As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Starting at 3rd level, you also appear translucent and gain resistance to all damage until the start of your next turn.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "tortle",
+      "name": "Tortle",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "strength": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Aquan"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Claws",
+          "description": "Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal 1d4 + your Strength modifier slashing damage."
+        },
+        {
+          "name": "Hold Breath",
+          "description": "You can hold your breath for up to 1 hour at a time."
+        },
+        {
+          "name": "Natural Armor",
+          "description": "Due to your shell, your AC is 17. You don't gain benefit from wearing armor, but a shield's bonus still applies."
+        },
+        {
+          "name": "Shell Defense",
+          "description": "You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0, you have disadvantage on Dexterity saving throws, and you can't take reactions."
+        },
+        {
+          "name": "Survival Instinct",
+          "description": "You gain proficiency in the Survival skill."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "triton",
+      "name": "Triton",
+      "source": "Mordenkainen's",
+      "ability_score_increases": {
+        "strength": 1,
+        "constitution": 1,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Primordial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water."
+        },
+        {
+          "name": "Control Air and Water",
+          "description": "At 1st level you can cast fog cloud once per long rest. At 3rd level you can cast gust of wind once per long rest. At 5th level you can cast wall of water once per long rest. Charisma is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        },
+        {
+          "name": "Emissary of the Sea",
+          "description": "Aquatic beasts can understand your speech. You can communicate simple ideas through sounds and gestures to any beast that has an innate swimming speed."
+        },
+        {
+          "name": "Guardians of the Depths",
+          "description": "You have resistance to cold damage. You ignore any of the drawbacks caused by a deep, underwater environment."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "changeling",
+      "name": "Changeling",
+      "source": "Tasha's",
+      "ability_score_increases": {
+        "charisma": 2
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Choice",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Shapechanger",
+          "description": "As an action, you can change your appearance and your voice. You determine the specifics of the changes, including your coloration, hair length, and sex. You can also adjust your height and weight. You can make yourself appear as a member of another race, though none of your game statistics change."
+        },
+        {
+          "name": "Changeling Instincts",
+          "description": "You gain proficiency with two of the following skills of your choice: Deception, Insight, Intimidation, and Persuasion."
+        },
+        {
+          "name": "Flexible Ability Scores",
+          "description": "In addition to +2 CHA, you may increase one other ability score of your choice by 1."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "gith-githyanki",
+      "name": "Gith (Githyanki)",
+      "source": "Tasha's",
+      "ability_score_increases": {
+        "intelligence": 1,
+        "strength": 2
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Gith"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [
+          "shortsword",
+          "longsword",
+          "greatsword"
+        ],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Decadent Mastery",
+          "description": "You gain proficiency with one skill or tool of your choice."
+        },
+        {
+          "name": "Martial Prodigy",
+          "description": "You are proficient with light and medium armor, and with shortswords, longswords, and greatswords."
+        },
+        {
+          "name": "Githyanki Psionics",
+          "description": "You know the mage hand cantrip, and the hand is invisible. At 3rd level you can cast jump once per long rest. At 5th level you can cast misty step once per long rest. Intelligence is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "gith"
+    },
+    {
+      "id": "gith-githzerai",
+      "name": "Gith (Githzerai)",
+      "source": "Tasha's",
+      "ability_score_increases": {
+        "intelligence": 1,
+        "wisdom": 2
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Gith"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Mental Discipline",
+          "description": "You have advantage on saving throws against the charmed and frightened conditions."
+        },
+        {
+          "name": "Githzerai Psionics",
+          "description": "You know the mage hand cantrip, and the hand is invisible. At 3rd level you can cast shield once per long rest. At 5th level you can cast detect thoughts once per long rest. Wisdom is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "gith"
+    },
+    {
+      "id": "kalashtar",
+      "name": "Kalashtar",
+      "source": "Tasha's",
+      "ability_score_increases": {
+        "wisdom": 2,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Quori",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Dual Mind",
+          "description": "You have advantage on all Wisdom saving throws."
+        },
+        {
+          "name": "Mental Discipline",
+          "description": "You have resistance to psychic damage."
+        },
+        {
+          "name": "Mind Link",
+          "description": "You can speak telepathically to any creature you can see, provided the creature is within a number of feet of you equal to 10 times your level. You don't need to share a language for the creature to understand you, but it must be able to understand at least one language."
+        },
+        {
+          "name": "Severed from Dreams",
+          "description": "Kalashtar sleep, but they don't connect to the plane of dreams as other creatures do. Instead, their minds draw from the memories of their otherworldly spirit while they sleep. As such, you are immune to spells and effects that require you to dream, like dream."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "aasimar",
+      "name": "Aasimar",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "charisma": 2
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Celestial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Celestial Resistance",
+          "description": "You have resistance to necrotic damage and radiant damage."
+        },
+        {
+          "name": "Healing Hands",
+          "description": "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        },
+        {
+          "name": "Light Bearer",
+          "description": "You know the light cantrip. Charisma is your spellcasting ability for it."
+        },
+        {
+          "name": "Celestial Revelation",
+          "description": "Starting at 3rd level, choose one revelation (Necrotic Shroud, Radiant Consumption, or Radiant Soul) when you gain this trait. Once per long rest as a bonus action, you unleash the divine energy within for 1 minute.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "bugbear",
+      "name": "Bugbear",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "strength": 2,
+        "dexterity": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Goblin"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Stealth"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Long-Limbed",
+          "description": "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+        },
+        {
+          "name": "Powerful Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Sneaky",
+          "description": "You are proficient in the Stealth skill."
+        },
+        {
+          "name": "Surprise Attack",
+          "description": "If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6 damage to it."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "firbolg",
+      "name": "Firbolg",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "wisdom": 2,
+        "strength": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Elvish",
+        "Giant"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Firbolg Magic",
+          "description": "You can cast detect magic and disguise self with this trait, using Wisdom as your spellcasting ability. Once you use either spell, you can't use it again until you finish a short or long rest. When you use disguise self, you can appear up to 3 feet shorter than normal.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Hidden Step",
+          "description": "As a bonus action, you can magically turn invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Powerful Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Speech of Beast and Leaf",
+          "description": "You have the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "constitution": 1
+      },
+      "size": "small",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Goblin"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fury of the Small",
+          "description": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Nimble Escape",
+          "description": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Hobgoblin",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "intelligence": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Goblin"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Martial Training",
+          "description": "You are proficient with two martial weapons of your choice and with light armor."
+        },
+        {
+          "name": "Saving Face",
+          "description": "If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5).",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "kobold",
+      "name": "Kobold",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "dexterity": 2
+      },
+      "size": "small",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Draconic"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Draconic Cry",
+          "description": "As a bonus action, you let out a cry at your enemies within 10 feet of you. Until the start of your next turn, you and your allies have advantage on attack rolls against any of those enemies who could hear you.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Kobold Legacy",
+          "description": "You gain one of the following traits: Craftiness (proficiency in one skill: Arcana, Investigation, Medicine, Sleight of Hand, or Survival), Defiance (advantage on saves vs. frightened), or Draconic Sorcery (you know one cantrip from the sorcerer spell list)."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "tabaxi",
+      "name": "Tabaxi",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "charisma": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Choice"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Perception",
+          "Stealth"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Feline Agility",
+          "description": "Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."
+        },
+        {
+          "name": "Cat's Claws",
+          "description": "You have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit, you deal 1d4 + your Strength modifier slashing damage."
+        },
+        {
+          "name": "Cat's Talent",
+          "description": "You have proficiency in the Perception and Stealth skills."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "yuan-ti-pureblood",
+      "name": "Yuan-ti Pureblood",
+      "source": "Volo's",
+      "ability_score_increases": {
+        "charisma": 2,
+        "intelligence": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Abyssal",
+        "Draconic"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Innate Spellcasting",
+          "description": "You know the poison spray cantrip. At 3rd level you can cast animal friendship (snakes only) at will. At 3rd level you can also cast suggestion once per long rest. Charisma is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        },
+        {
+          "name": "Magic Resistance",
+          "description": "You have advantage on saving throws against spells and other magical effects."
+        },
+        {
+          "name": "Poison Immunity",
+          "description": "You are immune to poison damage and the poisoned condition."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "aarakocra",
+      "name": "Aarakocra",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 25,
+      "languages": [
+        "Common",
+        "Aarakocra",
+        "Auran"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Flight",
+          "description": "You have a flying speed of 50 feet. To use this speed, you can't be wearing medium or heavy armor."
+        },
+        {
+          "name": "Talons",
+          "description": "Your talons are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal 1d4 + your Strength modifier slashing damage."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "genasi-air",
+      "name": "Genasi (Air)",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "dexterity": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Primordial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Unending Breath",
+          "description": "You can hold your breath indefinitely while you're not incapacitated."
+        },
+        {
+          "name": "Mingle with the Wind",
+          "description": "You can cast the levitate spell once with this trait, requiring no material components. You regain the ability to cast it when you finish a long rest. Constitution is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "genasi"
+    },
+    {
+      "id": "genasi-earth",
+      "name": "Genasi (Earth)",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "strength": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Primordial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Earth Walk",
+          "description": "You can move across difficult terrain made of earth or stone without expending extra movement."
+        },
+        {
+          "name": "Merge with Stone",
+          "description": "You can cast the pass without trace spell once with this trait, requiring no material components. You regain the ability to cast it when you finish a long rest. Constitution is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "genasi"
+    },
+    {
+      "id": "genasi-fire",
+      "name": "Genasi (Fire)",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "intelligence": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Primordial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Fire Resistance",
+          "description": "You have resistance to fire damage."
+        },
+        {
+          "name": "Reach to the Blaze",
+          "description": "You know the produce flame cantrip. Once you reach 3rd level, you can cast burning hands as a 1st-level spell once with this trait. You regain the ability to cast it when you finish a long rest. Constitution is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "genasi"
+    },
+    {
+      "id": "genasi-water",
+      "name": "Genasi (Water)",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Primordial"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Acid Resistance",
+          "description": "You have resistance to acid damage."
+        },
+        {
+          "name": "Amphibious",
+          "description": "You can breathe air and water."
+        },
+        {
+          "name": "Swim",
+          "description": "You have a swimming speed of 30 feet."
+        },
+        {
+          "name": "Call to the Wave",
+          "description": "You know the shape water cantrip. Once you reach 3rd level, you can cast create or destroy water as a 2nd-level spell once with this trait. You regain the ability to cast it when you finish a long rest. Constitution is your spellcasting ability.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "long_rest"
+          }
+        }
+      ],
+      "subraces": [],
+      "parent": "genasi"
+    },
+    {
+      "id": "goliath",
+      "name": "Goliath",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "strength": 2,
+        "constitution": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Giant"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Athletics"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Natural Athlete",
+          "description": "You have proficiency in the Athletics skill."
+        },
+        {
+          "name": "Stone's Endurance",
+          "description": "You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12 + your Constitution modifier. Reduce the damage by that total.",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        },
+        {
+          "name": "Powerful Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Mountain Born",
+          "description": "You have resistance to cold damage. You're also acclimated to high altitude, including elevations above 20,000 feet."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "kenku",
+      "name": "Kenku",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "dexterity": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Auran"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Expert Forgery",
+          "description": "You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."
+        },
+        {
+          "name": "Kenku Training",
+          "description": "You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand."
+        },
+        {
+          "name": "Mimicry",
+          "description": "You can mimic sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check."
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "lizardfolk",
+      "name": "Lizardfolk",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "constitution": 2,
+        "wisdom": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Draconic"
+      ],
+      "proficiencies": {
+        "skills": [],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Bite",
+          "description": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit, you deal 1d6 + your Strength modifier piercing damage."
+        },
+        {
+          "name": "Cunning Artisan",
+          "description": "As part of a short rest, you can harvest bone and hide from a slain beast, construct, dragon, monstrosity, or plant creature to create a shield, club, javelin, or 1d4 darts or blowgun needles."
+        },
+        {
+          "name": "Hold Breath",
+          "description": "You can hold your breath for up to 15 minutes at a time."
+        },
+        {
+          "name": "Hunter's Lore",
+          "description": "You gain proficiency with two of the following skills: Animal Handling, Nature, Perception, Stealth, and Survival."
+        },
+        {
+          "name": "Natural Armor",
+          "description": "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier."
+        },
+        {
+          "name": "Hungry Jaws",
+          "description": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your Constitution modifier (minimum of 1).",
+          "uses": {
+            "maximum": 1,
+            "recharge_trigger": "short_rest"
+          }
+        }
+      ],
+      "subraces": []
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "source": "Xanathar's",
+      "ability_score_increases": {
+        "strength": 2,
+        "constitution": 1
+      },
+      "size": "medium",
+      "speed": 30,
+      "languages": [
+        "Common",
+        "Orc"
+      ],
+      "proficiencies": {
+        "skills": [
+          "Intimidation"
+        ],
+        "weapons": [],
+        "tools": []
+      },
+      "racial_traits": [
+        {
+          "name": "Darkvision",
+          "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light."
+        },
+        {
+          "name": "Aggressive",
+          "description": "As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started."
+        },
+        {
+          "name": "Primal Intuition",
+          "description": "You have proficiency in two of the following skills: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival."
+        },
+        {
+          "name": "Powerful Build",
+          "description": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        }
+      ],
+      "subraces": []
+    }
+  ]
+}

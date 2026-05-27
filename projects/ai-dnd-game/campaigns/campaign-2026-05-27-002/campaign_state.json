@@ -1,0 +1,48 @@
+{
+  "campaign_id": "campaign-2026-05-27-002",
+  "status": "active",
+  "campaign_phase": "session_1",
+  "arc_number": 1,
+  "arc_name": "The Forgotten Throne",
+  "party": [
+    "pc-1",
+    "pc-2",
+    "pc-3",
+    "pc-4",
+    "pc-5",
+    "pc-6"
+  ],
+  "npcs": [],
+  "campaign_time_elapsed_hours": 0,
+  "session_count": 1,
+  "last_played": "2026-05-27T14:35:56.915402Z",
+  "loot_collected": [],
+  "timestamp": "2026-05-27T14:35:56.915402Z",
+  "combat": {
+    "active": false,
+    "enemies": [],
+    "round": 0
+  },
+  "travel": {
+    "active": false,
+    "destination": "",
+    "hours_remaining": 0
+  },
+  "social": {
+    "active": false,
+    "npc_id": "",
+    "npc_attitude": "neutral"
+  },
+  "challenge": {
+    "active": false,
+    "challenge_type": "",
+    "challenge_data": {}
+  },
+  "rest": {
+    "active": false,
+    "hours_remaining": 0
+  },
+  "exploration": {
+    "active": true
+  }
+}

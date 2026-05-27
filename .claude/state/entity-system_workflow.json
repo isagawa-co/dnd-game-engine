@@ -1,0 +1,19 @@
+{
+  "domain": "game-engine",
+  "task_folder": "tasks/entity-system/",
+  "total_tasks": 12,
+  "completed_tasks": [
+    "001-build-create-entity-system-directory.md"
+  ],
+  "skipped_tasks": [],
+  "current_task": null,
+  "attempts_on_current": 0,
+  "anchored": true,
+  "anchor_timestamp": "2026-05-04T00:30:07.000000+00:00",
+  "actions_since_anchor": 0,
+  "actions_limit": 20,
+  "cycling": false,
+  "one_shot_complete": false,
+  "completed_tasks_count": 0,
+  "timestamp": "2026-05-04T00:30:07.000000+00:00"
+}

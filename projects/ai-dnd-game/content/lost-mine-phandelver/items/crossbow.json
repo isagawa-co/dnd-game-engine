@@ -1,0 +1,13 @@
+{
+  "id": "crossbow",
+  "name": "Light Crossbow",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 5,
+  "weapon": {
+    "damage_roll": "1d8",
+    "damage_type": "piercing",
+    "properties": ["ammunition", "loading", "two-handed"]
+  },
+  "description": "A simple ranged weapon. Ammunition: requires bolts (range 80/320). Loading: only one attack per action regardless of extra attacks."
+}

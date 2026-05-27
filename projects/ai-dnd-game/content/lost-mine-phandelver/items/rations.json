@@ -1,0 +1,8 @@
+{
+  "id": "rations",
+  "name": "Rations (1 day)",
+  "type": "wondrous_item",
+  "rarity": "common",
+  "weight": 2,
+  "description": "Dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. One day's worth of sustenance."
+}

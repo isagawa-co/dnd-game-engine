@@ -1,0 +1,25 @@
+{
+  "difficulty_multipliers": {
+    "easy": 0.75,
+    "medium": 1.0,
+    "hard": 1.25,
+    "deadly": 1.5
+  },
+  "economy": {
+    "gold_per_encounter_multiplier": 1.0,
+    "treasure_rarity": "uncommon"
+  },
+  "combat": {
+    "enemy_damage_multiplier": 1.0,
+    "player_damage_multiplier": 1.0,
+    "critical_hit_chance": 0.05
+  },
+  "pacing": {
+    "encounter_frequency": 1.0,
+    "rest_recovery_multiplier": 1.0
+  },
+  "progression": {
+    "xp_multiplier": 1.0,
+    "level_advancement_speed": "medium"
+  }
+}

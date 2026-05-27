@@ -1,0 +1,49 @@
+{
+  "anchor_timestamp": "2026-05-27T00:32:47Z",
+  "actions_count": 7,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-27T00:30:12Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json, datetime\n\n# Read actions.jsonl\nwith open(\"D:/my_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:30:22Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.cl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:30:43Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.claude/s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:31:07Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.cla",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:31:08Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import json, glob; [json.load(open(f)) for f in glob.glob('D:/my_ai_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:31:25Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json, datetime\n\n# Update workflow state - add task to ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:32:05Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    }
+  ]
+}

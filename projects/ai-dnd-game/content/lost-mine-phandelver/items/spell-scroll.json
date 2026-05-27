@@ -1,0 +1,11 @@
+{
+  "id": "spell-scroll",
+  "name": "Spell Scroll (1st Level)",
+  "type": "scroll",
+  "rarity": "common",
+  "weight": 0,
+  "magical_effect": {
+    "effect": "Contains a 1st-level spell. If the spell is on your class spell list, you can read the scroll and cast the spell. The scroll crumbles to dust after use."
+  },
+  "description": "A spell scroll bears the words of a single 1st-level spell, written in a mystical cipher. DC 13 ability check required if the spell is not on your class spell list."
+}

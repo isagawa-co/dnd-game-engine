@@ -1,0 +1,553 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Character Creation Contract",
+  "description": "Defines input/output contract for PC character creation including ability score generation, class selection, proficiency assignment, and equipment.",
+  "version": "1.0",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "name",
+      "class",
+      "creation_method",
+      "ability_input",
+      "chosen_skills"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Character name"
+      },
+      "class": {
+        "type": "string",
+        "description": "Must be valid ID from all-classes.json registry"
+      },
+      "creation_method": {
+        "type": "string",
+        "enum": [
+          "point_buy",
+          "standard_array",
+          "4d6_drop_lowest",
+          "2d6_plus_6",
+          "custom"
+        ]
+      },
+      "ability_input": {
+        "type": "object",
+        "description": "Ability score distribution/assignment. Keys: STR, DEX, CON, INT, WIS, CHA",
+        "properties": {
+          "STR": {
+            "type": "integer"
+          },
+          "DEX": {
+            "type": "integer"
+          },
+          "CON": {
+            "type": "integer"
+          },
+          "INT": {
+            "type": "integer"
+          },
+          "WIS": {
+            "type": "integer"
+          },
+          "CHA": {
+            "type": "integer"
+          }
+        }
+      },
+      "chosen_skills": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Skill proficiencies chosen from class pool"
+      },
+      "equipment_choice": {
+        "type": "string",
+        "enum": [
+          "option_a",
+          "option_b",
+          "option_c"
+        ],
+        "default": "option_a"
+      },
+      "race": {
+        "type": "string",
+        "description": "Must be valid ID from all-races.json registry"
+      },
+      "background": {
+        "type": "string",
+        "default": "soldier"
+      },
+      "admin_override": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "valid",
+      "character",
+      "errors"
+    ],
+    "properties": {
+      "valid": {
+        "type": "boolean"
+      },
+      "character": {
+        "type": "object",
+        "description": "Tier 4 PC entity",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entity_type": {
+            "const": "pc"
+          },
+          "name": {
+            "type": "string"
+          },
+          "character_class": {
+            "type": "string"
+          },
+          "level": {
+            "const": 1
+          },
+          "xp": {
+            "const": 0
+          },
+          "ability_scores": {
+            "type": "object"
+          },
+          "hp": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ac": {
+            "type": "integer",
+            "minimum": 8
+          },
+          "hit_dice_detail": {
+            "type": "object"
+          },
+          "proficiency_bonus": {
+            "const": 2
+          },
+          "proficiencies": {
+            "type": "object"
+          },
+          "class_features": {
+            "type": "array"
+          },
+          "inventory": {
+            "type": "array"
+          },
+          "gold": {
+            "type": "number"
+          },
+          "spell_slots": {
+            "type": "object"
+          },
+          "personality": {
+            "type": "object"
+          },
+          "social": {
+            "type": "object"
+          }
+        }
+      },
+      "errors": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "validation_rules": [
+    {
+      "rule_id": "CHAR-001",
+      "description": "All ability scores must be between 3 and 20 inclusive",
+      "validation": "all(3 <= score <= 20 for score in ability_scores.values())"
+    },
+    {
+      "rule_id": "CHAR-002",
+      "description": "Point-buy total cost must not exceed 27 points",
+      "validation": "sum(POINT_BUY_COSTS[score] for score in ability_scores.values()) <= 27",
+      "applies_to": "point_buy"
+    },
+    {
+      "rule_id": "CHAR-003",
+      "description": "Standard array must use exactly [15, 14, 13, 12, 10, 8]",
+      "validation": "sorted(ability_scores.values(), reverse=True) == [15, 14, 13, 12, 10, 8]",
+      "applies_to": "standard_array"
+    },
+    {
+      "rule_id": "CHAR-004",
+      "description": "Chosen skill proficiencies must be from class pool and count <= class allowance",
+      "validation": "all(skill in class_pool for skill in chosen_skills) and len(chosen_skills) <= class_skill_count"
+    },
+    {
+      "rule_id": "CHAR-005",
+      "description": "HP at level 1 = max(hit_die) + CON modifier, minimum 1",
+      "validation": "hp == max(max_hit_die + con_modifier, 1)"
+    },
+    {
+      "rule_id": "CHAR-006",
+      "description": "Proficiency bonus at level 1 is 2",
+      "validation": "proficiency_bonus == 2"
+    },
+    {
+      "rule_id": "CHAR-007",
+      "description": "Equipment weight must not exceed STR * 15",
+      "validation": "total_weight <= ability_scores['STR'] * 15"
+    },
+    {
+      "rule_id": "CHAR-008",
+      "description": "Custom creation method requires admin_override flag",
+      "validation": "admin_override == True when creation_method == 'custom'",
+      "applies_to": "custom"
+    }
+  ],
+  "class_data_source": "Load from registry_references.classes at runtime. Fallback data below for offline validation.",
+  "class_data": {
+    "artificer": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "history",
+        "investigation",
+        "medicine",
+        "nature",
+        "perception",
+        "sleight_of_hand"
+      ],
+      "saving_throws": [
+        "constitution",
+        "intelligence"
+      ]
+    },
+    "barbarian": {
+      "hit_die": "d12",
+      "skill_count": 2,
+      "skill_pool": [
+        "athletics",
+        "animal_handling",
+        "intimidation",
+        "nature",
+        "perception",
+        "survival"
+      ],
+      "saving_throws": [
+        "strength",
+        "constitution"
+      ]
+    },
+    "bard": {
+      "hit_die": "d8",
+      "skill_count": 3,
+      "skill_pool": [
+        "acrobatics",
+        "animal_handling",
+        "arcana",
+        "athletics",
+        "deception",
+        "history",
+        "insight",
+        "intimidation",
+        "investigation",
+        "medicine",
+        "nature",
+        "perception",
+        "performance",
+        "persuasion",
+        "religion",
+        "sleight_of_hand",
+        "stealth",
+        "survival"
+      ],
+      "saving_throws": [
+        "dexterity",
+        "charisma"
+      ]
+    },
+    "cleric": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "history",
+        "insight",
+        "medicine",
+        "persuasion",
+        "religion"
+      ],
+      "saving_throws": [
+        "wisdom",
+        "charisma"
+      ]
+    },
+    "druid": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "animal_handling",
+        "insight",
+        "medicine",
+        "nature",
+        "perception",
+        "religion",
+        "survival"
+      ],
+      "saving_throws": [
+        "intelligence",
+        "wisdom"
+      ]
+    },
+    "fighter": {
+      "hit_die": "d10",
+      "skill_count": 2,
+      "skill_pool": [
+        "acrobatics",
+        "animal_handling",
+        "athletics",
+        "history",
+        "insight",
+        "intimidation",
+        "perception",
+        "survival"
+      ],
+      "saving_throws": [
+        "strength",
+        "constitution"
+      ]
+    },
+    "monk": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "acrobatics",
+        "athletics",
+        "history",
+        "insight",
+        "religion",
+        "stealth"
+      ],
+      "saving_throws": [
+        "strength",
+        "dexterity"
+      ]
+    },
+    "mystic": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "history",
+        "insight",
+        "medicine",
+        "nature",
+        "perception",
+        "religion"
+      ],
+      "saving_throws": [
+        "intelligence",
+        "wisdom"
+      ]
+    },
+    "paladin": {
+      "hit_die": "d10",
+      "skill_count": 2,
+      "skill_pool": [
+        "athletics",
+        "insight",
+        "intimidation",
+        "medicine",
+        "persuasion",
+        "religion"
+      ],
+      "saving_throws": [
+        "wisdom",
+        "charisma"
+      ]
+    },
+    "ranger": {
+      "hit_die": "d10",
+      "skill_count": 3,
+      "skill_pool": [
+        "animal_handling",
+        "athletics",
+        "insight",
+        "investigation",
+        "nature",
+        "perception",
+        "stealth",
+        "survival"
+      ],
+      "saving_throws": [
+        "strength",
+        "dexterity"
+      ]
+    },
+    "rogue": {
+      "hit_die": "d8",
+      "skill_count": 4,
+      "skill_pool": [
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight",
+        "intimidation",
+        "investigation",
+        "perception",
+        "performance",
+        "persuasion",
+        "sleight_of_hand",
+        "stealth"
+      ],
+      "saving_throws": [
+        "dexterity",
+        "intelligence"
+      ]
+    },
+    "sorcerer": {
+      "hit_die": "d6",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "deception",
+        "insight",
+        "intimidation",
+        "persuasion",
+        "religion"
+      ],
+      "saving_throws": [
+        "constitution",
+        "charisma"
+      ]
+    },
+    "warlock": {
+      "hit_die": "d8",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "deception",
+        "history",
+        "intimidation",
+        "investigation",
+        "nature",
+        "religion"
+      ],
+      "saving_throws": [
+        "wisdom",
+        "charisma"
+      ]
+    },
+    "wizard": {
+      "hit_die": "d6",
+      "skill_count": 2,
+      "skill_pool": [
+        "arcana",
+        "history",
+        "insight",
+        "investigation",
+        "medicine",
+        "religion"
+      ],
+      "saving_throws": [
+        "intelligence",
+        "wisdom"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "name": "Point-buy Fighter",
+      "input": {
+        "name": "Thorin Stoneforge",
+        "class": "fighter",
+        "creation_method": "point_buy",
+        "ability_input": {
+          "STR": 15,
+          "DEX": 12,
+          "CON": 14,
+          "INT": 10,
+          "WIS": 12,
+          "CHA": 8
+        },
+        "chosen_skills": [
+          "athletics",
+          "perception"
+        ],
+        "equipment_choice": "option_a",
+        "race": "dwarf",
+        "background": "soldier"
+      },
+      "execution": "generate_ability_scores(point_buy) -> assign_proficiencies(fighter) -> assign_equipment(fighter) -> create_character",
+      "output": {
+        "valid": true,
+        "character": {
+          "hp": 12,
+          "ac": 16,
+          "proficiency_bonus": 2
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "Standard-array Wizard",
+      "input": {
+        "name": "Elara Moonwhisper",
+        "class": "wizard",
+        "creation_method": "standard_array",
+        "ability_input": {
+          "STR": 8,
+          "DEX": 14,
+          "CON": 13,
+          "INT": 15,
+          "WIS": 12,
+          "CHA": 10
+        },
+        "chosen_skills": [
+          "arcana",
+          "investigation"
+        ],
+        "equipment_choice": "option_a",
+        "race": "elf",
+        "background": "sage"
+      },
+      "execution": "generate_ability_scores(standard_array) -> assign_proficiencies(wizard) -> assign_equipment(wizard) -> create_character",
+      "output": {
+        "valid": true,
+        "character": {
+          "hp": 7,
+          "ac": 12,
+          "proficiency_bonus": 2,
+          "spell_slots": {
+            "1": 2
+          }
+        },
+        "errors": []
+      }
+    }
+  ],
+  "dependencies": {
+    "uses": [
+      "entity-system (Tier 4 validation)",
+      "atomic-ops (dice_roll for random methods)",
+      "configuration (character_creation_method setting)"
+    ],
+    "used_by": [
+      "campaign-loop",
+      "scene-loop",
+      "game-session"
+    ]
+  },
+  "registry_references": {
+    "races": "projects/ai-dnd-game/content/all-races.json",
+    "classes": "projects/ai-dnd-game/content/all-classes.json"
+  }
+}

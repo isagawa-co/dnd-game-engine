@@ -1,0 +1,58 @@
+{
+  "campaign_id": "campaign-2026-05-27-002",
+  "campaign_name": "The Forgotten Throne",
+  "content_pack": "lost-mine-phandelver",
+  "party_count": 6,
+  "starting_level": 1,
+  "metadata": {
+    "timestamp_created": "2026-05-27T14:35:56.915402+00:00",
+    "version": "1.0",
+    "gm_name": "User",
+    "difficulty": "medium",
+    "rules_version": "5e"
+  },
+  "party_pcs": [
+    {
+      "pc_id": "pc-1",
+      "name": "Aldric Stonehammer",
+      "class": "Fighter",
+      "race": "dwarf-mountain",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-2",
+      "name": "Lyra Moonwhisper",
+      "class": "Wizard",
+      "race": "elf-high",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-3",
+      "name": "Kess Blackblade",
+      "class": "Rogue",
+      "race": "halfling-lightfoot",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-4",
+      "name": "Theron Goldleaf",
+      "class": "Cleric",
+      "race": "human",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-5",
+      "name": "Mira Stormbow",
+      "class": "Ranger",
+      "race": "elf-wood",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-6",
+      "name": "Gornak Ironjaw",
+      "class": "Barbarian",
+      "race": "half-orc",
+      "level": 1
+    }
+  ]
+}

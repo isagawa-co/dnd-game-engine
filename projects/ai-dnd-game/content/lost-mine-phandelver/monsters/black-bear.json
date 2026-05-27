@@ -1,0 +1,57 @@
+{
+  "id": "black-bear",
+  "name": "Black Bear",
+  "size_type": "medium",
+  "alignment": "unaligned",
+  "armor_class": 11,
+  "hp": {
+    "maximum": 19,
+    "hit_dice": "3d8+6"
+  },
+  "ability_scores": {
+    "strength": 15,
+    "dexterity": 10,
+    "constitution": 14,
+    "intelligence": 2,
+    "wisdom": 12,
+    "charisma": 7
+  },
+  "skills": {
+    "perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "challenge": "1/2",
+  "speed": {
+    "walk": 40,
+    "climb": 30
+  },
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "description": "The bear has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The bear makes two attacks: one with its bite and one with its claws."
+    },
+    {
+      "name": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Claws",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "2d4+2",
+      "damage_type": "slashing"
+    }
+  ]
+}

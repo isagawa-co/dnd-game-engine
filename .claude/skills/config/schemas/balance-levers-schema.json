@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Balance Levers Configuration",
+  "description": "Tunable parameters for game difficulty, economy, combat, and progression",
+  "type": "object",
+  "required": [
+    "difficulty_multipliers",
+    "economy",
+    "combat",
+    "pacing",
+    "progression"
+  ],
+  "properties": {
+    "difficulty_multipliers": {
+      "type": "object",
+      "description": "CR multipliers by difficulty level",
+      "required": ["easy", "medium", "hard", "deadly"],
+      "properties": {
+        "easy": {
+          "type": "number",
+          "const": 0.75,
+          "description": "Easy difficulty multiplier"
+        },
+        "medium": {
+          "type": "number",
+          "const": 1.0,
+          "description": "Medium difficulty multiplier"
+        },
+        "hard": {
+          "type": "number",
+          "const": 1.25,
+          "description": "Hard difficulty multiplier"
+        },
+        "deadly": {
+          "type": "number",
+          "const": 1.5,
+          "description": "Deadly difficulty multiplier"
+        }
+      }
+    },
+    "economy": {
+      "type": "object",
+      "description": "Economic tuning parameters",
+      "properties": {
+        "gold_per_encounter_multiplier": {
+          "type": "number",
+          "description": "Multiplier for gold rewards from encounters"
+        },
+        "treasure_rarity": {
+          "type": "string",
+          "enum": ["common", "uncommon", "rare", "very_rare", "legendary"],
+          "description": "Base treasure rarity distribution"
+        }
+      }
+    },
+    "combat": {
+      "type": "object",
+      "description": "Combat tuning parameters",
+      "properties": {
+        "enemy_damage_multiplier": {
+          "type": "number",
+          "description": "Multiplier for enemy damage output"
+        },
+        "player_damage_multiplier": {
+          "type": "number",
+          "description": "Multiplier for player damage output"
+        },
+        "critical_hit_chance": {
+          "type": "number",
+          "description": "Base critical hit chance (0.0-1.0)"
+        }
+      }
+    },
+    "pacing": {
+      "type": "object",
+      "description": "Pacing and progression control",
+      "properties": {
+        "encounter_frequency": {
+          "type": "number",
+          "description": "Multiplier for encounter frequency"
+        },
+        "rest_recovery_multiplier": {
+          "type": "number",
+          "description": "Multiplier for hit points and spell slots recovery"
+        }
+      }
+    },
+    "progression": {
+      "type": "object",
+      "description": "Experience and leveling progression",
+      "properties": {
+        "xp_multiplier": {
+          "type": "number",
+          "description": "Multiplier for experience point awards"
+        },
+        "level_advancement_speed": {
+          "type": "string",
+          "enum": ["slow", "medium", "fast"],
+          "description": "Speed of level advancement"
+        }
+      }
+    }
+  }
+}

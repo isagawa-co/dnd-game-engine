@@ -1,0 +1,57 @@
+{
+  "id": "owlbear",
+  "name": "Owlbear",
+  "size_type": "large",
+  "alignment": "unaligned",
+  "armor_class": 13,
+  "hp": {
+    "maximum": 59,
+    "hit_dice": "7d10+21"
+  },
+  "ability_scores": {
+    "strength": 20,
+    "dexterity": 12,
+    "constitution": 17,
+    "intelligence": 3,
+    "wisdom": 12,
+    "charisma": 7
+  },
+  "skills": {
+    "perception": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "challenge": "3",
+  "speed": {
+    "walk": 40
+  },
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "description": "The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The owlbear makes two attacks: one with its beak and one with its claws."
+    },
+    {
+      "name": "Beak",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 10 (1d10 + 5) piercing damage.",
+      "attack_bonus": 7,
+      "damage_roll": "1d10+5",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Claws",
+      "description": "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.",
+      "attack_bonus": 7,
+      "damage_roll": "2d8+5",
+      "damage_type": "slashing"
+    }
+  ]
+}

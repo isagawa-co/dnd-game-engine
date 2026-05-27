@@ -1,0 +1,13 @@
+{
+  "id": "chain-mail",
+  "name": "Chain Mail",
+  "type": "armor",
+  "rarity": "common",
+  "weight": 55,
+  "armor": {
+    "armor_class": 16,
+    "strength_requirement": 13,
+    "stealth_disadvantage": true
+  },
+  "description": "Made of interlocking metal rings. AC 16, requires Strength 13, imposes disadvantage on Stealth checks."
+}

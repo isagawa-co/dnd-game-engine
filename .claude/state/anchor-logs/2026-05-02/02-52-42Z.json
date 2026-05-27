@@ -1,0 +1,73 @@
+{
+  "anchor_timestamp": "2026-05-02T02:52:42Z",
+  "actions_count": 11,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-02T02:52:19Z",
+      "tool": "Bash",
+      "entry": "Bash: truncate -s 0 D:/my_ai_projects/project_test_repos/game-dev/.claude/state/action",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:20Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\tasks\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:22Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:23Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\tasks\\",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:27Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:29Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:30Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\backlo",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:36Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\tasks\\",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:37Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:41Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/actions.jsonl\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:52:42Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/src",
+      "session": "current"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "ring-of-protection",
+  "name": "Ring of Protection",
+  "type": "wondrous_item",
+  "rarity": "rare",
+  "weight": 0,
+  "properties": {
+    "attunement_required": true
+  },
+  "magical_effect": {
+    "bonus": 1,
+    "effect": "You gain a +1 bonus to AC and saving throws while wearing this ring."
+  },
+  "description": "A gleaming ring that provides magical protection. While attuned, you gain +1 to AC and all saving throws."
+}

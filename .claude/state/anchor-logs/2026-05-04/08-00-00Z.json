@@ -1,0 +1,115 @@
+{
+  "anchor_timestamp": "2026-05-04T01:51:07.315860Z",
+  "actions_count": 18,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T01:46:05Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nfrom datetime import datetime\n\n# Read actions.jsonl\nwith",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:46:42Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campaign_loade",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:46:44Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -E \"^\\s*def test_skill_registry_\" \"D:/my_ai_projects/project_test_repos/gam",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:46:49Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:46:54Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:47:51Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; content = open('D:/my_ai_projects/project_test_repos/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:48:09Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:48:13Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom datetime import datetime\n\n# Read actions.jsonl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:48:39Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:48:50Z",
+      "tool": "Edit",
+      "entry": "Edit: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:05Z",
+      "tool": "Edit",
+      "entry": "Edit: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:15Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:21Z",
+      "tool": "Edit",
+      "entry": "Edit: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:24Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:45Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -E \"^class TestContractEnforcer\" \"D:/my_ai_projects/project_test_repos/game",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:49:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:50:35Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:\\\\my_ai_projects\\\\projec",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:50:49Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/",
+      "session": "current"
+    }
+  ]
+}

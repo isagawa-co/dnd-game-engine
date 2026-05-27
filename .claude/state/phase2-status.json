@@ -1,0 +1,65 @@
+{
+  "phase": "Phase 2 - Core Loops",
+  "status": "ANALYZED & QUEUED",
+  "items": [
+    {
+      "id": 1,
+      "backlog": "projects/ai-dnd-game/backlog/016-entity-system-validation.md",
+      "title": "Entity System & Validation",
+      "status": "QUEUED",
+      "task_folder": "tasks/entity-system-validation/",
+      "dependencies": ["001-data-model", "012-atomic-operations"],
+      "deliverables": [
+        "Entity validation skill with 4 hooks",
+        "5 entity schema contracts (tier-1 through tier-4, plus master)",
+        "Entity markdown template",
+        "Entity load/save validation"
+      ]
+    },
+    {
+      "id": 2,
+      "backlog": "projects/ai-dnd-game/backlog/017-character-creation-command.md",
+      "title": "Character Creation Command",
+      "status": "QUEUED",
+      "task_folder": "tasks/character-creation-command/",
+      "dependencies": ["001", "012", "016"],
+      "deliverables": [
+        "/create-character command (8-step workflow)",
+        "Character creation skill",
+        "6 class/race/background/ability definition contracts",
+        "Campaign-start lock mechanism"
+      ]
+    },
+    {
+      "id": 3,
+      "backlog": "projects/ai-dnd-game/backlog/003-level-0-campaign-loop.md",
+      "title": "Level 0 - Campaign Loop",
+      "status": "QUEUED",
+      "task_folder": "tasks/level-0-campaign-loop/",
+      "dependencies": ["002-content-corpus"],
+      "deliverables": [
+        "/play-campaign command (5-step workflow)",
+        "Campaign orchestrator skill",
+        "Campaign schema + session schema contracts",
+        "5 campaign-load hooks"
+      ]
+    },
+    {
+      "id": 4,
+      "backlog": "projects/ai-dnd-game/backlog/004-level-1-scene-loop.md",
+      "title": "Level 1 - Scene Loop",
+      "status": "QUEUED",
+      "task_folder": "tasks/level-1-scene-loop/",
+      "dependencies": ["003-level-0-campaign-loop"],
+      "deliverables": [
+        "/scene-loop command (7-step mandatory sequence)",
+        "Scene-loop orchestrator skill",
+        "4 routing/narration/quest contracts",
+        "7 scene-loop hooks with delta commit"
+      ]
+    }
+  ],
+  "execution_plan": "Sequential run-task.sh with full autonomy - no pause points",
+  "total_deliverables": 20,
+  "created": "2026-05-02T03:55:00Z"
+}

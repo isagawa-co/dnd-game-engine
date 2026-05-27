@@ -1,0 +1,13 @@
+{
+  "id": "club",
+  "name": "Club",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 2,
+  "weapon": {
+    "damage_roll": "1d4",
+    "damage_type": "bludgeoning",
+    "properties": ["light"]
+  },
+  "description": "A simple bludgeoning weapon. Light enough for dual-wielding."
+}

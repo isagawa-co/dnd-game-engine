@@ -1,0 +1,37 @@
+{
+  "anchor_timestamp": "2026-05-27T01:43:05.788532+00:00",
+  "actions_count": 5,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-27T01:41:41Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"projects/ai-dnd-game/.claude/skills/combat/contracts/combat-loop-contra",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:42:11Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json, datetime\n\nnow = datetime.datetime.now(datetime.t",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:42:19Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\npath = '.claude/state/game-engine_workflow.json'\nd ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:42:31Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\npath = '.claude/state/session_state.json'\nd = json.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T01:43:02Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import os; print('BUILD-05:', os.path.exists('projects/ai-dnd-game/.",
+      "session": "current"
+    }
+  ]
+}

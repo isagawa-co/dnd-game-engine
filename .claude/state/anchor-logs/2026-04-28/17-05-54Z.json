@@ -1,0 +1,103 @@
+{
+  "anchor_timestamp": "2026-04-28T17:05:54.725023+00:00",
+  "actions_count": 16,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T17:03:10Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, sys\nfrom datetime import datetime, timezone\nsys.stdout.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:22Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos\" -type d -name \"packs\" 2>/dev/null | ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:25Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:29Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:33Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:44Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-co",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:03:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, sys\nsys.stdout.reconfigure(encoding='utf-8')\nwith open(",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:04:11Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -q \"coordinator\" \"D:/my_ai_projects/project_test_repos/ai-football-head-coa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:04:21Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, sys\nfrom datetime import datetime, timezone\nsys.stdout.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:08Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:11Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python -c \"\nimport json, o",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:24Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:29Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python -c \"\nimport json, o",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:37Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:05:47Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python -c \"\nimport json, o",
+      "session": "current"
+    }
+  ]
+}

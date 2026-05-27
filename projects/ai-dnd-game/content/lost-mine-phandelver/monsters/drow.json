@@ -1,0 +1,58 @@
+{
+  "id": "drow",
+  "name": "Drow",
+  "size_type": "medium",
+  "alignment": "neutral evil",
+  "armor_class": 15,
+  "hp": {
+    "maximum": 13,
+    "hit_dice": "3d8"
+  },
+  "ability_scores": {
+    "strength": 10,
+    "dexterity": 14,
+    "constitution": 10,
+    "intelligence": 11,
+    "wisdom": 11,
+    "charisma": 12
+  },
+  "skills": {
+    "perception": 2,
+    "stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": ["Elvish", "Undercommon"],
+  "challenge": "1/4",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "description": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "description": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Hand Crossbow",
+      "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    }
+  ]
+}

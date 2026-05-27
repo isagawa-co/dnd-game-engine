@@ -1,0 +1,23 @@
+{
+  "anchor_timestamp": "2026-05-27T00:58:00Z",
+  "actions_count": 16,
+  "violations_found": 0,
+  "actions": [
+    "Write: owlbear.json",
+    "Write: giant-spider.json",
+    "Write: stirge.json",
+    "Write: giant-rat.json",
+    "Write: dire-wolf.json",
+    "Write: black-bear.json",
+    "Write: rust-monster.json",
+    "Bash: validate beast monsters against schema",
+    "Write: _create_beasts.py",
+    "Bash: run _create_beasts.py",
+    "Bash: compute protocol hash",
+    "Bash: validate monsters",
+    "Bash: list monster files",
+    "Bash: rm _create_beasts.py",
+    "Bash: mkdir anchor-logs",
+    "Read: actions.jsonl"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "game-engine",
+  "task_folder": "tasks/atomic-operations/",
+  "completed_tasks": [
+    "001-atomic-build-directory.md",
+    "002-atomic-build-roll-ops.md",
+    "003-atomic-build-check-ops.md",
+    "004-atomic-build-damage-ops.md",
+    "005-atomic-build-effect-ops.md",
+    "006-atomic-build-state-validation.md",
+    "007-atomic-build-skill.md",
+    "008-atomic-test-unit.md",
+    "009-atomic-test-integration.md"
+  ],
+  "skipped_tasks": [],
+  "total_tasks": 9,
+  "current_task": null,
+  "attempts_on_current": 0,
+  "anchored": false,
+  "anchor_timestamp": "2026-05-04T01:10:58.858646Z",
+  "actions_since_anchor": 0,
+  "timestamp": "2026-05-04T01:02:07Z"
+}

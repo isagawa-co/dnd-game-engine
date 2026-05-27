@@ -1,0 +1,13 @@
+{
+  "id": "longsword",
+  "name": "Longsword",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 3,
+  "weapon": {
+    "damage_roll": "1d8",
+    "damage_type": "slashing",
+    "properties": ["versatile"]
+  },
+  "description": "A standard longsword with a long, straight blade. Versatile: can be wielded with one or two hands (1d10 when two-handed)."
+}

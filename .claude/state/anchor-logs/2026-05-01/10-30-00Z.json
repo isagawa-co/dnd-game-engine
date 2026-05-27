@@ -1,0 +1,1021 @@
+{
+  "anchor_timestamp": "2026-05-01T10:30:00Z",
+  "actions_count": 169,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T23:48:03Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/playbo",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:49:04Z",
+      "tool": "Write",
+      "entry": "Write: wide-zone.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:49:12Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:49:15Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:49:24Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:49:49Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:51:29Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/playbo",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:51:29Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:51:47Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:51:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:51:55Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playbooks/_test\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:52:22Z",
+      "tool": "Write",
+      "entry": "Write: validate_playbooks.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:52:26Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playbooks/_test/vali",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:52:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:53:08Z",
+      "tool": "Edit",
+      "entry": "Edit: west-coast.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:53:33Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nf='D:/my_ai_projects/project_test_repos/ai-football-head",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:53:43Z",
+      "tool": "Edit",
+      "entry": "Edit: west-coast.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:53:47Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playbooks/_test/vali",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:53:57Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nr=json.load(open('D:/my_ai_projects/project_test_repos/g",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:54:16Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:54:59Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:55:03Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:55:08Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep -i ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:55:14Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/pl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:56:04Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, glob\nprint('=== PLAYBOOK INVENTORY ===')\nfor f in sorte",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:56:14Z",
+      "tool": "Edit",
+      "entry": "Edit: west-coast.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:56:22Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, glob\nschemes = {}\nfor f in sorted(glob.glob('D:/my_ai_p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:58:32Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/attest.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:58:36Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playbooks/_test/validati",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:58:50Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:58:51Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:58:56Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/docs/backlog/done/\" 2>/dev/nul",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:30:55Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:33:45Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/fix-player-ids/_te",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:33:53Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:33:58Z",
+      "tool": "Write",
+      "entry": "Write: gate-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:34:19Z",
+      "tool": "Write",
+      "entry": "Write: fix_player_ids.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:34:23Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/tasks/fix-player-ids/_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:34:36Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json, glob, re\n\nTEAMS = 'D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:34:44Z",
+      "tool": "Bash",
+      "entry": "Bash: mv \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:34:58Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:35:05Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nfrom collections import defaultdict\nd = json.load(open('",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:35:44Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:35:57Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\n\nf = 'D:/my_ai_projects/project_test_repos/ai-football-h",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:36:04Z",
+      "tool": "Bash",
+      "entry": "Bash: mv \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:36:31Z",
+      "tool": "Bash",
+      "entry": "Bash: mv \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:36:46Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\n# Verify new injury rates produce ~0.5-1 injuries per game\n# 145 pla",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:36:51Z",
+      "tool": "Bash",
+      "entry": "Bash: mv \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:39:54Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/comm",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:40:27Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && env -u C",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:59:16Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -c \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:59:21Z",
+      "tool": "Bash",
+      "entry": "Bash: ps aux 2>/dev/null | grep -i claude | grep -v grep || tasklist 2>/dev/null | gre",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:59:25Z",
+      "tool": "Bash",
+      "entry": "Bash: tasklist 2>/dev/null | grep -i \"claude\\|node\" | head -10",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T00:59:32Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/docs/pla",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T01:05:11Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" -name \"*.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T01:05:12Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T02:58:27Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/saves/\" 2>&1",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T02:58:42Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T02:58:50Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T02:59:00Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && py -c \"\n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T02:59:55Z",
+      "tool": "Edit",
+      "entry": "Edit: BUF-2024.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T03:00:45Z",
+      "tool": "Edit",
+      "entry": "Edit: BUF-2024.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T03:00:47Z",
+      "tool": "Edit",
+      "entry": "Edit: BUF-2024.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T03:00:48Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/saves\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T03:00:54Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/saves/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T03:18:42Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && env -u C",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-29T23:31:19Z",
+      "tool": "Write",
+      "entry": "Write: known-issues.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T02:27:28Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:\\my_ai_projects\\project_test_repos\\ai-football-head-coach-sim\\.claude\\sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T02:27:30Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -d \"D:\\my_ai_projects\\project_test_repos\\ai-football-head-coach-sim\\.claude\\s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T02:27:32Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -d \"/d/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T02:27:45Z",
+      "tool": "Bash",
+      "entry": "Bash: for skill in ai-opponents configuration coordinator-interactions data-model enti",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:17:47Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/doc",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:20:43Z",
+      "tool": "Write",
+      "entry": "Write: 01-market-research.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:21:08Z",
+      "tool": "Write",
+      "entry": "Write: 02-architecture-mapping.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:21:39Z",
+      "tool": "Write",
+      "entry": "Write: 03-combat-loop.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:22:15Z",
+      "tool": "Write",
+      "entry": "Write: 04-combat-state-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:22:52Z",
+      "tool": "Write",
+      "entry": "Write: 05-narration-system.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:23:21Z",
+      "tool": "Write",
+      "entry": "Write: 06-tiered-memory.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:23:42Z",
+      "tool": "Write",
+      "entry": "Write: 07-assessment.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:26:57Z",
+      "tool": "Write",
+      "entry": "Write: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:27:27Z",
+      "tool": "Write",
+      "entry": "Write: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T03:51:45Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:25:19Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:26:09Z",
+      "tool": "Write",
+      "entry": "Write: 08-scene-loop.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:27:24Z",
+      "tool": "Write",
+      "entry": "Write: 09-campaign-pack-format.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:28:28Z",
+      "tool": "Write",
+      "entry": "Write: 10-character-system.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:28:50Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:29:17Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:29:31Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:40:27Z",
+      "tool": "Write",
+      "entry": "Write: 11-skills-contracts-map.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:43:54Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:05Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:09Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:15Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:19Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:25Z",
+      "tool": "Edit",
+      "entry": "Edit: profile.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:30Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:36Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:41Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:46Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:44:53Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:48:57Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:48:59Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:01Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:02Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:03Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:05Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:20Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:22Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:24Z",
+      "tool": "Edit",
+      "entry": "Edit: ai-dnd-game-seed.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:26Z",
+      "tool": "Edit",
+      "entry": "Edit: 01-market-research.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:28Z",
+      "tool": "Edit",
+      "entry": "Edit: 01-market-research.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:30Z",
+      "tool": "Edit",
+      "entry": "Edit: 11-skills-contracts-map.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:31Z",
+      "tool": "Edit",
+      "entry": "Edit: 11-skills-contracts-map.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:39Z",
+      "tool": "Edit",
+      "entry": "Edit: 07-assessment.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:49:50Z",
+      "tool": "Edit",
+      "entry": "Edit: 07-assessment.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T08:59:58Z",
+      "tool": "Write",
+      "entry": "Write: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:02:17Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/docs/game",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:02:32Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/doc",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:03:22Z",
+      "tool": "Write",
+      "entry": "Write: 01-game-loop.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:03:31Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:04:04Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:06:49Z",
+      "tool": "Write",
+      "entry": "Write: 02-world-space.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:06:55Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:06:57Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:11:48Z",
+      "tool": "Write",
+      "entry": "Write: 03-entities.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:11:54Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:11:56Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:13:53Z",
+      "tool": "Write",
+      "entry": "Write: 04-player-actions.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:13:58Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:14:00Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:16:29Z",
+      "tool": "Write",
+      "entry": "Write: 05-rules-mechanics.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:16:36Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:16:38Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:20:17Z",
+      "tool": "Write",
+      "entry": "Write: 06-progression.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:20:23Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:20:24Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:23:21Z",
+      "tool": "Write",
+      "entry": "Write: 07-win-lose.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:23:26Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:23:28Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:26:12Z",
+      "tool": "Write",
+      "entry": "Write: 08-ui-rendering.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:26:59Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:27:00Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:41:56Z",
+      "tool": "Write",
+      "entry": "Write: 09-ai-opponents.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:42:01Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:42:03Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:45:37Z",
+      "tool": "Write",
+      "entry": "Write: 10-economy-resources.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:45:43Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:45:45Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:49:36Z",
+      "tool": "Write",
+      "entry": "Write: 11-randomness.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:49:42Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:49:44Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:51:33Z",
+      "tool": "Write",
+      "entry": "Write: 13-narrative.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:51:38Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:51:40Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:53:13Z",
+      "tool": "Write",
+      "entry": "Write: 15-architecture.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:53:19Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:53:21Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:54:27Z",
+      "tool": "Write",
+      "entry": "Write: 16-data-model.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:55:04Z",
+      "tool": "Write",
+      "entry": "Write: 17-configuration.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T09:55:47Z",
+      "tool": "Write",
+      "entry": "Write: 18-balance.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:00:04Z",
+      "tool": "Write",
+      "entry": "Write: 19-scope-phases.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:00:28Z",
+      "tool": "Write",
+      "entry": "Write: 20-external-deps.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:00:40Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:00:40Z",
+      "tool": "Edit",
+      "entry": "Edit: index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:02:41Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\docs\\ga",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:02:43Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:\\my_ai_projects\\project_test_repos\\game-dev\\projects\\ai-dnd-game\\docs\\ga",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:11:56Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('.claude/protocols/game-eng",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:12:05Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

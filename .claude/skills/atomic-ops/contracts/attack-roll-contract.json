@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Attack Roll Contract",
+  "description": "Attack roll contract for melee and ranged attacks in D&D 5e. Determines hit/miss based on attack bonus vs target AC with critical hit/miss handling.",
+  "version": "1.0",
+  "operation": "attack_roll",
+  "input_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Attack Roll Input",
+    "type": "object",
+    "properties": {
+      "attack_bonus": {
+        "type": "integer",
+        "minimum": -5,
+        "maximum": 20,
+        "description": "Weapon attack bonus: STR/DEX mod + proficiency + magical bonuses"
+      },
+      "target_ac": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 30,
+        "description": "Target armor class (10 = unarmored, 15-18 = common armor, 20+ = magical/shield, 30 = nearly invulnerable)"
+      },
+      "advantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 take higher (flanking, invisibility advantage)"
+      },
+      "disadvantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 take lower (prone, darkness, obscured)"
+      }
+    },
+    "required": ["attack_bonus", "target_ac", "advantage", "disadvantage"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Attack Roll Output",
+    "type": "object",
+    "properties": {
+      "roll": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "description": "The d20 result (after advantage/disadvantage selection)"
+      },
+      "attack_bonus": {
+        "type": "integer",
+        "minimum": -5,
+        "maximum": 20
+      },
+      "total": {
+        "type": "integer",
+        "minimum": -4,
+        "maximum": 40,
+        "description": "roll + attack_bonus (clamped to -4 minimum, 40 maximum)"
+      },
+      "target_ac": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 30
+      },
+      "hit": {
+        "type": "boolean",
+        "description": "true if total >= target_ac (or natural 20), false if natural 1 or total < target_ac"
+      },
+      "critical_hit": {
+        "type": "boolean",
+        "description": "true if roll == 20"
+      },
+      "critical_miss": {
+        "type": "boolean",
+        "description": "true if roll == 1"
+      }
+    },
+    "required": ["roll", "attack_bonus", "total", "target_ac", "hit", "critical_hit", "critical_miss"],
+    "additionalProperties": false
+  },
+  "validation_rules": [
+    {
+      "rule_id": "ATTACK-001",
+      "description": "attack_bonus must be -5 to +20",
+      "validation": "-5 <= attack_bonus <= 20",
+      "error_message": "Attack bonus out of range"
+    },
+    {
+      "rule_id": "ATTACK-002",
+      "description": "target_ac must be 1 to 30",
+      "validation": "1 <= target_ac <= 30",
+      "error_message": "Target AC out of range"
+    },
+    {
+      "rule_id": "ATTACK-003",
+      "description": "advantage and disadvantage cannot both be true",
+      "validation": "NOT (advantage AND disadvantage)",
+      "error_message": "Cannot have both advantage and disadvantage"
+    },
+    {
+      "rule_id": "ATTACK-004",
+      "description": "critical hit (natural 20) always hits, regardless of AC or bonus",
+      "validation": "if roll == 20: hit = true",
+      "error_message": "N/A (output validation only)"
+    },
+    {
+      "rule_id": "ATTACK-005",
+      "description": "critical miss (natural 1) always misses, regardless of AC or bonus",
+      "validation": "if roll == 1: hit = false",
+      "error_message": "N/A (output validation only)"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Standard longsword attack vs AC 15 (hit)",
+      "input": { "attack_bonus": 5, "target_ac": 15, "advantage": false, "disadvantage": false },
+      "execution": "Roll 1d20 -> 12, total = 12 + 5 = 17, hit = (17 >= 15) = true",
+      "output": { "roll": 12, "attack_bonus": 5, "total": 17, "target_ac": 15, "hit": true, "critical_hit": false, "critical_miss": false }
+    },
+    {
+      "name": "Miss (roll too low)",
+      "input": { "attack_bonus": 3, "target_ac": 16, "advantage": false, "disadvantage": false },
+      "execution": "Roll 1d20 -> 10, total = 10 + 3 = 13, hit = (13 >= 16) = false",
+      "output": { "roll": 10, "attack_bonus": 3, "total": 13, "target_ac": 16, "hit": false, "critical_hit": false, "critical_miss": false }
+    },
+    {
+      "name": "Critical hit (natural 20)",
+      "input": { "attack_bonus": 2, "target_ac": 20, "advantage": false, "disadvantage": false },
+      "execution": "Roll 1d20 -> 20, total = 20 + 2 = 22, hit = true (natural 20 always hits)",
+      "output": { "roll": 20, "attack_bonus": 2, "total": 22, "target_ac": 20, "hit": true, "critical_hit": true, "critical_miss": false }
+    },
+    {
+      "name": "Critical miss (natural 1)",
+      "input": { "attack_bonus": 10, "target_ac": 12, "advantage": false, "disadvantage": false },
+      "execution": "Roll 1d20 -> 1, total = 1 + 10 = 11, hit = false (natural 1 always misses)",
+      "output": { "roll": 1, "attack_bonus": 10, "total": 11, "target_ac": 12, "hit": false, "critical_hit": false, "critical_miss": true }
+    },
+    {
+      "name": "Attack with advantage (flanking)",
+      "input": { "attack_bonus": 4, "target_ac": 14, "advantage": true, "disadvantage": false },
+      "execution": "Roll 2d20 -> [11, 17], select higher = 17, total = 17 + 4 = 21, hit = true",
+      "output": { "roll": 17, "attack_bonus": 4, "total": 21, "target_ac": 14, "hit": true, "critical_hit": false, "critical_miss": false }
+    },
+    {
+      "name": "Attack with disadvantage (prone)",
+      "input": { "attack_bonus": 6, "target_ac": 13, "advantage": false, "disadvantage": true },
+      "execution": "Roll 2d20 -> [9, 16], select lower = 9, total = 9 + 6 = 15, hit = true",
+      "output": { "roll": 9, "attack_bonus": 6, "total": 15, "target_ac": 13, "hit": true, "critical_hit": false, "critical_miss": false }
+    }
+  ],
+  "formulas": {
+    "total": "roll + attack_bonus (clamped to [-4, 40])",
+    "hit_resolution": "if roll == 20: hit = true; elif roll == 1: hit = false; else: hit = (total >= target_ac)",
+    "critical_hit": "roll == 20",
+    "critical_miss": "roll == 1"
+  },
+  "dependencies": {
+    "uses": ["dice_roll"],
+    "used_by": ["combat_loop"]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scene Action Contract",
+  "description": "Input schema for scene dispatcher. Defines what campaign-loop sends to scene-loop.",
+  "type": "object",
+  "required": ["campaign_id", "scene_id", "encounter_type", "encounter_data"],
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "description": "Campaign identifier"
+    },
+    "scene_id": {
+      "type": "string",
+      "description": "Scene identifier within campaign"
+    },
+    "encounter_type": {
+      "type": "string",
+      "enum": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"],
+      "description": "Type of encounter in this scene"
+    },
+    "encounter_data": {
+      "type": "object",
+      "description": "Encounter-specific data (enemies, NPCs, challenge type, etc.)",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "Scene location description"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard", "deadly"],
+          "description": "Encounter difficulty tier"
+        },
+        "objectives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Scene objectives (defeat enemies, gather information, acquire item, etc.)"
+        }
+      }
+    },
+    "party_state": {
+      "type": "object",
+      "description": "Current party state (HP, conditions, inventory)"
+    }
+  }
+}

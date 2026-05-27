@@ -1,0 +1,63 @@
+{
+  "id": "king-grol",
+  "name": "King Grol",
+  "size_type": "medium",
+  "alignment": "chaotic evil",
+  "armor_class": 16,
+  "hp": {
+    "maximum": 45,
+    "hit_dice": "7d8+14"
+  },
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 14,
+    "constitution": 14,
+    "intelligence": 11,
+    "wisdom": 12,
+    "charisma": 13
+  },
+  "saving_throws": {
+    "strength": 5,
+    "constitution": 4
+  },
+  "skills": {
+    "intimidation": 5,
+    "stealth": 6,
+    "survival": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": ["Common", "Goblin"],
+  "challenge": "3",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Brute",
+      "description": "A melee weapon deals one extra die of its damage when King Grol hits with it (included in the attack)."
+    },
+    {
+      "name": "Surprise Attack",
+      "description": "If King Grol surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 12 (2d8 + 3) piercing damage.",
+      "attack_bonus": 5,
+      "damage_roll": "2d8+3",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Javelin",
+      "description": "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 10 (2d6 + 3) piercing damage in melee or 6 (1d6 + 3) piercing damage at range.",
+      "attack_bonus": 5,
+      "damage_roll": "2d6+3",
+      "damage_type": "piercing"
+    }
+  ]
+}

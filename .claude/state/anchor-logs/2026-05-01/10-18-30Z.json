@@ -1,0 +1,151 @@
+{
+  "anchor_timestamp": "2026-05-01T10:18:30Z",
+  "actions_count": 24,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T10:15:42Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \".claude/state/anchor-logs/2026-05-01\" && python -c \"\nimport json\nactio",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:15:50Z",
+      "tool": "Write",
+      "entry": "Write: 007-world-travel.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:15:57Z",
+      "tool": "Write",
+      "entry": "Write: 008-npc-social.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:02Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \".claude/state/session_state.json\" | python -c \"\nimport sys, json\ndata = jso",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:07Z",
+      "tool": "Write",
+      "entry": "Write: 009-ai-opponents.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:13Z",
+      "tool": "Write",
+      "entry": "Write: 010-quest-system.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:16Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:18Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:22Z",
+      "tool": "Write",
+      "entry": "Write: 011-economy-merchants.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:23Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/data/m",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:29Z",
+      "tool": "Write",
+      "entry": "Write: 012-narration.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:33Z",
+      "tool": "Write",
+      "entry": "Write: weight-maps.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:37Z",
+      "tool": "Write",
+      "entry": "Write: sigmoid-curve.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:40Z",
+      "tool": "Write",
+      "entry": "Write: 013-save-load-config.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:44Z",
+      "tool": "Write",
+      "entry": "Write: trait-triggers.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:48Z",
+      "tool": "Write",
+      "entry": "Write: ol-dl-aggregate.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:16:48Z",
+      "tool": "Write",
+      "entry": "Write: 014-campaign-pack-loader.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:17:01Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/data/matchup",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:17:26Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/data/matchup",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:17:31Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playtest-fixes-2/\" | ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:17:44Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'EOF'\nimport json\n\n# Read current state\nwith open(\"D:/my_ai_projects/p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:18:06Z",
+      "tool": "Bash",
+      "entry": "Bash: date -u +\"%Y-%m-%dT%H:%M:%SZ\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:18:19Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T10:18:24Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "anchor_timestamp": "2026-04-28T19:30:00Z",
+  "actions_count": 52,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T17:40:05Z",
+      "tool": "Write",
+      "entry": "Write: validate_phase_c.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:40:09Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/tasks/authentic-coaching/v",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:40:17Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import json; json.load(open('D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:07Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE bash \"D:/my_ai_projects/project_test_repos/game-dev/run-task.s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:12Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:35Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-repo",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:42Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"C:/Users/solos/AppData/Local/Temp\" -name \"*.output\" -path \"*claude*\" 2>/de",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:49Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la /c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:41:57Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\"*authentic*",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:42:11Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/authentic-coach",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:42:21Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la /c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:42:58Z",
+      "tool": "Bash",
+      "entry": "Bash: for i in $(seq 1 14); do echo \"=== ITERATION $i ===\" && cat \"D:/my_ai_projects/p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:48:12Z",
+      "tool": "Bash",
+      "entry": "Bash: tail -5 \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:48:13Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/fix-playtest",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:48:17Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/fix-playtest-is",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T17:48:24Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/fix-playtest-is",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:08Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:16Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:24Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:24Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:25Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:07:26Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:08:43Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:08:49Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:08:57Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-co",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:10:30Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"=== Game Session ===\" && test -f \"D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:12:32Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:12:39Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -R \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-c",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:12:56Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -R \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-c",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:18:06Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"=== game-dev/packs/teams ===\" && ls \"D:/my_ai_projects/project_test_repos/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:18:18Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"=== game-dev data ===\" && ls \"D:/my_ai_projects/project_test_repos/game-de",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:29:34Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && env -u C",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:33:10Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && for i in 046 047 048 049 0",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:33:31Z",
+      "tool": "Write",
+      "entry": "Write: 046-domain-fix-situation-data.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:33:41Z",
+      "tool": "Write",
+      "entry": "Write: 047-domain-build-coordinator-packs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:33:49Z",
+      "tool": "Write",
+      "entry": "Write: 048-domain-fix-penalty-formula.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:33:55Z",
+      "tool": "Write",
+      "entry": "Write: 049-domain-fix-penalty-config.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:00Z",
+      "tool": "Write",
+      "entry": "Write: 050-domain-fix-fg-buckets.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:04Z",
+      "tool": "Write",
+      "entry": "Write: 051-domain-fix-injury-formula.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:12Z",
+      "tool": "Write",
+      "entry": "Write: 052-domain-fix-personality-mapping.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:16Z",
+      "tool": "Write",
+      "entry": "Write: 053-domain-fix-runbook-path.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:28Z",
+      "tool": "Write",
+      "entry": "Write: 054-domain-build-matchup-wiring.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:34:35Z",
+      "tool": "Write",
+      "entry": "Write: 055-domain-fix-rushing-balance.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:39:42Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" -name \"ba",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:39:43Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" -name \"pl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:39:44Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" -name \"pe",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:39:45Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" -name \"*i",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:40:25Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/docs\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:41:25Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/playtest-fixes-2\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:41:35Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:41:50Z",
+      "tool": "Write",
+      "entry": "Write: 001-build-situation-data.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:46:33Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

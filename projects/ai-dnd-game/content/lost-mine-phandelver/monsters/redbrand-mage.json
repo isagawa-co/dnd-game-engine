@@ -1,0 +1,50 @@
+{
+  "id": "redbrand-mage",
+  "name": "Redbrand Mage",
+  "size_type": "medium",
+  "alignment": "neutral evil",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 22,
+    "hit_dice": "5d8"
+  },
+  "ability_scores": {
+    "strength": 9,
+    "dexterity": 14,
+    "constitution": 11,
+    "intelligence": 17,
+    "wisdom": 12,
+    "charisma": 11
+  },
+  "saving_throws": {
+    "intelligence": 5,
+    "wisdom": 3
+  },
+  "skills": {
+    "arcana": 5,
+    "perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": ["Common", "Draconic", "Dwarvish"],
+  "challenge": "2",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Spellcasting",
+      "description": "The mage is a 4th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). The mage has the following wizard spells prepared: Cantrips (at will): fire bolt, light, mage hand, shocking grasp. 1st level (4 slots): charm person, magic missile, shield. 2nd level (3 slots): hold person, misty step."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 - 1) bludgeoning damage.",
+      "attack_bonus": 1,
+      "damage_roll": "1d6-1",
+      "damage_type": "bludgeoning"
+    }
+  ]
+}

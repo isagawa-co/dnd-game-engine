@@ -1,0 +1,511 @@
+{
+  "anchor_timestamp": "2026-04-28T21:29:20Z",
+  "actions_count": 84,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T18:47:17Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:47:43Z",
+      "tool": "Write",
+      "entry": "Write: 002-build-matchup-wiring.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:47:55Z",
+      "tool": "Write",
+      "entry": "Write: 003-build-personality-mapping.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:48:07Z",
+      "tool": "Write",
+      "entry": "Write: 004-build-coordinator-packs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:48:20Z",
+      "tool": "Write",
+      "entry": "Write: 005-test-validate-fixes.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:48:30Z",
+      "tool": "Write",
+      "entry": "Write: gate-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:08Z",
+      "tool": "Bash",
+      "entry": "Bash: tail -50 \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-tes",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:12Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:17Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\"*.log 2>/de",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:18Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\"*playtest-f",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:23Z",
+      "tool": "Bash",
+      "entry": "Bash: tail -30 \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/hook_debug",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:30Z",
+      "tool": "Bash",
+      "entry": "Bash: ps aux 2>/dev/null | grep -i \"run-task\\|claude\" | grep -v grep | head -10 || tas",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:39Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -c \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:50:58Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\"*playtest* ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:51:16Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE bash \"D:/my_ai_projects/project_test_repos/game-dev/run-task.s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:51:53Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 30 && wc -c \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-pr",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:52:03Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T18:52:45Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/.claude/lessons/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:28:22Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE claude -p --cwd \"D:/my_ai_projects/project_test_repos/ai-footb",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:28:34Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE claude --help 2>&1 | head -40",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:28:42Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE claude --help 2>&1 | grep -i \"dir\\|work\\|cd\\|path\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:28:54Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && env -u C",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:51:16Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/docs/backlog/\" 2>/dev/null | s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:51:24Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:51:31Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/intent.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:51:40Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-hea",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:52:00Z",
+      "tool": "Write",
+      "entry": "Write: 056-domain-build-53man-rosters.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:52:11Z",
+      "tool": "Write",
+      "entry": "Write: roster-schema.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:52:23Z",
+      "tool": "Write",
+      "entry": "Write: data-sourcing.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:52:37Z",
+      "tool": "Write",
+      "entry": "Write: depth-chart-format.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:52:49Z",
+      "tool": "Write",
+      "entry": "Write: build-phases.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:53:02Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/intent.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:53:16Z",
+      "tool": "Write",
+      "entry": "Write: 057-domain-fix-penalty-ownership.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:53:27Z",
+      "tool": "Write",
+      "entry": "Write: 058-domain-fix-oc-delegation-tags.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:53:39Z",
+      "tool": "Write",
+      "entry": "Write: 059-domain-build-2pt-conversion.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:55:25Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:56:39Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/data/situati",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:56:52Z",
+      "tool": "Write",
+      "entry": "Write: two_point_outcomes.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:58:34Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/53man-rosters\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:58:58Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T20:59:27Z",
+      "tool": "Bash",
+      "entry": "Bash: cat > /tmp/roster_template.txt << 'TEMPLATE_EOF'\n# Expand {DIVISION} to Full 53-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:02:18Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:04:25Z",
+      "tool": "Write",
+      "entry": "Write: gate-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:04:39Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:05:11Z",
+      "tool": "Write",
+      "entry": "Write: 001-build-afc-west.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:05:31Z",
+      "tool": "Write",
+      "entry": "Write: 002-build-afc-north.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:05:41Z",
+      "tool": "Write",
+      "entry": "Write: 003-build-afc-south.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:05:52Z",
+      "tool": "Write",
+      "entry": "Write: 004-build-afc-east.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:06:02Z",
+      "tool": "Write",
+      "entry": "Write: 005-build-nfc-west.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:06:13Z",
+      "tool": "Write",
+      "entry": "Write: 006-build-nfc-north.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:06:23Z",
+      "tool": "Write",
+      "entry": "Write: 007-build-nfc-south.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:06:33Z",
+      "tool": "Write",
+      "entry": "Write: 008-build-nfc-east.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:06:52Z",
+      "tool": "Write",
+      "entry": "Write: 009-test-validate-all.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:07:29Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && env -u CLAUDECODE bash run",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:08:28Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:08:29Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/ski",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:08:43Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nfor team in ['KC', 'LAC', 'DEN', 'LV']:\n    path = f'D:/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:13:38Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'SCRIPT'\nimport json\nimport os\n\nBASE = \"D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:14:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'SCRIPT'\nimport json\n\nBASE = \"D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:15:26Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'SCRIPT'\nimport json\n\nBASE = \"D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:16:25Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'SCRIPT'\nimport json\n\nBASE = \"D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:17:13Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'SCRIPT'\nimport json\n\nBASE = \"D:/my_ai_projects/project_test_repos/ai-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:17:21Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:18:01Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:18:07Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:18:14Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\"*53man* 2>/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:19:03Z",
+      "tool": "Bash",
+      "entry": "Bash: for team in KC LAC DEN LV; do python -c \"import json; d=json.load(open('D:/my_ai",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:19:09Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && env -u CLAUDECODE bash run",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:20:15Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python -c \"import hashlib;",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:21:35Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 120 && python -c \"\nimport json\nwf = json.load(open('D:/my_ai_projects/proj",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:21:42Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -c \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:21:46Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:21:51Z",
+      "tool": "Bash",
+      "entry": "Bash: tasklist 2>/dev/null | grep -i claude | head -10 || ps aux 2>/dev/null | grep cl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:22:36Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:23:10Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nfor team in ['BAL', 'CIN', 'CLE', 'PIT', 'KC']:\n    d = ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:23:24Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:26:40Z",
+      "tool": "Write",
+      "entry": "Write: expand_afc_north.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:26:47Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/expand_afc_north.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:26:55Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nBASE = 'D:/my_ai_projects/project_test_repos/ai-football",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:27:21Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\n\nBASE = 'D:/my_ai_projects/project_test_repos/ai-footbal",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:27:49Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\n\nBASE = 'D:/my_ai_projects/project_test_repos/ai-footbal",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:27:58Z",
+      "tool": "Bash",
+      "entry": "Bash: for team in BAL CIN CLE PIT; do python -c \"import json; d=json.load(open('D:/my_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:28:05Z",
+      "tool": "Bash",
+      "entry": "Bash: rm \"D:/my_ai_projects/project_test_repos/game-dev/expand_afc_north.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T21:28:21Z",
+      "tool": "Write",
+      "entry": "Write: expand_afc_north.py",
+      "session": "current"
+    }
+  ]
+}

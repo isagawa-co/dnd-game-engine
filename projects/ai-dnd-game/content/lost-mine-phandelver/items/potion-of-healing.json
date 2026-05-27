@@ -1,0 +1,11 @@
+{
+  "id": "potion-of-healing",
+  "name": "Potion of Healing",
+  "type": "potion",
+  "rarity": "common",
+  "weight": 0.5,
+  "magical_effect": {
+    "effect": "Regain 2d4+2 hit points when you drink this potion."
+  },
+  "description": "A vial of glimmering red liquid that restores 2d4+2 hit points when consumed. The most common healing potion."
+}

@@ -1,0 +1,30 @@
+{
+  "anchor_timestamp": "2026-05-01T11:42:00Z",
+  "actions_count": 23,
+  "violations_found": 0,
+  "actions": [
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && grep -q 'def level_up'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -1 tasks/rules-engine/",
+    "Edit: rules.py",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls tasks/rules-engine/gate-c",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ( echo \"Gate BUILD-08:\"",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Edit: gate-contract.md",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ( echo \"Verification:\"",
+    "Write: conditions.py",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python -c",
+    "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ( echo \"BUILD-09: file exi",
+    "Bash: python -c \"import hashlib; print(hashlib.sha256(...\""
+  ]
+}

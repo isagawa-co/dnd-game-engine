@@ -1,0 +1,13 @@
+{
+  "anchor_timestamp": "2026-05-27T01:19:58.644151+00:00",
+  "actions_count": 1,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-27T01:19:56Z",
+      "tool": "Bash",
+      "entry": "Bash: : > \".claude/state/actions.jsonl\"",
+      "session": "current"
+    }
+  ]
+}

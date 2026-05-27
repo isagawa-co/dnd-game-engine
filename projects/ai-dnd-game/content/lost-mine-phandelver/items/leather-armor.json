@@ -1,0 +1,12 @@
+{
+  "id": "leather-armor",
+  "name": "Leather Armor",
+  "type": "armor",
+  "rarity": "common",
+  "weight": 10,
+  "armor": {
+    "armor_class": 11,
+    "stealth_disadvantage": false
+  },
+  "description": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by boiling in oil. AC 11 + Dex modifier."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "iarno-albrek",
+  "name": "Iarno Albrek (Glasstaff)",
+  "size_type": "medium",
+  "alignment": "lawful evil",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 22,
+    "hit_dice": "5d8"
+  },
+  "ability_scores": {
+    "strength": 9,
+    "dexterity": 14,
+    "constitution": 11,
+    "intelligence": 17,
+    "wisdom": 12,
+    "charisma": 11
+  },
+  "saving_throws": {
+    "intelligence": 5,
+    "wisdom": 3
+  },
+  "skills": {
+    "arcana": 5,
+    "history": 5,
+    "perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": ["Common", "Draconic", "Dwarvish", "Elvish"],
+  "challenge": "2",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Spellcasting",
+      "description": "Iarno is a 4th-level spellcaster. His spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). He has the following wizard spells prepared: Cantrips (at will): light, mage hand, shocking grasp. 1st level (4 slots): charm person, magic missile, shield. 2nd level (3 slots): hold person, misty step."
+    },
+    {
+      "name": "Staff of Defense",
+      "description": "Iarno wields a staff of defense that grants him AC 13 (mage armor). He can use the staff to cast mage armor (1 charge) or shield (2 charges). The staff has 10 charges."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff (Staff of Defense)",
+      "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 - 1) bludgeoning damage.",
+      "attack_bonus": 1,
+      "damage_roll": "1d6-1",
+      "damage_type": "bludgeoning"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "anchor_timestamp": "2026-05-01T21:00:00Z",
+  "actions_count": 20,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-01T18:36:30Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:36:34Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:36:38Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:36:47Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:36:49Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:36:55Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:37:03Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:37:12Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T18:37:24Z", "tool": "Edit", "entry": "Edit: 11-randomness.md"},
+    {"timestamp": "2026-05-01T19:10:16Z", "tool": "Bash", "entry": "Bash: find docs/game-design/sections"},
+    {"timestamp": "2026-05-01T19:23:18Z", "tool": "Write", "entry": "Write: 00-loop-hierarchy.md"},
+    {"timestamp": "2026-05-01T20:24:41Z", "tool": "Write", "entry": "Write: level-0-campaign-loop.md"},
+    {"timestamp": "2026-05-01T20:24:44Z", "tool": "Bash", "entry": "Bash: find docs/game-design"},
+    {"timestamp": "2026-05-01T20:31:45Z", "tool": "Bash", "entry": "Bash: grep character docs"},
+    {"timestamp": "2026-05-01T20:31:53Z", "tool": "Bash", "entry": "Bash: ls docs/game-design/sections"},
+    {"timestamp": "2026-05-01T20:31:55Z", "tool": "Bash", "entry": "Bash: ls docs/game-design"},
+    {"timestamp": "2026-05-01T20:39:46Z", "tool": "Edit", "entry": "Edit: 15-architecture.md"},
+    {"timestamp": "2026-05-01T20:56:59Z", "tool": "Write", "entry": "Write: 12-content-corpus.md"},
+    {"timestamp": "2026-05-01T20:58:58Z", "tool": "Write", "entry": "Write: level-1-scene-loop.md"},
+    {"timestamp": "2026-05-01T20:59:48Z", "tool": "Write", "entry": "Write: level-2a-combat-subloop.md"}
+  ]
+}

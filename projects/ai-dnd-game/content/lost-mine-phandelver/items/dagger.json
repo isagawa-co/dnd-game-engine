@@ -1,0 +1,13 @@
+{
+  "id": "dagger",
+  "name": "Dagger",
+  "type": "weapon",
+  "rarity": "common",
+  "weight": 1,
+  "weapon": {
+    "damage_roll": "1d4",
+    "damage_type": "piercing",
+    "properties": ["finesse", "light", "thrown"]
+  },
+  "description": "A simple, lightweight blade useful in melee or thrown (range 20/60). Finesse allows use of Dexterity for attack and damage rolls."
+}

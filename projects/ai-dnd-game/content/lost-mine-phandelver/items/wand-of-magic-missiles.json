@@ -1,0 +1,18 @@
+{
+  "id": "wand-of-magic-missiles",
+  "name": "Wand of Magic Missiles",
+  "type": "wand",
+  "rarity": "uncommon",
+  "weight": 1,
+  "properties": {
+    "attunement_required": false
+  },
+  "magical_effect": {
+    "effect": "This wand has 7 charges. While holding it, you can expend 1 or more charges to cast the Magic Missile spell. For 1 charge, you cast the 1st-level version. You can increase the spell slot level by one for each additional charge expended. The wand regains 1d6+1 charges daily at dawn. If you expend the last charge, roll a d20; on a 1, the wand crumbles to dust.",
+    "charges": {
+      "maximum": 7,
+      "recharge_trigger": "dawn"
+    }
+  },
+  "description": "A slender wand crackling with arcane energy. It holds 7 charges for casting Magic Missile and regains 1d6+1 charges at dawn."
+}

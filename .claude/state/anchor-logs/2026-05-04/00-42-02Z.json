@@ -1,0 +1,247 @@
+{
+  "anchor_timestamp": "2026-05-04T00:42:02.664024+00:00",
+  "actions_count": 40,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T00:39:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\nfrom datetime import datet",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:55Z",
+      "tool": "Write",
+      "entry": "Write: 004-atomic-build-damage-ops.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:56Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:58Z",
+      "tool": "Write",
+      "entry": "Write: 005-atomic-build-effect-ops.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:59Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/\" 2>/dev/n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:01Z",
+      "tool": "Write",
+      "entry": "Write: 006-atomic-build-state-validation.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:02Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/campaign/ 2>",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:03Z",
+      "tool": "Write",
+      "entry": "Write: 007-atomic-build-skill.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:06Z",
+      "tool": "Write",
+      "entry": "Write: 008-atomic-test-unit.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:08Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep -i \"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:09Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:09Z",
+      "tool": "Write",
+      "entry": "Write: 009-atomic-test-integration.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:11Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/_context/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:12Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\nfrom datetime import datet",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:14Z",
+      "tool": "Write",
+      "entry": "Write: gate-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:18Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\n\nstate_file = Path(\"D:\\\\my",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:22Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/src/\" 2>/dev/null | head -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:27Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\nfrom datetime import datet",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:32Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:\\my_ai_projects\\project_test_repos\\game-dev\\tasks\\configuration\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:34Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \".claude/skills/campaign/tests\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:36Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:36Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/campaign/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:38Z",
+      "tool": "Write",
+      "entry": "Write: 001-config-build-directory.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:41Z",
+      "tool": "Write",
+      "entry": "Write: 002-config-build-balance-levers.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:43Z",
+      "tool": "Bash",
+      "entry": "Bash: test -d \".claude/skills/campaign/\" && echo \"BUILD-01: PASS\" || echo \"BUILD-01: F",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:44Z",
+      "tool": "Write",
+      "entry": "Write: 003-config-build-player-settings.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:45Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:\\\\\\\\my_ai_projects\\\\\\\\pr",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:47Z",
+      "tool": "Write",
+      "entry": "Write: 004-config-build-campaign-metadata.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:49Z",
+      "tool": "Write",
+      "entry": "Write: 005-config-build-loader.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:52Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\n\n# Read current session st",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:52Z",
+      "tool": "Write",
+      "entry": "Write: 006-config-build-skill.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:58Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/atomic-operations/\" 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:04Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep -E ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:14Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -ltr D:/my_ai_projects/project_test_repos/game-dev/.claude/state/ | grep sess",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:15Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/_test/\" 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:18Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/\" -name \"*g",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:42Z",
+      "tool": "Write",
+      "entry": "Write: encounters.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:44Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:\\\\\\\\my_ai_projects\\\\\\\\p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"from src import encounters; print('[PASS] encounters module imports ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:41:56Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nfrom src.encounters import EncounterSystem, EncounterTable, Enc",
+      "session": "current"
+    }
+  ]
+}

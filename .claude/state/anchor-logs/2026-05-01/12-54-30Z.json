@@ -1,0 +1,47 @@
+{
+  "anchor_timestamp": "2026-05-01T12:54:30Z",
+  "actions_count": 31,
+  "violations_found": 1,
+  "violations": [
+    {
+      "action_number": 5,
+      "type": "Bash foreground cd usage",
+      "pattern": "cd \"D:/...\" && env -u CLAUDECODE claude -",
+      "severity": "HIGH",
+      "rule_violated": "RULE ZERO - Anchor Violation - Foreground Bash cd Usage",
+      "notes": "Foreground bash cannot use cd — use absolute paths instead"
+    }
+  ],
+  "actions": [
+    "Bash: mkdir -p anchor-logs directory structure",
+    "Bash: Create done directories",
+    "Bash: ls -la done/004-rule* (check)",
+    "Bash: ls -1 tasks/completed/rules-engine",
+    "Bash: VIOLATION - cd D:/my_ai_projects/project_test_repos/game-dev && env -u CLAUDECODE claude -p",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 005\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 006\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 007\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 008\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 009\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 010\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 011\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 012\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 013\" 2>&1",
+    "Bash: env -u CLAUDECODE claude -p \"/kernel/execute-pipeline 014\" 2>&1",
+    "Bash: sleep 5 && ls temp/claude output directory",
+    "Bash: find /c/Users/solos/AppData/Local/Temp/claude *.output files",
+    "Bash: find tasks/completed directory structure",
+    "Bash: date -u timestamp",
+    "Bash: sleep 10 && ls tasks/completed",
+    "Bash: ls -lh tasks/completed/ai-dnd-game",
+    "Bash: find tasks/completed/ai-dnd-game",
+    "Bash: ls -1 tasks/ directory listing",
+    "Bash: ls -1 src/ directory listing",
+    "Bash: ls -la projects/ directory",
+    "Bash: find backlog and related files",
+    "Bash: ls projects/ai-dnd-game/backlog",
+    "Bash: ls projects/ai-dnd-game/src",
+    "Bash: find gate* and contract* files",
+    "Bash: ls projects/ai-dnd-game/ directory"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Player Start Settings Configuration",
+  "description": "Initial player settings including difficulty, house rules, and party composition",
+  "type": "object",
+  "required": [
+    "difficulty",
+    "house_rules",
+    "party_composition"
+  ],
+  "properties": {
+    "difficulty": {
+      "type": "string",
+      "description": "Game difficulty level",
+      "enum": ["easy", "medium", "hard", "deadly"]
+    },
+    "house_rules": {
+      "type": "array",
+      "description": "Optional house rules for gameplay",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the house rule"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of what the rule changes"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this rule is active"
+          }
+        }
+      }
+    },
+    "party_composition": {
+      "type": "object",
+      "description": "Initial party setup",
+      "properties": {
+        "party_size": {
+          "type": "integer",
+          "description": "Number of player characters",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "starting_level": {
+          "type": "integer",
+          "description": "Initial character level",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "starting_gold": {
+          "type": "number",
+          "description": "Starting gold per character"
+        }
+      }
+    }
+  }
+}

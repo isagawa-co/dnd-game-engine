@@ -1,0 +1,457 @@
+{
+  "anchor_timestamp": "2026-04-28T10:00:55Z",
+  "actions_count": 75,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T08:57:19Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:57:27Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import pandas as pd; df = pd.read_parquet('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:57:44Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import pandas as pd; r = pd.read_csv('D:/my_ai_projects/project_test_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:57:54Z",
+      "tool": "Edit",
+      "entry": "Edit: scaffold.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:58:24Z",
+      "tool": "Edit",
+      "entry": "Edit: scaffold.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:58:29Z",
+      "tool": "Edit",
+      "entry": "Edit: scaffold.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T08:58:35Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && python s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:04:53Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:04:58Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs\" -ty",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:04:59Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/state-temp",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:00Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/data\" -typ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:02Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:31Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:32Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/sk",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:44Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/person",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:05:50Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/saves\" 2>/de",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:41:12Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-hea",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:41:40Z",
+      "tool": "Write",
+      "entry": "Write: 044-domain-fix-playtest-issues.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:41:46Z",
+      "tool": "Write",
+      "entry": "Write: blocker-missing-team-packs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:41:57Z",
+      "tool": "Write",
+      "entry": "Write: major-player-id-fix.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:42:11Z",
+      "tool": "Write",
+      "entry": "Write: major-personality-mapping.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:42:27Z",
+      "tool": "Write",
+      "entry": "Write: major-trait-bugs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:42:46Z",
+      "tool": "Write",
+      "entry": "Write: minor-pipeline-gaps.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:49:15Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/teams/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:49:16Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/player",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:49:17Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/packs/person",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:49:32Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import json; teams=json.load(open('D:/my_ai_projects/project_test_rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:50:10Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/fix-playtest-issue",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:50:37Z",
+      "tool": "Write",
+      "entry": "Write: gate-contract.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:50:59Z",
+      "tool": "Write",
+      "entry": "Write: 000-index.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:51:14Z",
+      "tool": "Write",
+      "entry": "Write: 001-build-fix-trait-bugs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:51:20Z",
+      "tool": "Write",
+      "entry": "Write: 002-build-add-sack-rate-modifier.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:51:33Z",
+      "tool": "Write",
+      "entry": "Write: 003-build-fix-KC-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:02Z",
+      "tool": "Write",
+      "entry": "Write: 004-build-fix-BUF-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:06Z",
+      "tool": "Write",
+      "entry": "Write: 005-build-fix-PHI-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:10Z",
+      "tool": "Write",
+      "entry": "Write: 006-build-fix-SF-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:13Z",
+      "tool": "Write",
+      "entry": "Write: 007-build-fix-DAL-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:17Z",
+      "tool": "Write",
+      "entry": "Write: 008-build-fix-BAL-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:53:20Z",
+      "tool": "Write",
+      "entry": "Write: 009-build-fix-DET-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:13Z",
+      "tool": "Write",
+      "entry": "Write: 010-build-create-ARI-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:20Z",
+      "tool": "Write",
+      "entry": "Write: 011-build-create-ATL-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:23Z",
+      "tool": "Write",
+      "entry": "Write: 012-build-create-CAR-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:25Z",
+      "tool": "Write",
+      "entry": "Write: 013-build-create-CHI-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:28Z",
+      "tool": "Write",
+      "entry": "Write: 014-build-create-CIN-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:30Z",
+      "tool": "Write",
+      "entry": "Write: 015-build-create-CLE-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:33Z",
+      "tool": "Write",
+      "entry": "Write: 016-build-create-DEN-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:35Z",
+      "tool": "Write",
+      "entry": "Write: 017-build-create-GB-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:38Z",
+      "tool": "Write",
+      "entry": "Write: 018-build-create-HOU-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:43Z",
+      "tool": "Write",
+      "entry": "Write: 019-build-create-IND-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:45Z",
+      "tool": "Write",
+      "entry": "Write: 020-build-create-JAX-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:48Z",
+      "tool": "Write",
+      "entry": "Write: 021-build-create-LAC-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:50Z",
+      "tool": "Write",
+      "entry": "Write: 022-build-create-LAR-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:54:53Z",
+      "tool": "Write",
+      "entry": "Write: 023-build-create-LV-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:39Z",
+      "tool": "Write",
+      "entry": "Write: 024-build-create-MIA-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:42Z",
+      "tool": "Write",
+      "entry": "Write: 025-build-create-MIN-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:44Z",
+      "tool": "Write",
+      "entry": "Write: 026-build-create-NE-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:47Z",
+      "tool": "Write",
+      "entry": "Write: 027-build-create-NO-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:49Z",
+      "tool": "Write",
+      "entry": "Write: 028-build-create-NYG-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:52Z",
+      "tool": "Write",
+      "entry": "Write: 029-build-create-NYJ-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:54Z",
+      "tool": "Write",
+      "entry": "Write: 030-build-create-PIT-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:55:56Z",
+      "tool": "Write",
+      "entry": "Write: 031-build-create-SEA-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:09Z",
+      "tool": "Write",
+      "entry": "Write: 032-build-create-TB-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:12Z",
+      "tool": "Write",
+      "entry": "Write: 033-build-create-TEN-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:14Z",
+      "tool": "Write",
+      "entry": "Write: 034-build-create-WAS-pack.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:22Z",
+      "tool": "Write",
+      "entry": "Write: 035-build-add-clock-formula.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:27Z",
+      "tool": "Write",
+      "entry": "Write: 036-build-add-penalty-step.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:31Z",
+      "tool": "Write",
+      "entry": "Write: 037-build-add-injury-step.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:56:39Z",
+      "tool": "Write",
+      "entry": "Write: 038-test-validate-all-packs.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T09:58:11Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -l \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:27Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && grep -q ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:28Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && grep -q ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:29Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && grep -q ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:39Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\ndata = json.load(open('D:/my_ai_projects/project_test_re",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T10:00:44Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "anchor_timestamp": "2026-05-01T12:16:30Z",
+  "actions_count": 23,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T11:04:36Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"\" > /d/my_ai_projects/project_test_repos/game-dev/.claude/state/actions.js",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:04:37Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/tasks/character-system\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:04:40Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:04:46Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:03Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport os\nimport json\n\n# Create tasks/character-system director",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:06Z",
+      "tool": "Bash",
+      "entry": "Bash: cat > /tmp/execute_backlogs.sh << 'EOF'\n#!/bin/bash\nREPO=\"D:/my_ai_projects/proj",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:13Z",
+      "tool": "Write",
+      "entry": "Write: 001-create-entity-tiers-base-classes.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:19Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\n\n# Update session state\nwith open(\"D:/my_ai_project",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:27Z",
+      "tool": "Write",
+      "entry": "Write: entity_tiers.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:30Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/tasks/ 2>/dev/null | head -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:34Z",
+      "tool": "Bash",
+      "entry": "Bash: find D:/my_ai_projects/project_test_repos/game-dev -type d -name \"ai-dnd-game\" 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:36Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'EOF'\nfrom src.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:37Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/tasks/completed/ai-dnd-game",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:40Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\n\n# Update workflow to mark task 001 as completed\nwi",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:44Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/tasks/ 2>/dev/null | grep -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:47Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/tasks/character-system/ 2>/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:47Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\n\nwith open(\"D:/my_ai_projects/project_test_repos/ga",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:51Z",
+      "tool": "Bash",
+      "entry": "Bash: ps aux | grep execute_backlogs && echo \"Process running\" || echo \"No process fou",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:05:59Z",
+      "tool": "Bash",
+      "entry": "Bash: \n# Check file exists\ntest -f \"D:/my_ai_projects/project_test_repos/game-dev/src/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:06:03Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/tasks/character-system/\"*.md 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:06:04Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:06:13Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom datetime import datetime\n\n# Update session sta",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:07:05Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

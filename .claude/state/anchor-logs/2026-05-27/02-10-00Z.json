@@ -1,0 +1,14 @@
+{
+  "anchor_timestamp": "2026-05-27T02:10:00Z",
+  "actions_count": 7,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-27T00:51:51Z", "tool": "Bash", "entry": "Bash: python -c hashlib protocol hash"},
+    {"timestamp": "2026-05-27T00:52:09Z", "tool": "Write", "entry": "Write: orc.json"},
+    {"timestamp": "2026-05-27T00:52:14Z", "tool": "Write", "entry": "Write: drow.json"},
+    {"timestamp": "2026-05-27T00:52:18Z", "tool": "Write", "entry": "Write: redbrand-ruffian.json"},
+    {"timestamp": "2026-05-27T00:52:24Z", "tool": "Write", "entry": "Write: redbrand-mage.json"},
+    {"timestamp": "2026-05-27T00:52:49Z", "tool": "Bash", "entry": "Bash: python3 validation script"},
+    {"timestamp": "2026-05-27T00:53:53Z", "tool": "Bash", "entry": "Bash: python -c hashlib protocol hash"}
+  ]
+}

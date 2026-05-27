@@ -1,0 +1,332 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Condition Application Contract",
+  "description": "Contract for applying conditions to entities during combat/encounters. Handles immunity checks, concentration conflicts, and stacking rules.",
+  "version": "1.0",
+  "operation": "condition_application",
+  "input_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Condition Application Input",
+    "type": "object",
+    "properties": {
+      "entity_id": {
+        "type": "string",
+        "description": "Target entity (character, monster, etc.)"
+      },
+      "entity_condition_immunities": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Conditions entity is immune to (e.g., charmed, frightened)"
+      },
+      "entity_current_conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "condition_id": { "type": "string" },
+            "source": { "type": "string" },
+            "duration_remaining": { "type": "integer", "minimum": 1 },
+            "requires_concentration": { "type": "boolean" }
+          },
+          "required": ["condition_id", "source", "duration_remaining", "requires_concentration"]
+        },
+        "description": "Conditions currently on entity"
+      },
+      "entity_concentrating": {
+        "type": "boolean",
+        "description": "Is entity currently concentrating on a spell/effect?"
+      },
+      "condition_to_apply": {
+        "type": "object",
+        "properties": {
+          "condition_id": { "type": "string" },
+          "name": { "type": "string" },
+          "requires_concentration": { "type": "boolean" },
+          "breaks_concentration": { "type": "boolean" },
+          "duration": { "type": "integer", "minimum": 1, "description": "Duration in rounds" },
+          "stacking": { "type": "string", "enum": ["stack", "no_stack", "replace"] }
+        },
+        "required": ["condition_id", "name", "duration", "stacking"]
+      },
+      "source_spell_or_effect": {
+        "type": "string",
+        "description": "ID of spell/ability/effect applying this condition"
+      }
+    },
+    "required": [
+      "entity_id", "entity_condition_immunities", "entity_current_conditions",
+      "entity_concentrating", "condition_to_apply", "source_spell_or_effect"
+    ],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Condition Application Output",
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "true if condition was applied, false if rejected"
+      },
+      "reason": {
+        "type": "string",
+        "enum": ["applied", "immune", "invalid"],
+        "description": "Why was condition accepted/rejected"
+      },
+      "condition_immune": {
+        "type": "boolean",
+        "description": "true if target is immune to this condition"
+      },
+      "concentration_lost": {
+        "type": "boolean",
+        "description": "true if entity was concentrating and condition breaks concentration"
+      },
+      "entity_conditions_after": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "condition_id": { "type": "string" },
+            "source": { "type": "string" },
+            "duration_remaining": { "type": "integer", "minimum": 1 },
+            "requires_concentration": { "type": "boolean" }
+          },
+          "required": ["condition_id", "source", "duration_remaining", "requires_concentration"]
+        },
+        "description": "Entity condition list after application"
+      }
+    },
+    "required": ["success", "reason", "condition_immune", "concentration_lost", "entity_conditions_after"],
+    "additionalProperties": false
+  },
+  "validation_rules": [
+    {
+      "rule_id": "COND-001",
+      "description": "Check condition immunity before applying",
+      "validation": "if condition_to_apply.condition_id in entity_condition_immunities: apply_failed = true",
+      "error_message": "Target is immune to this condition"
+    },
+    {
+      "rule_id": "COND-002",
+      "description": "Concentration-breaking effect ends current concentration",
+      "validation": "if condition_to_apply.breaks_concentration AND entity_concentrating: end_concentration()",
+      "error_message": "N/A (automatic)"
+    },
+    {
+      "rule_id": "COND-003",
+      "description": "Condition stacking: 'no_stack' means reapply overwrites duration",
+      "validation": "if stacking == no_stack AND condition already present: reset duration to new_duration, update source",
+      "error_message": "N/A (rule)"
+    },
+    {
+      "rule_id": "COND-004",
+      "description": "Condition stacking: 'stack' means multiple instances can coexist",
+      "validation": "if stacking == stack: add new instance to conditions array",
+      "error_message": "N/A (rule)"
+    },
+    {
+      "rule_id": "COND-005",
+      "description": "Condition stacking: 'replace' means remove old instances then add new",
+      "validation": "if stacking == replace: remove all instances of this condition_id, then add new",
+      "error_message": "N/A (rule)"
+    },
+    {
+      "rule_id": "COND-006",
+      "description": "Duration must be at least 1 round",
+      "validation": "condition.duration_remaining >= 1",
+      "error_message": "Duration must be at least 1 round"
+    }
+  ],
+  "stacking_modes": {
+    "no_stack": "Most conditions (restrained, prone, stunned). If already present: update duration and source. Otherwise: add new.",
+    "stack": "Rare conditions that can apply multiple times. Always adds a new instance to the array.",
+    "replace": "Conditions that replace all prior instances. Remove all matching condition_id, then add new."
+  },
+  "examples": [
+    {
+      "name": "Apply Restrained (target not immune, no concentration conflict)",
+      "input": {
+        "entity_id": "goblin-1",
+        "entity_condition_immunities": ["charmed", "frightened"],
+        "entity_current_conditions": [],
+        "entity_concentrating": false,
+        "condition_to_apply": {
+          "condition_id": "restrained",
+          "name": "Restrained",
+          "requires_concentration": false,
+          "breaks_concentration": false,
+          "duration": 3,
+          "stacking": "no_stack"
+        },
+        "source_spell_or_effect": "web-spell"
+      },
+      "execution": "Check immunity: restrained NOT in immunities. No concentration to break. No existing restrained. Add new condition.",
+      "output": {
+        "success": true,
+        "reason": "applied",
+        "condition_immune": false,
+        "concentration_lost": false,
+        "entity_conditions_after": [
+          { "condition_id": "restrained", "source": "web-spell", "duration_remaining": 3, "requires_concentration": false }
+        ]
+      }
+    },
+    {
+      "name": "Apply Charmed (target is immune)",
+      "input": {
+        "entity_id": "paladin-1",
+        "entity_condition_immunities": ["charmed", "frightened"],
+        "entity_current_conditions": [],
+        "entity_concentrating": false,
+        "condition_to_apply": {
+          "condition_id": "charmed",
+          "name": "Charmed",
+          "requires_concentration": false,
+          "breaks_concentration": false,
+          "duration": 4,
+          "stacking": "no_stack"
+        },
+        "source_spell_or_effect": "charm-person"
+      },
+      "execution": "Check immunity: charmed IS in immunities. Reject application.",
+      "output": {
+        "success": false,
+        "reason": "immune",
+        "condition_immune": true,
+        "concentration_lost": false,
+        "entity_conditions_after": []
+      }
+    },
+    {
+      "name": "Apply Stunned (breaks concentration on wizard)",
+      "input": {
+        "entity_id": "wizard-1",
+        "entity_condition_immunities": [],
+        "entity_current_conditions": [
+          { "condition_id": "concentrating", "source": "magic-missile", "duration_remaining": 5, "requires_concentration": true }
+        ],
+        "entity_concentrating": true,
+        "condition_to_apply": {
+          "condition_id": "stunned",
+          "name": "Stunned",
+          "requires_concentration": false,
+          "breaks_concentration": true,
+          "duration": 1,
+          "stacking": "no_stack"
+        },
+        "source_spell_or_effect": "power-word-stun"
+      },
+      "execution": "Check immunity: not immune. Check concentration: breaks_concentration=true AND entity_concentrating=true. End concentration (remove concentrating condition). Add stunned.",
+      "output": {
+        "success": true,
+        "reason": "applied",
+        "condition_immune": false,
+        "concentration_lost": true,
+        "entity_conditions_after": [
+          { "condition_id": "stunned", "source": "power-word-stun", "duration_remaining": 1, "requires_concentration": false }
+        ]
+      }
+    },
+    {
+      "name": "Apply Prone with no_stack (overwrite existing duration)",
+      "input": {
+        "entity_id": "rogue-1",
+        "entity_condition_immunities": [],
+        "entity_current_conditions": [
+          { "condition_id": "prone", "source": "trip-attack", "duration_remaining": 2, "requires_concentration": false }
+        ],
+        "entity_concentrating": false,
+        "condition_to_apply": {
+          "condition_id": "prone",
+          "name": "Prone",
+          "requires_concentration": false,
+          "breaks_concentration": false,
+          "duration": 5,
+          "stacking": "no_stack"
+        },
+        "source_spell_or_effect": "grease-spell"
+      },
+      "execution": "Check immunity: not immune. No concentration break. Stacking=no_stack AND prone already present: reset duration to 5, update source to grease-spell.",
+      "output": {
+        "success": true,
+        "reason": "applied",
+        "condition_immune": false,
+        "concentration_lost": false,
+        "entity_conditions_after": [
+          { "condition_id": "prone", "source": "grease-spell", "duration_remaining": 5, "requires_concentration": false }
+        ]
+      }
+    },
+    {
+      "name": "Apply stacking condition (multiple instances)",
+      "input": {
+        "entity_id": "fighter-1",
+        "entity_condition_immunities": [],
+        "entity_current_conditions": [
+          { "condition_id": "exhaustion", "source": "forced-march", "duration_remaining": 10, "requires_concentration": false }
+        ],
+        "entity_concentrating": false,
+        "condition_to_apply": {
+          "condition_id": "exhaustion",
+          "name": "Exhaustion",
+          "requires_concentration": false,
+          "breaks_concentration": false,
+          "duration": 10,
+          "stacking": "stack"
+        },
+        "source_spell_or_effect": "sickening-radiance"
+      },
+      "execution": "Check immunity: not immune. No concentration break. Stacking=stack: add new instance alongside existing.",
+      "output": {
+        "success": true,
+        "reason": "applied",
+        "condition_immune": false,
+        "concentration_lost": false,
+        "entity_conditions_after": [
+          { "condition_id": "exhaustion", "source": "forced-march", "duration_remaining": 10, "requires_concentration": false },
+          { "condition_id": "exhaustion", "source": "sickening-radiance", "duration_remaining": 10, "requires_concentration": false }
+        ]
+      }
+    },
+    {
+      "name": "Apply replace condition (remove old, add new)",
+      "input": {
+        "entity_id": "cleric-1",
+        "entity_condition_immunities": [],
+        "entity_current_conditions": [
+          { "condition_id": "blessed", "source": "bless-spell-old", "duration_remaining": 2, "requires_concentration": false },
+          { "condition_id": "blessed", "source": "bless-spell-other", "duration_remaining": 4, "requires_concentration": false }
+        ],
+        "entity_concentrating": false,
+        "condition_to_apply": {
+          "condition_id": "blessed",
+          "name": "Blessed",
+          "requires_concentration": false,
+          "breaks_concentration": false,
+          "duration": 10,
+          "stacking": "replace"
+        },
+        "source_spell_or_effect": "bless-spell-new"
+      },
+      "execution": "Check immunity: not immune. No concentration break. Stacking=replace: remove all blessed instances, add new blessed.",
+      "output": {
+        "success": true,
+        "reason": "applied",
+        "condition_immune": false,
+        "concentration_lost": false,
+        "entity_conditions_after": [
+          { "condition_id": "blessed", "source": "bless-spell-new", "duration_remaining": 10, "requires_concentration": false }
+        ]
+      }
+    }
+  ],
+  "concentration_rules": {
+    "breaks_concentration": "If condition_to_apply.breaks_concentration=true AND entity_concentrating=true: remove all conditions with requires_concentration=true, set concentration_lost=true",
+    "requires_concentration": "Stored in condition entry for future reference (e.g., when caster takes damage later)",
+    "damage_concentration_loss": "Handled separately in damage resolution, not in this contract"
+  },
+  "dependencies": {
+    "uses": [],
+    "used_by": ["combat_loop", "scene_loop"]
+  }
+}

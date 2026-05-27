@@ -1,0 +1,19 @@
+{
+  "id": "weapon-of-warning",
+  "name": "Weapon of Warning",
+  "type": "weapon",
+  "rarity": "uncommon",
+  "weight": 3,
+  "properties": {
+    "attunement_required": true
+  },
+  "weapon": {
+    "damage_roll": "1d8",
+    "damage_type": "slashing",
+    "properties": ["versatile"]
+  },
+  "magical_effect": {
+    "effect": "While the weapon is on your person, you have advantage on initiative rolls. In addition, you and any of your companions within 30 feet can't be surprised."
+  },
+  "description": "This magic weapon warns you of danger. While the weapon is on your person, you have advantage on initiative rolls and cannot be surprised."
+}

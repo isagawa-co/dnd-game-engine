@@ -1,0 +1,55 @@
+{
+  "anchor_timestamp": "2026-05-04T00:58:32.296142Z",
+  "actions_count": 8,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T00:57:54Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-loop/\" | grep -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:57:54Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"\" > \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/actions.j",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:57:57Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test_r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:58:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\nfrom datetime import datet",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:58:05Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE bash \"D:\\\\my_ai_projects\\\\project_test_repos\\\\game-dev\\\\run-ta",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:58:15Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:58:27Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYTHON_EOF'\nimport hashlib\nwith open(\"D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:58:29Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

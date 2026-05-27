@@ -1,0 +1,151 @@
+{
+  "anchor_timestamp": "2026-05-04T08:20:00Z",
+  "actions_count": 24,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T01:51:07Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYTHON'\nimport json\nfrom datetime import datetime\nimport os\n\n# Read ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:51:42Z",
+      "tool": "Edit",
+      "entry": "Edit: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:51:50Z",
+      "tool": "Edit",
+      "entry": "Edit: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:52:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:52:04Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:52:16Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:52:26Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -n \"test_failure\\|Test Failure\" \"D:/my_ai_projects/project_test_repos/game-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:53:01Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:53:34Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:/my_ai_projects/project_test_repos/game-dev/run-task.sh\" \"D:/my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:53:46Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep -E ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:53:51Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-dnd-game/.claude/skills/campaign/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:53:53Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-dnd-game/.claude/skills/\" 2>&1 |",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:26Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:26Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:27Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:27Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:28Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:31Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lt \"D:\\my_ai_projects\\project_test_repos\\game-dev\\.claude\\state\" | grep -i \"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:36Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -ltr \"D:\\my_ai_projects\\project_test_repos\\game-dev\\.claude\\state\" | tail -20",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:\\my_ai_projects\\project_test_repos\\game-dev\\tasks\\campaign-pack-loader\\010",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:18:44Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.sh\" \"D:\\my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:19:21Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:19:29Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 30 && cat \"D:\\my_ai_projects\\project_test_repos\\game-dev\\.claude\\state\\gam",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:19:33Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

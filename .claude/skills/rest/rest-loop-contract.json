@@ -1,0 +1,92 @@
+{
+  "name": "rest-loop-contract",
+  "version": "1.0",
+  "description": "Input/output contract for rest loop: long rest, short rest, recovery mechanics",
+
+  "input_schema": {
+    "rest_type": "long_rest|short_rest",
+    "party_location": "string",
+    "location_safety": "safe_inn|adventurers_guild|camp_fire|dangerous_area",
+    "duration_hours": "int (8 for long rest, 1 for short rest)",
+    "party_pcs": [
+      {
+        "id": "string",
+        "hp": "int",
+        "max_hp": "int",
+        "level": "int",
+        "hit_die": "d6|d8|d10|d12",
+        "con_modifier": "int",
+        "spell_slots": { "level_N": "int" },
+        "max_spell_slots": { "level_N": "int" },
+        "hit_dice_remaining": "int",
+        "conditions": ["string"]
+      }
+    ]
+  },
+
+  "long_rest_output": {
+    "rest_type": "long_rest",
+    "success": "bool",
+    "result_code": "long_rest_completed|interrupted_rest|rest_refused",
+    "duration_hours": 8,
+    "party_recovery": {
+      "<pc_id>": {
+        "hp_before": "int",
+        "hp_restored": "int",
+        "hp_after": "int",
+        "spell_slots_restored": { "level_N": "int" },
+        "hit_dice_restored": { "remaining": "int", "recovered": "int" },
+        "conditions_removed": ["string"],
+        "conditions_remaining": ["string"]
+      }
+    },
+    "cost_gold": "int",
+    "time_elapsed": 480
+  },
+
+  "short_rest_output": {
+    "rest_type": "short_rest",
+    "success": "bool",
+    "result_code": "short_rest_completed|interrupted_rest",
+    "duration_hours": 1,
+    "party_recovery": {
+      "<pc_id>": {
+        "hp_before": "int",
+        "hp_restored": "int",
+        "hp_after": "int",
+        "hit_die_rolled": {
+          "die_type": "string",
+          "roll": "int",
+          "con_modifier": "int",
+          "total": "int"
+        }
+      }
+    },
+    "time_elapsed": 60
+  },
+
+  "outcome_codes": {
+    "long_rest_completed": "Full 8 hours, full recovery for all PCs",
+    "short_rest_completed": "Full 1 hour, partial recovery (HP via hit die only)",
+    "interrupted_rest": "Rest interrupted before completion, no recovery applied",
+    "rest_refused": "Party chooses not to rest, no recovery"
+  },
+
+  "location_safety": {
+    "safe_inn": { "interruption_chance": 0.0, "cost_gold": 5 },
+    "adventurers_guild": { "interruption_chance": 0.05, "cost_gold": 2 },
+    "camp_fire": { "interruption_chance": 0.20, "cost_gold": 0 },
+    "dangerous_area": { "interruption_chance": 0.50, "cost_gold": 0 }
+  },
+
+  "condition_removal_rules": {
+    "long_rest_removes": ["exhaustion", "poisoned", "stunned", "charmed"],
+    "long_rest_keeps": ["blinded", "frightened", "unconscious"],
+    "short_rest_removes": []
+  },
+
+  "hit_dice_recovery": {
+    "long_rest": "Restore all hit dice up to level amount",
+    "short_rest": "Can roll 1 hit die per short rest, HP restored = die roll + CON modifier (min 0)"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "anchor_timestamp": "2026-05-02T02:57:27.105854+00:00",
+  "actions_count": 3,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-02T02:57:18Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:57:22Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 180 && echo \"Final comprehensive check at 3+ minutes...\" && for item in 00",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-02T02:57:25Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai-projects-project-test-rep",
+      "session": "current"
+    }
+  ]
+}

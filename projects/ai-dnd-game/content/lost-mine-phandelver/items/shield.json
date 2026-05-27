@@ -1,0 +1,11 @@
+{
+  "id": "shield",
+  "name": "Shield",
+  "type": "shield",
+  "rarity": "common",
+  "weight": 6,
+  "armor": {
+    "armor_class": 12
+  },
+  "description": "A wooden or metal shield carried in one hand. Wielding a shield increases your AC by 2."
+}

@@ -1,0 +1,115 @@
+{
+  "anchor_timestamp": "2026-05-01T11:33:13.242694+00:00",
+  "actions_count": 18,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T11:31:33Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:31:37Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && test -f tests/test_character",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:31:38Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:31:39Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && grep \"def test\" tests/test_c",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:31:53Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && find tasks/character-system ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:31:58Z",
+      "tool": "Edit",
+      "entry": "Edit: rules.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:02Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c \"import hashlib; ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:04Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -1 tasks/character-system",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:09Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -la tasks/character-syste",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:10Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport os\ni",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:13Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && PYTHONIOENCODING=utf-8 pytho",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:21Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -1 tasks/rules-engine/*.m",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:25Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && test -f tasks/rules-engine/g",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:27Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:51Z",
+      "tool": "Bash",
+      "entry": "Bash: tail -100 \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai-projects-project-te",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:32:58Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p /d/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-logs",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:33:02Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 -c \"import hashlib; ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:33:11Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -1 tasks/rules-engine/ | ",
+      "session": "current"
+    }
+  ]
+}

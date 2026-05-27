@@ -1,0 +1,4012 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-05-27T12:53:26.826809+00:00",
+  "total_classes": 14,
+  "sources": [
+    "PHB",
+    "Tasha's",
+    "UA"
+  ],
+  "classes": [
+    {
+      "id": "barbarian",
+      "name": "Barbarian",
+      "hit_die": "d12",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "strength",
+          "constitution"
+        ],
+        "skills": [
+          "Animal Handling",
+          "Athletics",
+          "Intimidation",
+          "Nature",
+          "Perception",
+          "Survival"
+        ],
+        "weapons": [
+          "simple weapons",
+          "martial weapons"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Rage",
+          "level": 1,
+          "description": "Enter a rage as a bonus action. While raging, gain advantage on Strength checks and saves, bonus rage damage on melee attacks using Strength, and resistance to bludgeoning, piercing, and slashing damage. Rages per long rest: 2 (lvl 1), 3 (lvl 3), 4 (lvl 6), 5 (lvl 12), 6 (lvl 17), unlimited (lvl 20)."
+        },
+        {
+          "name": "Unarmored Defense",
+          "level": 1,
+          "description": "While not wearing armor, AC equals 10 + Dexterity modifier + Constitution modifier. You can use a shield and still gain this benefit."
+        },
+        {
+          "name": "Reckless Attack",
+          "level": 2,
+          "description": "When you make your first attack on your turn, you can attack recklessly, gaining advantage on melee weapon attack rolls using Strength, but attack rolls against you have advantage until your next turn."
+        },
+        {
+          "name": "Danger Sense",
+          "level": 2,
+          "description": "Advantage on Dexterity saving throws against effects you can see (traps, spells). Must not be blinded, deafened, or incapacitated."
+        },
+        {
+          "name": "Primal Path",
+          "level": 3,
+          "description": "Choose a primal path (Berserker or Totem Warrior). Grants features at 3rd, 6th, 10th, and 14th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1 (max 20). Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice when you take the Attack action on your turn."
+        },
+        {
+          "name": "Fast Movement",
+          "level": 5,
+          "description": "Speed increases by 10 feet while not wearing heavy armor."
+        },
+        {
+          "name": "Feral Instinct",
+          "level": 7,
+          "description": "Advantage on initiative rolls. If surprised, you can act normally on first turn if you enter rage first."
+        },
+        {
+          "name": "Brutal Critical",
+          "level": 9,
+          "description": "Roll one additional weapon damage die on critical hits. Two dice at 13th, three at 17th."
+        },
+        {
+          "name": "Relentless Rage",
+          "level": 11,
+          "description": "If you drop to 0 HP while raging, make DC 10 Constitution save to drop to 1 HP instead. DC increases by 5 each use."
+        },
+        {
+          "name": "Persistent Rage",
+          "level": 15,
+          "description": "Rage ends early only if you fall unconscious or choose to end it."
+        },
+        {
+          "name": "Indomitable Might",
+          "level": 18,
+          "description": "If Strength check total is less than Strength score, use that score instead."
+        },
+        {
+          "name": "Primal Champion",
+          "level": 20,
+          "description": "Strength and Constitution increase by 4 (max 24)."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "bard",
+      "name": "Bard",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "dexterity",
+          "charisma"
+        ],
+        "skills": [
+          "Acrobatics",
+          "Animal Handling",
+          "Arcana",
+          "Athletics",
+          "Deception",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Investigation",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Performance",
+          "Persuasion",
+          "Religion",
+          "Sleight of Hand",
+          "Stealth",
+          "Survival"
+        ],
+        "weapons": [
+          "simple weapons",
+          "hand crossbows",
+          "longswords",
+          "rapiers",
+          "shortswords"
+        ],
+        "armor": [
+          "light armor"
+        ]
+      },
+      "spellcasting": {
+        "ability": "charisma",
+        "spell_save_dc": "8 + proficiency bonus + Charisma modifier",
+        "spell_attack_bonus": "proficiency bonus + Charisma modifier",
+        "cantrips_known_by_level": [
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5
+        ],
+        "spells_known_by_level": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          15,
+          16,
+          18,
+          19,
+          19,
+          20,
+          22,
+          22,
+          22
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "You cast bard spells using Charisma as your spellcasting ability."
+        },
+        {
+          "name": "Bardic Inspiration",
+          "level": 1,
+          "description": "As a bonus action, give one creature within 60 feet a Bardic Inspiration die (d6, increasing to d8 at 5th, d10 at 10th, d12 at 15th). Uses equal Charisma modifier per long rest (short rest recovery at 5th level)."
+        },
+        {
+          "name": "Jack of All Trades",
+          "level": 2,
+          "description": "Add half your proficiency bonus (rounded down) to any ability check that does not already include your proficiency bonus."
+        },
+        {
+          "name": "Song of Rest",
+          "level": 2,
+          "description": "During a short rest, allies who spend Hit Dice regain extra 1d6 HP. Increases to 1d8 (9th), 1d10 (13th), 1d12 (17th)."
+        },
+        {
+          "name": "Bard College",
+          "level": 3,
+          "description": "Choose College of Lore or College of Valor. Grants features at 3rd, 6th, and 14th level."
+        },
+        {
+          "name": "Expertise",
+          "level": 3,
+          "description": "Double proficiency bonus for two chosen skill proficiencies. Choose two more at 10th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Font of Inspiration",
+          "level": 5,
+          "description": "Regain all Bardic Inspiration uses on short or long rest."
+        },
+        {
+          "name": "Countercharm",
+          "level": 6,
+          "description": "As an action, start a performance lasting until end of next turn. You and allies within 30 feet have advantage on saves against being frightened or charmed."
+        },
+        {
+          "name": "Magical Secrets",
+          "level": 10,
+          "description": "Choose two spells from any class. Additional spells at 14th and 18th level."
+        },
+        {
+          "name": "Superior Inspiration",
+          "level": 20,
+          "description": "When you roll initiative with no Bardic Inspiration uses left, regain one use."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "cleric",
+      "name": "Cleric",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "wisdom",
+          "charisma"
+        ],
+        "skills": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion"
+        ],
+        "weapons": [
+          "simple weapons"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ]
+      },
+      "spellcasting": {
+        "ability": "wisdom",
+        "spell_save_dc": "8 + proficiency bonus + Wisdom modifier",
+        "spell_attack_bonus": "proficiency bonus + Wisdom modifier",
+        "cantrips_known_by_level": [
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "You cast cleric spells using Wisdom. You prepare spells from the entire cleric spell list each day."
+        },
+        {
+          "name": "Divine Domain",
+          "level": 1,
+          "description": "Choose a divine domain (Knowledge, Life, Light, Nature, Tempest, Trickery, War). Grants domain spells and features at 1st, 2nd, 6th, 8th, and 17th level."
+        },
+        {
+          "name": "Channel Divinity",
+          "level": 2,
+          "description": "Channel divine energy for magical effects. Start with Turn Undead plus one domain effect. Uses: 1 (lvl 2), 2 (lvl 6), 3 (lvl 18)."
+        },
+        {
+          "name": "Turn Undead",
+          "level": 2,
+          "description": "As an action, each undead within 30 feet must make Wisdom save or be turned for 1 minute."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Destroy Undead",
+          "level": 5,
+          "description": "Undead that fail Turn Undead save are destroyed if CR is at or below threshold: 1/2 (5th), 1 (8th), 2 (11th), 3 (14th), 4 (17th)."
+        },
+        {
+          "name": "Divine Intervention",
+          "level": 10,
+          "description": "Roll percentile dice; if result <= cleric level, deity intervenes. Automatic at 20th level."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "intelligence",
+          "wisdom"
+        ],
+        "skills": [
+          "Arcana",
+          "Animal Handling",
+          "Insight",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Religion",
+          "Survival"
+        ],
+        "weapons": [
+          "clubs",
+          "daggers",
+          "darts",
+          "javelins",
+          "maces",
+          "quarterstaffs",
+          "scimitars",
+          "sickles",
+          "slings",
+          "spears"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ]
+      },
+      "spellcasting": {
+        "ability": "wisdom",
+        "spell_save_dc": "8 + proficiency bonus + Wisdom modifier",
+        "spell_attack_bonus": "proficiency bonus + Wisdom modifier",
+        "cantrips_known_by_level": [
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Druidic",
+          "level": 1,
+          "description": "You know Druidic, the secret language of druids."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "You cast druid spells using Wisdom. You prepare spells from the entire druid spell list each day."
+        },
+        {
+          "name": "Wild Shape",
+          "level": 2,
+          "description": "As an action, assume the shape of a beast you have seen. Twice per short rest. Max CR: 1/4 (2nd, no fly/swim), 1/2 (4th, no fly), 1 (8th)."
+        },
+        {
+          "name": "Druid Circle",
+          "level": 2,
+          "description": "Choose Circle of the Land or Circle of the Moon. Grants features at 2nd, 6th, 10th, and 14th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Timeless Body",
+          "level": 18,
+          "description": "For every 10 years that pass, your body ages only 1 year."
+        },
+        {
+          "name": "Beast Spells",
+          "level": 18,
+          "description": "Cast druid spells while in Wild Shape (somatic and verbal only, no material components)."
+        },
+        {
+          "name": "Archdruid",
+          "level": 20,
+          "description": "Unlimited Wild Shape uses. Ignore verbal, somatic, and non-costly material components."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "fighter",
+      "name": "Fighter",
+      "hit_die": "d10",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "strength",
+          "constitution"
+        ],
+        "skills": [
+          "Acrobatics",
+          "Animal Handling",
+          "Athletics",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Perception",
+          "Survival"
+        ],
+        "weapons": [
+          "simple weapons",
+          "martial weapons"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "heavy armor",
+          "shields"
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Fighting Style",
+          "level": 1,
+          "description": "Choose one: Archery (+2 ranged attack), Defense (+1 AC in armor), Dueling (+2 damage one-handed), Great Weapon Fighting (reroll 1s/2s), Protection (impose disadvantage with shield), Two-Weapon Fighting (add ability mod to off-hand)."
+        },
+        {
+          "name": "Second Wind",
+          "level": 1,
+          "description": "Bonus action to regain 1d10 + fighter level HP. Once per short or long rest."
+        },
+        {
+          "name": "Action Surge",
+          "level": 2,
+          "description": "Take one additional action on your turn. Once per short rest. Twice at 17th level."
+        },
+        {
+          "name": "Martial Archetype",
+          "level": 3,
+          "description": "Choose Champion, Battle Master, or Eldritch Knight. Grants features at 3rd, 7th, 10th, 15th, and 18th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Fighters get this at levels 4, 6, 8, 12, 14, 16, 19."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice with Attack action. Three attacks at 11th, four at 20th."
+        },
+        {
+          "name": "Indomitable",
+          "level": 9,
+          "description": "Reroll a failed saving throw (must use new roll). Once per long rest; twice at 13th, three times at 17th."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "monk",
+      "name": "Monk",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "strength",
+          "dexterity"
+        ],
+        "skills": [
+          "Acrobatics",
+          "Athletics",
+          "History",
+          "Insight",
+          "Religion",
+          "Stealth"
+        ],
+        "weapons": [
+          "simple weapons",
+          "shortswords"
+        ],
+        "armor": []
+      },
+      "class_features": [
+        {
+          "name": "Unarmored Defense",
+          "level": 1,
+          "description": "Without armor or shield, AC = 10 + Dexterity modifier + Wisdom modifier."
+        },
+        {
+          "name": "Martial Arts",
+          "level": 1,
+          "description": "Use Dexterity for monk weapon/unarmed attacks. Martial arts die: d4 (1st), d6 (5th), d8 (11th), d10 (17th). Bonus unarmed strike after Attack action."
+        },
+        {
+          "name": "Ki",
+          "level": 2,
+          "description": "Ki points equal monk level. Spend for: Flurry of Blows (2 unarmed strikes as bonus action), Patient Defense (Dodge as bonus action), Step of the Wind (Disengage/Dash as bonus action, doubled jump)."
+        },
+        {
+          "name": "Unarmored Movement",
+          "level": 2,
+          "description": "Speed +10 ft without armor. Increases: +15 (6th), +20 (10th), +25 (14th), +30 (18th)."
+        },
+        {
+          "name": "Monastic Tradition",
+          "level": 3,
+          "description": "Choose Way of the Open Hand, Shadow, or Four Elements. Grants features at 3rd, 6th, 11th, and 17th level."
+        },
+        {
+          "name": "Deflect Missiles",
+          "level": 3,
+          "description": "Reaction to reduce ranged weapon damage by 1d10 + Dex mod + monk level. If reduced to 0, catch and throw back for 1 ki point."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Slow Fall",
+          "level": 4,
+          "description": "Reaction to reduce falling damage by 5x monk level."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice with Attack action."
+        },
+        {
+          "name": "Stunning Strike",
+          "level": 5,
+          "description": "Spend 1 ki on melee hit; target must succeed Constitution save or be stunned until end of your next turn."
+        },
+        {
+          "name": "Ki-Empowered Strikes",
+          "level": 6,
+          "description": "Unarmed strikes count as magical for overcoming resistance/immunity."
+        },
+        {
+          "name": "Evasion",
+          "level": 7,
+          "description": "Dexterity save for half damage: take no damage on success, half on failure."
+        },
+        {
+          "name": "Stillness of Mind",
+          "level": 7,
+          "description": "Use action to end one charmed or frightened effect on yourself."
+        },
+        {
+          "name": "Purity of Body",
+          "level": 10,
+          "description": "Immune to disease and poison."
+        },
+        {
+          "name": "Tongue of the Sun and Moon",
+          "level": 13,
+          "description": "Understand all spoken languages; any creature that understands a language can understand you."
+        },
+        {
+          "name": "Diamond Soul",
+          "level": 14,
+          "description": "Proficiency in all saving throws. Spend 1 ki to reroll a failed save."
+        },
+        {
+          "name": "Timeless Body",
+          "level": 15,
+          "description": "No frailty of old age, cannot be aged magically. No need for food or water."
+        },
+        {
+          "name": "Empty Body",
+          "level": 18,
+          "description": "Spend 4 ki to become invisible for 1 minute with resistance to all damage but force. Spend 8 ki for astral projection."
+        },
+        {
+          "name": "Perfect Self",
+          "level": 20,
+          "description": "Regain 4 ki points when rolling initiative with none remaining."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "hit_die": "d10",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "wisdom",
+          "charisma"
+        ],
+        "skills": [
+          "Athletics",
+          "Insight",
+          "Intimidation",
+          "Medicine",
+          "Persuasion",
+          "Religion"
+        ],
+        "weapons": [
+          "simple weapons",
+          "martial weapons"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "heavy armor",
+          "shields"
+        ]
+      },
+      "spellcasting": {
+        "ability": "charisma",
+        "spell_save_dc": "8 + proficiency bonus + Charisma modifier",
+        "spell_attack_bonus": "proficiency bonus + Charisma modifier",
+        "cantrips_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Divine Sense",
+          "level": 1,
+          "description": "Detect celestials, fiends, or undead within 60 feet. Uses: 1 + Charisma modifier per long rest."
+        },
+        {
+          "name": "Lay on Hands",
+          "level": 1,
+          "description": "Healing pool of paladin level x 5 HP. Spend 5 HP from pool to cure one disease or neutralize one poison."
+        },
+        {
+          "name": "Fighting Style",
+          "level": 2,
+          "description": "Choose Defense, Dueling, Great Weapon Fighting, or Protection."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 2,
+          "description": "Cast paladin spells using Charisma. Prepare from paladin spell list each day."
+        },
+        {
+          "name": "Divine Smite",
+          "level": 2,
+          "description": "On melee hit, expend spell slot for extra radiant damage: 2d8 for 1st-level slot, +1d8 per higher level (max 5d8). +1d8 vs undead/fiends."
+        },
+        {
+          "name": "Divine Health",
+          "level": 3,
+          "description": "Immune to disease."
+        },
+        {
+          "name": "Sacred Oath",
+          "level": 3,
+          "description": "Choose Oath of Devotion, Ancients, or Vengeance. Grants oath spells and features at 3rd, 7th, 15th, and 20th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice with Attack action."
+        },
+        {
+          "name": "Aura of Protection",
+          "level": 6,
+          "description": "You and allies within 10 feet add your Charisma modifier to saving throws. Range increases to 30 feet at 18th level."
+        },
+        {
+          "name": "Aura of Courage",
+          "level": 10,
+          "description": "You and allies within 10 feet cannot be frightened while you are conscious. Range 30 feet at 18th level."
+        },
+        {
+          "name": "Improved Divine Smite",
+          "level": 11,
+          "description": "All melee weapon hits deal extra 1d8 radiant damage."
+        },
+        {
+          "name": "Cleansing Touch",
+          "level": 14,
+          "description": "End one spell on yourself or willing creature you touch. Uses: Charisma modifier per long rest."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "ranger",
+      "name": "Ranger",
+      "hit_die": "d10",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "strength",
+          "dexterity"
+        ],
+        "skills": [
+          "Animal Handling",
+          "Athletics",
+          "Insight",
+          "Investigation",
+          "Nature",
+          "Perception",
+          "Stealth",
+          "Survival"
+        ],
+        "weapons": [
+          "simple weapons",
+          "martial weapons"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ]
+      },
+      "spellcasting": {
+        "ability": "wisdom",
+        "spell_save_dc": "8 + proficiency bonus + Wisdom modifier",
+        "spell_attack_bonus": "proficiency bonus + Wisdom modifier",
+        "cantrips_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "spells_known_by_level": [
+          0,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9,
+          9,
+          10,
+          10,
+          11,
+          11
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Favored Enemy",
+          "level": 1,
+          "description": "Choose a favored enemy type. Advantage on Survival checks to track and Intelligence checks to recall info. Additional choices at 6th and 14th level."
+        },
+        {
+          "name": "Natural Explorer",
+          "level": 1,
+          "description": "Choose a favored terrain type. Doubled proficiency for Int/Wis checks in favored terrain, plus exploration benefits. Additional terrain at 6th and 10th level."
+        },
+        {
+          "name": "Fighting Style",
+          "level": 2,
+          "description": "Choose Archery, Defense, Dueling, or Two-Weapon Fighting."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 2,
+          "description": "Cast ranger spells using Wisdom."
+        },
+        {
+          "name": "Ranger Archetype",
+          "level": 3,
+          "description": "Choose Hunter or Beast Master. Grants features at 3rd, 7th, 11th, and 15th level."
+        },
+        {
+          "name": "Primeval Awareness",
+          "level": 3,
+          "description": "Expend spell slot to sense aberrations, celestials, dragons, elementals, fey, fiends, or undead within 1 mile (6 miles in favored terrain) for 1 minute per slot level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 5,
+          "description": "Attack twice with Attack action."
+        },
+        {
+          "name": "Lands Stride",
+          "level": 8,
+          "description": "Nonmagical difficult terrain costs no extra movement. Pass through nonmagical plants without damage."
+        },
+        {
+          "name": "Hide in Plain Sight",
+          "level": 10,
+          "description": "Spend 1 minute to create camouflage. +10 to Stealth checks while pressed against a solid surface."
+        },
+        {
+          "name": "Vanish",
+          "level": 14,
+          "description": "Hide as bonus action. Cannot be tracked by nonmagical means unless you choose."
+        },
+        {
+          "name": "Feral Senses",
+          "level": 18,
+          "description": "No disadvantage attacking creatures you cannot see. Aware of invisible creatures within 30 feet."
+        },
+        {
+          "name": "Foe Slayer",
+          "level": 20,
+          "description": "Add Wisdom modifier to attack or damage roll against favored enemy once per turn."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "dexterity",
+          "intelligence"
+        ],
+        "skills": [
+          "Acrobatics",
+          "Athletics",
+          "Deception",
+          "Insight",
+          "Intimidation",
+          "Investigation",
+          "Perception",
+          "Performance",
+          "Persuasion",
+          "Sleight of Hand",
+          "Stealth"
+        ],
+        "weapons": [
+          "simple weapons",
+          "hand crossbows",
+          "longswords",
+          "rapiers",
+          "shortswords"
+        ],
+        "armor": [
+          "light armor"
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Expertise",
+          "level": 1,
+          "description": "Double proficiency bonus for two chosen skill proficiencies (or one skill and thieves tools). Choose two more at 6th level."
+        },
+        {
+          "name": "Sneak Attack",
+          "level": 1,
+          "description": "Once per turn, extra damage on hits with advantage or ally adjacent to target: 1d6 (1st), +1d6 per odd level, up to 10d6 (19th). Requires finesse or ranged weapon."
+        },
+        {
+          "name": "Thieves Cant",
+          "level": 1,
+          "description": "Secret language of thieves for hiding messages in normal conversation."
+        },
+        {
+          "name": "Cunning Action",
+          "level": 2,
+          "description": "Bonus action to Dash, Disengage, or Hide."
+        },
+        {
+          "name": "Roguish Archetype",
+          "level": 3,
+          "description": "Choose Thief, Assassin, or Arcane Trickster. Grants features at 3rd, 9th, 13th, and 17th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 10, 12, 16, 19."
+        },
+        {
+          "name": "Uncanny Dodge",
+          "level": 5,
+          "description": "Reaction to halve damage from an attack you can see."
+        },
+        {
+          "name": "Evasion",
+          "level": 7,
+          "description": "Dex save for half damage: no damage on success, half on failure."
+        },
+        {
+          "name": "Reliable Talent",
+          "level": 11,
+          "description": "Treat d20 roll of 9 or lower as 10 on proficient ability checks."
+        },
+        {
+          "name": "Blindsense",
+          "level": 14,
+          "description": "Aware of hidden/invisible creatures within 10 feet if you can hear."
+        },
+        {
+          "name": "Slippery Mind",
+          "level": 15,
+          "description": "Gain proficiency in Wisdom saving throws."
+        },
+        {
+          "name": "Elusive",
+          "level": 18,
+          "description": "No attack has advantage against you while you are not incapacitated."
+        },
+        {
+          "name": "Stroke of Luck",
+          "level": 20,
+          "description": "Turn a miss into a hit, or treat failed ability check as 20. Once per short or long rest."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "sorcerer",
+      "name": "Sorcerer",
+      "hit_die": "d6",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "constitution",
+          "charisma"
+        ],
+        "skills": [
+          "Arcana",
+          "Deception",
+          "Insight",
+          "Intimidation",
+          "Persuasion",
+          "Religion"
+        ],
+        "weapons": [
+          "daggers",
+          "darts",
+          "slings",
+          "quarterstaffs",
+          "light crossbows"
+        ],
+        "armor": []
+      },
+      "spellcasting": {
+        "ability": "charisma",
+        "spell_save_dc": "8 + proficiency bonus + Charisma modifier",
+        "spell_attack_bonus": "proficiency bonus + Charisma modifier",
+        "cantrips_known_by_level": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "spells_known_by_level": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Cast sorcerer spells using Charisma as spellcasting ability."
+        },
+        {
+          "name": "Sorcerous Origin",
+          "level": 1,
+          "description": "Choose Draconic Bloodline or Wild Magic. Grants features at 1st, 6th, 14th, and 18th level."
+        },
+        {
+          "name": "Font of Magic",
+          "level": 2,
+          "description": "Sorcery points equal sorcerer level. Convert between sorcery points and spell slots."
+        },
+        {
+          "name": "Metamagic",
+          "level": 3,
+          "description": "Choose two Metamagic options (Careful, Distant, Empowered, Extended, Heightened, Quickened, Subtle, Twinned). Additional option at 10th and 17th."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Sorcerous Restoration",
+          "level": 20,
+          "description": "Regain 4 sorcery points on short rest."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "wisdom",
+          "charisma"
+        ],
+        "skills": [
+          "Arcana",
+          "Deception",
+          "History",
+          "Intimidation",
+          "Investigation",
+          "Nature",
+          "Religion"
+        ],
+        "weapons": [
+          "simple weapons"
+        ],
+        "armor": [
+          "light armor"
+        ]
+      },
+      "spellcasting": {
+        "ability": "charisma",
+        "spell_save_dc": "8 + proficiency bonus + Charisma modifier",
+        "spell_attack_bonus": "proficiency bonus + Charisma modifier",
+        "cantrips_known_by_level": [
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "spells_known_by_level": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "14": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "15": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "16": [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "17": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "18": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "19": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "20": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Otherworldly Patron",
+          "level": 1,
+          "description": "Choose The Archfey, The Fiend, or The Great Old One. Grants features at 1st, 6th, 10th, and 14th level."
+        },
+        {
+          "name": "Pact Magic",
+          "level": 1,
+          "description": "Limited spell slots that recharge on short rest. All slots same level (max 5th at level 9)."
+        },
+        {
+          "name": "Eldritch Invocations",
+          "level": 2,
+          "description": "Learn 2 invocations at 2nd level, gaining more at higher levels."
+        },
+        {
+          "name": "Pact Boon",
+          "level": 3,
+          "description": "Choose Pact of the Chain (familiar), Blade (pact weapon), or Tome (3 cantrips from any class)."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Mystic Arcanum",
+          "level": 11,
+          "description": "Choose one 6th-level warlock spell, castable once per long rest without slot. Additional arcanum: 7th (13th), 8th (15th), 9th (17th)."
+        },
+        {
+          "name": "Eldritch Master",
+          "level": 20,
+          "description": "Spend 1 minute to regain all Pact Magic spell slots. Once per long rest."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "wizard",
+      "name": "Wizard",
+      "hit_die": "d6",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "intelligence",
+          "wisdom"
+        ],
+        "skills": [
+          "Arcana",
+          "History",
+          "Insight",
+          "Investigation",
+          "Medicine",
+          "Religion"
+        ],
+        "weapons": [
+          "daggers",
+          "darts",
+          "slings",
+          "quarterstaffs",
+          "light crossbows"
+        ],
+        "armor": []
+      },
+      "spellcasting": {
+        "ability": "intelligence",
+        "spell_save_dc": "8 + proficiency bonus + Intelligence modifier",
+        "spell_attack_bonus": "proficiency bonus + Intelligence modifier",
+        "cantrips_known_by_level": [
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Cast wizard spells using Intelligence. Prepare from spellbook each day."
+        },
+        {
+          "name": "Arcane Recovery",
+          "level": 1,
+          "description": "Once per day after short rest, recover spell slots with combined level <= half wizard level (rounded up), none 6th or higher."
+        },
+        {
+          "name": "Arcane Tradition",
+          "level": 2,
+          "description": "Choose Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation. Grants features at 2nd, 6th, 10th, and 14th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1. Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Spell Mastery",
+          "level": 18,
+          "description": "Choose one 1st-level and one 2nd-level wizard spell from spellbook. Cast at lowest level without expending slots when prepared."
+        },
+        {
+          "name": "Signature Spells",
+          "level": 20,
+          "description": "Choose two 3rd-level wizard spells as signature spells. Always prepared, do not count against limit, cast each once at 3rd level without slot per short rest."
+        }
+      ],
+      "source": "PHB"
+    },
+    {
+      "id": "artificer",
+      "name": "Artificer",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "constitution",
+          "intelligence"
+        ],
+        "skills": [
+          "Arcana",
+          "History",
+          "Investigation",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Sleight of Hand"
+        ],
+        "weapons": [
+          "simple weapons",
+          "hand crossbows",
+          "heavy crossbows"
+        ],
+        "armor": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ]
+      },
+      "spellcasting": {
+        "ability": "intelligence",
+        "spell_save_dc": "8 + proficiency bonus + Intelligence modifier",
+        "spell_attack_bonus": "proficiency bonus + Intelligence modifier",
+        "cantrips_known_by_level": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "spell_slots_by_level": {
+        "1": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "2": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "3": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "4": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "5": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "6": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "7": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "8": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "9": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "10": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "11": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "12": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "13": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "14": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "15": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "16": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "17": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "18": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "19": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "20": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Magical Tinkering",
+          "level": 1,
+          "description": "Invest a spark of magic into mundane objects. Touch a Tiny nonmagical object to grant one property: emit light (5-ft bright, 5-ft dim), emit recorded message (6 seconds, 10 ft), emit odor or nonverbal sound (10 ft), or display a static visual (on surface). Max objects equal to Intelligence modifier (min 1). Source: Tasha's Cauldron of Everything."
+        },
+        {
+          "name": "Spellcasting",
+          "level": 1,
+          "description": "Intelligence-based half-caster. Prepare spells from the artificer spell list equal to Intelligence modifier + half artificer level (min 1). Requires tools as a spellcasting focus. Ritual casting available."
+        },
+        {
+          "name": "Infuse Item",
+          "level": 2,
+          "description": "Gain the ability to imbue mundane items with magical infusions. Infusions known: 4 (lvl 2), 6 (lvl 6), 8 (lvl 10), 10 (lvl 14), 12 (lvl 18). Max infused items: 2 (lvl 2), 3 (lvl 6), 4 (lvl 10), 5 (lvl 14), 6 (lvl 18). Each infusion can be in only one object at a time."
+        },
+        {
+          "name": "The Right Tool for the Job",
+          "level": 3,
+          "description": "With thieves' tools or artisan's tools in hand, you can magically create one set of artisan's tools in an unoccupied space within 5 feet. The creation disappears when you use this feature again."
+        },
+        {
+          "name": "Artificer Specialist",
+          "level": 3,
+          "description": "Choose a specialty: Alchemist, Armorer, Artillerist, or Battle Smith. Grants features at 3rd, 5th, 9th, and 15th level."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1 (max 20). Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Tool Expertise",
+          "level": 6,
+          "description": "Double your proficiency bonus for any ability check using a tool you are proficient with."
+        },
+        {
+          "name": "Flash of Genius",
+          "level": 7,
+          "description": "When you or another creature you can see within 30 feet makes an ability check or saving throw, you can use your reaction to add your Intelligence modifier to the roll. Uses equal to Intelligence modifier per long rest."
+        },
+        {
+          "name": "Magic Item Adept",
+          "level": 10,
+          "description": "Attune up to 4 magic items at once. Crafting a common or uncommon magic item takes a quarter of the normal time and half the normal gold."
+        },
+        {
+          "name": "Spell-Storing Item",
+          "level": 11,
+          "description": "Store an artificer spell (1st or 2nd level, 1-action casting time) in an object. The object can produce the spell effect a number of times equal to 2x Intelligence modifier (min 2). Replenishes on long rest."
+        },
+        {
+          "name": "Magic Item Savant",
+          "level": 14,
+          "description": "Attune up to 5 magic items at once. Ignore all class, race, spell, and level requirements for attuning to or using magic items."
+        },
+        {
+          "name": "Magic Item Master",
+          "level": 18,
+          "description": "Attune up to 6 magic items at once."
+        },
+        {
+          "name": "Soul of Artifice",
+          "level": 20,
+          "description": "Gain +1 to all saving throws per magic item you are attuned to. If you drop to 0 HP and don't die outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 HP instead."
+        }
+      ],
+      "source": "Tasha's"
+    },
+    {
+      "id": "mystic",
+      "name": "Mystic",
+      "hit_die": "d8",
+      "proficiency_bonus_by_level": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "proficiencies": {
+        "saving_throws": [
+          "intelligence",
+          "wisdom"
+        ],
+        "skills": [
+          "Arcana",
+          "History",
+          "Insight",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Religion"
+        ],
+        "weapons": [
+          "simple weapons"
+        ],
+        "armor": [
+          "light armor"
+        ]
+      },
+      "spellcasting": {
+        "ability": "wisdom",
+        "spell_save_dc": "8 + proficiency bonus + Wisdom modifier",
+        "spell_attack_bonus": "proficiency bonus + Wisdom modifier",
+        "cantrips_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "spells_known_by_level": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "class_features": [
+        {
+          "name": "Psionics",
+          "level": 1,
+          "description": "Gain psi points to fuel psionic disciplines. Psi points by level: 4 (1), 6 (2), 14 (3), 17 (4), 27 (5), 32 (6), 38 (7), 44 (8), 57 (9), 64 (10), 64 (11), 73 (12), 73 (13), 83 (14), 83 (15), 94 (16), 94 (17), 106 (18), 106 (19), 142 (20). Psi limit (max points per discipline use): 2 (1), 2 (2), 3 (3-4), 5 (5-6), 6 (7-8), 7 (9-10), 7 (11-12), 7 (13-14), 7 (15-16), 7 (17-18), 7 (19-20). Source: Mystic UA."
+        },
+        {
+          "name": "Mystic Order",
+          "level": 1,
+          "description": "Choose a Mystic Order: Order of the Avatar, Order of the Awakened, Order of the Immortal, Order of the Nomad, Order of the Soul Knife, or Order of the Wu Jen. Grants bonus disciplines and features at 1st, 3rd, 6th, and 14th level."
+        },
+        {
+          "name": "Psychic Focus",
+          "level": 1,
+          "description": "As a bonus action, choose one of your psionic disciplines and gain its psychic focus benefit, which lasts until you are incapacitated or until you use another bonus action to change your focus."
+        },
+        {
+          "name": "Mystical Recovery",
+          "level": 2,
+          "description": "When you spend psi points to activate a psionic discipline as a bonus action on your turn, you can regain hit points equal to the number of psi points spent, if your current hit point total equals half your hit point maximum or less."
+        },
+        {
+          "name": "Telepathy",
+          "level": 2,
+          "description": "You can telepathically speak to any creature within 120 feet of you. The creature must share a language with you or be telepathic itself."
+        },
+        {
+          "name": "Ability Score Improvement",
+          "level": 4,
+          "description": "Increase one ability score by 2, or two by 1 (max 20). Also at levels 8, 12, 16, 19."
+        },
+        {
+          "name": "Strength of Mind",
+          "level": 4,
+          "description": "After a short or long rest, replace your proficiency in Wisdom saving throws with proficiency in another saving throw of your choice. Lasts until your next rest."
+        },
+        {
+          "name": "Potent Psionics",
+          "level": 8,
+          "description": "Once on each of your turns, when you deal damage with a psionic talent, add your Intelligence modifier to the damage roll. At 14th level, the extra damage increases to 2x Intelligence modifier."
+        },
+        {
+          "name": "Consumptive Power",
+          "level": 10,
+          "description": "When you activate a psionic discipline, you can pay its psi point cost with hit points instead of psi points. Your current hit points and hit point maximum are both reduced by the number of hit points you spend (restored on long rest)."
+        },
+        {
+          "name": "Psionic Mastery",
+          "level": 11,
+          "description": "Gain a special pool of psi points you can use on psionic disciplines that require an action or bonus action. Pool: 9 (lvl 11), 11 (lvl 13), 13 (lvl 15), 15 (lvl 17). Uses: 1/long rest (lvl 11), 2 (lvl 13), 3 (lvl 15), 4 (lvl 17)."
+        },
+        {
+          "name": "Psion's Cunning",
+          "level": 14,
+          "description": "You gain advantage on saving throws against being charmed, frightened, or psionically compelled. Additionally, you can use an action to end one effect on yourself that is causing you to be charmed or frightened."
+        },
+        {
+          "name": "Discipline Mastery",
+          "level": 20,
+          "description": "Choose two of your psionic disciplines. You can use them at their lowest psi point cost without expending psi points. If you have other abilities that reduce psi cost, they stack with this feature."
+        }
+      ],
+      "source": "UA"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "campaign_id": "campaign-2026-05-27-001",
+  "campaign_name": "Lost Mine of Phandelver",
+  "content_pack": "lost-mine-phandelver",
+  "party_count": 3,
+  "starting_level": 1,
+  "metadata": {
+    "timestamp_created": "2026-05-27T01:48:06.355154+00:00",
+    "version": "1.0",
+    "gm_name": "User",
+    "difficulty": "medium",
+    "rules_version": "5e"
+  },
+  "party_pcs": [
+    {
+      "pc_id": "pc-1",
+      "name": "Thorin",
+      "class": "Fighter",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-2",
+      "name": "Elara",
+      "class": "Wizard",
+      "level": 1
+    },
+    {
+      "pc_id": "pc-3",
+      "name": "Grimm",
+      "class": "Rogue",
+      "level": 1
+    }
+  ]
+}

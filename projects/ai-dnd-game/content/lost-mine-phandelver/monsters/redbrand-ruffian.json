@@ -1,0 +1,43 @@
+{
+  "id": "redbrand-ruffian",
+  "name": "Redbrand Ruffian",
+  "size_type": "medium",
+  "alignment": "neutral evil",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 16,
+    "hit_dice": "3d8+3"
+  },
+  "ability_scores": {
+    "strength": 11,
+    "dexterity": 14,
+    "constitution": 12,
+    "intelligence": 9,
+    "wisdom": 9,
+    "charisma": 11
+  },
+  "skills": {
+    "intimidation": 2
+  },
+  "senses": {
+    "passive_perception": 9
+  },
+  "languages": ["Common"],
+  "challenge": "1/2",
+  "speed": {
+    "walk": 30
+  },
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The ruffian makes two melee attacks."
+    },
+    {
+      "name": "Shortsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    }
+  ]
+}

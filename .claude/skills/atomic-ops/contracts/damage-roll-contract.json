@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Damage Roll Contract",
+  "description": "Damage roll contract for weapons, spells, and effects in D&D 5e. Calculates damage dice roll and applies resistance/immunity/vulnerability modifiers to determine final damage.",
+  "version": "1.0",
+  "operation": "damage_roll",
+  "input_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Damage Roll Input",
+    "type": "object",
+    "properties": {
+      "damage_dice": {
+        "type": "string",
+        "pattern": "^\\d+d\\d+([+-]\\d+)?$",
+        "description": "Damage formula: XdY or XdY+Z (e.g., 1d8, 2d6+3, 4d10-1)"
+      },
+      "damage_type": {
+        "type": "string",
+        "enum": [
+          "acid", "bludgeoning", "cold", "fire", "force", "lightning",
+          "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
+        ],
+        "description": "D&D 5e damage type (one of 13 types)"
+      },
+      "target_resistances": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Damage types target is resistant to (halves damage)"
+      },
+      "target_immunities": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Damage types target is immune to (no damage)"
+      },
+      "target_vulnerabilities": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Damage types target is vulnerable to (doubles damage)"
+      }
+    },
+    "required": ["damage_dice", "damage_type", "target_resistances", "target_immunities", "target_vulnerabilities"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Damage Roll Output",
+    "type": "object",
+    "properties": {
+      "damage_dice": {
+        "type": "string",
+        "pattern": "^\\d+d\\d+([+-]\\d+)?$",
+        "description": "Echo of input damage formula"
+      },
+      "rolled_damage": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Total damage from rolling the dice plus modifier (before resistances/immunities)"
+      },
+      "damage_type": {
+        "type": "string",
+        "description": "Echo of input damage type"
+      },
+      "is_resistant": {
+        "type": "boolean",
+        "description": "true if damage_type in target_resistances"
+      },
+      "is_immune": {
+        "type": "boolean",
+        "description": "true if damage_type in target_immunities"
+      },
+      "is_vulnerable": {
+        "type": "boolean",
+        "description": "true if damage_type in target_vulnerabilities"
+      },
+      "final_damage": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Final damage after applying resistance/immunity/vulnerability"
+      }
+    },
+    "required": ["damage_dice", "rolled_damage", "damage_type", "is_resistant", "is_immune", "is_vulnerable", "final_damage"],
+    "additionalProperties": false
+  },
+  "validation_rules": [
+    {
+      "rule_id": "DMG-001",
+      "description": "damage_dice must be valid XdY or XdY+Z format",
+      "validation": "regex: ^\\d+d\\d+([+-]\\d+)?$",
+      "error_message": "Invalid damage dice format"
+    },
+    {
+      "rule_id": "DMG-002",
+      "description": "damage_type must be one of 13 D&D damage types",
+      "validation": "damage_type in [acid, bludgeoning, cold, fire, force, lightning, necrotic, piercing, poison, psychic, radiant, slashing, thunder]",
+      "error_message": "Invalid damage type"
+    },
+    {
+      "rule_id": "DMG-003",
+      "description": "Resistance halves damage (round down)",
+      "validation": "if damage_type in target_resistances: final_damage = floor(rolled_damage / 2)",
+      "error_message": "N/A (calculation rule)"
+    },
+    {
+      "rule_id": "DMG-004",
+      "description": "Immunity negates damage completely",
+      "validation": "if damage_type in target_immunities: final_damage = 0",
+      "error_message": "N/A (calculation rule)"
+    },
+    {
+      "rule_id": "DMG-005",
+      "description": "Vulnerability doubles damage",
+      "validation": "if damage_type in target_vulnerabilities: final_damage = rolled_damage * 2",
+      "error_message": "N/A (calculation rule)"
+    },
+    {
+      "rule_id": "DMG-006",
+      "description": "Multiple resistances do not stack (one resistance = half damage, applied once only)",
+      "validation": "if multiple resistances to same type: apply halving once only",
+      "error_message": "N/A (design rule)"
+    },
+    {
+      "rule_id": "DMG-007",
+      "description": "Immunity takes precedence over vulnerability (immunity wins, damage = 0)",
+      "validation": "if damage_type in target_immunities AND damage_type in target_vulnerabilities: final_damage = 0",
+      "error_message": "N/A (precedence rule)"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Longsword attack (1d8 slashing, no resistances)",
+      "input": { "damage_dice": "1d8", "damage_type": "slashing", "target_resistances": [], "target_immunities": [], "target_vulnerabilities": [] },
+      "execution": "Roll 1d8 -> 6, rolled_damage = 6, no modifiers apply, final_damage = 6",
+      "output": { "damage_dice": "1d8", "rolled_damage": 6, "damage_type": "slashing", "is_resistant": false, "is_immune": false, "is_vulnerable": false, "final_damage": 6 }
+    },
+    {
+      "name": "Fireball vs resistant target (8d6 fire, fire resistance)",
+      "input": { "damage_dice": "8d6", "damage_type": "fire", "target_resistances": ["fire"], "target_immunities": [], "target_vulnerabilities": [] },
+      "execution": "Roll 8d6 -> 30, is_resistant = true, final_damage = floor(30 / 2) = 15",
+      "output": { "damage_dice": "8d6", "rolled_damage": 30, "damage_type": "fire", "is_resistant": true, "is_immune": false, "is_vulnerable": false, "final_damage": 15 }
+    },
+    {
+      "name": "Fireball vs immune target (8d6 fire, fire immunity)",
+      "input": { "damage_dice": "8d6", "damage_type": "fire", "target_resistances": [], "target_immunities": ["fire"], "target_vulnerabilities": [] },
+      "execution": "Roll 8d6 -> 30, is_immune = true, final_damage = 0",
+      "output": { "damage_dice": "8d6", "rolled_damage": 30, "damage_type": "fire", "is_resistant": false, "is_immune": true, "is_vulnerable": false, "final_damage": 0 }
+    },
+    {
+      "name": "Flame blade vs vulnerable target (1d6+3 fire, fire vulnerability)",
+      "input": { "damage_dice": "1d6+3", "damage_type": "fire", "target_resistances": [], "target_immunities": [], "target_vulnerabilities": ["fire"] },
+      "execution": "Roll 1d6 -> 4, plus modifier +3 = 7, is_vulnerable = true, final_damage = 7 * 2 = 14",
+      "output": { "damage_dice": "1d6+3", "rolled_damage": 7, "damage_type": "fire", "is_resistant": false, "is_immune": false, "is_vulnerable": true, "final_damage": 14 }
+    },
+    {
+      "name": "Immunity over vulnerability (8d6 fire, both immunity and vulnerability)",
+      "input": { "damage_dice": "8d6", "damage_type": "fire", "target_resistances": [], "target_immunities": ["fire"], "target_vulnerabilities": ["fire"] },
+      "execution": "Roll 8d6 -> 30, is_immune = true (precedence over vulnerability), final_damage = 0",
+      "output": { "damage_dice": "8d6", "rolled_damage": 30, "damage_type": "fire", "is_resistant": false, "is_immune": true, "is_vulnerable": true, "final_damage": 0 }
+    },
+    {
+      "name": "Greatsword with modifier (2d6+3 slashing, no modifiers)",
+      "input": { "damage_dice": "2d6+3", "damage_type": "slashing", "target_resistances": [], "target_immunities": [], "target_vulnerabilities": [] },
+      "execution": "Roll 2d6 -> [3, 5] = 8, plus modifier +3 = 11, final_damage = 11",
+      "output": { "damage_dice": "2d6+3", "rolled_damage": 11, "damage_type": "slashing", "is_resistant": false, "is_immune": false, "is_vulnerable": false, "final_damage": 11 }
+    }
+  ],
+  "formulas": {
+    "rolled_damage": "sum(roll each die in XdY) + Z modifier",
+    "resistance": "final_damage = floor(rolled_damage / 2)",
+    "immunity": "final_damage = 0",
+    "vulnerability": "final_damage = rolled_damage * 2",
+    "no_modifier": "final_damage = rolled_damage",
+    "precedence": "immunity > vulnerability > resistance > none"
+  },
+  "dependencies": {
+    "uses": ["dice_roll"],
+    "used_by": ["combat_loop"]
+  }
+}

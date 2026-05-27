@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dice Roll Contract",
+  "description": "D20 roll contract with advantage/disadvantage logic for D&D 5e atomic operations",
+  "version": "1.0",
+  "operation": "dice_roll",
+  "input_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "D20 Roll Input",
+    "type": "object",
+    "properties": {
+      "advantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 and take higher"
+      },
+      "disadvantage": {
+        "type": "boolean",
+        "description": "Roll 2d20 and take lower"
+      },
+      "modifier": {
+        "type": "integer",
+        "minimum": -5,
+        "maximum": 20,
+        "description": "Ability modifier or other bonus/penalty to apply to roll"
+      }
+    },
+    "required": ["advantage", "disadvantage", "modifier"],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "D20 Roll Output",
+    "type": "object",
+    "properties": {
+      "die_rolls": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "minItems": 1,
+        "maxItems": 2,
+        "description": "Raw d20 roll(s): 1 roll if no advantage/disadvantage, 2 rolls if advantage/disadvantage"
+      },
+      "selected_roll": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "description": "Selected roll (highest if advantage, lowest if disadvantage, or the only roll if neither)"
+      },
+      "modifier": {
+        "type": "integer",
+        "minimum": -5,
+        "maximum": 20
+      },
+      "total": {
+        "type": "integer",
+        "minimum": -4,
+        "maximum": 40,
+        "description": "selected_roll + modifier (clamped to -4 minimum, 40 maximum)"
+      },
+      "critical": {
+        "type": "boolean",
+        "description": "true if selected_roll is 20"
+      },
+      "critical_fail": {
+        "type": "boolean",
+        "description": "true if selected_roll is 1"
+      }
+    },
+    "required": ["die_rolls", "selected_roll", "modifier", "total", "critical", "critical_fail"],
+    "additionalProperties": false
+  },
+  "validation_rules": [
+    {
+      "rule_id": "DICE-001",
+      "description": "advantage and disadvantage cannot both be true",
+      "validation": "NOT (advantage AND disadvantage)",
+      "error_message": "Cannot have both advantage and disadvantage"
+    },
+    {
+      "rule_id": "DICE-002",
+      "description": "modifier must be -5 to +20",
+      "validation": "-5 <= modifier <= 20",
+      "error_message": "Modifier out of range: must be -5 to +20"
+    },
+    {
+      "rule_id": "DICE-003",
+      "description": "advantage and disadvantage cancel out (both present = neither)",
+      "validation": "if advantage AND disadvantage: treat as neither",
+      "error_message": "Advantage and disadvantage cancel; recalculate"
+    }
+  ],
+  "examples": [
+    {
+      "name": "Standard roll (no advantage/disadvantage)",
+      "input": { "advantage": false, "disadvantage": false, "modifier": 3 },
+      "execution": "Roll 1d20 -> 14, total = 14 + 3 = 17",
+      "output": { "die_rolls": [14], "selected_roll": 14, "modifier": 3, "total": 17, "critical": false, "critical_fail": false }
+    },
+    {
+      "name": "Roll with advantage",
+      "input": { "advantage": true, "disadvantage": false, "modifier": -1 },
+      "execution": "Roll 2d20 -> [12, 18], select higher = 18, total = 18 + (-1) = 17",
+      "output": { "die_rolls": [12, 18], "selected_roll": 18, "modifier": -1, "total": 17, "critical": false, "critical_fail": false }
+    },
+    {
+      "name": "Roll with disadvantage",
+      "input": { "advantage": false, "disadvantage": true, "modifier": 5 },
+      "execution": "Roll 2d20 -> [8, 15], select lower = 8, total = 8 + 5 = 13",
+      "output": { "die_rolls": [8, 15], "selected_roll": 8, "modifier": 5, "total": 13, "critical": false, "critical_fail": false }
+    },
+    {
+      "name": "Critical hit (natural 20)",
+      "input": { "advantage": false, "disadvantage": false, "modifier": 2 },
+      "execution": "Roll 1d20 -> 20, total = 20 + 2 = 22, critical = true",
+      "output": { "die_rolls": [20], "selected_roll": 20, "modifier": 2, "total": 22, "critical": true, "critical_fail": false }
+    },
+    {
+      "name": "Critical fail (natural 1)",
+      "input": { "advantage": false, "disadvantage": false, "modifier": 10 },
+      "execution": "Roll 1d20 -> 1, total = 1 + 10 = 11, critical_fail = true",
+      "output": { "die_rolls": [1], "selected_roll": 1, "modifier": 10, "total": 11, "critical": false, "critical_fail": true }
+    }
+  ],
+  "dependencies": {
+    "uses": [],
+    "used_by": ["ability_check", "saving_throw", "attack_roll"]
+  }
+}

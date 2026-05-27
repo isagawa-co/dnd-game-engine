@@ -1,0 +1,325 @@
+{
+  "anchor_timestamp": "2026-05-04T01:31:20.951973Z",
+  "actions_count": 53,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T01:11:17Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\nfrom datetime import datetime\n\n# Read actions.jso",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:19Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tests/\" 2>&1 | grep atomic",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:21Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tests/\" 2>&1 | grep integr",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:25Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_atom",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:30Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_inte",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_atom",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:37Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/tasks\" -type f -name \"*.md\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep wor",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:41Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\n\n# Read workflow state\nworkflow_path = \"D:/my_ai_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:47Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\n\n# Check state\nsession_path = \"D:/my_ai_projects/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:11:56Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport os\nimport subprocess\n\n# Work in atomic-ops directory\no",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:04Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\nfrom datetime import datetime\n\n# Update session_s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:10Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE bash \"D:\\my_ai_projects\\project_test_repos\\game-dev\\run-task.s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:13Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/\" | grep -E \"^d\" | head -2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:15Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/src/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:38Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/src/skill_registry.py\" &&",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:41Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -q \"def register_skill\" \"D:/my_ai_projects/project_test_repos/game-dev/src/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:12:46Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:01Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/src/contract_enforcer.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:10Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/src/contract_enforcer.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:10Z",
+      "tool": "Bash",
+      "entry": "Bash: grep -q \"validate_contract\" \"D:/my_ai_projects/project_test_repos/game-dev/src/c",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:15Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:18Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:23Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:28Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev\" -name \"*test*contract*\" -o ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:30Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campaign_loade",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:14:42Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:05Z",
+      "tool": "Bash",
+      "entry": "Bash: \n# ARCH-004: file_exists\ntest -f \"D:/my_ai_projects/project_test_repos/game-dev/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:06Z",
+      "tool": "Bash",
+      "entry": "Bash: \n# ARCH-005: grep \"validate_contract\"\ngrep -q \"def validate_contract\" \"D:/my_ai_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:10Z",
+      "tool": "Bash",
+      "entry": "Bash: \nls \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:31Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:/my_ai_projects/project_test_repos/game-dev/run-task.sh\" \"D:/my_ai_proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:41Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/ai-dnd-game/.claude/skills/\" -type f ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:15:43Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/ai-dnd-game/.claude/skills/\" 2>&1",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:31Z",
+      "tool": "Bash",
+      "entry": "Bash: for i in {1..300}; do if [ -f \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:33Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\\D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:35Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"C:\\Users\\solos\\AppData\\Local\\Temp\\claude\" -name \"*.output\" -type f 2>/dev/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:38Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:42Z",
+      "tool": "Bash",
+      "entry": "Bash: find '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-re",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:47Z",
+      "tool": "Bash",
+      "entry": "Bash: find '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-re",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:51Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/logs/\" 2>/dev/null",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:53Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev\" -name \"*iteration*.log\" -ty",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:21:55Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state\" -name \"*scene",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:22:15Z",
+      "tool": "Bash",
+      "entry": "Bash: bash \"D:\\\\my_ai_projects\\\\project_test_repos\\\\game-dev\\\\run-task.sh\" \"D:\\\\my_ai_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:22:38Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/\" 2>/dev/null | head",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:22:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/completed/\" 2>/dev/n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:22:43Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/completed/scene-loop",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:23:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport hashlib\nimport json\nfrom datetime import datetime, tim",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:23:15Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/tasks/completed/scene-loo",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:23:33Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport os\nimport subprocess\n\nbase_dir = \"D:/my_ai_projects/pr",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:23:37Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_scen",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:30:51Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:31:17Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

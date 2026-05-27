@@ -1,0 +1,79 @@
+{
+  "anchor_timestamp": "2026-05-01T12:03:46.856720Z",
+  "actions_count": 12,
+  "violations_found": 7,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T12:01:25Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:01:44Z",
+      "tool": "Edit",
+      "entry": "Edit: rules.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:05Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\n# Test 1: I",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:21Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f /d/my_ai_projects/project_test_repos/game-dev/docs/gate-contract.md && e",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:24Z",
+      "tool": "Bash",
+      "entry": "Bash: find /d/my_ai_projects/project_test_repos/game-dev -name \"gate-contract*\" -o -na",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:30Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && bash -c '\n# BUILD-19: Opport",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:37Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && ls -1 tasks/rules-engine/*.m",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:42Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:46Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:02:52Z",
+      "tool": "Bash",
+      "entry": "Bash: cd /d/my_ai_projects/project_test_repos/game-dev && python3 << 'EOF'\nimport json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:03:23Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:\\\\my_ai_projects\\\\proje",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T12:03:41Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

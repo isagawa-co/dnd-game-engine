@@ -1,0 +1,115 @@
+{
+  "anchor_timestamp": "2026-05-01T14:00:00Z",
+  "actions_count": 18,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T11:12:18Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && {\n  # Create anchor-logs d",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:22Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'UPDATE_STATES'",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:26Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:\\my_ai_projects\\project_test_repos\\game-dev\" && python3 << 'EOF'\nimport js",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:31Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && env -u CLAUDECODE claude -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:32Z",
+      "tool": "Edit",
+      "entry": "Edit: character.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:34Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 -c \"from src.chara",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:43Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'TEST_FUNC04'\nf",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:48Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'VERIFY_002'\nfr",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:12:54Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'UPDATE_STATE'\n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:02Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'EOF'\nimport js",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:06Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'COMPLETE_TASK_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:14Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'FINALIZE_STATE",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:37Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 << 'EOF'\nimport js",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:47Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && sleep 3 && ls -la tasks/ 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:13:55Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && find .claude/state -name \"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:14:06Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python3 -c \"import hashlib",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:14:15Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la /D/my_ai_projects/project_test_repos/game-dev/.claude/skills/task-builder",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T11:14:17Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && mkdir -p .claude/state/anc",
+      "session": "current"
+    }
+  ]
+}

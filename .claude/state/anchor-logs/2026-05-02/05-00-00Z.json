@@ -1,0 +1,14 @@
+{
+  "anchor_timestamp": "2026-05-02T05:00:00Z",
+  "actions_count": 7,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-02T03:00:25Z", "tool": "Bash", "entry": "State update - session_started merge"},
+    {"timestamp": "2026-05-02T03:00:34Z", "tool": "Bash", "entry": "State update - workflow state merge"},
+    {"timestamp": "2026-05-02T03:00:38Z", "tool": "Bash", "entry": "State update - session context"},
+    {"timestamp": "2026-05-02T03:00:39Z", "tool": "Bash", "entry": "Directory listing - src folder"},
+    {"timestamp": "2026-05-02T03:00:40Z", "tool": "Bash", "entry": "Directory search - find command"},
+    {"timestamp": "2026-05-02T03:00:42Z", "tool": "Bash", "entry": "Directory listing - tests folder"},
+    {"timestamp": "2026-05-02T03:00:55Z", "tool": "Bash", "entry": "Directory listing - tasks folder"}
+  ]
+}

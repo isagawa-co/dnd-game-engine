@@ -1,0 +1,85 @@
+{
+  "anchor_timestamp": "2026-05-04T01:38:36.689542Z",
+  "actions_count": 13,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T01:35:06Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/src/\" 2>/dev/null | head -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:35:12Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/campaigns\" -type f -name \"*.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:35:29Z",
+      "tool": "Write",
+      "entry": "Write: wiki_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:35:35Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import sys; sys.path.insert(0, 'D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:35:41Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:35:57Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\n\n# Read workflow state\nwith open('D:/my_ai_projec",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:36:01Z",
+      "tool": "Bash",
+      "entry": "Bash: \necho \"Deliverable verification:\"\necho \"\"\necho \"File: src/wiki_loader.py\"\nwc -l ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:36:05Z",
+      "tool": "Bash",
+      "entry": "Bash: \necho \"Gate verification (ARCH-010, ARCH-011, ARCH-012):\"\necho \"\"\n\n# ARCH-010: f",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:36:11Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json\nimport os\nfrom pathlib import Path\n\n# Read workfl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:37:28Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/campaigns\" -type f -name \"*.",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:37:30Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/\" | head -30",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:37:32Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/src/\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:38:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "predicateType": "natural-language-session/v1",
+  "predicate": {
+    "invocation": {
+      "configSource": "fa57f7486f87504eb3b7b114a6e8d0b4666ce847f03ef05c4e76bc1bcab5049c",
+      "parameters": "45caec4f2f0009f391b0e70c81911add46cc17074b03d26b21c9e23b8b445e4a"
+    },
+    "output": {
+      "artifacts": [
+        {
+          "path": "tasks/completed/character-system/gate-contract.md",
+          "sha256": "b51eb2764de19ade0bda5f78eb7c0662c84c818ea1772515defdcad11a41d745"
+        },
+        {
+          "path": "tasks/completed/character-system/001-create-entity-tiers-base-classes.md",
+          "sha256": "3a911426385c300c4d190bf502b879ac27c34528d0610fc1ef390ba03b5280be"
+        },
+        {
+          "path": "tasks/completed/character-system/gate-contract.md",
+          "sha256": "b51eb2764de19ade0bda5f78eb7c0662c84c818ea1772515defdcad11a41d745"
+        }
+      ]
+    },
+    "timestamp": {
+      "start": "2026-05-01T11:28:08.300743+00:00",
+      "end": "2026-05-01T11:28:08.301746+00:00"
+    },
+    "metadata": {
+      "pipeline_backlog": "docs/backlog/done/003-character-system.md",
+      "task_folder": "tasks/completed/character-system/",
+      "task_count": 35,
+      "completed_count": 11,
+      "skipped_count": 0
+    }
+  }
+}

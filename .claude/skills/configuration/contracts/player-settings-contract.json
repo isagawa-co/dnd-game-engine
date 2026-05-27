@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Player Settings",
+  "description": "Player-facing campaign settings: rules complexity, character creation method, narration style, death handling. Selected at campaign start.",
+  "type": "object",
+  "properties": {
+    "campaign_difficulty": {
+      "type": "string",
+      "enum": ["novice", "intermediate", "veteran", "expert"],
+      "default": "intermediate",
+      "description": "novice=simplified rules, intermediate=standard 5e, veteran=complex interactions, expert=heavy house rules"
+    },
+    "character_creation_method": {
+      "type": "string",
+      "enum": ["point-buy", "standard-array", "4d6-drop-1", "2d6+6", "custom"],
+      "default": "point-buy",
+      "description": "How ability scores are determined at character creation"
+    },
+    "character_creation_ability_scores": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 3, "maximum": 18 },
+      "minItems": 6,
+      "maxItems": 6,
+      "description": "For standard-array method: the 6 ability scores to offer. Default: [15, 14, 13, 12, 10, 8]"
+    },
+    "house_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rule_id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "enabled": { "type": "boolean" }
+        },
+        "required": ["rule_id", "name", "enabled"]
+      },
+      "default": [],
+      "description": "Optional rule variations active in this campaign"
+    },
+    "narration_style": {
+      "type": "string",
+      "enum": ["tactical", "narrative", "mixed"],
+      "default": "mixed",
+      "description": "tactical=focus on mechanics and positioning, narrative=focus on story and roleplay, mixed=balanced"
+    },
+    "death_handling": {
+      "type": "string",
+      "enum": ["permadeath", "resurrection", "reroll"],
+      "default": "resurrection",
+      "description": "permadeath=death is final, resurrection=magic brings back (costs gold), reroll=new character at same level"
+    },
+    "resurrection_cost": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 500,
+      "description": "Gold cost to resurrect a dead character (only relevant if death_handling is resurrection)"
+    },
+    "multiclass_allowed": {
+      "type": "boolean",
+      "default": true,
+      "description": "Can characters multiclass between levels?"
+    },
+    "homebrew_content_allowed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Can players use homebrew classes, races, subclasses?"
+    },
+    "inspiration_rule": {
+      "type": "string",
+      "enum": ["standard", "none", "generous"],
+      "default": "standard",
+      "description": "standard=inspiration as written in 5e, none=no inspiration, generous=inspiration granted frequently"
+    }
+  },
+  "required": [
+    "campaign_difficulty",
+    "character_creation_method",
+    "narration_style",
+    "death_handling"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "name": "Novice Settings (simplified, forgiving)",
+      "config": {
+        "campaign_difficulty": "novice",
+        "character_creation_method": "standard-array",
+        "character_creation_ability_scores": [15, 14, 13, 12, 10, 8],
+        "house_rules": [
+          { "rule_id": "flanking-advantage", "name": "Flanking gives advantage", "enabled": true }
+        ],
+        "narration_style": "narrative",
+        "death_handling": "reroll",
+        "resurrection_cost": 0,
+        "multiclass_allowed": false,
+        "homebrew_content_allowed": false,
+        "inspiration_rule": "generous"
+      }
+    },
+    {
+      "name": "Intermediate Settings (standard 5e)",
+      "config": {
+        "campaign_difficulty": "intermediate",
+        "character_creation_method": "point-buy",
+        "house_rules": [],
+        "narration_style": "mixed",
+        "death_handling": "resurrection",
+        "resurrection_cost": 500,
+        "multiclass_allowed": true,
+        "homebrew_content_allowed": false,
+        "inspiration_rule": "standard"
+      }
+    },
+    {
+      "name": "Veteran Settings (complex)",
+      "config": {
+        "campaign_difficulty": "veteran",
+        "character_creation_method": "4d6-drop-1",
+        "house_rules": [
+          { "rule_id": "feats-at-level-up", "name": "Feats instead of ASIs", "enabled": true },
+          { "rule_id": "flanking-advantage", "name": "Flanking gives advantage", "enabled": true }
+        ],
+        "narration_style": "tactical",
+        "death_handling": "resurrection",
+        "resurrection_cost": 1000,
+        "multiclass_allowed": true,
+        "homebrew_content_allowed": false,
+        "inspiration_rule": "standard"
+      }
+    },
+    {
+      "name": "Expert Settings (heavy house rules)",
+      "config": {
+        "campaign_difficulty": "expert",
+        "character_creation_method": "4d6-drop-1",
+        "house_rules": [
+          { "rule_id": "feats-at-level-up", "name": "Feats instead of ASIs", "enabled": true },
+          { "rule_id": "critical-damage-extra-die", "name": "Critical hits do max + extra die", "enabled": true },
+          { "rule_id": "concentration-loss-on-damage", "name": "10+ damage loses concentration", "enabled": true }
+        ],
+        "narration_style": "tactical",
+        "death_handling": "permadeath",
+        "resurrection_cost": 2000,
+        "multiclass_allowed": true,
+        "homebrew_content_allowed": true,
+        "inspiration_rule": "standard"
+      }
+    },
+    {
+      "name": "Custom (high-power heroic)",
+      "config": {
+        "campaign_difficulty": "intermediate",
+        "character_creation_method": "2d6+6",
+        "house_rules": [
+          { "rule_id": "healing-potion-action", "name": "Drinking a potion takes action", "enabled": false }
+        ],
+        "narration_style": "narrative",
+        "death_handling": "resurrection",
+        "resurrection_cost": 100,
+        "multiclass_allowed": true,
+        "homebrew_content_allowed": true,
+        "inspiration_rule": "generous"
+      }
+    }
+  ],
+  "validation_rules": [
+    {
+      "rule_id": "SET-001",
+      "description": "If character_creation_method is standard-array, character_creation_ability_scores must be present with exactly 6 scores",
+      "validation": "if method == 'standard-array': len(character_creation_ability_scores) == 6",
+      "error_message": "standard-array requires exactly 6 ability scores"
+    },
+    {
+      "rule_id": "SET-002",
+      "description": "resurrection_cost only relevant if death_handling is resurrection",
+      "validation": "if death_handling != 'resurrection': resurrection_cost is ignored",
+      "severity": "info"
+    }
+  ],
+  "house_rules_registry": [
+    { "rule_id": "feats-at-level-up", "name": "Feats instead of ASIs", "description": "Characters get feat instead of Ability Score Improvement every 4 levels" },
+    { "rule_id": "critical-damage-extra-die", "name": "Critical hits do max + extra die", "description": "Critical hits roll damage dice + add one extra die instead of rolling twice" },
+    { "rule_id": "concentration-loss-on-damage", "name": "10+ damage loses concentration", "description": "Taking 10+ damage forces concentration save (DC 10 + damage taken)" },
+    { "rule_id": "flanking-advantage", "name": "Flanking gives advantage", "description": "Attackers flanking enemy gain advantage on attack roll" },
+    { "rule_id": "healing-potion-action", "name": "Healing potion takes action", "description": "Drinking a potion takes an action (not bonus action)" },
+    { "rule_id": "short-rest-spell-recovery", "name": "Short rest spell recovery", "description": "Some spells recover on short rest (not long rest)" },
+    { "rule_id": "variant-encumbrance", "name": "Variant encumbrance", "description": "Encumbrance based on STR score (not STR x 15)" }
+  ],
+  "campaign_difficulty_implications": {
+    "novice": {
+      "rules_complexity": "simplified (no concentration, simplified multiclassing)",
+      "death_default": "reroll",
+      "inspiration_default": "generous",
+      "house_rules_default": "none"
+    },
+    "intermediate": {
+      "rules_complexity": "standard 5e rules as written",
+      "death_default": "resurrection",
+      "inspiration_default": "standard",
+      "house_rules_default": "optional"
+    },
+    "veteran": {
+      "rules_complexity": "standard 5e + some house rules",
+      "death_default": "resurrection (costly)",
+      "inspiration_default": "standard",
+      "house_rules_default": "encouraged"
+    },
+    "expert": {
+      "rules_complexity": "standard 5e + many house rules + complex mechanics",
+      "death_default": "permadeath",
+      "inspiration_default": "standard",
+      "house_rules_default": "heavy"
+    }
+  }
+}

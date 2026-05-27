@@ -1,0 +1,13 @@
+{
+  "anchor_timestamp": "2026-04-28T23:50:00Z",
+  "actions_count": 6,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-04-28T23:36:48Z", "tool": "Bash", "entry": "Bash: ls playbooks dir"},
+    {"timestamp": "2026-04-28T23:37:38Z", "tool": "Write", "entry": "Write: spread.json"},
+    {"timestamp": "2026-04-28T23:37:55Z", "tool": "Bash", "entry": "Bash: validate JSON schema"},
+    {"timestamp": "2026-04-28T23:38:01Z", "tool": "Bash", "entry": "Bash: validate JSON play count and types"},
+    {"timestamp": "2026-04-28T23:38:28Z", "tool": "Bash", "entry": "Bash: validate required fields"},
+    {"timestamp": "2026-04-28T23:38:48Z", "tool": "Bash", "entry": "Bash: file exists check"}
+  ]
+}

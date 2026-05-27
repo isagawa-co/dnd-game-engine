@@ -1,0 +1,49 @@
+{
+  "anchor_timestamp": "2026-05-27T00:45:22.876426+00:00",
+  "actions_count": 7,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-27T00:44:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'PYEOF'\nimport json, datetime\n\nts = datetime.datetime.now(datetime.ti",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:44:56Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"projects/ai-dnd-game/.claude/skills/content/SKILL.md\" && echo \"EXISTS\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:45:02Z",
+      "tool": "Bash",
+      "entry": "Bash: ls projects/ai-dnd-game/.claude/skills/content/contracts/ 2>/dev/null && ls proj",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:45:12Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"projects/ai-dnd-game/.claude/skills/content/catalog.json\" && echo \"BUIL",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:45:12Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import json; json.load(open('projects/ai-dnd-game/.claude/skills/cont",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:45:13Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"projects/ai-dnd-game/.claude/skills/content/SKILL.md\" && echo \"PASS\" ||",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-27T00:45:17Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p .claude/state/anchor-logs/2026-05-27",
+      "session": "current"
+    }
+  ]
+}

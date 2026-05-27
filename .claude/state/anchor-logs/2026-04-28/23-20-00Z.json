@@ -1,0 +1,253 @@
+{
+  "anchor_timestamp": "2026-04-28T23:20:00Z",
+  "actions_count": 41,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-04-28T22:26:37Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\nfrom datetime import datetime, timezone\n\n# Archive",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:26:43Z",
+      "tool": "Bash",
+      "entry": "Bash: for team in PHI DAL NYG WAS; do count=$(python -c \"import json; d=json.load(open",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:26:52Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import json; d=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:27:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:27:07Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:27:11Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:27:43Z",
+      "tool": "Write",
+      "entry": "Write: validate_53man_rosters.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:27:58Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\n\n# Categorize errors\nreport = json.load(open(\"D:/m",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:28:01Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nd=json.load(open('D:/my_ai_projects/project_test_repos/a",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:28:43Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\n\n# Check which teams use which depth chart format\n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:05Z",
+      "tool": "Write",
+      "entry": "Write: fix_roster_issues.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:09Z",
+      "tool": "Bash",
+      "entry": "Bash: python D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/_test/fix",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:13Z",
+      "tool": "Bash",
+      "entry": "Bash: python D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/_test/fix",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:46Z",
+      "tool": "Edit",
+      "entry": "Edit: fix_roster_issues.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/_test/fix",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:30:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/_test/val",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:31:08Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\nimport sys\n\nBASE = \"D:/my_ai_projects/project_test",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:31:14Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"\nimport json\nr = json.load(open('D:/my_ai_projects/project_test_repos",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:31:36Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\nimport os\nfrom datetime import datetime, timezone\n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:31:50Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 300 && python -c \"\nimport json\nwf = json.load(open('D:/my_ai_projects/proj",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:34:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python << 'PYEOF'\nimport json\n\nBASE = \"D:/my_ai_projects/project_test_repos/ai-f",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:36:13Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/\" 2>/dev/null",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:36:40Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/attest.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:36:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/attest.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:38:41Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/attestations/\" 2",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:38:49Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/attestations",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:38:55Z",
+      "tool": "Bash",
+      "entry": "Bash: pip show sigstore 2>/dev/null || echo \"NOT INSTALLED\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:51:22Z",
+      "tool": "Bash",
+      "entry": "Bash: pip install sigstore 2>&1 | tail -5",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:53:34Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/attest.py\"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:54:30Z",
+      "tool": "Bash",
+      "entry": "Bash: python \"D:/my_ai_projects/project_test_repos/game-dev/lib/attestation/sign.py\" -",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T22:54:36Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/attestations",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:00:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim/.claude/comm",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:01:18Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/ai-football-head-coach-sim\" && env -u C",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:10:47Z",
+      "tool": "Bash",
+      "entry": "Bash: wc -c \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-r",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:10:51Z",
+      "tool": "Bash",
+      "entry": "Bash: cat \"C:/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-rep",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:14:24Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-football-head-coac",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:14:38Z",
+      "tool": "Bash",
+      "entry": "Bash: cd \"D:/my_ai_projects/project_test_repos/game-dev\" && python lib/attestation/int",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:14:56Z",
+      "tool": "Write",
+      "entry": "Write: 060-domain-research-playbook-schemes.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:15:05Z",
+      "tool": "Write",
+      "entry": "Write: 061-domain-build-playbooks.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:15:09Z",
+      "tool": "Write",
+      "entry": "Write: 062-domain-build-saves-directory.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-04-28T23:18:24Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

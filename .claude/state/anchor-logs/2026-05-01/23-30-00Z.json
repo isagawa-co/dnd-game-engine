@@ -1,0 +1,31 @@
+{
+  "anchor_timestamp": "2026-05-01T23:30:00Z",
+  "actions_count": 4,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-01T23:28:40Z",
+      "tool": "Bash",
+      "entry": "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/backlog/0",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T23:29:24Z",
+      "tool": "Bash",
+      "entry": "Bash: env -u CLAUDECODE bash \"D:/my_ai_projects/project_test_repos/game-dev/run-task.s",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T23:30:01Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:\\\\my_ai_projects\\\\projec",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-01T23:30:21Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:\\my_ai_projects\\project_test_repos\\game-dev\\.claude\\state\\anchor-log",
+      "session": "current"
+    }
+  ]
+}

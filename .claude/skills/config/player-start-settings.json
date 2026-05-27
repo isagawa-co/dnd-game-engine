@@ -1,0 +1,25 @@
+{
+  "difficulty": "medium",
+  "house_rules": [
+    {
+      "name": "Flanking Bonus",
+      "description": "Creatures gain +2 to attack rolls when they have an ally adjacent to their target",
+      "enabled": true
+    },
+    {
+      "name": "Lingering Damage",
+      "description": "Persistent damage lasts one additional round",
+      "enabled": false
+    },
+    {
+      "name": "Action Surge Variant",
+      "description": "Action Surge recharges on a short rest instead of long rest",
+      "enabled": false
+    }
+  ],
+  "party_composition": {
+    "party_size": 4,
+    "starting_level": 1,
+    "starting_gold": 50
+  }
+}

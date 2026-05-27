@@ -1,0 +1,8 @@
+{
+  "anchor_timestamp": "2026-05-01T10:46:44Z",
+  "actions_count": 1,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-01T10:46:44Z", "tool": "Bash", "entry": "Bash: echo \"\" > actions.jsonl"}
+  ]
+}

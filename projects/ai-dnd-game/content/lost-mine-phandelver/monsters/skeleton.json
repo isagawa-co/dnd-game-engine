@@ -1,0 +1,47 @@
+{
+  "id": "skeleton",
+  "name": "Skeleton",
+  "size_type": "medium",
+  "alignment": "lawful evil",
+  "armor_class": 13,
+  "hp": {
+    "maximum": 13,
+    "hit_dice": "2d8+4"
+  },
+  "ability_scores": {
+    "strength": 10,
+    "dexterity": 14,
+    "constitution": 15,
+    "intelligence": 6,
+    "wisdom": 8,
+    "charisma": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "damage_resistances": [],
+  "damage_immunities": ["poison"],
+  "condition_immunities": ["exhaustion", "poisoned"],
+  "languages": [],
+  "challenge": "1/4",
+  "speed": {
+    "walk": 30
+  },
+  "actions": [
+    {
+      "name": "Shortsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Shortbow",
+      "description": "Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "piercing"
+    }
+  ]
+}

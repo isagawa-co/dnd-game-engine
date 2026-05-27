@@ -1,0 +1,18 @@
+{
+  "anchor_timestamp": "2026-05-03T22:25:30.000000+00:00",
+  "actions_count": 79,
+  "violations_found": 0,
+  "summary": "Balance levers system completion and ai-dnd-game backlog verification. All actions were verification, testing, and state review. No violations detected.",
+  "actions": [
+    {"timestamp": "2026-05-02T04:03:47Z", "tool": "Bash", "category": "test_verification"},
+    {"timestamp": "2026-05-02T04:03:50Z", "tool": "Bash", "category": "file_check"},
+    {"timestamp": "2026-05-02T04:04:20Z", "tool": "Write", "category": "test_file_creation"},
+    {"timestamp": "2026-05-02T04:04:53Z", "tool": "Write", "category": "test_file_creation"},
+    {"timestamp": "2026-05-02T04:05:03Z", "tool": "Edit", "category": "test_file_fix"},
+    {"timestamp": "2026-05-03T19:38:55Z", "tool": "Bash", "category": "state_review"},
+    {"timestamp": "2026-05-03T22:21:08Z", "tool": "Bash", "category": "backlog_verification"},
+    {"timestamp": "2026-05-03T22:22:14Z", "tool": "Bash", "category": "process_check"},
+    {"timestamp": "2026-05-03T22:25:34Z", "tool": "Bash", "category": "protocol_hash"},
+    {"timestamp": "2026-05-03T22:25:46Z", "tool": "Bash", "category": "archive_creation"}
+  ]
+}

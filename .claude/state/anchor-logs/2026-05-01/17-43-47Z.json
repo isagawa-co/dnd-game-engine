@@ -1,0 +1,28 @@
+{
+  "anchor_timestamp": "2026-05-01T17:43:47Z",
+  "actions_count": 21,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-01T13:14:50Z", "tool": "Bash", "entry": "Bash: mkdir -p tasks/save-load-config/_context/_test/{fixtures,expected}"},
+    {"timestamp": "2026-05-01T13:15:05Z", "tool": "Write", "entry": "Write: 000-index.md"},
+    {"timestamp": "2026-05-01T13:15:09Z", "tool": "Write", "entry": "Write: 001-data-build-save-load.md"},
+    {"timestamp": "2026-05-01T13:15:13Z", "tool": "Write", "entry": "Write: 002-data-build-auto-save.md"},
+    {"timestamp": "2026-05-01T13:15:18Z", "tool": "Write", "entry": "Write: 003-config-build-configuration.md"},
+    {"timestamp": "2026-05-01T13:15:26Z", "tool": "Write", "entry": "Write: 004-balance-build-balance-levers.md"},
+    {"timestamp": "2026-05-01T13:15:30Z", "tool": "Write", "entry": "Write: 005-config-write-balance-json.md"},
+    {"timestamp": "2026-05-01T13:15:36Z", "tool": "Write", "entry": "Write: 006-test-save-load-verify.md"},
+    {"timestamp": "2026-05-01T13:15:38Z", "tool": "Write", "entry": "Write: 007-test-config-verify.md"},
+    {"timestamp": "2026-05-01T13:15:42Z", "tool": "Write", "entry": "Write: 008-test-balance-verify.md"},
+    {"timestamp": "2026-05-01T13:15:52Z", "tool": "Write", "entry": "Write: gate-contract.md"},
+    {"timestamp": "2026-05-01T17:40:22Z", "tool": "Bash", "entry": "Bash: find exploratory"},
+    {"timestamp": "2026-05-01T17:40:24Z", "tool": "Bash", "entry": "Bash: ls backlog"},
+    {"timestamp": "2026-05-01T17:40:26Z", "tool": "Bash", "entry": "Bash: ls docs"},
+    {"timestamp": "2026-05-01T17:40:28Z", "tool": "Bash", "entry": "Bash: ls backlog sorted"},
+    {"timestamp": "2026-05-01T17:40:31Z", "tool": "Bash", "entry": "Bash: ls backlog/done"},
+    {"timestamp": "2026-05-01T17:40:47Z", "tool": "Bash", "entry": "Bash: grep character tasks"},
+    {"timestamp": "2026-05-01T17:40:49Z", "tool": "Bash", "entry": "Bash: ls character-system"},
+    {"timestamp": "2026-05-01T17:41:09Z", "tool": "Bash", "entry": "Bash: ls completed"},
+    {"timestamp": "2026-05-01T17:42:54Z", "tool": "Bash", "entry": "Bash: date command"},
+    {"timestamp": "2026-05-01T17:43:47Z", "tool": "Bash", "entry": "Bash: protocol hash computation"}
+  ]
+}

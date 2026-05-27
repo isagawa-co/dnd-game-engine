@@ -1,0 +1,23 @@
+{
+  "anchor_timestamp": "2026-05-27T01:01:30Z",
+  "actions_count": 17,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-27T00:58:01Z", "tool": "Bash", "entry": "Bash: truncate actions.jsonl"},
+    {"timestamp": "2026-05-27T00:58:55Z", "tool": "Write", "entry": "Write: king-grol.json"},
+    {"timestamp": "2026-05-27T00:59:01Z", "tool": "Write", "entry": "Write: king-grol-officers.json"},
+    {"timestamp": "2026-05-27T00:59:06Z", "tool": "Write", "entry": "Write: sildar-hallwinter.json"},
+    {"timestamp": "2026-05-27T00:59:08Z", "tool": "Bash", "entry": "Bash: compute protocol hash"},
+    {"timestamp": "2026-05-27T00:59:14Z", "tool": "Write", "entry": "Write: iarno-albrek.json"},
+    {"timestamp": "2026-05-27T00:59:19Z", "tool": "Write", "entry": "Write: gundren-rockseeker.json"},
+    {"timestamp": "2026-05-27T00:59:26Z", "tool": "Write", "entry": "Write: nothic.json"},
+    {"timestamp": "2026-05-27T00:59:47Z", "tool": "Bash", "entry": "Bash: validate monsters against schema"},
+    {"timestamp": "2026-05-27T00:59:55Z", "tool": "Bash", "entry": "Bash: cat manifest update"},
+    {"timestamp": "2026-05-27T00:59:59Z", "tool": "Bash", "entry": "Bash: ls monsters dir"},
+    {"timestamp": "2026-05-27T01:00:03Z", "tool": "Bash", "entry": "Bash: count monster files"},
+    {"timestamp": "2026-05-27T01:00:05Z", "tool": "Bash", "entry": "Bash: validate all monsters"},
+    {"timestamp": "2026-05-27T01:01:13Z", "tool": "Bash", "entry": "Bash: compute protocol hash (anchor)"},
+    {"timestamp": "2026-05-27T01:01:13Z", "tool": "Bash", "entry": "Bash: ls monsters dir (anchor)"},
+    {"timestamp": "2026-05-27T01:01:38Z", "tool": "Bash", "entry": "Bash: mkdir anchor-logs dir"}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lamp",
+  "name": "Lamp",
+  "type": "wondrous_item",
+  "rarity": "common",
+  "weight": 1,
+  "description": "A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask of oil."
+}

@@ -1,0 +1,223 @@
+{
+  "anchor_timestamp": "2026-05-04T07:00:00Z",
+  "actions_count": 36,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T01:41:08Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/campaigns/lost-mine-of-p",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:16Z",
+      "tool": "Write",
+      "entry": "Write: campaign.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:20Z",
+      "tool": "Write",
+      "entry": "Write: npcs.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:25Z",
+      "tool": "Write",
+      "entry": "Write: locations.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:30Z",
+      "tool": "Write",
+      "entry": "Write: items.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:36Z",
+      "tool": "Write",
+      "entry": "Write: encounters.json",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:42Z",
+      "tool": "Write",
+      "entry": "Write: 001-intro-ambush.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:49Z",
+      "tool": "Write",
+      "entry": "Write: 002-redbrand-hideout.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:41:54Z",
+      "tool": "Write",
+      "entry": "Write: 003-mines-intro.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:01Z",
+      "tool": "Write",
+      "entry": "Write: 004-spider-cave.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:08Z",
+      "tool": "Write",
+      "entry": "Write: locate-gundren.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:13Z",
+      "tool": "Write",
+      "entry": "Write: goblin-gold.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:20Z",
+      "tool": "Write",
+      "entry": "Write: redbrand-threat.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:23Z",
+      "tool": "Bash",
+      "entry": "Bash: test -d \"D:/my_ai_projects/project_test_repos/game-dev/campaigns/lost-mine-of-ph",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:33Z",
+      "tool": "Bash",
+      "entry": "Bash: echo \"=== Lost Mine Campaign Pack Structure ===\" && echo \"\" && echo \"Manifest:\" ",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:46Z",
+      "tool": "Bash",
+      "entry": "Bash: test -d \"D:/my_ai_projects/project_test_repos/game-dev/campaigns/lost-mine-of-ph",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:49Z",
+      "tool": "Bash",
+      "entry": "Bash: for i in {1..600}; do\n  if [ -f '/c/Users/solos/AppData/Local/Temp/claude/D--my-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:51Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 120 && cat '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-pro",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:53Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -lh '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-project-test-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:42:56Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state\" -name \"*itera",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:43:01Z",
+      "tool": "Bash",
+      "entry": "Bash: ps aux | grep -E '(run-task|claude)' | grep -v grep | head -10",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:43:04Z",
+      "tool": "Bash",
+      "entry": "Bash: sleep 60; ls -lh '/c/Users/solos/AppData/Local/Temp/claude/D--my-ai-projects-pro",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:43:08Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state\" -name \"scene-",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:43:13Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state\" -name \"*itera",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:43:15Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state\" -name \"*itera",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:06Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:19Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:26Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campaign_loade",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:28Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tests/\" | head -20",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:31Z",
+      "tool": "Bash",
+      "entry": "Bash: test -f \"D:/my_ai_projects/project_test_repos/game-dev/tests/conftest.py\" && ech",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:46Z",
+      "tool": "Write",
+      "entry": "Write: test_campaign_loader.py",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:44:53Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:45:00Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:45:08Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:45:50Z",
+      "tool": "Bash",
+      "entry": "Bash: python -m pytest \"D:/my_ai_projects/project_test_repos/game-dev/tests/test_campa",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T01:46:01Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    }
+  ]
+}

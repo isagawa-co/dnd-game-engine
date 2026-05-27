@@ -1,0 +1,67 @@
+{
+  "anchor_timestamp": "2026-05-04T09:35:00Z",
+  "actions_count": 10,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T03:30:15Z",
+      "tool": "Bash",
+      "entry": "Bash: \n# Get current date and time for archive path\ncurrent_date=$(date -u +%Y-%m-%d)\n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:17Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/campaigns/lost-mine-of-phand",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:23Z",
+      "tool": "Bash",
+      "entry": "Bash: \npython3 << 'EOF'\nimport json\nfrom datetime import datetime\n\n# Read current sess",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:26Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport hashlib\nprotocol_path = \"D:/my_ai_projects/project_test_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:28Z",
+      "tool": "Bash",
+      "entry": "Bash: python -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:31Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/campaign-pack-loader/",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:35Z",
+      "tool": "Bash",
+      "entry": "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/campaigns/lost-mine-of-phand",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:36Z",
+      "tool": "Bash",
+      "entry": "Bash: cat D:/my_ai_projects/project_test_repos/game-dev/.claude/state/actions.jsonl",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:42Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T03:30:44Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/src/\" | head -20",
+      "session": "current"
+    }
+  ]
+}

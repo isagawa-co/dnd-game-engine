@@ -1,0 +1,85 @@
+{
+  "anchor_timestamp": "2026-05-04T00:40:12.596146Z",
+  "actions_count": 13,
+  "violations_found": 0,
+  "actions": [
+    {
+      "timestamp": "2026-05-04T00:39:54Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 << 'EOF'\nimport json\nfrom pathlib import Path\nfrom datetime import datet",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:55Z",
+      "tool": "Write",
+      "entry": "Write: 004-atomic-build-damage-ops.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:56Z",
+      "tool": "Bash",
+      "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:58Z",
+      "tool": "Write",
+      "entry": "Write: 005-atomic-build-effect-ops.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:39:59Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/\" 2>/dev/n",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:01Z",
+      "tool": "Write",
+      "entry": "Write: 006-atomic-build-state-validation.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:02Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/campaign/ 2>",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:03Z",
+      "tool": "Write",
+      "entry": "Write: 007-atomic-build-skill.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:06Z",
+      "tool": "Write",
+      "entry": "Write: 008-atomic-test-unit.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:08Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -1 \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/\" | grep -i \"",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:09Z",
+      "tool": "Bash",
+      "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:09Z",
+      "tool": "Write",
+      "entry": "Write: 009-atomic-test-integration.md",
+      "session": "current"
+    },
+    {
+      "timestamp": "2026-05-04T00:40:11Z",
+      "tool": "Bash",
+      "entry": "Bash: ls -la \"D:/my_ai_projects/project_test_repos/game-dev/tasks/scene-loop/_context/",
+      "session": "current"
+    }
+  ]
+}
