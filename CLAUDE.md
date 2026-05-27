@@ -203,6 +203,7 @@ Roll Numbers (user input)
 - **Update JSON state.** After each iteration, campaign_state.json reflects results.
 - **No Python execution.** You don't run code. You read contracts and apply them.
 - **Fully interactive.** This is collaborative: agent narrates, user rolls.
+- **Check for relevant commands/skills on every action.** Before taking any game action (character creation, combat, challenge resolution, rest, etc.), verify if a matching command or skill exists. Read and follow that skill's instructions exactly. Never improvise game logic—always read the prescriptive skill first.
 
 ---
 
