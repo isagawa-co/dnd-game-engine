@@ -1,0 +1,98 @@
+{
+  "act_id": "ch4-act-II",
+  "chapter": 4,
+  "act": "II",
+  "title": "Wave Echo Cave — The Inner Depths",
+  "level_range": [4, 5],
+  "location": {
+    "name": "Wave Echo Cave — Inner Caverns",
+    "description": "Deeper chambers of the ancient mine. Natural caverns connect with worked corridors. The sounds of waves grow louder. Signs of ancient battle — dwarf and orc remains — litter the floors.",
+    "environment": "underground mine, deep caverns, near-total darkness, echoing waves"
+  },
+  "read_aloud": "The tunnels open into vast natural caverns. Stalactites hang from ceilings lost in darkness. The booming of the underground waves is louder here — disorienting, rhythmic, relentless. Ancient mine cart tracks run along the floors, rusted and broken. The deeper you go, the more remains you find — dwarf and orc skeletons locked in combat, centuries old, never buried.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the south barracks",
+      "enemies": [
+        {"monster_id": "ghoul", "count": 3, "position": "Feeding on old remains in a barracks room"}
+      ],
+      "tactics": "Ghouls attempt to paralyze targets (DC 10 CON save) then feast on the paralyzed victim. Elves are immune to the paralysis.",
+      "difficulty": "medium",
+      "reward_xp": 600
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the great cavern",
+      "enemies": [
+        {"monster_id": "ghoul", "count": 7, "position": "Scattered through a vast natural cavern with a dark underground lake"}
+      ],
+      "tactics": "The ghouls lurk in the darkness. They attack from multiple directions, trying to overwhelm and paralyze targets. This is a dangerous fight due to numbers.",
+      "difficulty": "hard",
+      "reward_xp": 1400
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the north barracks",
+      "enemies": [
+        {"monster_id": "bugbear", "count": 5, "position": "Black Spider's elite guards, sleeping or resting in a barracks"}
+      ],
+      "tactics": "If alerted, they form a defensive line. If caught sleeping (Stealth DC 12), the party gets a surprise round.",
+      "difficulty": "hard",
+      "reward_xp": 1000
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the smelter cavern",
+      "enemies": [
+        {"monster_id": "zombie", "count": 8, "position": "Shambling through an old smelting room with furnaces"},
+        {"monster_id": "flameskull", "count": 1, "position": "Floating above the furnaces — a flaming skull wreathed in green fire", "special": "Flameskull — regenerates 1 hour after destruction unless doused in holy water or dispelled. Casts Fireball (8d6 fire, DC 13 DEX save) and Magic Missile."}
+      ],
+      "tactics": "The flameskull opens with Fireball targeting the largest cluster of party members. Zombies shamble toward the nearest target. The flameskull stays at range and uses Shield as a reaction. WARNING: Fireball can easily knock out or kill multiple level 4 characters.",
+      "difficulty": "deadly",
+      "reward_xp": 1550
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters Mormesk's quarters",
+      "enemies": [
+        {"monster_id": "wraith", "count": 1, "position": "The ghost of a wizard, haunting his former study", "special": "Mormesk — a wraith that guards his possessions. Will negotiate if offered something of value. Attacks if anyone touches his chest."}
+      ],
+      "tactics": "Mormesk uses Life Drain (DC 14 CON save, 4d8+3 necrotic, max HP reduced). He is resistant to most damage and immune to necrotic/poison. Can be negotiated with — he wants to be left alone and will let the party pass if they don't touch his things.",
+      "difficulty": "hard",
+      "reward_xp": 1800
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    {"item": "gold", "quantity": 90, "location": "Scattered through barracks and guardrooms"},
+    {"item": "ring-of-protection", "quantity": 1, "location": "Mormesk's chest — +1 AC and saving throws"},
+    {"item": "wand-of-magic-missiles", "quantity": 1, "location": "In the smelter room — hidden in debris"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "perception",
+      "dc": 14,
+      "success": "Hear the ghouls moving in the dark before they attack.",
+      "failure": "Ghouls get surprise.",
+      "context": "Entering the great cavern."
+    },
+    {
+      "skill": "religion",
+      "dc": 13,
+      "success": "Recognize the flameskull will regenerate — must be doused in holy water or have Dispel Magic cast on its remains.",
+      "failure": "Don't realize it will reform.",
+      "context": "After defeating the flameskull."
+    }
+  ],
+  "transitions": {
+    "reach_forge": "ch4-act-III",
+    "default": "ch4-act-III"
+  },
+  "dm_notes": "This is the grind section — resource attrition matters. The flameskull is the most dangerous single encounter in the cave and can TPK a careless party. Warn through environmental cues (scorch marks, burnt remains). Mormesk can be bypassed through diplomacy — reward parties that negotiate. The seven ghouls in the great cavern should feel overwhelming — use the darkness and the echoing waves to build tension. Remind the party that they can rest, but resting in the cave risks random encounters."
+}

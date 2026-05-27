@@ -1,0 +1,141 @@
+{
+  "id": "dain-mountain-dwarf-paladin",
+  "entity_type": "pc",
+  "name": "Dain",
+  "character_class": "paladin",
+  "race": "mountain-dwarf",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 19,
+    "dexterity": 14,
+    "constitution": 18,
+    "intelligence": 13,
+    "wisdom": 15,
+    "charisma": 17
+  },
+  "hp": 14,
+  "max_hp": 14,
+  "ac": 18,
+  "speed": 25,
+  "hit_dice_detail": {
+    "die_type": "d10",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["wisdom", "charisma"],
+    "skills": ["athletics", "religion"],
+    "weapons": ["simple weapons", "martial weapons", "battleaxe", "handaxe", "light hammer", "warhammer"],
+    "armor": ["light armor", "medium armor", "heavy armor", "shields"]
+  },
+  "class_features": [
+    {
+      "name": "Divine Sense",
+      "description": "As an action, detect the location of any celestial, fiend, or undead within 60 feet not behind total cover. Also detect consecrated or desecrated places/objects. Uses: 1 + CHA modifier (4) per long rest.",
+      "uses": 4,
+      "recharge": "long_rest"
+    },
+    {
+      "name": "Lay on Hands",
+      "description": "Touch a creature to restore HP from a pool of 5 HP (paladin level x 5). Can also expend 5 HP from pool to cure one disease or neutralize one poison.",
+      "uses": 5,
+      "recharge": "long_rest"
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Darkvision",
+      "description": "Can see in dim light within 60 feet as if bright light, and in darkness as if dim light."
+    },
+    {
+      "name": "Dwarven Resilience",
+      "description": "Advantage on saving throws against poison, and resistance against poison damage."
+    },
+    {
+      "name": "Dwarven Combat Training",
+      "description": "Proficiency with battleaxe, handaxe, light hammer, and warhammer."
+    },
+    {
+      "name": "Stonecunning",
+      "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient and add double your proficiency bonus."
+    },
+    {
+      "name": "Dwarven Armor Training",
+      "description": "Proficiency with light and medium armor."
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Warhammer",
+      "quantity": 1,
+      "weight": 2,
+      "damage": "1d8 bludgeoning",
+      "properties": ["versatile (1d10)"],
+      "gp_value": 15
+    },
+    {
+      "name": "Shield",
+      "quantity": 1,
+      "weight": 6,
+      "ac_bonus": 2,
+      "gp_value": 10
+    },
+    {
+      "name": "Handaxe",
+      "quantity": 2,
+      "weight": 4,
+      "damage": "1d6 slashing",
+      "properties": ["light", "thrown (20/60)"],
+      "gp_value": 10
+    },
+    {
+      "name": "Chain Mail",
+      "quantity": 1,
+      "weight": 55,
+      "ac": 16,
+      "properties": ["heavy"],
+      "gp_value": 75
+    },
+    {
+      "name": "Holy Symbol (Bronze Clasp on Shield)",
+      "quantity": 1,
+      "weight": 0,
+      "gp_value": 5
+    },
+    {
+      "name": "Adventuring Pack",
+      "quantity": 1,
+      "weight": 40,
+      "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "lawful good",
+    "background": "folk hero",
+    "traits": [
+      "If someone is in trouble, I'm always ready to lend help",
+      "When I set my mind to something, I follow through no matter what gets in my way"
+    ],
+    "ideal": "Destiny — Nothing and no one can steer me away from my higher calling",
+    "bond": "I protect those who cannot protect themselves",
+    "flaw": "Secretly, I believe that things would be better if I were a tyrant lording over the land",
+    "appearance": "A stocky Mountain Dwarf built like a granite block, standing 4'5\" but wider than most humans at the shoulders. His ruddy, weathered face is framed by a thick iron-gray beard braided with bronze clasps — each clasp earned, not bought. His eyes burn with quiet conviction, the look of someone who's already decided what's right before you've finished talking. He carries his warhammer like it's part of his arm and his shield like a sermon — both say the same thing: get behind me. His armor is practical, dented, well-maintained. He walks with the unhurried certainty of a dwarf who knows exactly where he's going, even when he doesn't.",
+    "backstory": "Dain was a common miner in the deep halls of Khundrukar until the day a cave-in trapped thirty workers behind a wall of collapsed stone. While the foremen argued about cost and risk, Dain picked up his hammer and started digging. He dug for two days straight, broke through, and carried the injured out on his back. The hold called him a hero. He felt something else — a calling, a voice in the stone itself telling him he was meant for more. He took the oath of a Paladin not in a temple but in the mine shaft, kneeling in dust and blood. He protects the weak because he believes it's right. But in the quiet moments, when he watches leaders fumble and people suffer from bad decisions, a thought creeps in that he can't quite silence: they'd all be better off if someone strong just took charge. Someone like him."
+  },
+  "creation_metadata": {
+    "creation_method": "4d6_drop_lowest",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}

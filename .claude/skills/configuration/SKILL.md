@@ -18,7 +18,7 @@
 
 ## Loading Configuration
 
-Configuration files live in `projects/ai-dnd-game/config/` as JSON files:
+Configuration files live in `config/` as JSON files:
 
 | File | Contract | Description |
 |------|----------|-------------|

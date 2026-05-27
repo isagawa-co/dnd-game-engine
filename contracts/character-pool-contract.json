@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Character Pool Contract",
+  "description": "Defines schemas for shared character storage and campaign-character references. Characters live in characters/ and campaigns reference them by ID.",
+  "version": "1.0",
+  "character_file_schema": {
+    "type": "object",
+    "required": ["id", "entity_type", "name", "character_class", "race", "level", "ability_scores", "hp", "ac", "proficiency_bonus", "creation_metadata", "campaign_history"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+-[a-z]+-[a-z]+$",
+        "description": "Unique character ID in format: <name-kebab>-<race>-<class>"
+      },
+      "entity_type": { "const": "pc" },
+      "name": { "type": "string" },
+      "character_class": { "type": "string" },
+      "race": { "type": "string" },
+      "level": { "type": "integer", "minimum": 1 },
+      "xp": { "type": "integer", "minimum": 0 },
+      "ability_scores": {
+        "type": "object",
+        "required": ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+      },
+      "hp": { "type": "integer", "minimum": 1 },
+      "max_hp": { "type": "integer", "minimum": 1 },
+      "ac": { "type": "integer", "minimum": 8 },
+      "hit_dice_detail": { "type": "object" },
+      "proficiency_bonus": { "type": "integer", "minimum": 2 },
+      "proficiencies": { "type": "object" },
+      "class_features": { "type": "array" },
+      "racial_features": { "type": "array" },
+      "inventory": { "type": "array" },
+      "gold": { "type": "number" },
+      "personality": { "type": "object" },
+      "creation_metadata": {
+        "type": "object",
+        "required": ["creation_method", "created_date", "source_campaign"],
+        "properties": {
+          "creation_method": { "type": "string" },
+          "created_date": { "type": "string" },
+          "source_campaign": { "type": "string" }
+        }
+      },
+      "campaign_history": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["campaign_id", "joined_at_level", "current_level", "status"],
+          "properties": {
+            "campaign_id": { "type": "string" },
+            "joined_at_level": { "type": "integer" },
+            "current_level": { "type": "integer" },
+            "status": { "type": "string", "enum": ["active", "dead", "retired"] }
+          }
+        }
+      }
+    }
+  },
+  "campaign_reference_schema": {
+    "type": "object",
+    "required": ["campaign_id", "party_size", "characters"],
+    "properties": {
+      "campaign_id": { "type": "string" },
+      "party_size": { "type": "integer" },
+      "characters": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["character_id", "party_position", "snapshot_level", "joined_date"],
+          "properties": {
+            "character_id": { "type": "string", "description": "References characters/<character_id>.json" },
+            "party_position": { "type": "integer" },
+            "snapshot_level": { "type": "integer" },
+            "joined_date": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "resolution_rules": {
+    "load_party": [
+      "Read campaigns/<id>/party.json to get character references",
+      "For each character_id: read characters/<character_id>.json",
+      "If character file not found: error, party incomplete",
+      "Build in-memory party array from resolved character entities",
+      "Pass resolved party to state evaluation and loop dispatch"
+    ],
+    "save_character": [
+      "Save full Tier 4 entity to characters/<character-id>.json",
+      "Add/update reference in campaigns/<id>/party.json",
+      "Update campaign_state.json party array with character IDs"
+    ],
+    "level_up": [
+      "Modify characters/<character-id>.json directly",
+      "Update campaign_history entry with new current_level",
+      "Campaign party.json does not need updating (references by ID)"
+    ]
+  },
+  "validation_rules": [
+    "Character files must pass CHAR-001 through CHAR-008 from character-creation-contract.json",
+    "Character ID must be unique across pool (no duplicates)",
+    "Character ID format: <name-kebab>-<race>-<class>"
+  ],
+  "file_locations": {
+    "character_pool": "characters/",
+    "character_file_pattern": "characters/<character-id>.json",
+    "campaign_party_reference": "campaigns/<campaign-id>/party.json"
+  }
+}

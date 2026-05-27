@@ -1,0 +1,144 @@
+{
+  "id": "sweeney-human-cleric",
+  "entity_type": "pc",
+  "name": "Sweeney",
+  "character_class": "cleric",
+  "race": "human",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 16,
+    "constitution": 18,
+    "intelligence": 16,
+    "wisdom": 19,
+    "charisma": 17
+  },
+  "hp": 12,
+  "max_hp": 12,
+  "ac": 18,
+  "speed": 30,
+  "hit_dice_detail": {
+    "die_type": "d8",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["wisdom", "charisma"],
+    "skills": ["insight", "medicine"],
+    "weapons": ["simple weapons"],
+    "armor": ["light armor", "medium armor", "heavy armor", "shields"]
+  },
+  "class_features": [
+    {
+      "name": "Disciple of Life",
+      "description": "Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Spellcasting",
+      "description": "WIS-based divine spellcasting. Spell save DC 14, spell attack +6. Prepare WIS mod + cleric level (5) spells per long rest.",
+      "spell_save_dc": 14,
+      "spell_attack": 6
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Ability Score Increase",
+      "description": "All ability scores increased by 1."
+    }
+  ],
+  "divine_domain": "life",
+  "spellcasting": {
+    "cantrips": ["Sacred Flame", "Spare the Dying", "Guidance"],
+    "domain_spells_always_prepared": ["Bless", "Cure Wounds"],
+    "prepared_spells": ["Healing Word", "Shield of Faith", "Guiding Bolt", "Sanctuary", "Detect Magic"],
+    "spell_slots": {
+      "1": 2
+    },
+    "spells_prepared_max": 5
+  },
+  "inventory": [
+    {
+      "name": "Light Crossbow",
+      "quantity": 1,
+      "weight": 5,
+      "damage": "1d8 piercing",
+      "properties": ["ammunition (80/320)", "loading", "two-handed"],
+      "gp_value": 25
+    },
+    {
+      "name": "Bolts",
+      "quantity": 20,
+      "weight": 1.5,
+      "gp_value": 1
+    },
+    {
+      "name": "Mace",
+      "quantity": 1,
+      "weight": 4,
+      "damage": "1d6 bludgeoning",
+      "properties": [],
+      "gp_value": 5
+    },
+    {
+      "name": "Shield",
+      "quantity": 1,
+      "weight": 6,
+      "ac_bonus": 2,
+      "gp_value": 10
+    },
+    {
+      "name": "Chain Mail",
+      "quantity": 1,
+      "weight": 55,
+      "ac": 16,
+      "properties": ["heavy"],
+      "gp_value": 75
+    },
+    {
+      "name": "Holy Symbol (Amulet)",
+      "quantity": 1,
+      "weight": 0,
+      "gp_value": 5
+    },
+    {
+      "name": "Adventuring Pack",
+      "quantity": 1,
+      "weight": 40,
+      "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "neutral good",
+    "background": "folk hero",
+    "traits": [
+      "I judge people by their actions, not their words",
+      "I'm confident in my own abilities and do what I can to instill confidence in others"
+    ],
+    "ideal": "Respect — All people, rich or poor, deserve respect",
+    "bond": "I protect those who cannot protect themselves",
+    "flaw": "The people who knew me when I was young know my shameful secret, so I can never go home again",
+    "appearance": "A striking young human woman with golden blonde hair that falls in loose waves past her shoulders, bright blue eyes that hold steady no matter what's in front of her. She's stronger than she looks — years of hauling the sick, mixing poultices, and marching in chain mail built a frame that surprises people who mistake her for soft. Her face is open, warm, the kind that makes strangers trust her immediately — which is useful, because she needs people to hold still while she sets their bones. She wears her holy symbol around her neck, keeps her crossbow slung across her back, and her shield close. She looks like she belongs in a noble court, not a battlefield — and she knows people underestimate her for it. She lets them.",
+    "backstory": "Sweeney grew up in a small farming village where she was the one people came to when the healer was too drunk or too far away. She learned to set bones, brew remedies, and pray — not always in that order. By fifteen she'd saved more lives than the village elder, and the people called her blessed. Then something happened that she won't speak about — something that made it impossible to stay. She left in the night with nothing but her faith and a mace she'd never swung. She found religion on the road, not in a temple — a goddess who valued action over scripture. She found the party not long after, and she found Ala. The man who trusts no one trusts her. She shares his bedroll most nights — neither of them talks about it openly, and the party knows better than to ask. She's the only person who can touch him without his hand going to a blade. Whatever secret she's running from, she's decided these people are worth staying for.",
+    "relationships": {
+      "ala-half-elf-rogue": "romantic — physical relationship, unspoken but known by the party"
+    }
+  },
+  "creation_metadata": {
+    "creation_method": "4d6_drop_lowest",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}

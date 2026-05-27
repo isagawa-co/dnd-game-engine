@@ -1,0 +1,67 @@
+{
+  "act_id": "ch2-act-II",
+  "chapter": 2,
+  "act": "II",
+  "title": "The Redbrand Threat",
+  "level_range": [2, 2],
+  "location": {
+    "name": "Phandalin — Sleeping Giant Tap House",
+    "description": "A dirty, dangerous-looking tap house on the east side of town. Several Redbrand ruffians loiter on the front porch, wearing their signature scarlet cloaks.",
+    "environment": "town, hostile territory"
+  },
+  "read_aloud": "As you approach the Sleeping Giant, four tough-looking men in scarlet cloaks block the doorway. One spits on the ground and sneers. 'Well, well. Another bunch of do-gooders looking for trouble. This is our town, greenhorns. Best you crawl back where you came from before you get hurt.'",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "player_action",
+      "surprise": false,
+      "enemies": [
+        {"monster_id": "redbrand-ruffian", "count": 4, "position": "On the porch and in the doorway of the Sleeping Giant"}
+      ],
+      "tactics": "Redbrands fight boldly but flee if reduced to half their number. They taunt the party and try to intimidate them first. If the party backs down, the Redbrands grow bolder and start terrorizing the party's allies in town.",
+      "difficulty": "medium",
+      "reward_xp": 400,
+      "description": "Four Redbrand Ruffians confront the party. This can be resolved through combat or social interaction, but the Redbrands are looking for a fight."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    {"item": "gold", "quantity": 16, "location": "On Redbrand bodies (4 gp each)"},
+    {"item": "scarlet cloak", "quantity": 4, "location": "Redbrand cloaks — can be used as disguise to enter the hideout"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "intimidation",
+      "dc": 15,
+      "success": "The Redbrands back down and retreat into the tavern. The party learns they answer to Glasstaff in the manor.",
+      "failure": "The Redbrands attack.",
+      "context": "Attempting to intimidate the Redbrands instead of fighting."
+    },
+    {
+      "skill": "persuasion",
+      "dc": 18,
+      "success": "One Redbrand quietly tells the party that the hideout is under Tresendar Manor, accessed through a secret tunnel south of the manor or through the manor's cellar.",
+      "failure": "The Redbrand laughs and attacks.",
+      "context": "Trying to get information from a captured or intimidated Redbrand."
+    }
+  ],
+  "secrets": [
+    {
+      "check": "intimidation",
+      "dc": 12,
+      "info": "A captured Redbrand reveals: 'Glasstaff has a pet monster in the cellar — some creepy thing with one big eye. We don't go near it.' (This is the Nothic.)"
+    },
+    {
+      "check": "persuasion",
+      "dc": 14,
+      "info": "A captured Redbrand reveals: 'Glasstaff gets his orders from someone called the Black Spider. Don't know who that is — just that Glasstaff is scared of him.'"
+    }
+  ],
+  "transitions": {
+    "attack_hideout": "ch2-act-III",
+    "use_secret_tunnel": "ch2-act-III",
+    "enter_manor": "ch2-act-III",
+    "default": "ch2-act-III"
+  },
+  "dm_notes": "This confrontation should make the Redbrand threat personal. Whether the party wins by combat or intimidation, they should come away knowing: Glasstaff leads the Redbrands, the hideout is under Tresendar Manor, and there's a way in through a secret tunnel (from Carp's info or a captured Redbrand). If the party uses Redbrand cloaks as disguise, give them advantage on Deception checks to enter the hideout."
+}

@@ -1,0 +1,42 @@
+{
+  "act_id": "ch1-act-I",
+  "chapter": 1,
+  "act": "I",
+  "title": "The Road to Phandalin",
+  "level_range": [1, 1],
+  "location": {
+    "name": "Triboar Trail",
+    "description": "A well-worn wagon trail heading south from Neverwinter toward the frontier town of Phandalin. The road winds through rolling hills and light forest.",
+    "environment": "road, open terrain"
+  },
+  "read_aloud": [
+    "In the city of Neverwinter, a dwarf named Gundren Rockseeker asked you to bring a wagonload of provisions to the rough-and-tumble settlement of Phandalin, a couple of days' travel southeast of the city. Gundren was clearly excited and more than a little secretive about his reasons for the trip, saying only that he and his brothers had found 'something big,' and that he'd pay you ten gold pieces each for escorting his supplies safely to Barthen's Provisions, a trading post in Phandalin.",
+    "Gundren set out ahead of you on horseback, along with a warrior escort named Sildar Hallwinter, claiming he needed to arrive early to 'take care of business.' You've spent the last few days following the High Road south from Neverwinter, and you've just recently veered east along the Triboar Trail. You've encountered no trouble so far, but this territory can be dangerous. Bandits and outlaws have been known to lurk along the trail."
+  ],
+  "encounters": [],
+  "npcs": [
+    {
+      "id": "gundren-rockseeker",
+      "name": "Gundren Rockseeker",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Hired the party to escort a wagon to Phandalin for 10 gp each",
+        "Has found 'something big' with his brothers — won't say what",
+        "Rode ahead with Sildar Hallwinter on horseback"
+      ],
+      "quest": {
+        "name": "Deliver Supplies to Phandalin",
+        "objective": "Bring wagon of provisions to Barthen's Provisions in Phandalin",
+        "reward": "10 gp per party member",
+        "destination": "Phandalin"
+      }
+    }
+  ],
+  "loot": [],
+  "skill_checks": [],
+  "transitions": {
+    "default": "ch1-act-II"
+  },
+  "dm_notes": "This act is pure setup. Let the party introduce themselves and roleplay on the road. After a brief travel scene, transition to Act II (the ambush). The road scene should feel calm — the ambush hits harder when it interrupts normalcy."
+}

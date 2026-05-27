@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "state-check-contract",
+  "version": "1.0",
+  "description": "Defines required state fields per action type. Used by game-state-enforcer hook to validate campaign_state.json writes.",
+
+  "combat_end_required_fields": {
+    "description": "When combat.active changes from true to false, these fields MUST be present/updated",
+    "fields": [
+      {"field": "combat.active", "value": false},
+      {"field": "combat.last_combat.encounter", "type": "string", "required": true},
+      {"field": "combat.last_combat.result", "enum": ["victory", "defeat", "draw", "escape"], "required": true},
+      {"field": "combat.last_combat.rounds", "type": "int", "required": true},
+      {"field": "combat.last_combat.xp_earned", "type": "int", "required": true},
+      {"field": "combat.last_combat.xp_per_pc", "type": "int", "required": true},
+      {"field": "party_xp", "type": "object", "required": true, "rule": "must have entry for each PC in party"},
+      {"field": "loot_collected", "type": "array", "required": true, "rule": "must include items from act file loot array"}
+    ]
+  },
+
+  "act_transition_required_fields": {
+    "description": "When current_act_id changes, these fields MUST be updated",
+    "fields": [
+      {"field": "current_act", "type": "string", "required": true},
+      {"field": "current_act_id", "type": "string", "required": true},
+      {"field": "current_chapter", "type": "int", "required": true},
+      {"field": "session_notes", "type": "string", "required": true, "rule": "must summarize what happened in the completed act"}
+    ]
+  },
+
+  "spell_usage_required_fields": {
+    "description": "When a caster uses a spell slot, spell_slots_used MUST be updated",
+    "fields": [
+      {"field": "spell_slots_used", "type": "object", "required": true, "rule": "keyed by character_id, value is object of level: count_used"}
+    ]
+  },
+
+  "quest_update_required_fields": {
+    "description": "When quest-relevant information is discovered or objectives met",
+    "fields": [
+      {"field": "quests", "type": "array", "required": true, "rule": "must contain quest with updated status"}
+    ]
+  },
+
+  "scene_transition_gate": {
+    "description": "Before reading a new act file, campaign_state.json MUST have been written since the last act file was read",
+    "rule": "game-state-enforcer.py tracks last_act_read_timestamp and last_state_save_timestamp. Blocks Read of act files if state_save < act_read."
+  },
+
+  "periodic_save_gate": {
+    "description": "Force state save every N game actions to prevent gradual drift",
+    "actions_before_forced_save": 5,
+    "rule": "game-state-enforcer.py tracks game_actions_since_save. Blocks at limit until campaign_state.json is written."
+  }
+}

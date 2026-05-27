@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "combat-state-contract",
+  "version": "1.0",
+  "description": "Per-round combat state tracking: combatant status, action economy, conditions, death saves",
+
+  "combatant_state": {
+    "id": "string — unique combatant identifier",
+    "name": "string — display name",
+    "side": "party|enemy",
+    "hp": "int — current HP",
+    "max_hp": "int — maximum HP",
+    "ac": "int — armor class (1-30)",
+    "initiative_roll": "int — rolled initiative value (1d20 + dex_modifier)",
+    "conditions": [
+      {
+        "condition_id": "string — blinded|charmed|deafened|frightened|grappled|incapacitated|invisible|paralyzed|petrified|poisoned|prone|restrained|stunned|unconscious|exhaustion",
+        "duration_remaining": "int — rounds remaining (-1 = permanent until dispelled)",
+        "source": "string — source combatant or effect ID"
+      }
+    ],
+    "concentrating": "bool — whether concentrating on a spell",
+    "concentration_spell": "string|null — name of spell being concentrated on",
+    "death_saves": {
+      "successes": "int — 0 to 3",
+      "failures": "int — 0 to 3",
+      "stable": "bool — true if stabilized (3 successes)"
+    },
+    "action_economy": {
+      "action": "bool — true if action available this turn",
+      "bonus_action": "bool — true if bonus action available this turn",
+      "reaction": "bool — true if reaction available this turn",
+      "movement": "int — remaining movement in feet"
+    }
+  },
+
+  "round_state": {
+    "round_number": "int — current round (starts at 1)",
+    "turn_order": ["string — array of combatant IDs in initiative order (highest first)"],
+    "current_turn_index": "int — index into turn_order for current actor",
+    "phase": "initiative|combat|resolved",
+    "active_combatant_id": "string — ID of combatant whose turn it is"
+  },
+
+  "combat_state": {
+    "encounter_id": "string — matches combat_input encounter_id",
+    "round": "round_state object",
+    "combatants": ["combatant_state objects — all combatants in encounter"],
+    "combat_log": ["action results accumulated during combat"],
+    "phase_description": {
+      "initiative": "Rolling initiative, determining turn order",
+      "combat": "Active combat rounds in progress",
+      "resolved": "Combat ended — outcome determined"
+    }
+  }
+}

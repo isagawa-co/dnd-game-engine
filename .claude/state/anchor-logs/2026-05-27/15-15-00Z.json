@@ -1,0 +1,17 @@
+{
+  "anchor_timestamp": "2026-05-27T15:15:00Z",
+  "actions_count": 33,
+  "violations_found": 0,
+  "actions": [
+    {"timestamp": "2026-05-27T14:59:37Z", "tool": "Write", "entry": "Write: party.json — Honu Tortle Fighter Tier 4 entity"},
+    {"timestamp": "2026-05-27T14:59:40Z", "tool": "Edit", "entry": "Edit: campaign.json — party_count 6->4, replaced party_pcs"},
+    {"timestamp": "2026-05-27T14:59:50Z", "tool": "Edit", "entry": "Edit: campaign.json — party_pcs updated"},
+    {"timestamp": "2026-05-27T14:59:53Z", "tool": "Edit", "entry": "Edit: campaign_state.json — party array updated to pc-1-honu only"},
+    {"timestamp": "2026-05-27T15:05:40Z", "tool": "Bash", "entry": "Repo structure exploration (multiple find commands)"},
+    {"timestamp": "2026-05-27T15:11:28Z", "tool": "Write", "entry": "Write: 024-domain-refactor-flatten-repo-structure.md"},
+    {"timestamp": "2026-05-27T15:11:42Z", "tool": "Write", "entry": "Write: 025-domain-build-character-pool.md"},
+    {"timestamp": "2026-05-27T15:11:56Z", "tool": "Write", "entry": "Write: 026-domain-clean-non-dnd-content.md"},
+    {"timestamp": "2026-05-27T15:12:02Z", "tool": "Bash", "entry": "mkdir backlog sub-document directories"},
+    {"timestamp": "2026-05-27T15:12:14Z", "tool": "Write", "entry": "Write: directory-moves.md sub-document"}
+  ]
+}

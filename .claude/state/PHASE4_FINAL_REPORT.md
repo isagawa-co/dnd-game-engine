@@ -35,10 +35,10 @@ All 4 Phase 4 backlog items (018-021) were launched via `run-task.sh` in backgro
 ### Option 1: Direct Inline Execution (Recommended)
 Run the execute-pipeline skill directly for each backlog:
 ```bash
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/018-narration-framework-and-log.md
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/019-narration-anti-drift-enforcement.md
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/020-ui-scene-and-encounter-display.md
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/021-ui-combat-hud-and-status-display.md
+/kernel/execute-pipeline backlog/018-narration-framework-and-log.md
+/kernel/execute-pipeline backlog/019-narration-anti-drift-enforcement.md
+/kernel/execute-pipeline backlog/020-ui-scene-and-encounter-display.md
+/kernel/execute-pipeline backlog/021-ui-combat-hud-and-status-display.md
 ```
 
 This will:
@@ -49,10 +49,10 @@ This will:
 ### Option 2: Manual Task-Builder Invocation
 Run task-builder manually for each backlog:
 ```bash
-/kernel/task-builder projects/ai-dnd-game/backlog/018-narration-framework-and-log.md
-/kernel/task-builder projects/ai-dnd-game/backlog/019-narration-anti-drift-enforcement.md
-/kernel/task-builder projects/ai-dnd-game/backlog/020-ui-scene-and-encounter-display.md
-/kernel/task-builder projects/ai-dnd-game/backlog/021-ui-combat-hud-and-status-display.md
+/kernel/task-builder backlog/018-narration-framework-and-log.md
+/kernel/task-builder backlog/019-narration-anti-drift-enforcement.md
+/kernel/task-builder backlog/020-ui-scene-and-encounter-display.md
+/kernel/task-builder backlog/021-ui-combat-hud-and-status-display.md
 ```
 
 This will:
@@ -106,7 +106,7 @@ If background execution is preferred:
 
 - State: `.claude/state/session_state.json`
 - Logs: `.claude/state/narration-system_iteration_*.log` etc.
-- Backlogs: `projects/ai-dnd-game/backlog/01[8-9]-*.md` and `020-*.md`, `021-*.md`
+- Backlogs: `backlog/01[8-9]-*.md` and `020-*.md`, `021-*.md`
 - Commands: `.claude/commands/kernel/execute-pipeline.md`
 
 ---

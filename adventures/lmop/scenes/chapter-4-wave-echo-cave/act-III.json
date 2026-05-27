@@ -1,0 +1,108 @@
+{
+  "act_id": "ch4-act-III",
+  "chapter": 4,
+  "act": "III",
+  "title": "The Forge of Spells — The Black Spider",
+  "level_range": [4, 5],
+  "location": {
+    "name": "Wave Echo Cave — The Forge of Spells",
+    "description": "The deepest chamber of Wave Echo Cave. A great cavern with a ceiling lost in shadow. In the center, a stone brazier burns with green magical flame — the Forge of Spells, an ancient magical foundry where enchanters once imbued weapons and armor with powerful magic. The Black Spider has found it.",
+    "environment": "underground forge, magical green light, ancient dwarven architecture"
+  },
+  "read_aloud": "You enter a large cavern illuminated by an eerie green glow. In the center of the room, a stone brazier holds a flickering flame of emerald light — not natural fire, but raw magical energy. Ancient dwarven runes circle the brazier. Channels cut into the stone floor radiate outward like the spokes of a wheel. This is the Forge of Spells. Standing before it, examining the runes with focused intensity, is a dark elf in black robes. He turns as you enter, his white hair framing a face of cold intelligence. 'So. You're the ones who've been interfering with my plans. How tiresome.'",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "enemies": [
+        {"monster_id": "drow", "count": 1, "position": "At the Forge of Spells", "special": "Nezznar the Black Spider — drow mage. Uses Spider Staff (1d6+1 bludgeoning + 1d6 poison on hit, can cast Web once per day). Casts Suggestion, Web, and Magic Missile. Has Spider Climb."},
+        {"monster_id": "giant-spider", "count": 4, "position": "On the walls and ceiling of the cavern"},
+        {"monster_id": "bugbear", "count": 2, "position": "Flanking the entrance — Black Spider's bodyguards"}
+      ],
+      "tactics": "Nezznar opens with Web to restrain as many party members as possible, then targets casters with Magic Missile. The giant spiders drop from the ceiling and use their webs. The bugbears charge melee fighters. Nezznar retreats behind the Forge if wounded, using it as cover. He surrenders if reduced to 1 HP — he values his life over his mission. If he surrenders, he reveals everything about the Forge and Wave Echo Cave.",
+      "difficulty": "hard",
+      "reward_xp": 1850,
+      "description": "Final boss encounter. Nezznar the Black Spider with his giant spider minions and bugbear bodyguards."
+    },
+    {
+      "type": "social",
+      "trigger": "conditional",
+      "trigger_condition": "Party finds the spectator at the Forge",
+      "enemies": [
+        {"monster_id": "spectator", "count": 1, "position": "Hovering near the Forge of Spells", "special": "A spectator (lesser beholder) bound centuries ago to guard the Forge. Its binding has weakened — it no longer remembers exactly what it was guarding or from whom. It attacks anyone who tries to take items from the Forge unless convinced that the rightful owners sent them."}
+      ],
+      "tactics": "The spectator uses eye rays (Confusion, Paralyzing, Fear, Wounding) but can be convinced to stand down with a DC 15 Persuasion check by claiming to be agents of the original mine owners (the Phandelver Pact). If its binding is broken (Dispel Magic DC 14), it thanks the party and vanishes to its home plane.",
+      "difficulty": "hard",
+      "reward_xp": 700,
+      "description": "The Forge's ancient guardian. Can be fought or reasoned with."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "nezznar-black-spider",
+      "name": "Nezznar (The Black Spider)",
+      "attitude": "hostile",
+      "role": "villain",
+      "dialog_hooks": [
+        "A drow from Menzoberranzan, seeking the Forge of Spells to gain power and influence",
+        "Has been using the Cragmaw goblins and Redbrands as pawns",
+        "Captured Nundro Rockseeker (Gundren's other brother) — he's held in a side chamber",
+        "If he surrenders, he reveals the Forge can still enchant items but is weakened",
+        "Knows about other threats in the Underdark that could be future plot hooks"
+      ]
+    },
+    {
+      "id": "nundro-rockseeker",
+      "name": "Nundro Rockseeker",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Gundren's brother — held prisoner by the Black Spider",
+        "Forced to help identify minerals and evaluate the Forge",
+        "Deeply grieved when he learns Tharden is dead",
+        "Grateful for rescue — the Rockseeker brothers will share the mine's future wealth with the party"
+      ]
+    }
+  ],
+  "loot": [
+    {"item": "Spider Staff", "quantity": 1, "location": "Nezznar's possession — +1 quarterstaff, +1d6 poison damage, Web 1/day"},
+    {"item": "gold", "quantity": 190, "location": "Nezznar's pack and scattered through the forge area"},
+    {"item": "weapon-of-warning", "quantity": 1, "location": "On the Forge of Spells — Lightbringer, a +1 mace that glows (20 ft bright, 20 ft dim) on command. Advantage on initiative."},
+    {"item": "Dragonguard breastplate", "quantity": 1, "location": "On the Forge — +1 breastplate, advantage on saves vs. dragon breath weapons"},
+    {"item": "potion-of-healing", "quantity": 3, "location": "Nezznar's supplies"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "arcana",
+      "dc": 15,
+      "success": "The Forge of Spells is still functional but greatly diminished. It can enhance items to +1 enchantment given time and materials. In its heyday, it could create legendary artifacts.",
+      "failure": "The Forge glows with magic — purpose unclear.",
+      "context": "Examining the Forge of Spells."
+    },
+    {
+      "skill": "persuasion",
+      "dc": 15,
+      "success": "The spectator accepts the party as agents of the Phandelver Pact and allows access to the Forge items.",
+      "failure": "The spectator attacks.",
+      "context": "Negotiating with the spectator guardian."
+    }
+  ],
+  "secrets": [
+    {
+      "check": "investigation",
+      "dc": 14,
+      "info": "A hidden chamber behind the Forge contains Nundro Rockseeker, chained to the wall. He's alive but weakened."
+    },
+    {
+      "check": "arcana",
+      "dc": 18,
+      "info": "The Forge of Spells could theoretically be fully restored with a massive infusion of magical energy — a quest for higher-level adventurers."
+    }
+  ],
+  "transitions": {
+    "black_spider_defeated": "adventure_complete",
+    "black_spider_fled": "adventure_complete",
+    "adventure_complete": "adventure_complete"
+  },
+  "dm_notes": "This is the final encounter of the adventure. Make it epic. The Forge's green light, the echoing waves, Nezznar's cold confidence — build the atmosphere. The spectator adds complexity — fighting it AND Nezznar's forces simultaneously would be deadly. Smart parties deal with one before the other. Rescuing Nundro is the emotional resolution. After clearing the cave, the party has essentially saved Phandalin, rescued the Rockseekers, and secured a legendary location. The Forge of Spells can serve as a base of operations for future adventures. Ending narration should acknowledge each character's contribution and set up what comes next."
+}

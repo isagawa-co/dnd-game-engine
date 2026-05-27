@@ -1,0 +1,149 @@
+{
+  "id": "ala-half-elf-rogue",
+  "entity_type": "pc",
+  "name": "Ala",
+  "character_class": "rogue",
+  "race": "half-elf",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 15,
+    "dexterity": 18,
+    "constitution": 18,
+    "intelligence": 15,
+    "wisdom": 18,
+    "charisma": 20
+  },
+  "hp": 12,
+  "max_hp": 12,
+  "ac": 15,
+  "speed": 30,
+  "hit_dice_detail": {
+    "die_type": "d8",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["dexterity", "intelligence"],
+    "skills": ["stealth", "persuasion", "deception", "insight", "investigation", "perception", "acrobatics", "athletics"],
+    "expertise": ["stealth", "persuasion"],
+    "weapons": ["simple weapons", "hand crossbows", "longswords", "rapiers", "shortswords"],
+    "armor": ["light armor"],
+    "tools": ["thieves' tools"]
+  },
+  "class_features": [
+    {
+      "name": "Sneak Attack",
+      "description": "Once per turn, deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll, or if another enemy of the target is within 5 feet of it. Must use a finesse or ranged weapon.",
+      "damage": "1d6",
+      "uses": "once per turn",
+      "recharge": "passive"
+    },
+    {
+      "name": "Thieves' Cant",
+      "description": "A secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Also understand a set of secret signs and symbols used by thieves and beggars.",
+      "uses": "unlimited",
+      "recharge": "passive"
+    },
+    {
+      "name": "Expertise",
+      "description": "Double proficiency bonus for Stealth and Persuasion checks.",
+      "skills": ["stealth", "persuasion"],
+      "uses": "passive",
+      "recharge": "passive"
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Darkvision",
+      "description": "Can see in dim light within 60 feet as if bright light, and in darkness as if dim light."
+    },
+    {
+      "name": "Fey Ancestry",
+      "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+    },
+    {
+      "name": "Skill Versatility",
+      "description": "Proficiency in two additional skills (Acrobatics, Athletics)."
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Rapier",
+      "quantity": 1,
+      "weight": 2,
+      "damage": "1d8 piercing",
+      "properties": ["finesse"],
+      "gp_value": 25
+    },
+    {
+      "name": "Shortbow",
+      "quantity": 1,
+      "weight": 2,
+      "damage": "1d6 piercing",
+      "properties": ["ammunition (80/320)", "two-handed"],
+      "gp_value": 25
+    },
+    {
+      "name": "Arrows",
+      "quantity": 20,
+      "weight": 1,
+      "gp_value": 1
+    },
+    {
+      "name": "Dagger",
+      "quantity": 2,
+      "weight": 2,
+      "damage": "1d4 piercing",
+      "properties": ["finesse", "light", "thrown (20/60)"],
+      "gp_value": 4
+    },
+    {
+      "name": "Leather Armor",
+      "quantity": 1,
+      "weight": 10,
+      "ac": "11 + DEX",
+      "gp_value": 10
+    },
+    {
+      "name": "Thieves' Tools",
+      "quantity": 1,
+      "weight": 1,
+      "gp_value": 25
+    },
+    {
+      "name": "Burglar's Pack",
+      "quantity": 1,
+      "weight": 44,
+      "contents": ["backpack", "caltrops (bag of 20)", "string (10 ft)", "bell", "candles (5)", "crowbar", "hammer", "pitons (10)", "hooded lantern", "oil (2 flasks)", "rations (5 days)", "tinderbox", "waterskin", "rope (50 ft)"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "chaotic good",
+    "background": "urchin",
+    "traits": [
+      "I ask a lot of questions",
+      "I think anyone who's nice to me is hiding evil intent"
+    ],
+    "ideal": "Community — We have to take care of each other, because no one else is going to do it",
+    "bond": "No one else should have to endure the hardships I've been through",
+    "flaw": "I will never fully trust anyone other than myself",
+    "appearance": "A lean Half-Elf of average height with sharp, angular features that betray his elven blood and sun-darkened skin that speaks to years on the streets. His eyes are a striking pale green — always moving, always counting exits, always watching hands. He wears his dark hair cropped short, practical, nothing to grab in a fight. A thin scar runs from his left ear to his jaw — a lesson from someone who underestimated him once and never got the chance to do it again. He dresses in worn but well-fitted leather, every pocket placed with purpose. He asks more questions than anyone in the room, and if you're being too kind he wants to know why. When he smiles, it never quite reaches his eyes. He takes care of his people like it's a debt he can never finish paying — but he sleeps with one eye open, because trusting someone fully is a luxury he's never been able to afford.",
+    "backstory": "Ala never knew his elven parent — just the human mother who died when he was seven, leaving him alone in a city that doesn't feed orphans. He learned fast: who to avoid, where to sleep, how to take what he needed without getting caught. He survived by asking the right questions and trusting no one's answer. An older urchin named Fen taught him the basics — lockpicks, rooftops, the language of thieves — and then disappeared one winter without a word. Ala doesn't talk about Fen. By sixteen, he was running a small crew of street kids, keeping them fed, keeping them alive. Nobody was going to suffer the way he did — not on his watch. He leads this party the way he led his crew: watch everyone, question everything, make sure nobody goes hungry. He believes in community because he built one from nothing. But trust? Trust is different. Trust gets people killed. He'll die for his people. He just won't close his eyes around them."
+  },
+  "creation_metadata": {
+    "creation_method": "4d6_drop_lowest",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}

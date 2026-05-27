@@ -1,0 +1,89 @@
+{
+  "act_id": "ch3-act-I",
+  "chapter": 3,
+  "act": "I",
+  "title": "The Spider's Web — Side Quests",
+  "level_range": [3, 3],
+  "location": {
+    "name": "Various — Sword Coast Wilderness",
+    "description": "The party follows leads from Phandalin across the Sword Coast wilderness. Multiple locations can be visited in any order.",
+    "environment": "wilderness, varied terrain"
+  },
+  "read_aloud": "With the Redbrands dealt with and Phandalin somewhat safer, you have several leads to follow. Gundren Rockseeker is still missing, held at Cragmaw Castle somewhere in the wilderness. The Black Spider pulls strings from the shadows. And several people in town have asked for your help with problems of their own.",
+  "encounters": [
+    {
+      "type": "social",
+      "trigger": "player_action",
+      "description": "Agatha's Lair — The party brings the jeweled silver comb from Sister Garaele. Agatha, a banshee, will answer one question truthfully if given the comb. She can reveal the location of Bowgentle's spellbook (traded to a necromancer named Tsernoth in Iriaebor over a hundred years ago).",
+      "enemies": [
+        {"monster_id": "banshee", "count": 1, "position": "Her dome-shaped shelter in the woods near Conyberry", "special": "Do NOT fight Agatha — she is far too powerful for a level 3 party. This is a diplomacy encounter only."}
+      ],
+      "difficulty": "hard",
+      "reward_xp": 200
+    },
+    {
+      "type": "combat",
+      "trigger": "player_action",
+      "description": "Old Owl Well — A necromancer named Hamun Kost has set up camp amid ancient ruins, guarding the well with a dozen zombies. He is not immediately hostile and can be negotiated with. He wants to know who built the tower at Old Owl Well — Agatha can answer this.",
+      "enemies": [
+        {"monster_id": "zombie", "count": 12, "position": "Shambling around the ruins of Old Owl Well"},
+        {"monster_id": "evil-mage", "count": 1, "position": "In a colorful tent near the ruins", "special": "Hamun Kost — Thayan necromancer (use Redbrand Mage stats). Not hostile if approached diplomatically."}
+      ],
+      "tactics": "If attacked, Kost commands the zombies to fight while he casts spells from behind cover. If approached peacefully, he'll bargain — answer his question about the tower's builders and he'll share information about the area.",
+      "difficulty": "hard",
+      "reward_xp": 600
+    },
+    {
+      "type": "combat",
+      "trigger": "player_action",
+      "description": "Ruins of Thundertree — An abandoned town overrun by ash zombies, twig blights, and giant spiders. A young green dragon named Venomfang has taken up residence in the tower. Reidoth the Druid is here trying to drive out the dragon. A group of dragon cultists is also present, hoping to recruit Venomfang.",
+      "enemies": [
+        {"monster_id": "zombie", "count": 6, "position": "Scattered through the ruined buildings (ash zombies)", "special": "Ash zombies — when destroyed, each explodes in a cloud of ash (DC 10 CON save or blinded for 1 minute)"},
+        {"monster_id": "giant-spider", "count": 2, "position": "In webbed-over buildings"},
+        {"monster_id": "young-green-dragon", "count": 1, "position": "In the ruined tower — Venomfang", "special": "DEADLY encounter. The dragon can be fought, driven off (hard), or negotiated with. Reidoth advises against fighting."}
+      ],
+      "tactics": "Venomfang uses Poison Breath (DC 14 CON save, 12d6 poison damage) and then flies away if reduced below half HP. The dragon cultists (4 humans in black robes) try to prevent the party from attacking Venomfang.",
+      "difficulty": "deadly",
+      "reward_xp": 2000
+    },
+    {
+      "type": "combat",
+      "trigger": "player_action",
+      "description": "Wyvern Tor — A band of orcs has set up a camp in the hills. The party can ambush them or confront directly.",
+      "enemies": [
+        {"monster_id": "orc", "count": 6, "position": "In a cave complex at Wyvern Tor"},
+        {"monster_id": "ogre", "count": 1, "position": "Deep in the cave — the orcs' ally", "special": "Brughor Axe-Biter leads the orcs. The ogre fights alongside them."}
+      ],
+      "tactics": "Orcs charge into melee. The ogre throws javelins first, then joins the melee. If Brughor falls, remaining orcs flee.",
+      "difficulty": "hard",
+      "reward_xp": 750
+    }
+  ],
+  "npcs": [
+    {
+      "id": "reidoth-druid",
+      "name": "Reidoth the Druid",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Knows the location of Cragmaw Castle — will share it if the party helps drive off or deal with Venomfang",
+        "Knows the location of Wave Echo Cave",
+        "Warns that Venomfang is extremely dangerous and should not be fought head-on",
+        "Can guide the party through the wilderness"
+      ]
+    }
+  ],
+  "loot": [
+    {"item": "gold", "quantity": 150, "location": "Venomfang's hoard (if dragon driven off)"},
+    {"item": "Dragonguard breastplate", "quantity": 1, "location": "Venomfang's hoard — +1 AC, advantage on saves vs. dragon breath weapons"},
+    {"item": "gold", "quantity": 75, "location": "Orc camp at Wyvern Tor"},
+    {"item": "emerald necklace", "quantity": 1, "location": "Ruined herb shop in Thundertree (Mirna's family heirloom, worth 200 gp)", "requires": "Investigation DC 10 in the herb shop"}
+  ],
+  "transitions": {
+    "learned_cragmaw_location": "ch3-act-II",
+    "found_map": "ch3-act-II",
+    "return_to_phandalin": "ch3-act-II",
+    "default": "ch3-act-II"
+  },
+  "dm_notes": "This is a sandbox act — the party can visit these locations in any order. Not all need to be completed. The key goal is learning the location of Cragmaw Castle (from Reidoth or other sources). Venomfang is DEADLY for level 3 — make this clear through Reidoth's warnings. Smart parties will negotiate or flee. The dragon cult subplot can be expanded if desired. Wyvern Tor and Agatha are simpler side quests for XP and rewards."
+}

@@ -1,48 +1,55 @@
 {
   "session_started": true,
-  "timestamp": "2026-05-27T09:00:00Z",
-  "resumed_from": "005-build-damage-roll-contract.md",
+  "timestamp": "2026-05-27T16:45:00Z",
+  "resumed_from": null,
   "context": {
-    "current_task": null,
-    "task_folder": null,
-    "progress": "Preparing new campaign",
-    "last_completed": null,
-    "next_step": "Create 6-character party and start new game",
-    "notes": "Copying extended class/race data from game-dev repo to dnd-game-engine-test. Creating new campaign with characters."
+    "current_task": "Build combat loop skill + contracts",
+    "task_folder": "tasks/dnd-combat-loop/",
+    "progress": "0/4 combat loop tasks complete",
+    "last_completed": "027-adventure-pack-system pipeline",
+    "next_step": "Save campaign state to Ch1 Act II, then build combat-loop-contract.json, combat-state-contract.json, combat-action-contract.json, and combat SKILL.md",
+    "notes": "Campaign gameplay reached Ch1 Act II (goblin ambush). Combat started but combat loop skill missing. User paused game to build it. Scale encounters +50% for 6-PC party. Adventure pack system complete (11 act files). Anti-drift rules in place."
   },
   "domain": "game-engine",
   "needs_learn": false,
   "one_shot": false,
   "protocol_hash": "cc9684492e9972f47d1ef11f306c4d4d1eb56b2d324e2a57d25087206c939a0f",
-  "protocol_hash_timestamp": "2026-05-27T14:40:00Z",
+  "protocol_hash_timestamp": "2026-05-27T21:00:00Z",
   "anchor_token_confirmed": true,
   "pending_anchor_token": null,
   "actions_log": [
-    "Bash: python3 << 'PYEOF'\nimport json\nfrom datetime import datetime\n\n# Create new campa",
-    "Bash: find \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills\" ",
-    "Bash: ls -la \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dn",
-    "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.claude/s",
-    "Bash: cp -r \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/.claud",
-    "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks\" ",
-    "Bash: ls \"D:/my_ai_projects/project_test_repos/game-dev/projects/ai-dnd-game/tasks/dnd",
-    "Bash: find \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" -name \"characte",
-    "Bash: find \"D:/my_ai_projects/project_test_repos/game-dev\" -name \"character-creation-c",
-    "Bash: cp -r \"D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/character\" \""
+    "Write: campaign_state.json",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" init",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" status -s | h",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" log --oneline",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" branch",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" status -s | w",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" status -s | g",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" remote -v",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" status -s | g",
+    "Bash: git -C \"D:/my_ai_projects/project_test_repos/dnd-game-engine-test\" diff --name-o"
   ],
   "needs_learn_reason": null,
   "complete": false,
   "complete_timestamp": null,
   "pipeline_execution": {
-    "status": "IDLE",
-    "total_items": 0,
-    "completed_items": []
+    "status": "COMPLETE",
+    "total_items": 3,
+    "completed_items": [
+      "024",
+      "025",
+      "026"
+    ]
   },
   "pipeline_state": {
-    "input_mode": null,
-    "backlog_path": null,
-    "task_folder": null,
-    "task_count": 0,
-    "status": "IDLE"
+    "input_mode": "existing_backlog",
+    "backlog_path": "docs/backlog/027-domain-build-adventure-pack-system.md",
+    "task_folder": "tasks/027-adventure-pack-system/",
+    "task_count": 5,
+    "status": "COMPLETE"
   },
-  "pipeline_mode": null
+  "pipeline_mode": {
+    "skip_plan_review": true,
+    "no_execute": false
+  }
 }

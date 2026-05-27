@@ -43007,3 +43007,912 @@ campaign_id = f"...
 [2026-05-27T07:44:16.332256] tool_response type: <class 'dict'>
 [2026-05-27T07:44:16.335716] command: cp -r "D:/my_ai_projects/project_test_repos/game-dev/.claude/skills/character" "D:/my_ai_projects/pr...
 [2026-05-27T07:44:16.339765] Skipping - not a test command
+[2026-05-27T07:47:45.302894] === Hook triggered ===
+[2026-05-27T07:47:45.305892] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:47:45.308906] tool_name: Bash
+[2026-05-27T07:47:45.310892] tool_input keys: ['command', 'description']
+[2026-05-27T07:47:45.312891] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected', 'persistedOutputPath', 'persistedOutputSize']
+[2026-05-27T07:47:45.312891] tool_response type: <class 'dict'>
+[2026-05-27T07:47:45.318419] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" init && git -C "D:/my_ai_projects...
+[2026-05-27T07:47:45.318419] Skipping - not a test command
+[2026-05-27T07:47:48.960485] === Hook triggered ===
+[2026-05-27T07:47:48.963485] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:47:48.963485] tool_name: Bash
+[2026-05-27T07:47:48.980085] tool_input keys: ['command', 'description']
+[2026-05-27T07:47:48.983490] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T07:47:48.988267] tool_response type: <class 'dict'>
+[2026-05-27T07:47:48.990707] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" checkout -b feature/party-creatio...
+[2026-05-27T07:47:49.004731] Skipping - not a test command
+[2026-05-27T07:49:22.606508] === Hook triggered ===
+[2026-05-27T07:49:22.611345] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:49:22.614360] tool_name: Bash
+[2026-05-27T07:49:22.616362] tool_input keys: ['command', 'description']
+[2026-05-27T07:49:22.618244] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T07:49:22.627507] tool_response type: <class 'dict'>
+[2026-05-27T07:49:22.629351] command: gh repo create isagawa-co/dnd-game-engine --public --source="D:/my_ai_projects/project_test_repos/dn...
+[2026-05-27T07:49:22.629351] Skipping - not a test command
+[2026-05-27T07:49:46.685267] === Hook triggered ===
+[2026-05-27T07:49:46.688267] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:49:46.690267] tool_name: Bash
+[2026-05-27T07:49:46.696047] tool_input keys: ['command', 'description']
+[2026-05-27T07:49:46.701531] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T07:49:46.704538] tool_response type: <class 'dict'>
+[2026-05-27T07:49:46.710251] command: gh repo view isagawa-co/dnd-game-engine...
+[2026-05-27T07:49:46.718262] Skipping - not a test command
+[2026-05-27T07:49:58.871242] === Hook triggered ===
+[2026-05-27T07:49:58.874740] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:49:58.879409] tool_name: Bash
+[2026-05-27T07:49:58.879409] tool_input keys: ['command', 'description']
+[2026-05-27T07:49:58.879409] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T07:49:58.879409] tool_response type: <class 'dict'>
+[2026-05-27T07:49:58.879409] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" add CLAUDE.md && git -C "D:/my_ai...
+[2026-05-27T07:49:58.879409] Skipping - not a test command
+[2026-05-27T07:50:09.076294] === Hook triggered ===
+[2026-05-27T07:50:09.079834] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T07:50:09.085853] tool_name: Bash
+[2026-05-27T07:50:09.090445] tool_input keys: ['command', 'description']
+[2026-05-27T07:50:09.094515] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T07:50:09.099515] tool_response type: <class 'dict'>
+[2026-05-27T07:50:09.101519] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" push origin feature/party-creatio...
+[2026-05-27T07:50:09.104942] Skipping - not a test command
+[2026-05-27T08:05:40.683406] === Hook triggered ===
+[2026-05-27T08:05:40.705649] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:40.705649] tool_name: Bash
+[2026-05-27T08:05:40.723086] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:40.729082] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:40.734535] tool_response type: <class 'dict'>
+[2026-05-27T08:05:40.735535] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" -maxdepth 1 -type d | sort...
+[2026-05-27T08:05:40.735535] Skipping - not a test command
+[2026-05-27T08:05:41.454080] === Hook triggered ===
+[2026-05-27T08:05:41.455648] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:41.455648] tool_name: Bash
+[2026-05-27T08:05:41.455648] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:41.455648] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:41.455648] tool_response type: <class 'dict'>
+[2026-05-27T08:05:41.473348] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects" -maxdepth 3 -type d | sort...
+[2026-05-27T08:05:41.475354] Skipping - not a test command
+[2026-05-27T08:05:44.694060] === Hook triggered ===
+[2026-05-27T08:05:44.698094] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:44.700096] tool_name: Bash
+[2026-05-27T08:05:44.704222] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:44.706733] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:44.710483] tool_response type: <class 'dict'>
+[2026-05-27T08:05:44.710483] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/_test" -maxdepth 2 -type d | sort...
+[2026-05-27T08:05:44.716448] Skipping - not a test command
+[2026-05-27T08:05:45.169058] === Hook triggered ===
+[2026-05-27T08:05:45.177894] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:45.189081] tool_name: Bash
+[2026-05-27T08:05:45.195674] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:45.200117] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:45.200117] tool_response type: <class 'dict'>
+[2026-05-27T08:05:45.218244] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/docs" -maxdepth 2 | sort...
+[2026-05-27T08:05:45.227501] Skipping - not a test command
+[2026-05-27T08:05:46.040054] === Hook triggered ===
+[2026-05-27T08:05:46.045045] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:46.050047] tool_name: Bash
+[2026-05-27T08:05:46.050047] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:46.050047] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:46.050047] tool_response type: <class 'dict'>
+[2026-05-27T08:05:46.050047] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills" -maxdepth 2 -type d ...
+[2026-05-27T08:05:46.050047] Skipping - not a test command
+[2026-05-27T08:05:59.528460] === Hook triggered ===
+[2026-05-27T08:05:59.533458] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:59.533458] tool_name: Bash
+[2026-05-27T08:05:59.533458] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:59.552111] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:59.557136] tool_response type: <class 'dict'>
+[2026-05-27T08:05:59.561825] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*.py" 2>/dev/null...
+[2026-05-27T08:05:59.573452] Skipping - not a test command
+[2026-05-27T08:05:59.796546] === Hook triggered ===
+[2026-05-27T08:05:59.801793] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:05:59.805918] tool_name: Bash
+[2026-05-27T08:05:59.811174] tool_input keys: ['command', 'description']
+[2026-05-27T08:05:59.815374] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:05:59.819379] tool_response type: <class 'dict'>
+[2026-05-27T08:05:59.822367] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type d -name "__pycache__" 2>/dev/nu...
+[2026-05-27T08:05:59.822367] Skipping - not a test command
+[2026-05-27T08:06:06.847941] === Hook triggered ===
+[2026-05-27T08:06:06.847941] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:06.863267] tool_name: Bash
+[2026-05-27T08:06:06.870486] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:06.876384] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:06.885081] tool_response type: <class 'dict'>
+[2026-05-27T08:06:06.888762] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/website-cloner -type f...
+[2026-05-27T08:06:06.888762] Skipping - not a test command
+[2026-05-27T08:06:20.112767] === Hook triggered ===
+[2026-05-27T08:06:20.115767] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:20.116760] tool_name: Bash
+[2026-05-27T08:06:20.116760] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:20.116760] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:20.116760] tool_response type: <class 'dict'>
+[2026-05-27T08:06:20.133158] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type d -name "*website*" -o -type d ...
+[2026-05-27T08:06:20.142413] Skipping - not a test command
+[2026-05-27T08:06:20.522264] === Hook triggered ===
+[2026-05-27T08:06:20.541623] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:20.551190] tool_name: Bash
+[2026-05-27T08:06:20.558646] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:20.558646] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:20.572257] tool_response type: <class 'dict'>
+[2026-05-27T08:06:20.580767] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/ 2>/dev/null | grep ...
+[2026-05-27T08:06:20.583771] Skipping - not a test command
+[2026-05-27T08:06:22.683313] === Hook triggered ===
+[2026-05-27T08:06:22.685411] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:22.685411] tool_name: Bash
+[2026-05-27T08:06:22.685411] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:22.685411] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:22.685411] tool_response type: <class 'dict'>
+[2026-05-27T08:06:22.700477] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/website-cloner -type f...
+[2026-05-27T08:06:22.706058] Skipping - not a test command
+[2026-05-27T08:06:30.215284] === Hook triggered ===
+[2026-05-27T08:06:30.215284] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:30.233306] tool_name: Bash
+[2026-05-27T08:06:30.238374] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:30.238922] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:30.238922] tool_response type: <class 'dict'>
+[2026-05-27T08:06:30.238922] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*.py" | grep -v ".clau...
+[2026-05-27T08:06:30.254892] Skipping - not a test command
+[2026-05-27T08:06:32.382235] === Hook triggered ===
+[2026-05-27T08:06:32.387235] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:32.391235] tool_name: Bash
+[2026-05-27T08:06:32.396693] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:32.401087] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:32.405876] tool_response type: <class 'dict'>
+[2026-05-27T08:06:32.405876] command: grep -r "projects/ai-dnd-game" D:\my_ai_projects\project_test_repos\dnd-game-engine-test/projects/ai...
+[2026-05-27T08:06:32.411448] Skipping - not a test command
+[2026-05-27T08:06:32.780850] === Hook triggered ===
+[2026-05-27T08:06:32.795769] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:32.801201] tool_name: Bash
+[2026-05-27T08:06:32.807869] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:32.813238] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:32.819949] tool_response type: <class 'dict'>
+[2026-05-27T08:06:32.824949] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ 2>/dev/null...
+[2026-05-27T08:06:32.829707] Skipping - not a test command
+[2026-05-27T08:06:33.012099] === Hook triggered ===
+[2026-05-27T08:06:33.024133] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:33.029417] tool_name: Bash
+[2026-05-27T08:06:33.035466] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:33.039465] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:33.047607] tool_response type: <class 'dict'>
+[2026-05-27T08:06:33.055270] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test 2>/dev/null | head -20...
+[2026-05-27T08:06:33.059275] Skipping - not a test command
+[2026-05-27T08:06:35.664579] === Hook triggered ===
+[2026-05-27T08:06:35.672251] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:35.675551] tool_name: Bash
+[2026-05-27T08:06:35.681600] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:35.685447] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:35.692705] tool_response type: <class 'dict'>
+[2026-05-27T08:06:35.697593] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/docs -type f 2>/dev/null | head -20...
+[2026-05-27T08:06:35.707028] Skipping - not a test command
+[2026-05-27T08:06:36.251026] === Hook triggered ===
+[2026-05-27T08:06:36.256689] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:36.262066] tool_name: Bash
+[2026-05-27T08:06:36.266376] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:36.271378] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:36.276378] tool_response type: <class 'dict'>
+[2026-05-27T08:06:36.282427] command: find "D:\my_ai_projects\project_test_repos\dnd-game-engine-test\projects\ai-dnd-game\tasks" -name "*...
+[2026-05-27T08:06:36.285610] Skipping - not a test command
+[2026-05-27T08:06:39.166637] === Hook triggered ===
+[2026-05-27T08:06:39.183223] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:39.187744] tool_name: Bash
+[2026-05-27T08:06:39.190478] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:39.195495] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:39.200156] tool_response type: <class 'dict'>
+[2026-05-27T08:06:39.203260] command: grep -r "football\|NFL\|sports" /d/my_ai_projects/project_test_repos/dnd-game-engine-test --exclude-...
+[2026-05-27T08:06:39.207261] Skipping - not a test command
+[2026-05-27T08:06:45.444923] === Hook triggered ===
+[2026-05-27T08:06:45.447929] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:45.449929] tool_name: Bash
+[2026-05-27T08:06:45.452933] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:45.457930] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:45.460924] tool_response type: <class 'dict'>
+[2026-05-27T08:06:45.463929] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type d -name "rules-of-football" 2>/...
+[2026-05-27T08:06:45.465929] Skipping - not a test command
+[2026-05-27T08:06:45.846553] === Hook triggered ===
+[2026-05-27T08:06:45.849546] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:45.851562] tool_name: Bash
+[2026-05-27T08:06:45.853552] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:45.857046] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:45.859052] tool_response type: <class 'dict'>
+[2026-05-27T08:06:45.862044] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/ 2>/dev/null...
+[2026-05-27T08:06:45.865051] Skipping - not a test command
+[2026-05-27T08:06:48.761976] === Hook triggered ===
+[2026-05-27T08:06:48.769974] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:06:48.774975] tool_name: Bash
+[2026-05-27T08:06:48.779967] tool_input keys: ['command', 'description']
+[2026-05-27T08:06:48.781968] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:06:48.784967] tool_response type: <class 'dict'>
+[2026-05-27T08:06:48.788969] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/tasks/ 2>/dev/...
+[2026-05-27T08:06:48.791985] Skipping - not a test command
+[2026-05-27T08:12:02.026167] === Hook triggered ===
+[2026-05-27T08:12:02.029147] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:12:02.032146] tool_name: Bash
+[2026-05-27T08:12:02.035227] tool_input keys: ['command', 'description']
+[2026-05-27T08:12:02.041119] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:12:02.044073] tool_response type: <class 'dict'>
+[2026-05-27T08:12:02.046397] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/docs/backlog/024-domain-refactor...
+[2026-05-27T08:12:02.049562] Skipping - not a test command
+[2026-05-27T08:14:05.311489] === Hook triggered ===
+[2026-05-27T08:14:05.320333] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:14:05.326796] tool_name: Bash
+[2026-05-27T08:14:05.335952] tool_input keys: ['command', 'description']
+[2026-05-27T08:14:05.339714] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:14:05.341721] tool_response type: <class 'dict'>
+[2026-05-27T08:14:05.344717] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/anchor-logs/2026-0...
+[2026-05-27T08:14:05.346721] Skipping - not a test command
+[2026-05-27T08:14:12.570031] === Hook triggered ===
+[2026-05-27T08:14:12.573843] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:14:12.576357] tool_name: Bash
+[2026-05-27T08:14:12.576357] tool_input keys: ['command', 'description']
+[2026-05-27T08:14:12.585488] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:14:12.588755] tool_response type: <class 'dict'>
+[2026-05-27T08:14:12.593113] command: python -c "import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project_test_repos/dnd-game-...
+[2026-05-27T08:14:12.596153] Skipping - not a test command
+[2026-05-27T08:19:31.966261] === Hook triggered ===
+[2026-05-27T08:19:31.970538] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:19:31.973520] tool_name: Bash
+[2026-05-27T08:19:31.975092] tool_input keys: ['command', 'description']
+[2026-05-27T08:19:31.995399] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:19:31.998398] tool_response type: <class 'dict'>
+[2026-05-27T08:19:32.000597] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/tasks/flatten-repo-structure"...
+[2026-05-27T08:19:32.004856] Skipping - not a test command
+[2026-05-27T08:20:18.169734] === Hook triggered ===
+[2026-05-27T08:20:18.172493] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:18.175875] tool_name: Bash
+[2026-05-27T08:20:18.178862] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:18.185867] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:18.185867] tool_response type: <class 'dict'>
+[2026-05-27T08:20:18.206746] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" mv projects/ai-dnd-game/campaigns...
+[2026-05-27T08:20:18.208276] Skipping - not a test command
+[2026-05-27T08:20:23.212640] === Hook triggered ===
+[2026-05-27T08:20:23.272464] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:23.277236] tool_name: Bash
+[2026-05-27T08:20:23.281149] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:23.286002] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:23.291157] tool_response type: <class 'dict'>
+[2026-05-27T08:20:23.295160] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" mv projects/ai-dnd-game/content c...
+[2026-05-27T08:20:23.298165] Skipping - not a test command
+[2026-05-27T08:20:23.684622] === Hook triggered ===
+[2026-05-27T08:20:23.688672] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:23.690672] tool_name: Bash
+[2026-05-27T08:20:23.693663] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:23.696664] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:23.700737] tool_response type: <class 'dict'>
+[2026-05-27T08:20:23.703734] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" mv projects/ai-dnd-game/contracts...
+[2026-05-27T08:20:23.707723] Skipping - not a test command
+[2026-05-27T08:20:27.089873] === Hook triggered ===
+[2026-05-27T08:20:27.091874] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:27.091874] tool_name: Bash
+[2026-05-27T08:20:27.100126] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:27.102731] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:27.111867] tool_response type: <class 'dict'>
+[2026-05-27T08:20:27.113889] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/"...
+[2026-05-27T08:20:27.120002] Skipping - not a test command
+[2026-05-27T08:20:31.975990] === Hook triggered ===
+[2026-05-27T08:20:31.979991] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:31.982616] tool_name: Bash
+[2026-05-27T08:20:31.985607] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:31.987614] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:31.991546] tool_response type: <class 'dict'>
+[2026-05-27T08:20:31.991546] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/tasks/"...
+[2026-05-27T08:20:31.991546] Skipping - not a test command
+[2026-05-27T08:20:36.501462] === Hook triggered ===
+[2026-05-27T08:20:36.505463] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:36.509257] tool_name: Bash
+[2026-05-27T08:20:36.509257] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:36.509257] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:36.509257] tool_response type: <class 'dict'>
+[2026-05-27T08:20:36.519286] command: for dir in "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/tasks/"*/...
+[2026-05-27T08:20:36.519286] Skipping - not a test command
+[2026-05-27T08:20:41.986375] === Hook triggered ===
+[2026-05-27T08:20:41.990551] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:41.993769] tool_name: Bash
+[2026-05-27T08:20:41.997263] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:42.000413] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:42.003215] tool_response type: <class 'dict'>
+[2026-05-27T08:20:42.007950] command: for dir in "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/tasks/"*/...
+[2026-05-27T08:20:42.010199] Skipping - not a test command
+[2026-05-27T08:20:46.501025] === Hook triggered ===
+[2026-05-27T08:20:46.502586] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:46.502586] tool_name: Bash
+[2026-05-27T08:20:46.509988] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:46.509988] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:46.509988] tool_response type: <class 'dict'>
+[2026-05-27T08:20:46.520076] command: rm -rf "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects" "D:/my_ai_projects/proje...
+[2026-05-27T08:20:46.522070] Skipping - not a test command
+[2026-05-27T08:20:50.091477] === Hook triggered ===
+[2026-05-27T08:20:50.095482] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:50.099269] tool_name: Bash
+[2026-05-27T08:20:50.101269] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:50.104269] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:50.106268] tool_response type: <class 'dict'>
+[2026-05-27T08:20:50.110386] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/" | head -20...
+[2026-05-27T08:20:50.110386] Skipping - not a test command
+[2026-05-27T08:20:55.324786] === Hook triggered ===
+[2026-05-27T08:20:55.328792] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:20:55.336799] tool_name: Bash
+[2026-05-27T08:20:55.346602] tool_input keys: ['command', 'description']
+[2026-05-27T08:20:55.349554] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:20:55.352904] tool_response type: <class 'dict'>
+[2026-05-27T08:20:55.363614] command: grep -rn "projects/ai-dnd-game" "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/" --inclu...
+[2026-05-27T08:20:55.369235] Skipping - not a test command
+[2026-05-27T08:22:15.759937] === Hook triggered ===
+[2026-05-27T08:22:15.767992] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:15.775942] tool_name: Bash
+[2026-05-27T08:22:15.779941] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:15.785152] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:15.786864] tool_response type: <class 'dict'>
+[2026-05-27T08:22:15.795424] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state" "D:/my_ai_projects/pr...
+[2026-05-27T08:22:15.800041] Skipping - not a test command
+[2026-05-27T08:22:22.439663] === Hook triggered ===
+[2026-05-27T08:22:22.441295] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:22.441295] tool_name: Bash
+[2026-05-27T08:22:22.458626] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:22.463624] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:22.463624] tool_response type: <class 'dict'>
+[2026-05-27T08:22:22.472117] command: for f in "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/game_build_state.j...
+[2026-05-27T08:22:22.475770] Skipping - not a test command
+[2026-05-27T08:22:26.219033] === Hook triggered ===
+[2026-05-27T08:22:26.224033] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:26.231222] tool_name: Bash
+[2026-05-27T08:22:26.236222] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:26.240229] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:26.245599] tool_response type: <class 'dict'>
+[2026-05-27T08:22:26.251853] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/tasks" -name "*.md" | xargs grep -l ...
+[2026-05-27T08:22:26.258879] Skipping - not a test command
+[2026-05-27T08:22:32.652336] === Hook triggered ===
+[2026-05-27T08:22:32.656337] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:32.657974] tool_name: Bash
+[2026-05-27T08:22:32.657974] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:32.657974] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:32.657974] tool_response type: <class 'dict'>
+[2026-05-27T08:22:32.675646] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/tasks" -name "*.md" -exec grep -l "p...
+[2026-05-27T08:22:32.679644] Skipping - not a test command
+[2026-05-27T08:22:40.481045] === Hook triggered ===
+[2026-05-27T08:22:40.481045] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:40.481045] tool_name: Bash
+[2026-05-27T08:22:40.495383] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:40.502360] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:40.502360] tool_response type: <class 'dict'>
+[2026-05-27T08:22:40.509788] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/tasks" -name "*.md" -exec grep -l "p...
+[2026-05-27T08:22:40.513870] Skipping - not a test command
+[2026-05-27T08:22:45.741158] === Hook triggered ===
+[2026-05-27T08:22:45.748499] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:22:45.750505] tool_name: Bash
+[2026-05-27T08:22:45.756719] tool_input keys: ['command', 'description']
+[2026-05-27T08:22:45.761720] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:22:45.766718] tool_response type: <class 'dict'>
+[2026-05-27T08:22:45.775334] command: grep -rn "projects/ai-dnd-game" "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/" --inclu...
+[2026-05-27T08:22:45.775334] Skipping - not a test command
+[2026-05-27T08:23:21.380409] === Hook triggered ===
+[2026-05-27T08:23:21.387416] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:23:21.392895] tool_name: Bash
+[2026-05-27T08:23:21.399176] tool_input keys: ['command', 'description']
+[2026-05-27T08:23:21.404003] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:23:21.409862] tool_response type: <class 'dict'>
+[2026-05-27T08:23:21.413422] command: rm -rf "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/website-cloner"...
+[2026-05-27T08:23:21.413422] Skipping - not a test command
+[2026-05-27T08:26:51.569305] === Hook triggered ===
+[2026-05-27T08:26:51.573304] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:26:51.578303] tool_name: Bash
+[2026-05-27T08:26:51.582305] tool_input keys: ['command', 'description']
+[2026-05-27T08:26:51.586304] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:26:51.590306] tool_response type: <class 'dict'>
+[2026-05-27T08:26:51.594303] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/attestations/020-2026042...
+[2026-05-27T08:26:51.598297] Skipping - not a test command
+[2026-05-27T08:26:52.800939] === Hook triggered ===
+[2026-05-27T08:26:52.811507] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:26:52.817029] tool_name: Bash
+[2026-05-27T08:26:52.823036] tool_input keys: ['command', 'description']
+[2026-05-27T08:26:52.827036] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:26:52.832922] tool_response type: <class 'dict'>
+[2026-05-27T08:26:52.838921] command: ls -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/atomic_ops" 2>/dev/n...
+[2026-05-27T08:26:52.845430] Skipping - not a test command
+[2026-05-27T08:26:53.410548] === Hook triggered ===
+[2026-05-27T08:26:53.414548] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:26:53.419292] tool_name: Bash
+[2026-05-27T08:26:53.422455] tool_input keys: ['command', 'description']
+[2026-05-27T08:26:53.424460] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:26:53.427460] tool_response type: <class 'dict'>
+[2026-05-27T08:26:53.430471] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" -name "__pycache__" -type d 2>/dev/...
+[2026-05-27T08:26:53.433465] Skipping - not a test command
+[2026-05-27T08:26:58.972707] === Hook triggered ===
+[2026-05-27T08:26:58.977156] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:26:58.981156] tool_name: Bash
+[2026-05-27T08:26:58.985305] tool_input keys: ['command', 'description']
+[2026-05-27T08:26:58.989305] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:26:58.993305] tool_response type: <class 'dict'>
+[2026-05-27T08:26:58.998305] command: rm -f "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/attestations/020-2026...
+[2026-05-27T08:26:59.002305] Skipping - not a test command
+[2026-05-27T08:27:00.064913] === Hook triggered ===
+[2026-05-27T08:27:00.068921] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:00.072920] tool_name: Bash
+[2026-05-27T08:27:00.077068] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:00.082060] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:00.087580] tool_response type: <class 'dict'>
+[2026-05-27T08:27:00.091597] command: rm -rf "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/atomic_ops"...
+[2026-05-27T08:27:00.095597] Skipping - not a test command
+[2026-05-27T08:27:01.562912] === Hook triggered ===
+[2026-05-27T08:27:01.569325] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:01.572839] tool_name: Bash
+[2026-05-27T08:27:01.576840] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:01.581842] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:01.585841] tool_response type: <class 'dict'>
+[2026-05-27T08:27:01.589841] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" -name "__pycache__" -type d -exec r...
+[2026-05-27T08:27:01.594840] Skipping - not a test command
+[2026-05-27T08:27:15.614160] === Hook triggered ===
+[2026-05-27T08:27:15.618160] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:15.620160] tool_name: Bash
+[2026-05-27T08:27:15.622160] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:15.626160] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:15.629160] tool_response type: <class 'dict'>
+[2026-05-27T08:27:15.631159] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/attestations/020-2026042...
+[2026-05-27T08:27:15.634163] Skipping - not a test command
+[2026-05-27T08:27:16.956424] === Hook triggered ===
+[2026-05-27T08:27:16.959423] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:16.962424] tool_name: Bash
+[2026-05-27T08:27:16.966424] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:16.971425] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:16.974423] tool_response type: <class 'dict'>
+[2026-05-27T08:27:16.977425] command: ls -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/atomic_ops" 2>/dev/n...
+[2026-05-27T08:27:16.980424] Skipping - not a test command
+[2026-05-27T08:27:17.640436] === Hook triggered ===
+[2026-05-27T08:27:17.643436] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:17.646429] tool_name: Bash
+[2026-05-27T08:27:17.649440] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:17.651428] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:17.653941] tool_response type: <class 'dict'>
+[2026-05-27T08:27:17.657082] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" -name "__pycache__" -type d 2>/dev/...
+[2026-05-27T08:27:17.659089] Skipping - not a test command
+[2026-05-27T08:27:49.806220] === Hook triggered ===
+[2026-05-27T08:27:49.811219] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:27:49.816219] tool_name: Bash
+[2026-05-27T08:27:49.819222] tool_input keys: ['command', 'description']
+[2026-05-27T08:27:49.822220] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:27:49.824223] tool_response type: <class 'dict'>
+[2026-05-27T08:27:49.826335] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/characters"...
+[2026-05-27T08:27:49.829347] Skipping - not a test command
+[2026-05-27T08:29:37.144937] === Hook triggered ===
+[2026-05-27T08:29:37.147937] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:29:37.149937] tool_name: Bash
+[2026-05-27T08:29:37.152936] tool_input keys: ['command', 'description']
+[2026-05-27T08:29:37.154936] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:29:37.159459] tool_response type: <class 'dict'>
+[2026-05-27T08:29:37.162466] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/characters/" && echo "---" && ls "D:/m...
+[2026-05-27T08:29:37.165463] Skipping - not a test command
+[2026-05-27T08:36:59.788816] === Hook triggered ===
+[2026-05-27T08:36:59.799579] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:36:59.810495] tool_name: Bash
+[2026-05-27T08:36:59.810495] tool_input keys: ['command', 'description']
+[2026-05-27T08:36:59.810495] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:36:59.810495] tool_response type: <class 'dict'>
+[2026-05-27T08:36:59.822875] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/characters/"...
+[2026-05-27T08:36:59.826853] Skipping - not a test command
+[2026-05-27T08:37:00.318834] === Hook triggered ===
+[2026-05-27T08:37:00.322827] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:00.324827] tool_name: Bash
+[2026-05-27T08:37:00.326827] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:00.327820] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:00.327820] tool_response type: <class 'dict'>
+[2026-05-27T08:37:00.333395] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/contracts/character-pool-contract.json...
+[2026-05-27T08:37:00.333395] Skipping - not a test command
+[2026-05-27T08:37:00.855526] === Hook triggered ===
+[2026-05-27T08:37:00.855526] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:00.855526] tool_name: Bash
+[2026-05-27T08:37:00.871330] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:00.878002] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:00.883161] tool_response type: <class 'dict'>
+[2026-05-27T08:37:00.885506] command: ls "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.gitignore"...
+[2026-05-27T08:37:00.905303] Skipping - not a test command
+[2026-05-27T08:37:05.800332] === Hook triggered ===
+[2026-05-27T08:37:05.800332] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:05.806566] tool_name: Bash
+[2026-05-27T08:37:05.808553] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:05.811165] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:05.821271] tool_response type: <class 'dict'>
+[2026-05-27T08:37:05.822133] command: test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/campaigns" && echo "PASS: campaig...
+[2026-05-27T08:37:05.822133] Skipping - not a test command
+[2026-05-27T08:37:06.756550] === Hook triggered ===
+[2026-05-27T08:37:06.762973] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:06.768256] tool_name: Bash
+[2026-05-27T08:37:06.771260] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:06.773278] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:06.776143] tool_response type: <class 'dict'>
+[2026-05-27T08:37:06.784398] command: test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/content" && echo "PASS: content/ ...
+[2026-05-27T08:37:06.794433] Skipping - not a test command
+[2026-05-27T08:37:07.233229] === Hook triggered ===
+[2026-05-27T08:37:07.233229] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:07.256674] tool_name: Bash
+[2026-05-27T08:37:07.258824] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:07.261186] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:07.263269] tool_response type: <class 'dict'>
+[2026-05-27T08:37:07.265988] command: test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/contracts" && echo "PASS: contrac...
+[2026-05-27T08:37:07.265988] Skipping - not a test command
+[2026-05-27T08:37:08.194410] === Hook triggered ===
+[2026-05-27T08:37:08.197413] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:08.199421] tool_name: Bash
+[2026-05-27T08:37:08.199962] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:08.199962] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:08.199962] tool_response type: <class 'dict'>
+[2026-05-27T08:37:08.199962] command: test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/tasks" && echo "PASS: tasks/ at r...
+[2026-05-27T08:37:08.199962] Skipping - not a test command
+[2026-05-27T08:37:09.134196] === Hook triggered ===
+[2026-05-27T08:37:09.146033] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:09.153034] tool_name: Bash
+[2026-05-27T08:37:09.161093] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:09.169415] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:09.175436] tool_response type: <class 'dict'>
+[2026-05-27T08:37:09.184076] command: ! test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/projects" && echo "PASS: projec...
+[2026-05-27T08:37:09.193582] Skipping - not a test command
+[2026-05-27T08:37:09.932357] === Hook triggered ===
+[2026-05-27T08:37:09.941978] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:09.944883] tool_name: Bash
+[2026-05-27T08:37:09.950934] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:09.956513] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:09.959516] tool_response type: <class 'dict'>
+[2026-05-27T08:37:09.962038] command: ! test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/_test" && echo "PASS: _test/ re...
+[2026-05-27T08:37:09.964223] Skipping - not a test command
+[2026-05-27T08:37:32.372042] === Hook triggered ===
+[2026-05-27T08:37:32.378453] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:32.388791] tool_name: Bash
+[2026-05-27T08:37:32.395358] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:32.400428] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:32.413589] tool_response type: <class 'dict'>
+[2026-05-27T08:37:32.423503] command: grep -rn "projects/ai-dnd-game" "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" --includ...
+[2026-05-27T08:37:32.429593] Skipping - not a test command
+[2026-05-27T08:37:37.177576] === Hook triggered ===
+[2026-05-27T08:37:37.185952] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:37.189723] tool_name: Bash
+[2026-05-27T08:37:37.189723] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:37.197121] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:37.201132] tool_response type: <class 'dict'>
+[2026-05-27T08:37:37.203287] command: ! test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/website-cloner" ...
+[2026-05-27T08:37:37.206278] Skipping - not a test command
+[2026-05-27T08:37:38.616953] === Hook triggered ===
+[2026-05-27T08:37:38.619779] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:38.623040] tool_name: Bash
+[2026-05-27T08:37:38.625040] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:38.627687] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:38.630817] tool_response type: <class 'dict'>
+[2026-05-27T08:37:38.632817] command: ! test -f "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/attestations/020-...
+[2026-05-27T08:37:38.635824] Skipping - not a test command
+[2026-05-27T08:37:39.522506] === Hook triggered ===
+[2026-05-27T08:37:39.522506] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:39.529736] tool_name: Bash
+[2026-05-27T08:37:39.531879] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:39.535961] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:39.537954] tool_response type: <class 'dict'>
+[2026-05-27T08:37:39.539246] command: ! test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/atomic_ops" && e...
+[2026-05-27T08:37:39.539246] Skipping - not a test command
+[2026-05-27T08:37:40.538719] === Hook triggered ===
+[2026-05-27T08:37:40.538719] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:40.557376] tool_name: Bash
+[2026-05-27T08:37:40.561369] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:40.561369] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:40.566515] tool_response type: <class 'dict'>
+[2026-05-27T08:37:40.574160] command: find "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" -name "__pycache__" -type d 2>/dev/...
+[2026-05-27T08:37:40.576172] Skipping - not a test command
+[2026-05-27T08:37:41.505379] === Hook triggered ===
+[2026-05-27T08:37:41.509115] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:37:41.511446] tool_name: Bash
+[2026-05-27T08:37:41.511446] tool_input keys: ['command', 'description']
+[2026-05-27T08:37:41.516470] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:37:41.519475] tool_response type: <class 'dict'>
+[2026-05-27T08:37:41.522073] command: test -d "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/atomic-ops" && ech...
+[2026-05-27T08:37:41.525015] Skipping - not a test command
+[2026-05-27T08:38:58.189771] === Hook triggered ===
+[2026-05-27T08:38:58.193783] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:38:58.195907] tool_name: Bash
+[2026-05-27T08:38:58.203385] tool_input keys: ['command', 'description']
+[2026-05-27T08:38:58.205372] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:38:58.213129] tool_response type: <class 'dict'>
+[2026-05-27T08:38:58.216644] command: python -c "
+import json
+# Check character file
+with open('D:/my_ai_projects/project_test_repos/dnd-g...
+[2026-05-27T08:38:58.218991] Skipping - not a test command
+[2026-05-27T08:39:02.099359] === Hook triggered ===
+[2026-05-27T08:39:02.099359] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:39:02.099359] tool_name: Bash
+[2026-05-27T08:39:02.111439] tool_input keys: ['command', 'description']
+[2026-05-27T08:39:02.115183] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:39:02.117590] tool_response type: <class 'dict'>
+[2026-05-27T08:39:02.121590] command: python -c "
+import json
+# Check party.json uses reference format
+with open('D:/my_ai_projects/projec...
+[2026-05-27T08:39:02.124771] Skipping - not a test command
+[2026-05-27T08:39:05.286893] === Hook triggered ===
+[2026-05-27T08:39:05.289894] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:39:05.291893] tool_name: Bash
+[2026-05-27T08:39:05.293868] tool_input keys: ['command', 'description']
+[2026-05-27T08:39:05.297358] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:39:05.297358] tool_response type: <class 'dict'>
+[2026-05-27T08:39:05.297358] command: python -c "
+import json
+# Check contract file structure
+with open('D:/my_ai_projects/project_test_re...
+[2026-05-27T08:39:05.302851] Skipping - not a test command
+[2026-05-27T08:40:27.369334] === Hook triggered ===
+[2026-05-27T08:40:27.372357] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T08:40:27.375865] tool_name: Bash
+[2026-05-27T08:40:27.376862] tool_input keys: ['command', 'description']
+[2026-05-27T08:40:27.376862] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T08:40:27.376862] tool_response type: <class 'dict'>
+[2026-05-27T08:40:27.376862] command: python -c "
+import json
+with open('D:/my_ai_projects/project_test_repos/dnd-game-engine-test/charact...
+[2026-05-27T08:40:27.389792] Skipping - not a test command
+[2026-05-27T09:27:29.357311] === Hook triggered ===
+[2026-05-27T09:27:29.361027] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T09:27:29.363027] tool_name: Bash
+[2026-05-27T09:27:29.366029] tool_input keys: ['command', 'description']
+[2026-05-27T09:27:29.368031] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T09:27:29.369955] tool_response type: <class 'dict'>
+[2026-05-27T09:27:29.369955] command: python -c "
+import json
+with open('D:/my_ai_projects/project_test_repos/dnd-game-engine-test/content...
+[2026-05-27T09:27:29.369955] Skipping - not a test command
+[2026-05-27T11:23:09.383765] === Hook triggered ===
+[2026-05-27T11:23:09.386956] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:09.389547] tool_name: Bash
+[2026-05-27T11:23:09.392553] tool_input keys: ['command']
+[2026-05-27T11:23:09.395544] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:09.397549] tool_response type: <class 'dict'>
+[2026-05-27T11:23:09.400734] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*.json" -o -name "*.md...
+[2026-05-27T11:23:09.402962] Skipping - not a test command
+[2026-05-27T11:23:11.172880] === Hook triggered ===
+[2026-05-27T11:23:11.176882] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:11.177881] tool_name: Bash
+[2026-05-27T11:23:11.177881] tool_input keys: ['command']
+[2026-05-27T11:23:11.184346] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:11.184346] tool_response type: <class 'dict'>
+[2026-05-27T11:23:11.184346] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/projects/ai-dnd-game/ 2>/dev/null |...
+[2026-05-27T11:23:11.189812] Skipping - not a test command
+[2026-05-27T11:23:12.765662] === Hook triggered ===
+[2026-05-27T11:23:12.771804] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:12.775316] tool_name: Bash
+[2026-05-27T11:23:12.777315] tool_input keys: ['command']
+[2026-05-27T11:23:12.780259] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'returnCodeInterpretation', 'noOutputExpected']
+[2026-05-27T11:23:12.783789] tool_response type: <class 'dict'>
+[2026-05-27T11:23:12.783789] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/projects -type d 2>/dev/null...
+[2026-05-27T11:23:12.783789] Skipping - not a test command
+[2026-05-27T11:23:16.532859] === Hook triggered ===
+[2026-05-27T11:23:16.532859] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:16.549153] tool_name: Bash
+[2026-05-27T11:23:16.553164] tool_input keys: ['command']
+[2026-05-27T11:23:16.556580] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:16.558580] tool_response type: <class 'dict'>
+[2026-05-27T11:23:16.560580] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type d \( -name "content" -o -name "...
+[2026-05-27T11:23:16.562700] Skipping - not a test command
+[2026-05-27T11:23:18.624475] === Hook triggered ===
+[2026-05-27T11:23:18.627477] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:18.628483] tool_name: Bash
+[2026-05-27T11:23:18.632871] tool_input keys: ['command']
+[2026-05-27T11:23:18.639421] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:18.641428] tool_response type: <class 'dict'>
+[2026-05-27T11:23:18.644420] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/content -type f | sort...
+[2026-05-27T11:23:18.646426] Skipping - not a test command
+[2026-05-27T11:23:20.821285] === Hook triggered ===
+[2026-05-27T11:23:20.825953] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:20.832886] tool_name: Bash
+[2026-05-27T11:23:20.833646] tool_input keys: ['command']
+[2026-05-27T11:23:20.840391] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:20.843391] tool_response type: <class 'dict'>
+[2026-05-27T11:23:20.846136] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/campaigns -type f | sort...
+[2026-05-27T11:23:20.850138] Skipping - not a test command
+[2026-05-27T11:23:22.436348] === Hook triggered ===
+[2026-05-27T11:23:22.440348] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:22.449221] tool_name: Bash
+[2026-05-27T11:23:22.450221] tool_input keys: ['command']
+[2026-05-27T11:23:22.450221] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:22.463409] tool_response type: <class 'dict'>
+[2026-05-27T11:23:22.476131] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/contracts -type f | sort...
+[2026-05-27T11:23:22.486938] Skipping - not a test command
+[2026-05-27T11:23:25.128109] === Hook triggered ===
+[2026-05-27T11:23:25.129109] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:25.129109] tool_name: Bash
+[2026-05-27T11:23:25.141513] tool_input keys: ['command']
+[2026-05-27T11:23:25.146021] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:25.149021] tool_response type: <class 'dict'>
+[2026-05-27T11:23:25.149534] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*adventure*" -o -name ...
+[2026-05-27T11:23:25.149534] Skipping - not a test command
+[2026-05-27T11:23:27.166089] === Hook triggered ===
+[2026-05-27T11:23:27.166089] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:27.182811] tool_name: Bash
+[2026-05-27T11:23:27.188755] tool_input keys: ['command']
+[2026-05-27T11:23:27.196022] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:27.203677] tool_response type: <class 'dict'>
+[2026-05-27T11:23:27.210661] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f \( -name "*GDD*" -o -name "*g...
+[2026-05-27T11:23:27.217416] Skipping - not a test command
+[2026-05-27T11:23:37.872255] === Hook triggered ===
+[2026-05-27T11:23:37.872255] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:37.890299] tool_name: Bash
+[2026-05-27T11:23:37.894013] tool_input keys: ['command']
+[2026-05-27T11:23:37.896058] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:37.898467] tool_response type: <class 'dict'>
+[2026-05-27T11:23:37.899484] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*.json" | xargs grep -...
+[2026-05-27T11:23:37.899484] Skipping - not a test command
+[2026-05-27T11:23:40.132758] === Hook triggered ===
+[2026-05-27T11:23:40.155429] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:40.164295] tool_name: Bash
+[2026-05-27T11:23:40.171757] tool_input keys: ['command']
+[2026-05-27T11:23:40.175833] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:40.181508] tool_response type: <class 'dict'>
+[2026-05-27T11:23:40.183509] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills -name "*.md" | head -2...
+[2026-05-27T11:23:40.183509] Skipping - not a test command
+[2026-05-27T11:23:42.684559] === Hook triggered ===
+[2026-05-27T11:23:42.689660] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:42.699063] tool_name: Bash
+[2026-05-27T11:23:42.702621] tool_input keys: ['command']
+[2026-05-27T11:23:42.705714] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:42.705714] tool_response type: <class 'dict'>
+[2026-05-27T11:23:42.712615] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -name "SKILL.md" -path "*/scene/*" -o...
+[2026-05-27T11:23:42.715609] Skipping - not a test command
+[2026-05-27T11:23:48.678365] === Hook triggered ===
+[2026-05-27T11:23:48.682828] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:48.687155] tool_name: Bash
+[2026-05-27T11:23:48.690780] tool_input keys: ['command']
+[2026-05-27T11:23:48.695078] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:48.698078] tool_response type: <class 'dict'>
+[2026-05-27T11:23:48.702725] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f -name "*.md" | xargs grep -l ...
+[2026-05-27T11:23:48.705913] Skipping - not a test command
+[2026-05-27T11:23:50.992240] === Hook triggered ===
+[2026-05-27T11:23:50.996916] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:50.999423] tool_name: Bash
+[2026-05-27T11:23:51.001607] tool_input keys: ['command']
+[2026-05-27T11:23:51.004607] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:51.006608] tool_response type: <class 'dict'>
+[2026-05-27T11:23:51.008608] command: ls -la /d/my_ai_projects/project_test_repos/dnd-game-engine-test/content/lost-mine-phandelver/monste...
+[2026-05-27T11:23:51.011235] Skipping - not a test command
+[2026-05-27T11:23:59.604590] === Hook triggered ===
+[2026-05-27T11:23:59.609589] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:23:59.610587] tool_name: Bash
+[2026-05-27T11:23:59.617144] tool_input keys: ['command']
+[2026-05-27T11:23:59.617144] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:23:59.622861] tool_response type: <class 'dict'>
+[2026-05-27T11:23:59.629093] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/content/lost-mine-phandelver -type f ...
+[2026-05-27T11:23:59.633093] Skipping - not a test command
+[2026-05-27T11:24:03.131408] === Hook triggered ===
+[2026-05-27T11:24:03.131408] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'agent_id', 'agent_type', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T11:24:03.135866] tool_name: Bash
+[2026-05-27T11:24:03.141352] tool_input keys: ['command']
+[2026-05-27T11:24:03.143924] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T11:24:03.146980] tool_response type: <class 'dict'>
+[2026-05-27T11:24:03.149493] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test -type f \( -name "*location*" -o -nam...
+[2026-05-27T11:24:03.151319] Skipping - not a test command
+[2026-05-27T13:15:32.076028] === Hook triggered ===
+[2026-05-27T13:15:32.172423] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T13:15:32.189715] tool_name: Bash
+[2026-05-27T13:15:32.196725] tool_input keys: ['command', 'description']
+[2026-05-27T13:15:32.202975] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T13:15:32.209827] tool_response type: <class 'dict'>
+[2026-05-27T13:15:32.209827] command: mv /d/my_ai_projects/project_test_repos/dnd-game-engine-test/content /d/my_ai_projects/project_test_...
+[2026-05-27T13:15:32.209827] Skipping - not a test command
+[2026-05-27T13:18:05.388396] === Hook triggered ===
+[2026-05-27T13:18:05.388396] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T13:18:05.388396] tool_name: Bash
+[2026-05-27T13:18:05.388396] tool_input keys: ['command', 'description']
+[2026-05-27T13:18:05.388396] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T13:18:05.388396] tool_response type: <class 'dict'>
+[2026-05-27T13:18:05.410176] command: mkdir -p /d/my_ai_projects/project_test_repos/dnd-game-engine-test/adventures/lmop/scenes/chapter-1-...
+[2026-05-27T13:18:05.412228] Skipping - not a test command
+[2026-05-27T13:24:39.530502] === Hook triggered ===
+[2026-05-27T13:24:39.543480] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T13:24:39.546482] tool_name: Bash
+[2026-05-27T13:24:39.546482] tool_input keys: ['command', 'description']
+[2026-05-27T13:24:39.567818] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T13:24:39.571944] tool_response type: <class 'dict'>
+[2026-05-27T13:24:39.573545] command: rm /d/my_ai_projects/project_test_repos/dnd-game-engine-test/campaigns/campaign-2026-05-27-002/sessi...
+[2026-05-27T13:24:39.573545] Skipping - not a test command
+[2026-05-27T13:24:48.938397] === Hook triggered ===
+[2026-05-27T13:24:48.946682] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T13:24:48.954874] tool_name: Bash
+[2026-05-27T13:24:48.960493] tool_input keys: ['command', 'description']
+[2026-05-27T13:24:48.960493] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T13:24:48.974456] tool_response type: <class 'dict'>
+[2026-05-27T13:24:48.976590] command: find /d/my_ai_projects/project_test_repos/dnd-game-engine-test/adventures/lmop/scenes -type f -name ...
+[2026-05-27T13:24:48.978927] Skipping - not a test command
+[2026-05-27T13:24:49.125816] === Hook triggered ===
+[2026-05-27T13:24:49.127822] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T13:24:49.131735] tool_name: Bash
+[2026-05-27T13:24:49.134472] tool_input keys: ['command', 'description']
+[2026-05-27T13:24:49.138544] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T13:24:49.140118] tool_response type: <class 'dict'>
+[2026-05-27T13:24:49.140118] command: ls /d/my_ai_projects/project_test_repos/dnd-game-engine-test/adventures/lmop/...
+[2026-05-27T13:24:49.140118] Skipping - not a test command
+[2026-05-27T14:02:44.415525] === Hook triggered ===
+[2026-05-27T14:02:44.415525] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T14:02:44.415525] tool_name: Bash
+[2026-05-27T14:02:44.427063] tool_input keys: ['command', 'description']
+[2026-05-27T14:02:44.429057] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T14:02:44.432057] tool_response type: <class 'dict'>
+[2026-05-27T14:02:44.434232] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/state/anchor-logs/2026-0...
+[2026-05-27T14:02:44.436709] Skipping - not a test command
+[2026-05-27T14:04:26.821288] === Hook triggered ===
+[2026-05-27T14:04:26.821288] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T14:04:26.842691] tool_name: Bash
+[2026-05-27T14:04:26.847199] tool_input keys: ['command', 'description']
+[2026-05-27T14:04:26.851244] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T14:04:26.855841] tool_response type: <class 'dict'>
+[2026-05-27T14:04:26.859300] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/combat/contracts"...
+[2026-05-27T14:04:26.860312] Skipping - not a test command
+[2026-05-27T14:24:47.213447] === Hook triggered ===
+[2026-05-27T14:24:47.213447] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T14:24:47.213447] tool_name: Bash
+[2026-05-27T14:24:47.231119] tool_input keys: ['command', 'description']
+[2026-05-27T14:24:47.234824] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T14:24:47.238893] tool_response type: <class 'dict'>
+[2026-05-27T14:24:47.240442] command: mkdir -p "D:/my_ai_projects/project_test_repos/dnd-game-engine-test/.claude/skills/state-check/contr...
+[2026-05-27T14:24:47.240442] Skipping - not a test command
+[2026-05-27T16:12:41.518894] === Hook triggered ===
+[2026-05-27T16:12:41.654511] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:12:41.665652] tool_name: Bash
+[2026-05-27T16:12:41.674713] tool_input keys: ['command', 'description']
+[2026-05-27T16:12:41.683703] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:12:41.683703] tool_response type: <class 'dict'>
+[2026-05-27T16:12:41.703711] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" init...
+[2026-05-27T16:12:41.710954] Skipping - not a test command
+[2026-05-27T16:12:44.877491] === Hook triggered ===
+[2026-05-27T16:12:44.883107] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:12:44.886157] tool_name: Bash
+[2026-05-27T16:12:44.892163] tool_input keys: ['command', 'description']
+[2026-05-27T16:12:44.894156] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:12:44.896864] tool_response type: <class 'dict'>
+[2026-05-27T16:12:44.896864] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" status -s | head -30...
+[2026-05-27T16:12:44.915441] Skipping - not a test command
+[2026-05-27T16:12:48.188340] === Hook triggered ===
+[2026-05-27T16:12:48.203441] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:12:48.210339] tool_name: Bash
+[2026-05-27T16:12:48.216650] tool_input keys: ['command', 'description']
+[2026-05-27T16:12:48.220662] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:12:48.220662] tool_response type: <class 'dict'>
+[2026-05-27T16:12:48.229718] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" log --oneline -5...
+[2026-05-27T16:12:48.232719] Skipping - not a test command
+[2026-05-27T16:12:51.032943] === Hook triggered ===
+[2026-05-27T16:12:51.032943] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:12:51.038376] tool_name: Bash
+[2026-05-27T16:12:51.042363] tool_input keys: ['command', 'description']
+[2026-05-27T16:12:51.042363] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:12:51.051548] tool_response type: <class 'dict'>
+[2026-05-27T16:12:51.054554] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" branch...
+[2026-05-27T16:12:51.056549] Skipping - not a test command
+[2026-05-27T16:13:03.392514] === Hook triggered ===
+[2026-05-27T16:13:03.394876] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:13:03.397796] tool_name: Bash
+[2026-05-27T16:13:03.400811] tool_input keys: ['command', 'description']
+[2026-05-27T16:13:03.403866] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:13:03.406867] tool_response type: <class 'dict'>
+[2026-05-27T16:13:03.408866] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" status -s | wc -l...
+[2026-05-27T16:13:03.411543] Skipping - not a test command
+[2026-05-27T16:13:07.113852] === Hook triggered ===
+[2026-05-27T16:13:07.116860] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:13:07.118860] tool_name: Bash
+[2026-05-27T16:13:07.121852] tool_input keys: ['command', 'description']
+[2026-05-27T16:13:07.121852] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:13:07.121852] tool_response type: <class 'dict'>
+[2026-05-27T16:13:07.121852] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" status -s | grep "^?" | head -20...
+[2026-05-27T16:13:07.121852] Skipping - not a test command
+[2026-05-27T16:15:02.066871] === Hook triggered ===
+[2026-05-27T16:15:02.070068] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:15:02.073070] tool_name: Bash
+[2026-05-27T16:15:02.075057] tool_input keys: ['command', 'description']
+[2026-05-27T16:15:02.078055] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:15:02.082063] tool_response type: <class 'dict'>
+[2026-05-27T16:15:02.085056] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" remote -v...
+[2026-05-27T16:15:02.085056] Skipping - not a test command
+[2026-05-27T16:15:06.976065] === Hook triggered ===
+[2026-05-27T16:15:06.980176] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:15:06.984227] tool_name: Bash
+[2026-05-27T16:15:06.988227] tool_input keys: ['command', 'description']
+[2026-05-27T16:15:06.991661] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:15:06.991661] tool_response type: <class 'dict'>
+[2026-05-27T16:15:06.991661] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" status -s | grep "^??" | grep -v ...
+[2026-05-27T16:15:06.991661] Skipping - not a test command
+[2026-05-27T16:15:10.464207] === Hook triggered ===
+[2026-05-27T16:15:10.464207] Received data keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+[2026-05-27T16:15:10.482381] tool_name: Bash
+[2026-05-27T16:15:10.486590] tool_input keys: ['command', 'description']
+[2026-05-27T16:15:10.490240] tool_response keys: ['stdout', 'stderr', 'interrupted', 'isImage', 'noOutputExpected']
+[2026-05-27T16:15:10.491250] tool_response type: <class 'dict'>
+[2026-05-27T16:15:10.491250] command: git -C "D:/my_ai_projects/project_test_repos/dnd-game-engine-test" diff --name-only | head -30...
+[2026-05-27T16:15:10.491250] Skipping - not a test command

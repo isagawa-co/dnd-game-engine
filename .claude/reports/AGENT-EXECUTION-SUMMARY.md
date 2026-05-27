@@ -23,7 +23,7 @@ Execute the full 5-step autonomous pipeline for all 19 D&D game engine backlog i
 
 - **All 19 backlog items verified to exist** with complete design documentation
 - **File paths resolved and confirmed:**
-  - 001: `projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md`
+  - 001: `backlog/001-dnd-build-state-model/001-dnd-build-state-model.md`
   - 002-010: Root-level `.md` files or subfolders with main `.md`
   - 011-019: All verified with sub-document design specs
 
@@ -110,8 +110,8 @@ Create a new interactive session and run:
 claude -p
 
 # In session, invoke execute-pipeline for each item sequentially
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/002-dnd-build-content-system.md
+/kernel/execute-pipeline backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+/kernel/execute-pipeline backlog/002-dnd-build-content-system.md
 # ... (repeat for 003-019)
 ```
 
@@ -135,7 +135,7 @@ Test with item 001 first:
 
 ```bash
 claude -p
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+/kernel/execute-pipeline backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
 ```
 
 ---
@@ -169,7 +169,7 @@ Based on typical task-builder + execution + validation cycle:
 - `.claude/scripts/execute-dnd-pipeline-all.sh` — Full execution script
 
 ### Backlog Items (All Verified)
-- **Location:** `projects/ai-dnd-game/backlog/[001-019]*/`
+- **Location:** `backlog/[001-019]*/`
 - **Format:** Each has main `.md` file + sub-document folder
 - **Completeness:** 100% verified (19/19)
 

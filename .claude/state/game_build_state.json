@@ -1,7 +1,7 @@
 {
   "current_phase": 3,
   "current_step": 7,
-  "gdd_path": "projects/ai-dnd-game/docs/game-design/",
+  "gdd_path": "docs/game-design/",
   "systems_identified": [
     "data-contracts",
     "dice-engine",
@@ -36,7 +36,7 @@
     "013-save-load-config.md",
     "014-campaign-pack-loader.md"
   ],
-  "backlog_path": "projects/ai-dnd-game/backlog/",
+  "backlog_path": "backlog/",
   "task_count": 0,
   "last_session": "2026-05-01",
   "version": 1

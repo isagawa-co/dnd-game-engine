@@ -1,0 +1,42 @@
+{
+  "campaign_id": "campaign-2026-05-27-002",
+  "party_size": 6,
+  "characters": [
+    {
+      "character_id": "honu-tortle-fighter",
+      "party_position": 1,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    },
+    {
+      "character_id": "bron-centaur-fighter",
+      "party_position": 2,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    },
+    {
+      "character_id": "raistlin-high-elf-wizard",
+      "party_position": 3,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    },
+    {
+      "character_id": "dain-mountain-dwarf-paladin",
+      "party_position": 4,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    },
+    {
+      "character_id": "ala-half-elf-rogue",
+      "party_position": 5,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    },
+    {
+      "character_id": "sweeney-human-cleric",
+      "party_position": 6,
+      "snapshot_level": 1,
+      "joined_date": "2026-05-27"
+    }
+  ]
+}

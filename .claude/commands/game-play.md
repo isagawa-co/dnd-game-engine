@@ -39,12 +39,23 @@ Arguments:
 
 2. **Load campaign state:**
    - Read campaign via game-session skill contracts:
-     - `projects/ai-dnd-game/.claude/skills/game-session/contracts/load-campaign-contract.json`
-   - If no campaign-id provided, check for most recent campaign in `projects/ai-dnd-game/campaigns/`
+     - `.claude/skills/game-session/contracts/load-campaign-contract.json`
+   - If no campaign-id provided, check for most recent campaign in `campaigns/`
    - If no campaign exists, report error: "No campaign found. Run /game-create then /game-build first."
+   - **Resolve character pool:** After loading campaign state, read `campaigns/<id>/party.json` to get character references. For each `character_id`, load the full entity from `characters/<character_id>.json`. Build in-memory party array from resolved entities. If any character file is missing, report error: "Character <id> not found in pool."
+
+2.5. **Load Adventure (MANDATORY — do this BEFORE any narration):**
+   - Read `campaigns/<id>/campaign.json` → get `adventure_id` (e.g., `"lmop"`)
+   - Read `adventures/[adventure_id]/manifest.json` → verify adventure pack exists
+   - Read `campaign_state.json` → get `current_chapter` and `current_act`
+   - If current chapter's scene directory doesn't exist under `adventures/[id]/scenes/`:
+     - Build the chapter's act files from training knowledge before proceeding
+   - Read the current act file: `adventures/[id]/scenes/chapter-N-*/act-[numeral].json`
+   - This act file is the **script** for this iteration
+   - **ANTI-DRIFT CONSTRAINT:** All encounters, NPCs, locations, and plot beats come from the act file. The agent may add flavor text and dialog but MUST NOT invent new encounters, NPCs, or plot points not defined in the act. If the act file doesn't exist, build it before proceeding.
 
 3. **Evaluate state against decision rules:**
-   - Read `projects/ai-dnd-game/contracts/state-evaluation-contract.json`
+   - Read `contracts/state-evaluation-contract.json`
    - Apply decision rules in priority order (first match wins):
 
    | Priority | Condition | Output |
@@ -76,7 +87,7 @@ Arguments:
 
 6. **Save campaign state:**
    - Persist state via game-session save contract:
-     - `projects/ai-dnd-game/.claude/skills/game-session/contracts/save-session-contract.json`
+     - `.claude/skills/game-session/contracts/save-session-contract.json`
    - Log the iteration result to session transcript
 
 7. **Repeat or complete:**
@@ -99,9 +110,12 @@ Arguments:
 
 | Contract | Location | Purpose |
 |----------|----------|---------|
-| State Evaluation | `projects/ai-dnd-game/contracts/state-evaluation-contract.json` | Map campaign state to loop system |
-| Load Campaign | `projects/ai-dnd-game/.claude/skills/game-session/contracts/load-campaign-contract.json` | Load campaign state |
-| Save Session | `projects/ai-dnd-game/.claude/skills/game-session/contracts/save-session-contract.json` | Persist state after iteration |
+| State Evaluation | `contracts/state-evaluation-contract.json` | Map campaign state to loop system |
+| Load Campaign | `.claude/skills/game-session/contracts/load-campaign-contract.json` | Load campaign state |
+| Save Session | `.claude/skills/game-session/contracts/save-session-contract.json` | Persist state after iteration |
+| Character Pool | `contracts/character-pool-contract.json` | Resolve character IDs to full entities from shared pool |
+| Adventure Scene | `contracts/adventure-scene-contract.json` | Act file schema — encounters, transitions, read-aloud text |
+| Action Prompt | `contracts/action-prompt-contract.json` | Standardized action menu presentation |
 
 ## Constraints
 

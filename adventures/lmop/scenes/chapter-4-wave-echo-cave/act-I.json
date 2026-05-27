@@ -1,0 +1,80 @@
+{
+  "act_id": "ch4-act-I",
+  "chapter": 4,
+  "act": "I",
+  "title": "Wave Echo Cave — The Outer Mines",
+  "level_range": [4, 4],
+  "location": {
+    "name": "Wave Echo Cave — Entrance and Outer Tunnels",
+    "description": "An ancient mine complex hidden in the hills fifteen miles east of Phandalin. The rhythmic thundering of waves echoes through the caverns — an underground lake connected to subterranean channels creates the sound that gave the cave its name. Centuries ago, humans and dwarves mined rich veins of ore and created the Forge of Spells here.",
+    "environment": "underground mine, natural caverns, echo of waves, darkness"
+  },
+  "read_aloud": "Using Gundren's map, you locate the hidden entrance to Wave Echo Cave — a narrow fissure in a rocky hillside, partially concealed by scrub brush. Inside, the passage opens into worked stone tunnels. The rhythmic boom of crashing waves echoes through the darkness, though you are miles from the sea. The air is cold and damp, tinged with the smell of old stone and something else — decay.",
+  "encounters": [
+    {
+      "type": "exploration",
+      "trigger": "automatic",
+      "description": "The first room — a large cavern with a campsite. The body of Tharden Rockseeker (Gundren's brother) lies here, killed by the Black Spider's forces. His boots (Boots of Striding and Springing) are still on his body.",
+      "enemies": []
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party explores the mine tunnels",
+      "enemies": [
+        {"monster_id": "ochre-jelly", "count": 1, "position": "Blocking a side tunnel, flowing through cracks in the rock"}
+      ],
+      "tactics": "The ochre jelly is mindless. It attacks anything that disturbs it. Slashing/lightning damage splits it into two smaller jellies.",
+      "difficulty": "medium",
+      "reward_xp": 450
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the old entrance cavern",
+      "enemies": [
+        {"monster_id": "stirge", "count": 10, "position": "Clinging to the ceiling of a large cavern, dropping when prey enters"}
+      ],
+      "tactics": "Stirges swarm and attach to the nearest warm-blooded creatures. Each attached stirge drains 1d4+3 HP per turn until detached or killed.",
+      "difficulty": "medium",
+      "reward_xp": 250
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the old guardroom",
+      "enemies": [
+        {"monster_id": "skeleton", "count": 9, "position": "Ancient dwarf and orc skeletons animated by residual magic, scattered through a guardroom with broken furniture"}
+      ],
+      "tactics": "Skeletons attack mindlessly. They are vulnerable to bludgeoning damage.",
+      "difficulty": "medium",
+      "reward_xp": 450
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    {"item": "Boots of Striding and Springing", "quantity": 1, "location": "On Tharden Rockseeker's body — jump distance tripled, walking speed 30 ft minimum"},
+    {"item": "gold", "quantity": 45, "location": "Scattered in old guardroom — ancient coins"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "perception",
+      "dc": 12,
+      "success": "Notice the stirges clinging to the ceiling before they attack.",
+      "failure": "Stirges get a surprise round.",
+      "context": "Entering the old entrance cavern."
+    },
+    {
+      "skill": "medicine",
+      "dc": 10,
+      "success": "Tharden has been dead for about a week. Killed by multiple weapon wounds and a spell (necrotic burns). The Black Spider's forces killed him.",
+      "failure": "He's clearly dead. Cause uncertain.",
+      "context": "Examining Tharden Rockseeker's body."
+    }
+  ],
+  "transitions": {
+    "deeper_into_cave": "ch4-act-II",
+    "default": "ch4-act-II"
+  },
+  "dm_notes": "Finding Tharden's body sets the emotional tone — the stakes are real. Nundro (the other brother) is still alive, held prisoner by the Black Spider deeper in the cave. The outer tunnels are dangerous but manageable. The echoing waves should be described frequently — they mask sounds and create an eerie atmosphere. Resource management matters here — the party should be thinking about spell slots and HP before the harder encounters ahead."
+}

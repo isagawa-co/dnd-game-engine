@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "action-prompt-contract",
+  "title": "Action Prompt Contract",
+  "description": "Defines the standardized action menu schema used by all loops when presenting choices to the user. Every decision point in the game uses this format: numbered options + custom input.",
+  "type": "object",
+  "required": ["context", "actions", "custom_input_allowed"],
+  "properties": {
+    "context": {
+      "type": "string",
+      "enum": [
+        "exploration",
+        "combat_turn",
+        "social",
+        "travel",
+        "rest",
+        "merchant",
+        "loot",
+        "level_up",
+        "party_decision"
+      ],
+      "description": "The game context that determines which default actions are available."
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "action_type"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Numbered option displayed to the user (1, 2, 3...)."
+          },
+          "label": {
+            "type": "string",
+            "description": "Short, clear description of the action shown to the user."
+          },
+          "action_type": {
+            "type": "string",
+            "enum": [
+              "dialog",
+              "investigate",
+              "move",
+              "attack",
+              "cast_spell",
+              "use_item",
+              "skill_check",
+              "interact",
+              "proceed",
+              "rest",
+              "trade",
+              "flee",
+              "stealth",
+              "party_action"
+            ],
+            "description": "Machine-readable action category for the calling loop to route."
+          },
+          "hint": {
+            "type": "string",
+            "description": "Optional parenthetical hint shown after the label (e.g., 'requires Thieves Tools', 'DC 15')."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Numbered action options presented to the user."
+    },
+    "custom_input_allowed": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the user can type a custom action instead of picking a numbered option. Always true unless context restricts it."
+    },
+    "situation_summary": {
+      "type": "string",
+      "description": "One-line summary of the current situation shown above the action menu."
+    }
+  },
+  "additionalProperties": false,
+  "context_defaults": {
+    "_note": "Default action sets per context. The agent uses these as starting points and adds/removes situation-specific options. These are NOT exhaustive — the agent should adapt based on what NPCs, objects, and environment are present.",
+    "exploration": {
+      "actions": [
+        {"id": 1, "label": "Investigate surroundings", "action_type": "investigate"},
+        {"id": 2, "label": "Talk to NPC", "action_type": "dialog"},
+        {"id": 3, "label": "Move to a new area", "action_type": "move"},
+        {"id": 4, "label": "Check inventory / equipment", "action_type": "use_item"},
+        {"id": 5, "label": "Rest", "action_type": "rest"}
+      ]
+    },
+    "combat_turn": {
+      "actions": [
+        {"id": 1, "label": "Attack (melee)", "action_type": "attack"},
+        {"id": 2, "label": "Attack (ranged)", "action_type": "attack"},
+        {"id": 3, "label": "Cast a spell", "action_type": "cast_spell"},
+        {"id": 4, "label": "Dash / Disengage / Dodge", "action_type": "move"},
+        {"id": 5, "label": "Use an item", "action_type": "use_item"},
+        {"id": 6, "label": "Help an ally", "action_type": "party_action"}
+      ]
+    },
+    "social": {
+      "actions": [
+        {"id": 1, "label": "Persuade", "action_type": "skill_check", "hint": "CHA (Persuasion)"},
+        {"id": 2, "label": "Intimidate", "action_type": "skill_check", "hint": "CHA (Intimidation)"},
+        {"id": 3, "label": "Deceive", "action_type": "skill_check", "hint": "CHA (Deception)"},
+        {"id": 4, "label": "Read their intent", "action_type": "skill_check", "hint": "WIS (Insight)"},
+        {"id": 5, "label": "End conversation", "action_type": "proceed"}
+      ]
+    },
+    "travel": {
+      "actions": [
+        {"id": 1, "label": "Continue on the road", "action_type": "proceed"},
+        {"id": 2, "label": "Scout ahead", "action_type": "stealth", "hint": "WIS (Perception) or DEX (Stealth)"},
+        {"id": 3, "label": "Set up camp", "action_type": "rest"},
+        {"id": 4, "label": "Investigate something off the path", "action_type": "investigate"},
+        {"id": 5, "label": "Change destination", "action_type": "move"}
+      ]
+    },
+    "rest": {
+      "actions": [
+        {"id": 1, "label": "Long rest (8 hours)", "action_type": "rest"},
+        {"id": 2, "label": "Short rest (1 hour)", "action_type": "rest"},
+        {"id": 3, "label": "Set watch order", "action_type": "party_action"},
+        {"id": 4, "label": "Skip rest and continue", "action_type": "proceed"}
+      ]
+    },
+    "merchant": {
+      "actions": [
+        {"id": 1, "label": "Browse wares", "action_type": "trade"},
+        {"id": 2, "label": "Sell items", "action_type": "trade"},
+        {"id": 3, "label": "Haggle for a better price", "action_type": "skill_check", "hint": "CHA (Persuasion)"},
+        {"id": 4, "label": "Leave shop", "action_type": "proceed"}
+      ]
+    },
+    "loot": {
+      "actions": [
+        {"id": 1, "label": "Search the bodies", "action_type": "investigate"},
+        {"id": 2, "label": "Search the area", "action_type": "investigate", "hint": "INT (Investigation)"},
+        {"id": 3, "label": "Take everything and move on", "action_type": "proceed"},
+        {"id": 4, "label": "Detect Magic on the loot", "action_type": "cast_spell", "hint": "requires Detect Magic"}
+      ]
+    },
+    "party_decision": {
+      "actions": [
+        {"id": 1, "label": "Go left", "action_type": "move"},
+        {"id": 2, "label": "Go right", "action_type": "move"},
+        {"id": 3, "label": "Go back", "action_type": "move"},
+        {"id": 4, "label": "Discuss with the party", "action_type": "party_action"}
+      ]
+    }
+  }
+}

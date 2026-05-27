@@ -1,0 +1,110 @@
+{
+  "act_id": "ch3-act-II",
+  "chapter": 3,
+  "act": "II",
+  "title": "Cragmaw Castle",
+  "level_range": [3, 4],
+  "location": {
+    "name": "Cragmaw Castle",
+    "description": "A crumbling goblin-held castle deep in Neverwinter Wood. Once a noble outpost, now overrun by the Cragmaw goblin tribe under King Grol, who takes orders from the Black Spider.",
+    "environment": "ruined castle, partially collapsed, dim light"
+  },
+  "read_aloud": "Through dense forest, you reach the ruins of Cragmaw Castle — a crumbling stone fortification with collapsed towers, arrow slits, and a heavy oak door. Goblin sentries patrol the walls, and you can hear the guttural sounds of goblinoid voices from within.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party approaches the main entrance",
+      "enemies": [
+        {"monster_id": "goblin", "count": 4, "position": "In the entrance hall and guard posts"}
+      ],
+      "tactics": "Goblins raise an alarm if they spot intruders. One flees to warn King Grol.",
+      "difficulty": "easy",
+      "reward_xp": 200
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the hobgoblin barracks",
+      "enemies": [
+        {"monster_id": "hobgoblin", "count": 4, "position": "In a barracks room with weapon racks"}
+      ],
+      "tactics": "Hobgoblins are disciplined fighters. They form a line and use Martial Advantage (extra 2d6 damage when an ally is adjacent to the target).",
+      "difficulty": "medium",
+      "reward_xp": 400
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the dark hall",
+      "enemies": [
+        {"monster_id": "owlbear", "count": 1, "position": "Chained in a collapsed section of the castle. The goblins captured it but can't control it."}
+      ],
+      "tactics": "The owlbear is enraged and attacks anything that enters. If its chain is broken, it rampages through the castle — potentially attacking goblins too.",
+      "difficulty": "hard",
+      "reward_xp": 700
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters King Grol's chamber",
+      "enemies": [
+        {"monster_id": "king-grol", "count": 1, "position": "Bugbear king, standing over a battered dwarf (Gundren)", "special": "King Grol — bugbear chieftain of the Cragmaw tribe. Has Gundren's map to Wave Echo Cave."},
+        {"monster_id": "wolf", "count": 1, "position": "King Grol's pet wolf"},
+        {"monster_id": "drow", "count": 1, "position": "A female drow emissary from the Black Spider, negotiating for the map", "special": "Vyerith — drow agent. If combat breaks out, she grabs the map and tries to flee to deliver it to the Black Spider. She fights with poisoned shortsword and hand crossbow."}
+      ],
+      "tactics": "King Grol fights aggressively. Vyerith prioritizes grabbing the map and escaping. If the party catches Vyerith, she fights to the death rather than be captured. If she escapes with the map, the Black Spider already has it when the party reaches Wave Echo Cave.",
+      "difficulty": "hard",
+      "reward_xp": 550,
+      "description": "The final encounter — King Grol has Gundren and the map. A drow emissary is present, complicating the situation."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "gundren-rockseeker",
+      "name": "Gundren Rockseeker",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Badly beaten but alive — needs healing",
+        "His brothers Nundro and Tharden went to Wave Echo Cave ahead of him",
+        "The map shows the secret entrance to Wave Echo Cave",
+        "The Black Spider (Nezznar) wants the Forge of Spells inside the mine",
+        "Begs the party to rescue his brothers and stop the Black Spider"
+      ],
+      "quest": {
+        "name": "Wave Echo Cave",
+        "objective": "Enter Wave Echo Cave, find Gundren's brothers, stop the Black Spider from claiming the Forge of Spells",
+        "reward": "10% share of the mine's wealth",
+        "destination": "Wave Echo Cave"
+      }
+    }
+  ],
+  "loot": [
+    {"item": "gold", "quantity": 220, "location": "King Grol's treasure (coins, gems, trade goods)"},
+    {"item": "potion-of-healing", "quantity": 2, "location": "King Grol's quarters"},
+    {"item": "Gundren's map to Wave Echo Cave", "quantity": 1, "location": "King Grol's possession (or Vyerith takes it if she escapes)"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "stealth",
+      "dc": 14,
+      "success": "Approach the castle without alerting sentries. Can pick entry point.",
+      "failure": "Sentries spot the party and raise an alarm. All goblins in the castle prepare for combat.",
+      "context": "Approaching Cragmaw Castle."
+    },
+    {
+      "skill": "perception",
+      "dc": 15,
+      "success": "Notice a collapsed section of wall on the south side — alternate entry point that bypasses the main entrance.",
+      "failure": "Only the main entrance is visible.",
+      "context": "Scouting the castle exterior."
+    }
+  ],
+  "transitions": {
+    "castle_cleared": "ch4-act-I",
+    "have_map": "ch4-act-I",
+    "default": "ch4-act-I"
+  },
+  "dm_notes": "This is the climax of Chapter 3. The Vyerith complication is important — if she escapes with the map, the Black Spider is better prepared in Chapter 4. Rescuing Gundren is the emotional payoff. His map is the key to Chapter 4. The owlbear can be released to create chaos among the goblins — reward creative solutions. Multiple entry points reward scouting and planning."
+}

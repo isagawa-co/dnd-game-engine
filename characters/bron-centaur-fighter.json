@@ -1,0 +1,124 @@
+{
+  "id": "bron-centaur-fighter",
+  "entity_type": "pc",
+  "name": "Bron",
+  "character_class": "fighter",
+  "race": "centaur",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 20,
+    "dexterity": 15,
+    "constitution": 16,
+    "intelligence": 13,
+    "wisdom": 15,
+    "charisma": 14
+  },
+  "hp": 13,
+  "max_hp": 13,
+  "ac": 16,
+  "speed": 40,
+  "hit_dice_detail": {
+    "die_type": "d10",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["strength", "constitution"],
+    "skills": ["athletics", "intimidation"],
+    "weapons": ["simple weapons", "martial weapons"],
+    "armor": ["light armor", "medium armor", "heavy armor", "shields"]
+  },
+  "class_features": [
+    {
+      "name": "Fighting Style - Great Weapon Fighting",
+      "description": "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property.",
+      "uses": "unlimited",
+      "recharge": "passive"
+    },
+    {
+      "name": "Second Wind",
+      "description": "Bonus action: regain 1d10 + 1 HP, once per short rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Fey",
+      "description": "Your creature type is fey, rather than humanoid."
+    },
+    {
+      "name": "Charge",
+      "description": "If you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, you can immediately follow that attack with a bonus action, making one attack against the target with your hooves."
+    },
+    {
+      "name": "Hooves",
+      "description": "Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit, you deal 1d4 + 5 (STR) bludgeoning damage."
+    },
+    {
+      "name": "Equine Build",
+      "description": "You count as one size larger when determining your carrying capacity and the weight you can push or drag. Any climb that requires hands and feet is especially difficult; each foot of movement costs 4 extra feet."
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Greatsword",
+      "quantity": 1,
+      "weight": 6,
+      "damage": "2d6 slashing",
+      "properties": ["heavy", "two-handed"],
+      "gp_value": 50
+    },
+    {
+      "name": "Handaxe",
+      "quantity": 2,
+      "weight": 4,
+      "damage": "1d6 slashing",
+      "properties": ["light", "thrown (20/60)"],
+      "gp_value": 10
+    },
+    {
+      "name": "Chain Mail",
+      "quantity": 1,
+      "weight": 55,
+      "ac": 16,
+      "properties": ["heavy"],
+      "gp_value": 75
+    },
+    {
+      "name": "Adventuring Pack",
+      "quantity": 1,
+      "weight": 40,
+      "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "chaotic neutral",
+    "background": "outlander",
+    "traits": [
+      "I have a lesson for every situation, drawn from observing nature",
+      "I watch over my friends as if they were a litter of newborn pups"
+    ],
+    "ideal": "Glory — I must earn glory in battle, for myself and my clan",
+    "bond": "It is my duty to provide children to sustain my tribe",
+    "flaw": "I am too enamored of ale, wine, and other intoxicants",
+    "appearance": "A massive Centaur with a powerful warhorse body, stark white coat and pale skin that stands out against any landscape. His upper body is broad and scarred, built for swinging a greatsword that most humans couldn't lift. White hair falls past his shoulders, unkempt and tangled with bits of dried grass from sleeping on open plains. His pale pink eyes carry the sharp, watchful look of someone who reads the land like a book — but soften when checking on his companions. He squints in bright sunlight but sees perfectly at dusk, when he prefers to hunt. He smells faintly of ale and wildflowers. When he charges, the ground shakes — a ghost-white blur that the enemy sees too late.",
+    "backstory": "Bron was born white as snow into a plains herd that saw it as an omen — some said blessed, others said cursed. He settled the debate by outfighting every challenger before his third summer. He learned to read the land, the wind, and the habits of predators, but it was glory he craved — the thunder of a charge, the roar of his herd when he brought down a threat. He left the plains not because he was driven out, but because there was nothing left big enough to fight. He drinks to quiet the restlessness, and tells himself the next battle will be the one that earns his name a place in the herd's songs. He still owes his herd a legacy — and he intends to earn it."
+  },
+  "creation_metadata": {
+    "creation_method": "4d6_drop_lowest",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}

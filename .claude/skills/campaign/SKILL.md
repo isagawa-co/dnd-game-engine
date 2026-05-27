@@ -13,6 +13,14 @@ The campaign loop executes 5 sequential steps per campaign session:
 - Instantiate CampaignState with campaign_id, campaign_name, and metadata
 - Create campaign directory structure if needed
 
+### Step 1.5: Load Adventure (MANDATORY)
+- Read `campaign.json` → get `adventure_id` (e.g., `"lmop"`)
+- Read `adventures/[adventure_id]/manifest.json` → verify adventure pack exists
+- Read `campaign_state.json` → get `current_chapter` and `current_act`
+- If current chapter's scene files don't exist under `adventures/[id]/scenes/` → build them from training knowledge before proceeding
+- Read the current act file (`adventures/[id]/scenes/chapter-N-*/act-[numeral].json`) → this is the script for this iteration
+- **CONSTRAINT: The agent MUST complete this step before any narration. All encounters, NPCs, locations, and plot beats come from the act file. The agent may add flavor text and dialog but MUST NOT invent new encounters, NPCs, or plot points not defined in the act file.**
+
 ### Step 2: Resume Session
 - Restore prior session checkpoint or create new session
 - Reconstruct all 5 state tiers from checkpoint:
@@ -23,10 +31,13 @@ The campaign loop executes 5 sequential steps per campaign session:
   - Tier 5: Combat (ephemeral combat state)
 
 ### Step 3: Play Campaign
-- Invoke scene loop to run gameplay
-- Track encounters and progression
-- Update session and scene state as encounters complete
-- Record scene completion in session state
+- Read the current act file loaded in Step 1.5
+- Present the `read_aloud` text to the user
+- Present action menu using the action-prompt skill with context from the act's encounter data
+- Resolve encounters per the act's encounter definitions using monster stat blocks from `adventures/[id]/monsters/`
+- Follow `transitions` in the act file to determine the next act when the current one completes
+- Update `current_chapter`, `current_act`, and `current_act_id` in campaign state
+- **ANTI-DRIFT RULE: Do not narrate events, NPCs, or encounters not defined in the act file. If the player takes an unexpected action, resolve it within the act's context or transition to the appropriate act.**
 
 ### Step 4: Check Arc Completion
 - Evaluate arc completion conditions via arc-transition module
@@ -47,9 +58,13 @@ The campaign loop executes 5 sequential steps per campaign session:
 1. **Load campaign state** from the campaign JSON files
 2. **Resolve state** against the state-evaluation contract to determine what happens next
 3. **Narrate the situation** to the user based on the current campaign state
-4. **Prompt user for action** — what does their character do?
+4. **Prompt user for action** — use the **action-prompt** skill (`.claude/skills/action-prompt/SKILL.md`) for standardized presentation. Every decision point uses numbered options + custom input.
 5. **Apply rules** from the contracts and skills to resolve outcomes
 6. **Update state** in campaign JSON files
 7. **Repeat** until session or game ends
 
 Your role is to read the prescriptive skills and contracts, then MAKE DECISIONS as the Dungeon Master. You don't execute Python code — you understand the D&D rules, read the JSON contracts, and narrate/decide outcomes.
+
+## Action Prompt Integration
+
+At every decision point where the user must choose, read and follow `.claude/skills/action-prompt/SKILL.md`. This ensures consistent presentation across all game loops. See `contracts/action-prompt-contract.json` for context-specific default actions.

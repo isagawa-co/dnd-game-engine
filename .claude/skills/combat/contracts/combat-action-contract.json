@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "combat-action-contract",
+  "version": "1.0",
+  "description": "Action resolution structures for combat: requests, results, and action type definitions",
+
+  "action_request": {
+    "actor_id": "string — combatant performing the action",
+    "action_type": "attack|cast_spell|ability_check|dodge|disengage|dash|help|ready",
+    "target_id": "string|null — target combatant (null for self-targeting actions)",
+    "parameters": {
+      "attack": {
+        "weapon": "string — weapon name",
+        "attack_bonus": "int — attack modifier",
+        "damage_dice": "string — e.g. '1d8+3'",
+        "damage_type": "string — slashing|piercing|bludgeoning|fire|cold|lightning|thunder|poison|acid|necrotic|radiant|psychic|force"
+      },
+      "cast_spell": {
+        "spell_name": "string — name of spell",
+        "spell_level": "int — slot level used (0 for cantrip)",
+        "spell_dc": "int — spell save DC",
+        "range": "int — range in feet",
+        "components": ["string — V|S|M"],
+        "concentration": "bool — requires concentration",
+        "damage_dice": "string|null — damage if applicable",
+        "damage_type": "string|null — damage type if applicable",
+        "effect": "string|null — condition or effect applied"
+      },
+      "ability_check": {
+        "ability": "string — STR|DEX|CON|INT|WIS|CHA",
+        "dc": "int — difficulty class",
+        "proficient": "bool — has proficiency"
+      },
+      "dodge": {},
+      "disengage": {},
+      "dash": {
+        "base_movement": "int — normal movement speed in feet"
+      },
+      "help": {
+        "aided_combatant_id": "string — combatant receiving advantage"
+      },
+      "ready": {
+        "trigger_condition": "string — description of trigger",
+        "readied_action": "string — action type to perform when triggered"
+      }
+    }
+  },
+
+  "action_result": {
+    "actor_id": "string — combatant who acted",
+    "action_type": "attack|cast_spell|ability_check|dodge|disengage|dash|help|ready",
+    "target_id": "string|null — target of action",
+    "success": "bool — whether action succeeded",
+    "result_code": "action_hit|action_miss|action_critical|spell_success|spell_resisted|action_dodged|action_completed",
+    "damage_dealt": "int — damage applied (0 if no damage)",
+    "conditions_applied": [
+      {
+        "condition_id": "string — condition applied to target",
+        "duration": "int — rounds (-1 = permanent)"
+      }
+    ],
+    "state_mutations": {
+      "hp_change": "int — HP change on target (negative = damage, positive = healing)",
+      "concentration_broken": "bool — whether target lost concentration",
+      "death_save_triggered": "bool — whether target dropped to 0 HP",
+      "action_economy_spent": "string — action|bonus_action|reaction"
+    }
+  },
+
+  "action_type_rules": {
+    "attack": "Roll d20 + attack_bonus vs target AC. Hit = roll damage. Natural 20 = critical (double damage dice). Natural 1 = auto-miss. Dispatches to atomic_ops/attack_operations.",
+    "cast_spell": "Check spell slot availability, range, components. Target rolls saving throw vs spell_dc if applicable. On fail, apply damage/effect. Concentration spells replace existing concentration.",
+    "ability_check": "Roll d20 + ability modifier (+ proficiency if proficient) vs DC. Dispatches to atomic_ops/check_operations.",
+    "dodge": "Until next turn, attacks against this combatant have disadvantage. Grants advantage on DEX saving throws. Costs action.",
+    "disengage": "Movement this turn does not provoke opportunity attacks. Costs action.",
+    "dash": "Doubles remaining movement for this turn. Costs action.",
+    "help": "Grant advantage on next attack roll or ability check to aided combatant. Costs action.",
+    "ready": "Prepare an action with a trigger condition. When trigger occurs, use reaction to perform readied action."
+  },
+
+  "result_codes": {
+    "action_hit": "Attack roll met or exceeded target AC",
+    "action_miss": "Attack roll below target AC",
+    "action_critical": "Natural 20 on attack roll — double damage dice",
+    "spell_success": "Target failed saving throw or spell has no save",
+    "spell_resisted": "Target succeeded on saving throw",
+    "action_dodged": "Target used Dodge — attack had disadvantage and missed",
+    "action_completed": "Non-attack action completed successfully (dodge, disengage, dash, help, ready)"
+  }
+}

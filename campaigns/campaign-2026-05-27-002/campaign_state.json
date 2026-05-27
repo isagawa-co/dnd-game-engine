@@ -1,0 +1,153 @@
+{
+  "campaign_id": "campaign-2026-05-27-002",
+  "status": "active",
+  "campaign_phase": "session_1",
+  "arc_number": 1,
+  "arc_name": "Lost Mine of Phandelver",
+  "adventure_id": "lmop",
+  "current_chapter": 2,
+  "current_act": "I",
+  "current_act_id": "ch2-act-I",
+  "chapters_completed": [1],
+  "party": [
+    "honu-tortle-fighter",
+    "bron-centaur-fighter",
+    "raistlin-high-elf-wizard",
+    "dain-mountain-dwarf-paladin",
+    "ala-half-elf-rogue",
+    "sweeney-human-cleric"
+  ],
+  "npcs": [
+    "gundren-rockseeker",
+    "sildar-hallwinter"
+  ],
+  "campaign_time_elapsed_hours": 20,
+  "session_count": 1,
+  "last_played": "2026-05-27",
+  "current_location": "phandalin-stonehill-inn",
+  "loot_collected": [
+    {"item": "potion-of-healing", "quantity": 3, "source": "Klarg's cave"},
+    {"item": "local area map", "quantity": 1, "source": "Yeemik's den — crude goblin map of trails"},
+    {"item": "Black Spider note", "quantity": 1, "source": "Klarg's cave — orders to bring dwarf and map to King Grol at Cragmaw Castle"}
+  ],
+  "party_gold": {
+    "pooled": true,
+    "gold": 273,
+    "silver": 23,
+    "copper": 22
+  },
+  "sold_items": [
+    {"item": "shortbow", "quantity": 6, "sold_for": 15},
+    {"item": "scimitar", "quantity": 6, "sold_for": 15},
+    {"item": "jade statuette of a frog", "quantity": 1, "sold_for": 40},
+    {"item": "gold tooth", "quantity": 1, "sold_for": 1}
+  ],
+  "quests": [
+    {
+      "name": "Deliver Supplies to Phandalin",
+      "objective": "Bring wagon of provisions to Barthen's Provisions in Phandalin",
+      "reward": "10 gp per party member",
+      "status": "completed"
+    },
+    {
+      "name": "Rescue Gundren Rockseeker",
+      "objective": "Find Cragmaw Castle and rescue Gundren — he has a map to Wave Echo Cave. King Grol has him. The Black Spider is behind it.",
+      "reward": "Sildar will pay the party well",
+      "status": "active"
+    },
+    {
+      "name": "Escort Sildar to Phandalin",
+      "objective": "Bring Sildar Hallwinter safely to Phandalin",
+      "reward": "50 gp",
+      "status": "completed"
+    },
+    {
+      "name": "Find Iarno Albrek",
+      "objective": "Sildar is looking for Iarno Albrek, a Lords' Alliance agent who disappeared near Phandalin two months ago",
+      "reward": "unknown",
+      "status": "active"
+    },
+    {
+      "name": "Return Lionshield Coster Supplies",
+      "objective": "Return stolen supplies to Linene Graywind at the Lionshield Coster trading post",
+      "reward": "50 gp",
+      "status": "completed"
+    },
+    {
+      "name": "Deal with the Redbrands",
+      "objective": "Clear the Redbrand gang from Phandalin. Leader is Glasstaff, hideout under Tresendar Manor. Secret tunnel entrance south of manor.",
+      "reward": "town's gratitude + hideout loot",
+      "status": "active"
+    },
+    {
+      "name": "Rescue Dendrar Family",
+      "objective": "Thel Dendrar was murdered by Redbrands. His wife Mirna and children are missing — likely held in the hideout.",
+      "reward": "unknown",
+      "status": "active"
+    }
+  ],
+  "combat": {
+    "active": false,
+    "enemies": [],
+    "round": 0,
+    "last_combat": {
+      "encounter": "klarg-cave-ch1-act-III",
+      "result": "victory",
+      "rounds": 1,
+      "enemies_killed": 4,
+      "enemies_captured": 1,
+      "xp_earned": 400,
+      "xp_per_pc": 66
+    }
+  },
+  "travel": {
+    "active": false,
+    "destination": "",
+    "hours_remaining": 0
+  },
+  "social": {
+    "active": true,
+    "npc_id": "toblen-stonehill",
+    "npc_attitude": "friendly"
+  },
+  "challenge": {
+    "active": false,
+    "challenge_type": "",
+    "challenge_data": {}
+  },
+  "rest": {
+    "active": false,
+    "hours_remaining": 0
+  },
+  "exploration": {
+    "active": true
+  },
+  "party_xp": {
+    "honu-tortle-fighter": 116,
+    "bron-centaur-fighter": 116,
+    "raistlin-high-elf-wizard": 116,
+    "dain-mountain-dwarf-paladin": 116,
+    "ala-half-elf-rogue": 116,
+    "sweeney-human-cleric": 116
+  },
+  "spell_slots_used": {
+    "raistlin-high-elf-wizard": {"1": 0},
+    "sweeney-human-cleric": {"1": 0}
+  },
+  "ammo": {
+    "ala-half-elf-rogue": {"arrows": 20},
+    "sweeney-human-cleric": {"bolts": 20}
+  },
+  "npcs_met": [
+    "elmar-barthen",
+    "linene-graywind",
+    "toblen-stonehill",
+    "sildar-hallwinter"
+  ],
+  "session_notes": "Chapter 1 complete. Chapter 2 Act I: arrived in Phandalin. Delivered wagon to Barthen (60gp). Returned Lionshield supplies to Linene (50gp). Sold gear (71gp). Collected Sildar escort fee (50gp). Total treasury: 273gp 23sp 22cp. Stonehill Inn: learned about Redbrands — gang led by Glasstaff, hideout under Tresendar Manor, secret tunnel south of manor. Thel Dendrar murdered, family kidnapped. Iarno Albrek still missing. No magic shop in town. Party fully rested, all slots recovered.",
+  "scaling": {
+    "party_size": 6,
+    "encounter_scaling": "+50% enemy count",
+    "note": "All encounters scaled for 6 PCs vs module default of 4"
+  }
+}

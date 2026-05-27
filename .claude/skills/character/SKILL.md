@@ -58,8 +58,8 @@
 
 | Module | Path | Key Functions |
 |--------|------|---------------|
-| character_creator | `projects/ai-dnd-game/src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
-| leveling | `projects/ai-dnd-game/src/entity/leveling.py` | `level_up`, `check_level_up`, `calculate_proficiency_bonus`, `get_xp_threshold`, `check_asi`, `get_spell_slots`, `get_class_features` |
+| character_creator | `src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
+| leveling | `src/entity/leveling.py` | `level_up`, `check_level_up`, `calculate_proficiency_bonus`, `get_xp_threshold`, `check_asi`, `get_spell_slots`, `get_class_features` |
 
 ## Integration
 
@@ -71,6 +71,7 @@
 | Used by | Campaign Loop | Party creation, XP awards |
 | Used by | Scene Loop | Character checks, combat setup |
 | Used by | Game Session | `/game-create` character creation command |
+| Produces | Character Pool | Writes to `characters/<id>.json` via `contracts/character-pool-contract.json` |
 
 ## Fixtures
 
@@ -84,5 +85,5 @@
 
 | Test | Path |
 |------|------|
-| Character Creation | `projects/ai-dnd-game/tests/test_character_creation.py` |
-| Leveling | `projects/ai-dnd-game/tests/test_leveling.py` |
+| Character Creation | `tests/test_character_creation.py` |
+| Leveling | `tests/test_leveling.py` |

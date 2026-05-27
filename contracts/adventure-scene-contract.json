@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "adventure-scene-contract",
+  "title": "Adventure Scene Contract — Act Schema",
+  "description": "Defines the structure for act files within adventure scene chapters. Each act file represents a discrete segment of gameplay that the agent follows as a script. The agent narrates WITHIN the act — it does not invent encounters, NPCs, or plot points outside what the act defines.",
+  "type": "object",
+  "required": ["act_id", "chapter", "act", "title", "level_range", "location", "read_aloud", "encounters", "transitions"],
+  "properties": {
+    "act_id": {
+      "type": "string",
+      "description": "Unique identifier for this act (e.g., 'ch1-act-II')."
+    },
+    "chapter": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Chapter number this act belongs to."
+    },
+    "act": {
+      "type": "string",
+      "enum": ["I", "II", "III", "IV", "V"],
+      "description": "Act numeral within the chapter."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title for the act (e.g., 'Goblin Ambush')."
+    },
+    "level_range": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Expected party level range [min, max] for this act."
+    },
+    "location": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Location name (e.g., 'Triboar Trail')."
+        },
+        "description": {
+          "type": "string",
+          "description": "Environment description for DM context."
+        },
+        "environment": {
+          "type": "string",
+          "description": "Short environment tag (e.g., 'forest road', 'dungeon', 'town')."
+        }
+      },
+      "additionalProperties": false
+    },
+    "read_aloud": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ],
+      "description": "Boxed text the DM reads to set the scene. String for single block, array for multi-part scenes."
+    },
+    "encounters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "trigger"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["combat", "social", "challenge", "trap", "exploration", "puzzle"],
+            "description": "Encounter type — determines which loop resolves it."
+          },
+          "trigger": {
+            "type": "string",
+            "enum": ["automatic", "conditional", "player_action", "perception_check"],
+            "description": "What causes this encounter to activate."
+          },
+          "trigger_condition": {
+            "type": "string",
+            "description": "For conditional triggers, the condition that must be met (e.g., 'party enters room 3')."
+          },
+          "surprise": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether enemies get a surprise round."
+          },
+          "enemies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["monster_id", "count"],
+              "properties": {
+                "monster_id": {
+                  "type": "string",
+                  "description": "References stat block in adventures/[adventure_id]/monsters/."
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "position": {
+                  "type": "string",
+                  "description": "Where enemies are positioned (e.g., 'hidden in underbrush')."
+                },
+                "special": {
+                  "type": "string",
+                  "description": "Special behavior or variant (e.g., 'Klarg — bugbear leader, has wolf pet')."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "tactics": {
+            "type": "string",
+            "description": "How enemies behave in combat (e.g., 'Goblins fire from cover, flee if 2 die')."
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard", "deadly"],
+            "description": "Encounter difficulty rating per DMG guidelines."
+          },
+          "reward_xp": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Total XP reward for completing this encounter."
+          },
+          "description": {
+            "type": "string",
+            "description": "Narrative description of the encounter for the DM."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Encounters within this act."
+    },
+    "npcs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "attitude": {
+            "type": "string",
+            "enum": ["hostile", "unfriendly", "neutral", "friendly", "allied"]
+          },
+          "role": { "type": "string", "description": "NPC's role (e.g., 'quest_giver', 'merchant', 'captive')." },
+          "dialog_hooks": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Key things this NPC can tell the party."
+          },
+          "quest": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "objective": { "type": "string" },
+              "reward": { "type": "string" },
+              "destination": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "NPCs present in this act."
+    },
+    "loot": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item"],
+        "properties": {
+          "item": { "type": "string", "description": "Item name or item_id from manifest." },
+          "quantity": { "type": "integer", "default": 1 },
+          "location": { "type": "string", "description": "Where the loot is found." },
+          "requires": { "type": "string", "description": "Check required to find (e.g., 'Investigation DC 12')." }
+        },
+        "additionalProperties": false
+      },
+      "description": "Loot available in this act."
+    },
+    "skill_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["skill", "dc"],
+        "properties": {
+          "skill": { "type": "string" },
+          "dc": { "type": "integer" },
+          "success": { "type": "string", "description": "What happens on success." },
+          "failure": { "type": "string", "description": "What happens on failure." },
+          "context": { "type": "string", "description": "When/why this check occurs." }
+        },
+        "additionalProperties": false
+      }
+    },
+    "traps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "trigger_description", "dc"],
+        "properties": {
+          "name": { "type": "string" },
+          "trigger_description": { "type": "string" },
+          "dc": { "type": "integer" },
+          "damage": { "type": "string" },
+          "effect": { "type": "string" },
+          "detection": { "type": "string", "description": "How to detect (e.g., 'Perception DC 12')." },
+          "disarm": { "type": "string", "description": "How to disarm (e.g., 'Thieves Tools DC 10')." }
+        },
+        "additionalProperties": false
+      }
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "dc", "info"],
+        "properties": {
+          "check": { "type": "string" },
+          "dc": { "type": "integer" },
+          "info": { "type": "string", "description": "Information revealed on success." }
+        },
+        "additionalProperties": false
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "description": "Prerequisites for this act. If conditions not met, skip or adapt.",
+      "properties": {
+        "requires_item": { "type": "string" },
+        "requires_quest": { "type": "string" },
+        "requires_npc_alive": { "type": "string" },
+        "requires_chapter_complete": { "type": "integer" }
+      },
+      "additionalProperties": true
+    },
+    "transitions": {
+      "type": "object",
+      "description": "Maps outcomes to next act_id. The game loop reads this to advance.",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Value is the act_id to transition to."
+      }
+    },
+    "dm_notes": {
+      "type": "string",
+      "description": "Agent-only guidance for running this act. Not shown to player."
+    }
+  },
+  "additionalProperties": false
+}

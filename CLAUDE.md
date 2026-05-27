@@ -2,6 +2,20 @@
 
 This is the definitive D&D 5e game engine implementation. Fully contract-driven, agent-orchestrated, and ready for production use.
 
+## MANDATORY: Anchor Protocol
+
+**NEVER shortcut the anchor.** When the action counter triggers an anchor (or you invoke `/kernel/anchor`), you MUST execute the FULL protocol — every step, every read, every review. This means:
+
+1. **Read** `.claude/protocols/game-engine-protocol.md` — use the Read tool, not memory
+2. **Read** `.claude/lessons/lessons.md` — use the Read tool, not memory
+3. **Apply rules** to your specific next action with concrete verbs ("I will X before Y")
+4. **Read** `.claude/state/session_state.json` to restore context
+5. **Read** `.claude/state/actions.jsonl` and review every action against protocol
+6. **Archive** the actions log, reset counters, confirm the anchor token
+7. **Use the Skill tool** to invoke `/kernel/anchor` — do not manually flip state flags
+
+Skipping ANY step is a violation. "Quick anchor" (just confirming the token) is a violation. Reading from memory instead of using the Read tool is a violation. The anchor exists to re-center on protocol, not to reset a counter.
+
 ## Game Architecture
 
 ### Core Principle: Agent-Orchestrated Interactive TTRPGs
@@ -175,18 +189,25 @@ Roll Numbers (user input)
 ### Skills
 - `.claude/skills/campaign/SKILL.md` — Campaign loop (5 steps)
 - `.claude/skills/scene/SKILL.md` — Scene dispatch
+- `.claude/skills/combat/SKILL.md` — Combat loop (initiative, rounds, actions, outcomes)
 - `.claude/skills/challenge/SKILL.md` — Challenge resolution
 - `.claude/skills/rest/SKILL.md` — Rest mechanics
 - `.claude/skills/character/SKILL.md` — Character creation
+- `.claude/skills/action-prompt/SKILL.md` — Standardized action menu presentation
+- `.claude/skills/state-check/SKILL.md` — Post-action state validation (soft enforcement)
 - `.claude/skills/game-engine/` — Domain specification
 
+### Hooks (Hard Enforcement)
+- `.claude/hooks/universal-gate-enforcer.py` — Anchor, session, learn gates
+- `.claude/hooks/game-state-enforcer.py` — Game state persistence enforcement
+
 ### Contracts
-- `projects/ai-dnd-game/contracts/` — State evaluation, campaign loop, character creation
+- `contracts/` — State evaluation, campaign loop, character creation
 - `.claude/skills/*/contracts/` — Skill-specific input/output schemas
 
 ### Campaigns
-- `projects/ai-dnd-game/campaigns/` — Saved campaign state
-- `projects/ai-dnd-game/content/` — Content packs (monsters, items, spells, NPCs)
+- `campaigns/` — Saved campaign state
+- `adventures/` — Adventure packs (scenes, monsters, items, spells, NPCs)
 
 ## Testing
 
@@ -196,6 +217,38 @@ Roll Numbers (user input)
 4. **Verify** state updates correctly after each iteration
 5. **Test multi-session** by invoking `/game-play [campaign-id]` again
 
+## MANDATORY: State Check After Every Action (Defense in Depth)
+
+**After every resolved game action, you MUST run the state-check before narrating results.**
+
+Two layers enforce this — both are mandatory:
+
+### Layer 1 — Soft (state-check skill)
+Read `.claude/skills/state-check/SKILL.md`. After every resolved action (combat round, skill check, loot pickup, quest update, rest, travel), run the 10-item checklist:
+
+1. HP changed? → update state
+2. Resources spent? → update spell slots, ammo, class features
+3. Loot gained? → add to loot_collected
+4. XP earned? → update party_xp
+5. Quest updated? → update quests array
+6. Location changed? → update current_location
+7. NPCs encountered? → update npcs array
+8. Conditions changed? → update character conditions
+9. Combat state changed? → update combat object
+10. Act/chapter progressed? → update current_act, current_act_id
+
+Output the STATE CHECK block, save campaign_state.json, THEN narrate.
+
+### Layer 2 — Hard (game-state-enforcer.py hook)
+The hook blocks you if you skip the state check:
+
+- **Scene transition gate:** Cannot read next act file without saving state first
+- **Combat end validation:** Cannot set combat.active=false without XP, loot, and last_combat fields
+- **Act transition validation:** Cannot change current_act_id without session_notes
+- **Periodic save:** Blocked after 5 game-file writes without saving campaign_state.json
+
+You cannot bypass these. If the hook blocks you, run the state-check skill and save state.
+
 ## Critical Reminders for Agents
 
 - **You are the DM.** Read skills, understand rules, make game decisions.
@@ -203,6 +256,7 @@ Roll Numbers (user input)
 - **Update JSON state.** After each iteration, campaign_state.json reflects results.
 - **No Python execution.** You don't run code. You read contracts and apply them.
 - **Fully interactive.** This is collaborative: agent narrates, user rolls.
+- **State check is not optional.** Run the checklist after every action. The hook enforces this.
 - **Check for relevant commands/skills on every action.** Before taking any game action (character creation, combat, challenge resolution, rest, etc.), verify if a matching command or skill exists. Read and follow that skill's instructions exactly. Never improvise game logic—always read the prescriptive skill first.
 
 ---

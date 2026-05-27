@@ -1,0 +1,124 @@
+{
+  "act_id": "ch1-act-III",
+  "chapter": 1,
+  "act": "III",
+  "title": "Cragmaw Hideout",
+  "level_range": [1, 1],
+  "location": {
+    "name": "Cragmaw Hideout",
+    "description": "A cave complex hidden in the hills northwest of the Triboar Trail. A stream flows out of the cave mouth. The goblins of the Cragmaw tribe use this as a base for their raids.",
+    "environment": "cave, underground stream, dim light"
+  },
+  "read_aloud": "Following the goblin trail, you find a large cave in a hillside five miles from the scene of the ambush. A shallow stream flows out of the cave mouth, which is screened by dense briar thickets. A narrow, dry path leads into the cave alongside the stream.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the cave without scouting",
+      "surprise": false,
+      "enemies": [
+        {"monster_id": "goblin", "count": 2, "position": "Goblin blind — thicket 30 feet from cave entrance, watching the trail"}
+      ],
+      "tactics": "These lookouts fire arrows and then flee into the cave to warn the others.",
+      "difficulty": "easy",
+      "reward_xp": 50,
+      "description": "Two goblin sentries watch the cave entrance from a hidden blind in the thickets."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the kennel area",
+      "enemies": [
+        {"monster_id": "wolf", "count": 3, "position": "Chained to iron rods in a side cave. They bark and snap at intruders."}
+      ],
+      "tactics": "Wolves are chained and can only reach creatures within 10 feet. If freed or if chains break (AC 20, HP 10), wolves attack the nearest target.",
+      "difficulty": "easy",
+      "reward_xp": 75,
+      "description": "Three wolves chained in the kennel cave. They alert goblins upstream."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party reaches the goblin den",
+      "enemies": [
+        {"monster_id": "goblin", "count": 5, "position": "In a large cave with cooking fires and sleeping pallets", "special": "Yeemik — second-in-command goblin, holds Sildar Hallwinter hostage"}
+      ],
+      "tactics": "Yeemik threatens to kill Sildar (pushing him off a ledge) unless the party agrees to kill Klarg, the bugbear leader. If the party attacks, Yeemik shoves Sildar off the ledge (1d6 fall damage) on his first turn.",
+      "difficulty": "medium",
+      "reward_xp": 125,
+      "description": "Yeemik's den. He has Sildar Hallwinter as a hostage and wants to overthrow Klarg."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party reaches Klarg's cave",
+      "enemies": [
+        {"monster_id": "bugbear", "count": 1, "position": "Standing near a fire pit", "special": "Klarg — bugbear chieftain of the Cragmaw goblins at this hideout"},
+        {"monster_id": "wolf", "count": 1, "position": "Klarg's pet wolf, Ripper, beside him"},
+        {"monster_id": "goblin", "count": 2, "position": "Attending Klarg"}
+      ],
+      "tactics": "Klarg is arrogant and attacks immediately. He fights to the death. If the goblins upstream released a flood (dam trap), the stream passage is dangerous.",
+      "difficulty": "hard",
+      "reward_xp": 275,
+      "description": "Klarg's lair — the final encounter in the hideout. Defeating Klarg secures the cave."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "sildar-hallwinter",
+      "name": "Sildar Hallwinter",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Gundren and his map were taken to Cragmaw Castle by order of King Grol",
+        "He is a member of the Lords' Alliance, sent to bring order to Phandalin",
+        "He is looking for Iarno Albrek, a fellow Alliance agent who disappeared near Phandalin two months ago",
+        "He will join the party to Phandalin and offer 50 gp for safe escort"
+      ],
+      "quest": {
+        "name": "Rescue Gundren Rockseeker",
+        "objective": "Find Cragmaw Castle and rescue Gundren — he has a map to Wave Echo Cave",
+        "reward": "Sildar will pay the party well and assist however he can",
+        "destination": "Cragmaw Castle (location unknown — must be discovered)"
+      }
+    }
+  ],
+  "loot": [
+    {"item": "gold", "quantity": 33, "location": "Klarg's treasure chest"},
+    {"item": "potion-of-healing", "quantity": 1, "location": "Klarg's treasure chest"},
+    {"item": "jade statuette of a frog", "quantity": 1, "location": "Klarg's treasure chest (worth 40 gp)"},
+    {"item": "Lionshield Coster supplies", "quantity": 1, "location": "Stolen goods in Klarg's cave — stamped with a blue lion. Return to Linene in Phandalin for 50 gp reward."}
+  ],
+  "skill_checks": [
+    {
+      "skill": "perception",
+      "dc": 15,
+      "success": "Notice the goblin blind before approaching the cave entrance.",
+      "failure": "Walk past without noticing. Goblins get first attack.",
+      "context": "Approaching the cave entrance."
+    },
+    {
+      "skill": "stealth",
+      "dc": 12,
+      "success": "Sneak past the wolves without alerting them.",
+      "failure": "Wolves bark, alerting goblins deeper in the cave.",
+      "context": "Passing through the kennel area."
+    }
+  ],
+  "traps": [
+    {
+      "name": "Flood Trap",
+      "trigger_description": "Goblins on the bridge can release a dam, flooding the stream passage",
+      "dc": 10,
+      "damage": "Swept 30 feet downstream, knocked prone. DC 10 STR save or take 1d6 bludgeoning.",
+      "effect": "The flood fills the passage waist-deep. Can be used twice (two dams).",
+      "detection": "The stream level rises before the flood hits — Perception DC 12 gives 1 round warning.",
+      "disarm": "Destroying the dam releases the flood harmlessly before goblins can use it."
+    }
+  ],
+  "transitions": {
+    "hideout_cleared": "ch2-act-I",
+    "default": "ch2-act-I"
+  },
+  "dm_notes": "This is a multi-room dungeon. Run it room by room — don't dump all encounters at once. The Yeemik hostage situation is the first real social/moral choice. If they negotiate with Yeemik, they can avoid fighting his goblins and get Sildar back safely. Sildar is the main exposition NPC — he connects Chapter 1 to Chapters 2 and 3. Make sure he delivers his dialog hooks."
+}

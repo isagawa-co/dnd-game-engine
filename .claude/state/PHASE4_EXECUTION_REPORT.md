@@ -7,25 +7,25 @@ All 4 Phase 4 items have been launched in background processes with full autonom
 ## Items Launched
 
 ### 1. Task 018: Narration Framework & Log
-- **Backlog:** `projects/ai-dnd-game/backlog/018-narration-framework-and-log.md`
+- **Backlog:** `backlog/018-narration-framework-and-log.md`
 - **Task folder:** `tasks/narration-system/`
 - **Log:** `.claude/state/narration-system_iteration_*.log`
 - **Status:** Running (task-builder decomposing)
 
 ### 2. Task 019: Narration Anti-Drift Enforcement
-- **Backlog:** `projects/ai-dnd-game/backlog/019-narration-anti-drift-enforcement.md`
+- **Backlog:** `backlog/019-narration-anti-drift-enforcement.md`
 - **Task folder:** `tasks/anti-drift-enforcement/`
 - **Log:** `.claude/state/anti-drift-enforcement_iteration_*.log`
 - **Status:** Running (task-builder decomposing)
 
 ### 3. Task 020: UI Scene & Encounter Display
-- **Backlog:** `projects/ai-dnd-game/backlog/020-ui-scene-and-encounter-display.md`
+- **Backlog:** `backlog/020-ui-scene-and-encounter-display.md`
 - **Task folder:** `tasks/ui-scene-display/`
 - **Log:** `.claude/state/ui-scene-display_iteration_*.log`
 - **Status:** Running (task-builder decomposing)
 
 ### 4. Task 021: UI Combat HUD & Status Display
-- **Backlog:** `projects/ai-dnd-game/backlog/021-ui-combat-hud-and-status-display.md`
+- **Backlog:** `backlog/021-ui-combat-hud-and-status-display.md`
 - **Task folder:** `tasks/combat-hud-status/`
 - **Log:** `.claude/state/combat-hud-status_iteration_*.log`
 - **Status:** Running (task-builder decomposing)
@@ -70,6 +70,6 @@ All tasks will be marked COMPLETE once all acceptance criteria are met and `/ker
 ## Backlog Movement
 
 When each task completes:
-- Backlog file moves from `projects/ai-dnd-game/backlog/0NN-*.md` → `done/0NN-*.md`
+- Backlog file moves from `backlog/0NN-*.md` → `done/0NN-*.md`
 - Task folder moves from `tasks/[name]/` → `tasks/completed/`
 

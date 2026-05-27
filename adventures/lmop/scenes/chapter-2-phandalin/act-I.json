@@ -1,0 +1,172 @@
+{
+  "act_id": "ch2-act-I",
+  "chapter": 2,
+  "act": "I",
+  "title": "Welcome to Phandalin",
+  "level_range": [1, 2],
+  "location": {
+    "name": "Phandalin",
+    "description": "A small frontier town built on the ruins of a much older settlement. Phandalin is a rough-and-tumble place — simple log buildings, muddy roads, and a handful of shops and businesses serving the miners, farmers, and travelers who pass through.",
+    "environment": "frontier town, daytime"
+  },
+  "read_aloud": "You arrive in Phandalin — a small, rough frontier town of about fifty simple log buildings. Muddy wagon tracks crisscross the main street, and a few townsfolk eye your group with a mix of curiosity and hope. The town has clearly seen better days, but there's life here. Smoke rises from chimneys, and the sound of hammers rings from the smithy. A sign near the center of town reads 'Barthen's Provisions.'",
+  "encounters": [
+    {
+      "type": "social",
+      "trigger": "player_action",
+      "description": "Meeting the various NPCs around town. Each has information or quests to offer.",
+      "enemies": []
+    }
+  ],
+  "npcs": [
+    {
+      "id": "elmar-barthen",
+      "name": "Elmar Barthen",
+      "attitude": "friendly",
+      "role": "merchant",
+      "dialog_hooks": [
+        "Pays the party for delivering the wagon (10 gp each as Gundren promised)",
+        "Gundren hasn't arrived yet — seems worried",
+        "Warns about the Redbrands — a gang of ruffians led by someone called 'Glasstaff' who have been shaking down locals"
+      ]
+    },
+    {
+      "id": "toblen-stonehill",
+      "name": "Toblen Stonehill",
+      "attitude": "friendly",
+      "role": "innkeeper",
+      "dialog_hooks": [
+        "Runs the Stonehill Inn — rooms for 5 sp/night",
+        "The Redbrands hassle every business in town",
+        "Thel Dendrar, a local woodcarver, stood up to the Redbrands. They murdered him, took his wife and children",
+        "The Redbrands hang out at the Sleeping Giant tap house on the east end of town"
+      ]
+    },
+    {
+      "id": "linene-graywind",
+      "name": "Linene Graywind",
+      "attitude": "neutral",
+      "role": "merchant",
+      "dialog_hooks": [
+        "Runs the Lionshield Coster trading post",
+        "Recognizes the stolen supplies from Cragmaw Hideout — pays 50 gp reward if returned",
+        "Refuses to sell weapons to the Redbrands"
+      ]
+    },
+    {
+      "id": "halia-thornton",
+      "name": "Halia Thornton",
+      "attitude": "neutral",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Runs the Phandalin Miner's Exchange",
+        "Secretly a Zhentarim agent — ambitious and cunning"
+      ],
+      "quest": {
+        "name": "Eliminate Glasstaff",
+        "objective": "Kill the Redbrand leader Glasstaff and bring her any correspondence found in his quarters",
+        "reward": "100 gp",
+        "destination": "Tresendar Manor (Redbrand hideout)"
+      }
+    },
+    {
+      "id": "harbin-wester",
+      "name": "Harbin Wester",
+      "attitude": "neutral",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Townsmaster — cowardly, avoids confrontation with the Redbrands",
+        "Posts bounties on the notice board"
+      ],
+      "quest": {
+        "name": "Orc Trouble",
+        "objective": "A band of orcs has set up camp near Wyvern Tor. Travelers have been attacked. Clear them out.",
+        "reward": "100 gp",
+        "destination": "Wyvern Tor"
+      }
+    },
+    {
+      "id": "qelline-alderleaf",
+      "name": "Qelline Alderleaf",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Halfling farmer, wise and kind",
+        "Her son Carp saw Redbrands emerge from a secret tunnel in the woods south of Tresendar Manor",
+        "Suggests the party visit Reidoth the Druid in Thundertree — he knows every inch of the land and could help find Cragmaw Castle and Wave Echo Cave"
+      ],
+      "quest": {
+        "name": "Find Reidoth the Druid",
+        "objective": "Reidoth the Druid in the ruins of Thundertree knows the location of Cragmaw Castle and Wave Echo Cave",
+        "reward": "Information about Cragmaw Castle location",
+        "destination": "Ruins of Thundertree"
+      }
+    },
+    {
+      "id": "sister-garaele",
+      "name": "Sister Garaele",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Elf cleric of Tymora at the Shrine of Luck",
+        "Recently returned from a failed diplomatic mission to Agatha's Lair — she looks exhausted"
+      ],
+      "quest": {
+        "name": "The Banshee's Bargain",
+        "objective": "Bring a jeweled silver comb to the banshee Agatha in exchange for answering one question: where is Bowgentle's spellbook?",
+        "reward": "3 potions of healing",
+        "destination": "Conyberry / Agatha's Lair"
+      }
+    },
+    {
+      "id": "daran-edermath",
+      "name": "Daran Edermath",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Retired half-elf adventurer, Order of the Gauntlet member",
+        "Troubled by undead activity near Old Owl Well"
+      ],
+      "quest": {
+        "name": "Old Owl Well",
+        "objective": "Investigate reports of undead near the Old Owl Well ruins east of town",
+        "reward": "Daran's gratitude and Order of the Gauntlet reputation",
+        "destination": "Old Owl Well"
+      }
+    },
+    {
+      "id": "mirna-dendrar",
+      "name": "Mirna Dendrar",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Found as a prisoner in the Redbrand hideout with her two children",
+        "Her husband Thel was murdered by the Redbrands",
+        "Offers information about a family heirloom emerald necklace hidden in the herb shop in Thundertree as reward for rescue"
+      ]
+    }
+  ],
+  "loot": [
+    {"item": "gold", "quantity": 60, "location": "Barthen pays 10 gp each for 6 party members for wagon delivery"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "insight",
+      "dc": 12,
+      "success": "Halia seems to have her own agenda — she's more interested in Glasstaff's papers than stopping the Redbrands.",
+      "failure": "Halia seems like a concerned businesswoman.",
+      "context": "Talking to Halia Thornton."
+    }
+  ],
+  "transitions": {
+    "investigate_redbrands": "ch2-act-II",
+    "go_to_sleeping_giant": "ch2-act-II",
+    "ask_about_redbrands": "ch2-act-II",
+    "side_quest_agatha": "ch3-act-I",
+    "side_quest_old_owl_well": "ch3-act-I",
+    "side_quest_thundertree": "ch3-act-I",
+    "side_quest_wyvern_tor": "ch3-act-I",
+    "default": "ch2-act-II"
+  },
+  "dm_notes": "This is a sandbox act — let the party explore town at their own pace. Present NPCs as they visit locations. The Redbrand threat should become clear through multiple NPC conversations. Don't rush them to the hideout. The side quests set up Chapter 3 but shouldn't be pursued yet — they're hooks to remember. Eventually the Redbrand confrontation (Act II) should feel inevitable."
+}

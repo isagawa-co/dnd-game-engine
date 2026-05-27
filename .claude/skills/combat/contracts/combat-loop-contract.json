@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "combat-loop-contract",
+  "version": "1.0",
+  "description": "Input/output contract for combat loop: initiative, rounds, action resolution, outcomes",
+
+  "combat_input": {
+    "encounter_id": "string — unique encounter identifier",
+    "terrain": "string — open_field|forest|dungeon|urban|cave|water",
+    "party_pcs": [
+      {
+        "id": "string — PC identifier",
+        "name": "string",
+        "hp": "int — current HP",
+        "max_hp": "int — maximum HP",
+        "ac": "int — armor class (1-30)",
+        "dex_modifier": "int — DEX modifier for initiative (-5 to +10)",
+        "attack_bonus": "int — primary attack bonus (-5 to +20)",
+        "damage_dice": "string — e.g. '1d8+3'",
+        "damage_type": "string — one of 13 D&D 5e damage types",
+        "resistances": ["string — damage types resisted"],
+        "immunities": ["string — damage types immune to"],
+        "vulnerabilities": ["string — damage types vulnerable to"],
+        "conditions": ["string — active conditions"],
+        "condition_immunities": ["string — conditions immune to"],
+        "concentrating": "bool — whether concentrating on a spell",
+        "spell_slots": {"level_N": "int — remaining slots per level"},
+        "level": "int — character level (1-20)"
+      }
+    ],
+    "enemies": [
+      {
+        "id": "string — enemy identifier",
+        "name": "string",
+        "hp": "int — current HP",
+        "max_hp": "int — maximum HP",
+        "ac": "int — armor class (1-30)",
+        "dex_modifier": "int — DEX modifier for initiative",
+        "attack_bonus": "int — primary attack bonus",
+        "damage_dice": "string — e.g. '2d6+4'",
+        "damage_type": "string — one of 13 D&D 5e damage types",
+        "resistances": ["string"],
+        "immunities": ["string"],
+        "vulnerabilities": ["string"],
+        "conditions": ["string"],
+        "condition_immunities": ["string"],
+        "concentrating": "bool",
+        "xp_value": "int — XP awarded on defeat"
+      }
+    ]
+  },
+
+  "combat_outcome": {
+    "encounter_id": "string — matches input encounter_id",
+    "result_code": "victory|defeat|draw|escape",
+    "rounds_elapsed": "int — total rounds of combat",
+    "surviving_pcs": [
+      {
+        "id": "string",
+        "hp_remaining": "int",
+        "conditions_after": ["string"]
+      }
+    ],
+    "surviving_enemies": [
+      {
+        "id": "string",
+        "hp_remaining": "int"
+      }
+    ],
+    "defeated_pcs": [
+      {
+        "id": "string",
+        "death_save_result": "dead|stabilized|none"
+      }
+    ],
+    "defeated_enemies": [
+      {
+        "id": "string",
+        "defeated_by": "string — PC id that landed final blow"
+      }
+    ],
+    "xp_earned": "int — total XP from defeated enemies",
+    "loot": [
+      {
+        "item_id": "string",
+        "name": "string",
+        "quantity": "int"
+      }
+    ],
+    "combat_log": [
+      {
+        "round": "int",
+        "actor_id": "string",
+        "action_type": "string",
+        "target_id": "string",
+        "result": "string — hit|miss|critical|spell_success|spell_resisted",
+        "damage_dealt": "int",
+        "narrative": "string — short description for narration"
+      }
+    ]
+  },
+
+  "outcome_codes": {
+    "victory": "All enemies defeated (HP <= 0). Party earns XP and loot.",
+    "defeat": "All PCs dead (failed 3 death saves each or HP <= 0 with no saves).",
+    "draw": "Both sides agree to cease combat. No XP or loot.",
+    "escape": "Party flees successfully. No XP. Enemies may pursue."
+  },
+
+  "initiative_rules": {
+    "roll": "1d20 + dex_modifier per combatant",
+    "tie_break": "Higher DEX modifier goes first. If still tied, coin flip.",
+    "turn_order": "Descending initiative (highest first)",
+    "surprise": "Surprised combatants skip first round"
+  },
+
+  "round_rules": {
+    "round_number": "Starts at 1, increments each full cycle",
+    "turn_sequence": "Each combatant acts in initiative order",
+    "condition_expiry": "At end of each combatant's turn, reduce condition duration by 1. Remove if 0.",
+    "concentration_check": "On damage taken, DC = max(10, damage/2). Fail = lose concentration.",
+    "max_rounds": 100
+  },
+
+  "death_save_rules": {
+    "trigger": "When PC reaches 0 HP",
+    "roll": "1d20, no modifiers",
+    "success_threshold": 10,
+    "successes_to_stabilize": 3,
+    "failures_to_die": 3,
+    "natural_20": "PC regains 1 HP and is conscious",
+    "natural_1": "Counts as 2 failures",
+    "damage_at_0hp": "Each hit = 1 death save failure (critical = 2)"
+  }
+}

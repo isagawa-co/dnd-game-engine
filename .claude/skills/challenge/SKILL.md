@@ -49,10 +49,11 @@ When resolving a challenge:
 
 1. **Identify challenge type** from the encounter data
 2. **Determine DC** based on the challenge difficulty (easy=10, medium=12, hard=15, very hard=17)
-3. **Prompt user for roll** — e.g., "Make an Athletics check (DC 12)" — wait for their d20 roll
-4. **Apply the result**:
+3. **Present approach options** using the **action-prompt** skill (`.claude/skills/action-prompt/SKILL.md`) — show the user how they can attempt the challenge (which skill, which character, creative approaches)
+4. **Prompt user for roll** — e.g., "Make an Athletics check (DC 12)" — wait for their d20 roll
+5. **Apply the result**:
    - Roll ≥ DC → success (user succeeds at the challenge)
    - Roll < DC → failure (obstacle remains or consequence applies)
-5. **Update state** and narrate the outcome to the user
+6. **Update state** and narrate the outcome to the user
 
 The user provides the actual die roll; you use it to determine success/failure.

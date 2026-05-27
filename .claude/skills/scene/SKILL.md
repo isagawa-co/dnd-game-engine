@@ -43,7 +43,7 @@
 
 | Type | Sub-Loop | Skill | Status |
 |------|----------|-------|--------|
-| combat | combat-loop | → [[.claude/skills/combat/SKILL.md]] | stub |
+| combat | combat-loop | → [[.claude/skills/combat/SKILL.md]] | built |
 | social | social-loop | — | stub |
 | challenge | challenge-loop | → [[.claude/skills/challenge/SKILL.md]] | built |
 | merchant | merchant-loop | — | stub |
@@ -51,11 +51,15 @@
 | travel | travel-loop | — | stub |
 | item-use | item-use-loop | — | stub |
 
+## Action Prompt Integration
+
+At every decision point within a scene, use the **action-prompt** skill (`.claude/skills/action-prompt/SKILL.md`) for standardized presentation. The scene loop determines the context (`exploration`, `social`, `combat_turn`, etc.) and the action-prompt skill handles numbered options + custom input.
+
 ## Integration
 
-- **Depends on:** atomic_ops (ability checks, damage), entity (PC/NPC/monster state)
+- **Depends on:** atomic_ops (ability checks, damage), entity (PC/NPC/monster state), action-prompt (user choice presentation)
 - **Returns to:** campaign-loop (outcome dict triggers state mutations + narration)
-- **Design doc:** → [[projects/ai-dnd-game/backlog/007-dnd-build-scene-loop/encounter-types.md]]
+- **Design doc:** → [[backlog/007-dnd-build-scene-loop/encounter-types.md]]
 
 ## Tests
 

@@ -1,0 +1,89 @@
+{
+  "act_id": "ch1-act-II",
+  "chapter": 1,
+  "act": "II",
+  "title": "Goblin Ambush",
+  "level_range": [1, 1],
+  "location": {
+    "name": "Triboar Trail — Ambush Site",
+    "description": "About fifteen miles from Phandalin, the trail passes through a dense thicket. Two dead horses sprawl about fifty feet ahead, blocking the path. Several black-feathered arrows protrude from the carcasses.",
+    "environment": "forest road, dense thicket, underbrush on both sides"
+  },
+  "read_aloud": "You've been on the Triboar Trail for about half a day when you come around a bend and spot two dead horses sprawled about fifty feet ahead of you, blocking the path. Each has several black-feathered arrows sticking out of it. The woods press close to the trail here, with a steep embankment and dense thickets on either side.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": true,
+      "enemies": [
+        {"monster_id": "goblin", "count": 4, "position": "Hidden in the thickets on both sides of the road, 30 feet from the dead horses"}
+      ],
+      "tactics": "The goblins fire arrows from behind the thickets (half cover, +2 AC). If two or more goblins die, the remaining goblins attempt to flee north along a hidden trail toward Cragmaw Hideout. One goblin may try to surrender if cornered.",
+      "difficulty": "medium",
+      "reward_xp": 200,
+      "description": "Four goblins ambush the party. They have surprise unless someone succeeds on a DC 10 Perception check (passive or active) before reaching the horses."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    {"item": "gold", "quantity": 8, "location": "On goblin bodies"},
+    {"item": "shortbow", "quantity": 4, "location": "Goblin weapons"},
+    {"item": "scimitar", "quantity": 4, "location": "Goblin weapons"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "perception",
+      "dc": 10,
+      "success": "Notice the goblins hiding in the thickets before the ambush. Party is not surprised.",
+      "failure": "Goblins get a surprise round.",
+      "context": "Passive or active Perception as the party approaches the dead horses."
+    },
+    {
+      "skill": "investigation",
+      "dc": 10,
+      "success": "The horses belong to Gundren Rockseeker and Sildar Hallwinter. Saddlebags have been looted. A trail leads northwest into the thickets.",
+      "failure": "The horses look like they were ambushed. Nothing else obvious.",
+      "context": "Examining the dead horses after combat."
+    },
+    {
+      "skill": "survival",
+      "dc": 10,
+      "success": "A clear trail leads northwest. About a dozen goblin-sized footprints head in that direction. The trail is well-used.",
+      "failure": "The underbrush is too thick to find a clear path.",
+      "context": "Tracking the goblins after combat."
+    }
+  ],
+  "traps": [
+    {
+      "name": "Goblin Snare",
+      "trigger_description": "On the trail to Cragmaw Hideout, about 10 minutes along",
+      "dc": 12,
+      "damage": "restrained, hanging upside down",
+      "effect": "Character is restrained and dangling. Requires DC 10 Athletics or another character to cut them down.",
+      "detection": "Perception DC 12",
+      "disarm": "Can be avoided once spotted"
+    },
+    {
+      "name": "Goblin Pit",
+      "trigger_description": "On the trail to Cragmaw Hideout, about 30 minutes along",
+      "dc": 15,
+      "damage": "1d6 bludgeoning",
+      "effect": "Character falls 10 feet into a pit.",
+      "detection": "Perception DC 15",
+      "disarm": "Can be avoided once spotted"
+    }
+  ],
+  "secrets": [
+    {
+      "check": "investigation",
+      "dc": 10,
+      "info": "An empty leather map case is found among the horse's belongings. Gundren had a map — the goblins took it."
+    }
+  ],
+  "transitions": {
+    "follow_trail": "ch1-act-III",
+    "continue_to_phandalin": "ch2-act-I",
+    "default": "ch1-act-III"
+  },
+  "dm_notes": "This is the party's first combat. Walk them through initiative, attack rolls, and damage. The surprise round is important — let the goblins get their shots in. After combat, the Investigation/Survival checks reveal the trail to Cragmaw Hideout. If the party decides to skip the hideout and go straight to Phandalin, transition to ch2-act-I instead."
+}

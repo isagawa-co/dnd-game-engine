@@ -1,0 +1,143 @@
+{
+  "act_id": "ch2-act-III",
+  "chapter": 2,
+  "act": "III",
+  "title": "Tresendar Manor — Redbrand Hideout",
+  "level_range": [2, 2],
+  "location": {
+    "name": "Tresendar Manor — Cellar Complex",
+    "description": "Beneath the ruined Tresendar Manor lies a multi-room cellar complex that the Redbrands have converted into their hideout. Cold stone corridors, storage rooms, and a natural cavern system make up the dungeon.",
+    "environment": "dungeon, underground, dim light (torches in some rooms)"
+  },
+  "read_aloud": "The cellar beneath Tresendar Manor is cold and damp. Rough-hewn stone walls line narrow corridors lit by flickering torches. The smell of stale beer and unwashed bodies hangs in the air. Somewhere deeper, you hear the low murmur of voices.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the crevasse cavern",
+      "enemies": [],
+      "description": "The Nothic lurks in a natural crevasse. It is not immediately hostile — it tries to communicate telepathically, bargaining for food (fresh meat) in exchange for information about Glasstaff."
+    },
+    {
+      "type": "social",
+      "trigger": "conditional",
+      "trigger_condition": "Party encounters the Nothic",
+      "enemies": [
+        {"monster_id": "nothic", "count": 1, "position": "In the natural crevasse, 20 feet below the bridge", "special": "Will trade information for food. Knows Glasstaff's real name is Iarno Albrek. Attacks only if threatened or refused."}
+      ],
+      "tactics": "The Nothic uses Weird Insight to learn party secrets and uses them as leverage. It wants fresh meat. If given food, it reveals that Glasstaff is really Iarno Albrek and that he has a secret escape route in his quarters. If attacked, it fights with Rotting Gaze.",
+      "difficulty": "hard",
+      "reward_xp": 450,
+      "description": "The Nothic — a twisted aberration that was once a wizard. It can be negotiated with or fought."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the common room",
+      "enemies": [
+        {"monster_id": "redbrand-ruffian", "count": 3, "position": "Drinking and gambling at a table"}
+      ],
+      "tactics": "Redbrands are caught off guard if the party enters quietly. They fight but surrender if outnumbered and wounded.",
+      "difficulty": "easy",
+      "reward_xp": 300,
+      "description": "Three Redbrands in the common room."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters the barracks",
+      "enemies": [
+        {"monster_id": "redbrand-ruffian", "count": 3, "position": "Sleeping or resting on bunks"}
+      ],
+      "tactics": "If the party is stealthy (DC 10 Stealth), they can get a surprise round. Otherwise, the Redbrands grab weapons and fight.",
+      "difficulty": "easy",
+      "reward_xp": 300
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "Party enters Glasstaff's quarters",
+      "enemies": [
+        {"monster_id": "iarno-albrek", "count": 1, "position": "In his study/laboratory", "special": "Glasstaff — real name Iarno Albrek. Uses Staff of Defense (AC 18 with Shield, can cast Shield and Mage Armor). Has a secret escape route through a hidden door."}
+      ],
+      "tactics": "If Glasstaff hears combat, he tries to flee through the secret escape passage. If cornered, he casts Hold Person, then Magic Missile. He surrenders if reduced to 5 HP or less. He can reveal information about the Black Spider (Nezznar) and Wave Echo Cave.",
+      "difficulty": "hard",
+      "reward_xp": 200,
+      "description": "Glasstaff (Iarno Albrek) — the Redbrand leader. A wizard working for the Black Spider."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "iarno-albrek",
+      "name": "Iarno Albrek (Glasstaff)",
+      "attitude": "hostile",
+      "role": "villain",
+      "dialog_hooks": [
+        "Real name is Iarno Albrek — the missing Lords' Alliance agent Sildar was looking for",
+        "Works for the Black Spider (Nezznar, a drow)",
+        "The Black Spider wants Wave Echo Cave and the Forge of Spells",
+        "Glasstaff was sent to Phandalin to keep the town under control and prevent interference",
+        "Has a letter from the Black Spider in his quarters — proof of the conspiracy"
+      ]
+    },
+    {
+      "id": "mirna-dendrar",
+      "name": "Mirna Dendrar",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Imprisoned with her two children in the slave pens",
+        "Her husband Thel was murdered by the Redbrands for standing up to them",
+        "Offers the location of a family heirloom emerald necklace in the ruined herb shop in Thundertree as a reward"
+      ]
+    }
+  ],
+  "loot": [
+    {"item": "gold", "quantity": 180, "location": "Glasstaff's strongbox (includes gems and coins)"},
+    {"item": "Staff of Defense", "quantity": 1, "location": "Glasstaff's possession — +1 AC, can cast Shield (reaction) and Mage Armor"},
+    {"item": "spell-scroll", "quantity": 1, "location": "Glasstaff's lab — Scroll of Augury"},
+    {"item": "potion-of-healing", "quantity": 1, "location": "Glasstaff's quarters"},
+    {"item": "Black Spider's letter", "quantity": 1, "location": "Glasstaff's desk — reveals the Black Spider's plans and Cragmaw Castle connection"},
+    {"item": "Dendrar family emerald necklace location", "quantity": 1, "location": "Mirna reveals it's in the ruined herb shop in Thundertree"}
+  ],
+  "skill_checks": [
+    {
+      "skill": "perception",
+      "dc": 15,
+      "success": "Notice the secret escape passage in Glasstaff's quarters before he can use it.",
+      "failure": "Glasstaff may escape through the hidden door.",
+      "context": "Searching Glasstaff's study."
+    },
+    {
+      "skill": "stealth",
+      "dc": 10,
+      "success": "Approach the barracks or common room without alerting the Redbrands.",
+      "failure": "Redbrands hear the party and prepare for a fight.",
+      "context": "Moving through the hideout corridors."
+    }
+  ],
+  "traps": [
+    {
+      "name": "Pit Trap",
+      "trigger_description": "A section of corridor floor is a concealed pit trap",
+      "dc": 15,
+      "damage": "2d6 bludgeoning",
+      "effect": "Character falls 20 feet into a pit.",
+      "detection": "Perception DC 15 or Investigation DC 12",
+      "disarm": "Can be avoided by walking along the edges once detected"
+    }
+  ],
+  "secrets": [
+    {
+      "check": "investigation",
+      "dc": 10,
+      "info": "The Black Spider's letter to Glasstaff reads: 'Lord Albrek, my spies in Neverwinter tell me that strangers are due to arrive in Phandalin. They could be working for the dwarves. Capture them if you can, kill them if you must, but don't allow them to upset our plans. See that any dwarven maps in their possession are delivered to me with haste. I am counting on you, Iarno. Don't disappoint me. —The Black Spider'"
+    }
+  ],
+  "transitions": {
+    "hideout_cleared": "ch3-act-I",
+    "glasstaff_escaped": "ch3-act-I",
+    "default": "ch3-act-I"
+  },
+  "dm_notes": "This dungeon has multiple entry points — the secret tunnel (from Carp's info) or the manor cellar entrance. The Nothic encounter is a key decision point — fighting vs. negotiating teaches the party that not everything is a combat encounter. If Glasstaff escapes, he can reappear later at Cragmaw Castle. The letter from the Black Spider is the main plot hook connecting Chapters 2 and 3. Rescuing the Dendrars should feel heroic."
+}

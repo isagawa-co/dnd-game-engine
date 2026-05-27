@@ -151,10 +151,40 @@
             "type": "object"
           },
           "personality": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "alignment": { "type": "string" },
+              "background": { "type": "string" },
+              "traits": { "type": "array", "items": { "type": "string" }, "maxItems": 2 },
+              "ideal": { "type": "string" },
+              "bond": { "type": "string" },
+              "flaw": { "type": "string" },
+              "appearance": { "type": "string" },
+              "backstory": { "type": "string" }
+            }
           },
           "social": {
             "type": "object"
+          },
+          "creation_metadata": {
+            "type": "object",
+            "properties": {
+              "creation_method": { "type": "string" },
+              "created_date": { "type": "string" },
+              "source_campaign": { "type": "string" }
+            }
+          },
+          "campaign_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "campaign_id": { "type": "string" },
+                "joined_at_level": { "type": "integer" },
+                "current_level": { "type": "integer" },
+                "status": { "type": "string" }
+              }
+            }
           }
         }
       },
@@ -547,7 +577,7 @@
     ]
   },
   "registry_references": {
-    "races": "projects/ai-dnd-game/content/all-races.json",
-    "classes": "projects/ai-dnd-game/content/all-classes.json"
+    "races": "adventures/all-races.json",
+    "classes": "adventures/all-classes.json"
   }
 }

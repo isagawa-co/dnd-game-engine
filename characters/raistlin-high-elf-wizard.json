@@ -1,0 +1,126 @@
+{
+  "id": "raistlin-high-elf-wizard",
+  "entity_type": "pc",
+  "name": "Raistlin",
+  "character_class": "wizard",
+  "race": "high-elf",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 11,
+    "dexterity": 18,
+    "constitution": 15,
+    "intelligence": 17,
+    "wisdom": 15,
+    "charisma": 14
+  },
+  "hp": 8,
+  "max_hp": 8,
+  "ac": 11,
+  "speed": 30,
+  "hit_dice_detail": {
+    "die_type": "d6",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["intelligence", "wisdom"],
+    "skills": ["arcana", "investigation"],
+    "weapons": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows", "longswords", "shortswords", "shortbows", "longbows"],
+    "armor": []
+  },
+  "class_features": [
+    {
+      "name": "Arcane Recovery",
+      "description": "Once per day during a short rest, recover spell slots with combined level equal to half wizard level (rounded up). At level 1, recover one 1st-level slot.",
+      "uses": 1,
+      "recharge": "long_rest"
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Darkvision",
+      "description": "Can see in dim light within 60 feet as if bright light, and in darkness as if dim light."
+    },
+    {
+      "name": "Keen Senses",
+      "description": "Proficiency in Perception skill."
+    },
+    {
+      "name": "Fey Ancestry",
+      "description": "Advantage on saving throws against being charmed, and magic can't put you to sleep."
+    },
+    {
+      "name": "Trance",
+      "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+    },
+    {
+      "name": "Cantrip",
+      "description": "One free wizard cantrip: Minor Illusion."
+    }
+  ],
+  "spellcasting": {
+    "cantrips": ["Fire Bolt", "Mage Hand", "Prestidigitation", "Minor Illusion"],
+    "spellbook": ["Mage Armor", "Shield", "Magic Missile", "Thunderwave", "Detect Magic", "Find Familiar"],
+    "spell_slots": {
+      "1": 2
+    },
+    "spells_prepared_max": 4
+  },
+  "inventory": [
+    {
+      "name": "Quarterstaff",
+      "quantity": 1,
+      "weight": 4,
+      "damage": "1d6 bludgeoning",
+      "properties": ["versatile (1d8)"],
+      "gp_value": 2
+    },
+    {
+      "name": "Arcane Focus (Crystal)",
+      "quantity": 1,
+      "weight": 1,
+      "gp_value": 10
+    },
+    {
+      "name": "Spellbook",
+      "quantity": 1,
+      "weight": 3,
+      "gp_value": 50
+    },
+    {
+      "name": "Scholar's Pack",
+      "quantity": 1,
+      "weight": 40,
+      "contents": ["backpack", "book of lore", "ink", "ink pen", "parchment (10 sheets)", "small knife", "little bag of sand"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "chaotic neutral",
+    "background": "cloistered scholar",
+    "traits": [
+      "I was, in fact, raised by books. People confuse me",
+      "I'm willing to listen to every side of an argument before I make my own judgment"
+    ],
+    "ideal": "No Limits — Nothing should fetter the infinite possibility inherent in all existence",
+    "bond": "I sold my soul for knowledge. I hope to do great deeds and win it back",
+    "flaw": "Most people scream and run when they see a demon. I stop and take notes on its anatomy",
+    "appearance": "A gaunt High Elf with obsidian-dark skin and sharp cheekbones that catch shadows like they were carved for it. His pale amber eyes are always half-narrowed, studying everything like it's a page he hasn't finished reading. Long white hair is pulled back and tied with a leather cord stained with ink. His robes hang loose on a thin frame — he forgets to eat when he's researching, which is always. His fingers are perpetually ink-stained, and he carries his spellbook the way a soldier carries a sword — never out of arm's reach. Between the albino Centaur and the dark-skinned Elf, the party turns heads in every tavern. When others speak, he listens with unsettling patience, weighing every word. When he speaks, it's deliberate and quiet — the kind of voice that makes people lean in, which is exactly what he wants.",
+    "backstory": "Raistlin was born into a minor High Elf noble house but spent his childhood in the libraries, not the courts. His dark complexion marked him as unusual among his kin — whispered about but never explained. He didn't care. Books were better company than elves who judged by appearance. He devoured every tome in the family archive by his twentieth year, then moved to a cloistered scriptorium where he studied for decades. It wasn't enough. When he hit the limits of sanctioned knowledge, he found other sources — older, darker, with a price. He traded something he can't quite name for access to texts that shouldn't exist. Now he travels to do enough good to earn back what he lost, taking notes on every horror he encounters along the way. He doesn't run from demons. He indexes them."
+  },
+  "creation_metadata": {
+    "creation_method": "4d6_drop_lowest",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}

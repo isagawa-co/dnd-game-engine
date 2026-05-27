@@ -1,0 +1,22 @@
+{
+  "campaign_id": "campaign-2026-05-27-002",
+  "campaign_name": "Lost Mine of Phandelver",
+  "adventure_id": "lmop",
+  "party_count": 6,
+  "starting_level": 1,
+  "metadata": {
+    "timestamp_created": "2026-05-27T14:35:56.915402+00:00",
+    "version": "1.0",
+    "gm_name": "User",
+    "difficulty": "medium",
+    "rules_version": "5e"
+  },
+  "party_pcs": [
+    {"pc_id": "honu-tortle-fighter", "name": "Honu", "class": "Fighter", "race": "tortle", "level": 1},
+    {"pc_id": "bron-centaur-fighter", "name": "Bron", "class": "Fighter", "race": "centaur", "level": 1},
+    {"pc_id": "raistlin-high-elf-wizard", "name": "Raistlin", "class": "Wizard", "race": "high-elf", "level": 1},
+    {"pc_id": "dain-mountain-dwarf-paladin", "name": "Dain", "class": "Paladin", "race": "mountain-dwarf", "level": 1},
+    {"pc_id": "ala-half-elf-rogue", "name": "Ala", "class": "Rogue", "race": "half-elf", "level": 1},
+    {"pc_id": "sweeney-human-cleric", "name": "Sweeney", "class": "Cleric", "race": "human", "level": 1}
+  ]
+}

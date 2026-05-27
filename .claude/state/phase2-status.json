@@ -4,7 +4,7 @@
   "items": [
     {
       "id": 1,
-      "backlog": "projects/ai-dnd-game/backlog/016-entity-system-validation.md",
+      "backlog": "backlog/016-entity-system-validation.md",
       "title": "Entity System & Validation",
       "status": "QUEUED",
       "task_folder": "tasks/entity-system-validation/",
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "backlog": "projects/ai-dnd-game/backlog/017-character-creation-command.md",
+      "backlog": "backlog/017-character-creation-command.md",
       "title": "Character Creation Command",
       "status": "QUEUED",
       "task_folder": "tasks/character-creation-command/",
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "backlog": "projects/ai-dnd-game/backlog/003-level-0-campaign-loop.md",
+      "backlog": "backlog/003-level-0-campaign-loop.md",
       "title": "Level 0 - Campaign Loop",
       "status": "QUEUED",
       "task_folder": "tasks/level-0-campaign-loop/",
@@ -46,7 +46,7 @@
     },
     {
       "id": 4,
-      "backlog": "projects/ai-dnd-game/backlog/004-level-1-scene-loop.md",
+      "backlog": "backlog/004-level-1-scene-loop.md",
       "title": "Level 1 - Scene Loop",
       "status": "QUEUED",
       "task_folder": "tasks/level-1-scene-loop/",

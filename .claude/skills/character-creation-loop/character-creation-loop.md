@@ -7,18 +7,18 @@ Prescriptive workflow for creating a party of PCs when a new campaign has no par
 | Contract | Path | Purpose |
 |----------|------|---------|
 | Character Creation | `.claude/skills/character/contracts/character-creation-contract.json` | Input/output schema for PC creation, validation rules CHAR-001 through CHAR-008 |
-| Player Settings | `projects/ai-dnd-game/config/player-settings.json` | Creation method, house rules, difficulty |
-| State Evaluation | `projects/ai-dnd-game/contracts/state-evaluation-contract.json` | Priority 0 rule triggers this loop |
+| Player Settings | `config/player-settings.json` | Creation method, house rules, difficulty |
+| State Evaluation | `contracts/state-evaluation-contract.json` | Priority 0 rule triggers this loop |
 
 ## Dependencies
 
 | System | Module | Key Functions |
 |--------|--------|---------------|
-| Character Skill | `projects/ai-dnd-game/src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
-| Entity System | `projects/ai-dnd-game/src/entity/entity_loader.py` | Tier 4 PC entity validation |
+| Character Skill | `src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
+| Entity System | `src/entity/entity_loader.py` | Tier 4 PC entity validation |
 | Atomic Ops | `.claude/skills/atomic_ops/` | `dice_roll` for random ability generation methods |
-| Race Registry | `projects/ai-dnd-game/content/all-races.json` | Dynamic race data with ability modifiers |
-| Class Registry | `projects/ai-dnd-game/content/all-classes.json` | Dynamic class data with hit dice, features |
+| Race Registry | `adventures/all-races.json` | Dynamic race data with ability modifiers |
+| Class Registry | `adventures/all-classes.json` | Dynamic class data with hit dice, features |
 
 ## Instructions
 
@@ -26,13 +26,13 @@ Prescriptive workflow for creating a party of PCs when a new campaign has no par
 
 **This step runs BEFORE any character creation. It loads the dynamic registries that replace all hardcoded class/race lists.**
 
-1. Load race registry from `projects/ai-dnd-game/content/all-races.json`:
+1. Load race registry from `adventures/all-races.json`:
    - Parse JSON, extract `races` array
    - Build lookup map: `race_registry = {r["id"]: r for r in data["races"]}`
    - Extract available race IDs: `valid_race_ids = set(race_registry.keys())`
    - If file missing or invalid JSON: STOP with error `"Registry load failed: all-races.json not found or invalid. Cannot create characters without race registry."`
 
-2. Load class registry from `projects/ai-dnd-game/content/all-classes.json`:
+2. Load class registry from `adventures/all-classes.json`:
    - Parse JSON, extract `classes` array
    - Build lookup map: `class_registry = {c["id"]: c for c in data["classes"]}`
    - Extract available class IDs: `valid_class_ids = set(class_registry.keys())`
@@ -97,9 +97,88 @@ For each PC slot (repeat for party size):
    - If validation fails: log errors, retry with corrected input (max 2 retries)
 9. **Output** — collect `{valid: true, character: <Tier 4 entity>, errors: []}` for assembly
 
-### Part 3: Party Assembly
+### Part 3: Personality and Roleplay
 
-1. Collect all created PC entities into `campaign.party` array
+For each PC (after mechanical creation in Part 2):
+
+#### Presentation Format (MANDATORY)
+
+Every table in Part 3 MUST be presented using this exact format. This ensures consistent HITL experience across all sessions.
+
+```
+Part 3: Personality and Roleplay — PC [N]: [Name] ([Race] [Class])
+
+[Name]'s background is [Background]. Here are the D&D 5e [Background] background options:
+
+[Category] (pick [N] or roll d[die]):
+
+| # | [Column Header] |
+|---|-----------------|
+| 1 | [option text]   |
+| 2 | [option text]   |
+| ...               |
+
+Pick [N], roll d[die], or "roll all" to randomize everything.
+```
+
+Rules:
+- Always show the full table even if player chose "roll" — they see what they got
+- One table at a time — wait for player response before showing the next
+- After each selection/roll, confirm: "[Name]'s [category]: [selected text]"
+- For "roll all": present all tables at once, player provides all rolls, agent maps results
+
+#### Steps
+
+0. **Choose method** — ask the player:
+   - **Pick**: player selects each trait from the background table by number
+   - **Roll**: player rolls dice, agent maps result to table entry
+   - **Roll all**: player rolls d8, d8, d6, d6, d6 — agent maps all at once
+   - Present method choice BEFORE showing any tables
+
+1. **Select background** — if not already chosen in Part 2:
+   - Background determines personality trait options, ideal options, bond options, flaw options
+   - Common backgrounds: acolyte, charlatan, criminal, entertainer, folk hero, guild artisan, hermit, noble, outlander, sage, sailor, soldier, urchin
+
+2. **Personality traits** (2) — pick or roll (d8) from background table:
+   - These describe how the character behaves day-to-day
+   - Present numbered table of 8 options from background
+   - If rolling: player rolls d8 twice (reroll duplicates)
+
+3. **Ideal** (1) — pick or roll (d6) from background table:
+   - What principle drives the character
+   - Tied to alignment (good, evil, lawful, chaotic, neutral, any)
+   - Present numbered table of 6 options from background
+
+4. **Bond** (1) — pick or roll (d6) from background table:
+   - A connection to a person, place, or event that matters deeply
+   - Present numbered table of 6 options from background
+
+5. **Flaw** (1) — pick or roll (d6) from background table:
+   - A weakness, vice, or fear the character struggles with
+   - Present numbered table of 6 options from background
+
+6. **Appearance** — brief physical description:
+   - Agent proposes based on race/class/background, player can modify
+   - Height, build, distinguishing features
+   - Useful for narration skill to describe the character in scenes
+
+7. **Backstory** (optional) — 2-3 sentences of character history:
+   - Agent proposes based on background/bond/ideal, player can modify or skip
+   - Where they came from, why they adventure
+
+8. **Populate fields** — write to character entity:
+   - `personality.traits`: array of 2 strings
+   - `personality.ideal`: string
+   - `personality.bond`: string
+   - `personality.flaw`: string
+   - `personality.appearance`: string
+   - `personality.backstory`: string (optional)
+   - `personality.alignment`: already set
+   - `personality.background`: already set
+
+### Part 4: Party Assembly
+
+1. Collect all created PC entity IDs into party reference list
 2. Assign party order (index 0 = party leader, typically highest CHA)
 3. Validate party composition:
    - Party size matches configured count
@@ -107,7 +186,7 @@ For each PC slot (repeat for party size):
    - No duplicate character IDs
 4. Build party roster summary: name, class, HP, AC for each PC
 
-### Part 4: Equipment and Gold
+### Part 5: Equipment and Gold
 
 1. Calculate starting gold per PC based on class and `campaign_difficulty`:
    - Standard gold per `character-creation-contract.json` class defaults
@@ -116,24 +195,30 @@ For each PC slot (repeat for party size):
 3. Build inventory array for each PC from equipment choices
 4. Add gold to each PC's `gold` field
 
-### Part 5: Save to Campaign
+### Part 6: Save to Character Pool and Campaign
 
-1. Write updated campaign state with `party` array populated:
-   - Update `campaigns/<campaign-id>/campaign_state.json`
-   - Set `campaign.party` to array of PC entity objects
-2. Create `campaigns/<campaign-id>/party.json`:
-   - Contains party roster with all PC data
-   - Includes creation metadata (method, timestamp)
-3. Validate save per game-session save contract (atomic write, checksum)
-4. Report success:
+1. Save each PC entity to the shared character pool:
+   - Write `characters/<character-id>.json` with full Tier 4 entity
+   - Include `creation_metadata`: `{ creation_method, created_date, source_campaign }`
+   - Include `campaign_history`: `[{ campaign_id, joined_at_level, current_level, status }]`
+   - Character ID format: `<name-kebab>-<race>-<class>` (e.g., `honu-tortle-fighter`)
+   - Validate against `contracts/character-pool-contract.json`
+2. Update campaign with character references (not full entities):
+   - Write `campaigns/<campaign-id>/party.json` with character ID references per campaign_reference_schema
+   - Each entry: `{ character_id, party_position, snapshot_level, joined_date }`
+3. Update `campaigns/<campaign-id>/campaign_state.json`:
+   - Set `campaign.party` to array of character IDs (e.g., `["honu-tortle-fighter"]`)
+4. Validate save per game-session save contract (atomic write, checksum)
+5. Report success:
    ```
    Party created — [N] PCs ready for adventure.
+   Characters saved to characters/ pool.
 
-   | # | Name | Class | HP | AC |
-   |---|------|-------|----|----|
-   | 1 | [name] | [class] | [hp] | [ac] |
-   | 2 | [name] | [class] | [hp] | [ac] |
-   | 3 | [name] | [class] | [hp] | [ac] |
+   | # | Name | Class | HP | AC | Character ID |
+   |---|------|-------|----|----|--------------|
+   | 1 | [name] | [class] | [hp] | [ac] | [character-id] |
+   | 2 | [name] | [class] | [hp] | [ac] | [character-id] |
+   | 3 | [name] | [class] | [hp] | [ac] | [character-id] |
    ```
 
 ## Rules

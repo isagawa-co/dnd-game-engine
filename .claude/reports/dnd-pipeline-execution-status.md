@@ -107,7 +107,7 @@ To execute the full pipeline:
 claude -p
 
 # In session:
-/kernel/execute-pipeline projects/ai-dnd-game/backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
+/kernel/execute-pipeline backlog/001-dnd-build-state-model/001-dnd-build-state-model.md
 # ... repeat for items 002-019
 ```
 

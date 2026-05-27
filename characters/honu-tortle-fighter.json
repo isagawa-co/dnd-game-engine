@@ -1,0 +1,125 @@
+{
+  "id": "honu-tortle-fighter",
+  "entity_type": "pc",
+  "name": "Honu",
+  "character_class": "fighter",
+  "race": "tortle",
+  "level": 1,
+  "xp": 0,
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 13,
+    "constitution": 14,
+    "intelligence": 8,
+    "wisdom": 13,
+    "charisma": 10
+  },
+  "hp": 12,
+  "max_hp": 12,
+  "ac": 19,
+  "hit_dice_detail": {
+    "die_type": "d10",
+    "number": 1,
+    "remaining": 1
+  },
+  "proficiency_bonus": 2,
+  "proficiencies": {
+    "saving_throws": ["strength", "constitution"],
+    "skills": ["athletics", "perception", "survival"],
+    "weapons": ["simple weapons", "martial weapons"],
+    "armor": ["light armor", "medium armor", "heavy armor", "shields"]
+  },
+  "class_features": [
+    {
+      "name": "Fighting Style - Protection",
+      "description": "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.",
+      "uses": "unlimited",
+      "recharge": "reaction"
+    },
+    {
+      "name": "Second Wind",
+      "description": "Bonus action: regain 1d10 + 1 HP, once per short rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    }
+  ],
+  "racial_features": [
+    {
+      "name": "Natural Armor",
+      "description": "AC 17. Shield bonus (+2) still applies. AC now 19 with shield."
+    },
+    {
+      "name": "Claws",
+      "description": "Unarmed strike: 1d4 + 3 (STR) slashing damage."
+    },
+    {
+      "name": "Hold Breath",
+      "description": "Can hold breath for up to 1 hour."
+    },
+    {
+      "name": "Shell Defense",
+      "description": "Action to withdraw: +4 AC, advantage on STR/CON saves, but prone and speed 0."
+    },
+    {
+      "name": "Survival Instinct",
+      "description": "Proficiency in Survival skill."
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Longsword",
+      "quantity": 1,
+      "weight": 3,
+      "damage": "1d8 slashing",
+      "properties": ["versatile (1d10)"],
+      "gp_value": 15
+    },
+    {
+      "name": "Shield",
+      "quantity": 1,
+      "weight": 6,
+      "ac_bonus": 2,
+      "gp_value": 10
+    },
+    {
+      "name": "Scale Mail",
+      "quantity": 1,
+      "weight": 45,
+      "note": "Can't wear (Tortle shell), but included in equipment",
+      "gp_value": 50
+    },
+    {
+      "name": "Adventuring Pack",
+      "quantity": 1,
+      "weight": 40,
+      "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    }
+  ],
+  "gold": 0,
+  "personality": {
+    "alignment": "lawful neutral",
+    "background": "soldier",
+    "traits": [
+      "I have a crude sense of humor",
+      "I'm full of inspiring and cautionary tales from my military experience"
+    ],
+    "ideal": "Might — In life as in war, the stronger force wins",
+    "bond": "My honor is my life",
+    "flaw": "I obey the law, even if the law causes misery",
+    "appearance": "A stocky, battle-worn Tortle standing 5'10\" with a dark green-brown shell covered in deep gouges and blade scars from years of service. His eyes are steady and unblinking — the kind that can stare down a hell hound without flinching. He moves with the deliberate confidence of someone who knows strength wins. A crude grin often crosses his face before he launches into another war story, usually ending with a punchline only soldiers would laugh at. His longsword hangs across his back, his shield always within arm's reach — honor demands he be ready to protect those beside him, even when the law behind the orders makes no sense.",
+    "backstory": "Honu served for decades in a coastal militia, rising through the ranks on the simple principle that the strongest shield wall holds. He followed every order without question — even the one that sent his unit into a losing position to protect a noble's trade route. They held the line, but the law that put them there served coin, not people. He left the militia not out of rebellion, but because his contract ended. He still believes in the chain of command. He just chooses his own contracts now."
+  },
+  "creation_metadata": {
+    "creation_method": "standard_array",
+    "created_date": "2026-05-27",
+    "source_campaign": "campaign-2026-05-27-002"
+  },
+  "campaign_history": [
+    {
+      "campaign_id": "campaign-2026-05-27-002",
+      "joined_at_level": 1,
+      "current_level": 1,
+      "status": "active"
+    }
+  ]
+}
