@@ -1,7 +1,7 @@
 # Build Stub Loops and Update Skill Contract References
 
 ## Status
-Open
+Done
 
 ## Priority
 High — 4 encounter types (social, merchant, travel, item-use) are stubs in the scene dispatcher, forcing the narration fallback to handle them ad-hoc. Scene and Campaign SKILL.md files don't reference their imported contracts, so the agent may not discover them.

@@ -1,7 +1,7 @@
 # Clean Non-D&D Content From Repo
 
 ## Status
-Open
+Done
 
 ## Priority
 High — This is the golden master D&D game engine. Non-D&D artifacts confuse scope and pollute the repo.

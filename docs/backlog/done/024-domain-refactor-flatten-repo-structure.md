@@ -1,7 +1,7 @@
 # Flatten Repo Structure — Remove projects/ai-dnd-game Nesting
 
 ## Status
-Open
+Done
 
 ## Priority
 High — This repo IS the D&D game engine. The `projects/ai-dnd-game/` nesting implies it's a sub-project inside a larger workspace. Every path reference is wrong.

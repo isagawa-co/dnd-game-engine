@@ -1,7 +1,7 @@
 # Character Pool — Shared Character Registry
 
 ## Status
-Open
+Done
 
 ## Priority
 High — Characters are currently campaign-local (saved in `campaigns/<id>/party.json`). Need shared pool so characters can be reused across campaigns.

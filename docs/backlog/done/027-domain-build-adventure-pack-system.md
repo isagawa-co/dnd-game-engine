@@ -1,7 +1,7 @@
 # Build Adventure Pack System
 
 ## Status
-Open
+Done
 
 ## Priority
 High — Game loop cannot follow official adventures without structured scene data. Agent drifts into improvisation without it.
