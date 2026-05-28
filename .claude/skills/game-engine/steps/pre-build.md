@@ -18,7 +18,7 @@ Run this checklist before entering Phase 3 (`/game-build`).
 | 4 | No partial sections | `ls sections/*.partial.md` returns empty | Complete partial sections |
 | 5 | Every section has REQ IDs | `grep -l "REQ-" sections/*.md` count matches | Add REQ IDs to sections missing them |
 | 6 | Index is current | `docs/game-design/index.md` shows all complete | Regenerate index |
-| 7 | Coverage script exists | `test -f scripts/req-coverage.py` | Generate from gate-contract.md |
+| 7 | Coverage script exists | `test -f scripts/req-coverage` or equivalent | Generate from gate-contract.md |
 | 8 | Platform stack determined | Profile has `platform:` field | Re-run Step 1 platform question |
 
 ## Quick Check Command
@@ -30,7 +30,7 @@ test -f docs/game-design/index.md && echo "✓ Index" || echo "✗ Index MISSING
 ls docs/game-design/sections/*.md 2>/dev/null | wc -l | xargs -I{} echo "  Sections: {}"
 ls docs/game-design/sections/*.partial.md 2>/dev/null | wc -l | xargs -I{} echo "  Partials: {}"
 grep -rl "REQ-" docs/game-design/sections/ 2>/dev/null | wc -l | xargs -I{} echo "  With REQs: {}"
-test -f scripts/req-coverage.py && echo "✓ Coverage script" || echo "✗ Coverage script MISSING"
+test -f scripts/req-coverage && echo "✓ Coverage script" || echo "✗ Coverage script MISSING"
 ```
 
 ## If Any Check Fails

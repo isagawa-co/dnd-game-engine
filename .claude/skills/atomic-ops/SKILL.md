@@ -19,7 +19,7 @@ Every operation in this module is deterministic: given the same inputs (die roll
 
 ## Core Operations
 
-### 1. Roll Operations (`roll_operations.py`)
+### 1. Roll Operations
 
 Manage D20 rolls and roll modifications.
 
@@ -33,7 +33,7 @@ Manage D20 rolls and roll modifications.
 
 ---
 
-### 2. Check Operations (`check_operations.py`)
+### 2. Check Operations
 
 Resolve ability checks, attack rolls, and saving throws.
 
@@ -47,7 +47,7 @@ Resolve ability checks, attack rolls, and saving throws.
 
 ---
 
-### 3. Damage Operations (`damage_operations.py`)
+### 3. Damage Operations
 
 Calculate and apply damage, accounting for resistances and immunities.
 
@@ -62,7 +62,7 @@ Calculate and apply damage, accounting for resistances and immunities.
 
 ---
 
-### 4. Effect Operations (`effect_operations.py`)
+### 4. Effect Operations
 
 Apply conditions, manage effects, validate concentration.
 
@@ -77,7 +77,7 @@ Apply conditions, manage effects, validate concentration.
 
 ---
 
-### 5. State Validation (`state_validation.py`)
+### 5. State Validation
 
 Validate character state fields and enforce immutability.
 
@@ -108,16 +108,7 @@ These fields NEVER change after character creation:
 
 ## Error Handling
 
-All operations raise `ValueError` if inputs are invalid. No silent failures. No defaults.
-
-```python
-try:
-    result = ability_check(roll, modifier, dc)
-except ValueError as e:
-    # Invalid input — report and stop
-    log_error(f"Illegal ability check: {e}")
-    return None
-```
+All operations reject invalid inputs. No silent failures. No defaults. If an input is outside the legal range (e.g., roll not in [1,20], negative HP), report the error and stop — do not autocorrect.
 
 ---
 

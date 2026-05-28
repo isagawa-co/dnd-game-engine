@@ -37,10 +37,6 @@
 5. Sub-loop resolves encounter and returns outcome dict
 6. `process_outcome()` applies state mutations and returns updated state to campaign loop
 
-→ [[scene_dispatcher.py]]
-→ [[encounter_validator.py]]
-→ [[outcome_processor.py]]
-
 ## 7 Encounter Types
 
 | Type | Sub-Loop | Skill | Status |

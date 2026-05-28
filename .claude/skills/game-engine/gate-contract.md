@@ -51,8 +51,8 @@ parent: game-engine
 
 | ID | Check | Method | Pass Criteria | Fail Action |
 |----|-------|--------|---------------|-------------|
-| BUILD-01 | Source files created | `run_code` | `ls src/**/*.py` (or platform equivalent) exits 0 | Execute next backlog item |
-| BUILD-02 | Test files exist | `run_code` | `ls tests/**/*test*.py` (or equivalent) exits 0 | Create tests for implemented REQs |
+| BUILD-01 | Source files created | `run_code` | Source files exist for implemented systems | Execute next backlog item |
+| BUILD-02 | Test files exist | `run_code` | Test files exist for implemented REQs | Create tests for implemented REQs |
 | BUILD-03 | Test names include REQ IDs | `grep` | Test files contain `REQ-` in function/describe names | Rename tests to include REQ IDs |
 | BUILD-04 | Config not hardcoded | `grep` | Balance levers in `config/` or `*.yaml`, not in source | Extract hardcoded values to config |
 
@@ -60,15 +60,15 @@ parent: game-engine
 
 | ID | Check | Method | Pass Criteria | Fail Action |
 |----|-------|--------|---------------|-------------|
-| COV-01 | Coverage script exists | `file_exists` | `scripts/req-coverage.py` exists | Generate coverage script |
-| COV-02 | All GDD REQs have tests | `run_code` | `python scripts/req-coverage.py` exits 0, no orphan REQs | Write missing tests |
+| COV-01 | Coverage script exists | `file_exists` | `scripts/req-coverage` exists | Generate coverage script |
+| COV-02 | All GDD REQs have tests | `run_code` | Coverage script exits 0, no orphan REQs | Write missing tests |
 | COV-03 | No orphan tests | `run_code` | Coverage report shows 0 tests without matching REQ | Remove or link orphan tests |
 
 ## Test Gates
 
 | ID | Check | Method | Pass Criteria | Fail Action |
 |----|-------|--------|---------------|-------------|
-| TEST-01 | Test suite passes | `run_test` | `pytest tests/ -v` (or platform equivalent) exits 0 | Fix failing tests using GDD as spec |
+| TEST-01 | Test suite passes | `run_test` | Test suite exits 0 | Fix failing tests using GDD as spec |
 
 ## Requirements Registry
 

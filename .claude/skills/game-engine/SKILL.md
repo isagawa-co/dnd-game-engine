@@ -29,7 +29,7 @@ Phase 1 does the hard thinking with the user so Phase 3 is just typing. Every GD
 | Phase Transition Gate | Structural gate between design (Phase 1) and build (Phase 3) — verifies GDD completeness | `/game-build` entry check |
 | Section Walkthrough | Per-GDD-section cycle: present concept → ask questions → generate with REQ IDs → HITL gate | Step 3 main loop |
 | Decomposition | Automatic conversion of completed GDD into ordered backlog items by system | Phase 2, no HITL |
-| Coverage Script | Tool that validates REQ ID ↔ test function bidirectional traceability (no orphans) | `scripts/req-coverage.py` |
+| Coverage Script | Tool that validates REQ ID ↔ test bidirectional traceability (no orphans) | `scripts/req-coverage` |
 | GDD Reference | Fully worked example GDD (Tiny Civ 4X) used as granularity calibration target | `references/gdd-reference/` |
 | Balance Lever | Tunable game parameter (difficulty, spawn rates, yields) stored in config, never hard-coded | GDD section 18 |
 | External Dependency | Data, computation, or asset sourced from MCP/package/API — identified during discovery, acquired at scaffold time | Design principles |

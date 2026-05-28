@@ -14,8 +14,8 @@ Prescriptive workflow for creating a party of PCs when a new campaign has no par
 
 | System | Module | Key Functions |
 |--------|--------|---------------|
-| Character Skill | `src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
-| Entity System | `src/entity/entity_loader.py` | Tier 4 PC entity validation |
+| Character Skill | `.claude/skills/character/SKILL.md` | Character creation rules, ability scores, class data, proficiencies, equipment, validation |
+| Entity System | `.claude/skills/entity/SKILL.md` | Tier 4 PC entity validation via contracts |
 | Atomic Ops | `.claude/skills/atomic_ops/` | `dice_roll` for random ability generation methods |
 | Race Registry | `adventures/all-races.json` | Dynamic race data with ability modifiers |
 | Class Registry | `adventures/all-classes.json` | Dynamic class data with hit dice, features |

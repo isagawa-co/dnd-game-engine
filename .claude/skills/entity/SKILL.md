@@ -33,11 +33,6 @@
 5. For Tier 4: validate proficiency, spell slots, inventory weight, hit dice
 6. Return pass/fail with error list
 
-## Implementation
-
-- `projects/ai-dnd-game/src/entity/entity_loader.py` — validation logic
-- `projects/ai-dnd-game/src/entity/__init__.py` — package exports
-
 ## Fixtures
 
 Test fixtures in `fixtures/`:

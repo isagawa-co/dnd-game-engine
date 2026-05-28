@@ -54,13 +54,6 @@
 8. **Validation** — Verify LVL-001 through LVL-006
 9. **Output** — Return `{leveled_up, new_level, hp_gained, new_features, ...}`
 
-## Modules
-
-| Module | Path | Key Functions |
-|--------|------|---------------|
-| character_creator | `src/entity/character_creator.py` | `create_character`, `generate_ability_scores`, `get_class_data`, `assign_proficiencies`, `assign_equipment`, `validate_character` |
-| leveling | `src/entity/leveling.py` | `level_up`, `check_level_up`, `calculate_proficiency_bonus`, `get_xp_threshold`, `check_asi`, `get_spell_slots`, `get_class_features` |
-
 ## Integration
 
 | Direction | System | Interface |
@@ -81,9 +74,3 @@
 | Wizard PC | `fixtures/wizard-pc.json` | Standard-array wizard, level 1, spellcaster |
 | Rogue PC | `fixtures/rogue-pc.json` | 4d6 rogue, level 1, expertise + 4 skills |
 
-## Tests
-
-| Test | Path |
-|------|------|
-| Character Creation | `tests/test_character_creation.py` |
-| Leveling | `tests/test_leveling.py` |

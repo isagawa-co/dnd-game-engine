@@ -16,7 +16,7 @@ Build the game autonomously from the ordered backlog. Each system is built, test
 - `backlog/NNN-system-name.md` — ordered backlog items from Step 6
 - `docs/game-design/sections/*.md` — GDD sections for context
 - `docs/game-design/profile.md` — platform/stack info
-- `scripts/req-coverage.py` — coverage checker
+- `scripts/req-coverage` — coverage checker
 
 ## Actions
 
@@ -27,7 +27,7 @@ Build the game autonomously from the ordered backlog. Each system is built, test
    c. Execute-pipeline decomposes into atomic tasks and runs via `run-task.sh`
    d. After completion: run tests for this system
    e. Verify REQ IDs are covered (test names include REQ IDs)
-   f. Run `python scripts/req-coverage.py` for progressive coverage
+   f. Run coverage script for progressive coverage
 3. **After all systems built:**
    a. Run full test suite
    b. Run final coverage report
@@ -37,7 +37,7 @@ Build the game autonomously from the ordered backlog. Each system is built, test
 
 - Source code in `src/` (or platform-appropriate directory)
 - Tests in `tests/` with REQ IDs in function names
-- Coverage report from `scripts/req-coverage.py`
+- Coverage report from coverage script
 - Build state updated with completed systems
 
 ## Verification
@@ -65,7 +65,7 @@ Build the game autonomously from the ordered backlog. Each system is built, test
 1. Read `backlog/005-combat.md` → REQ-COMBAT-001 through REQ-COMBAT-008
 2. Read `docs/game-design/sections/05-rules-mechanics.md` for exact formulas
 3. Execute-pipeline generates:
-   - `src/combat.py` — damage calculation, modifiers, siege
-   - `tests/test_combat.py` — one test per REQ ID
-4. Run `pytest tests/test_combat.py -v` → all pass
-5. Run coverage: `python scripts/req-coverage.py` → 005 system at 100%
+   - Combat skill contracts — damage calculation, modifiers, resolution
+   - Combat gate contract — one gate per REQ ID
+4. Run combat loop verification → all gates pass
+5. Run coverage → 005 system at 100%

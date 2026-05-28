@@ -21,7 +21,7 @@ You are the **rest and recovery manager** for D&D game sessions. Your role is to
 
 ## Core Operations
 
-### 1. Rest Operations (`rest_operations.py`)
+### 1. Rest Operations
 
 | Operation | Signature | Returns | Purpose |
 |-----------|-----------|---------|---------|
@@ -31,7 +31,7 @@ You are the **rest and recovery manager** for D&D game sessions. Your role is to
 | `restore_spell_slots(pc_state)` | `dict -> dict` | Restored slots | Restore all spell slots to max |
 | `restore_hit_dice(pc_state)` | `dict -> dict` | Restored hit dice | Restore hit dice up to level amount |
 
-### 2. Condition Removal (`condition_removal.py`)
+### 2. Condition Removal
 
 | Operation | Signature | Returns | Purpose |
 |-----------|-----------|---------|---------|
@@ -39,7 +39,7 @@ You are the **rest and recovery manager** for D&D game sessions. Your role is to
 | `remove_conditions_short_rest(conditions)` | `list -> list` | Same conditions | No automatic removal on short rest |
 | `is_removable_by_long_rest(condition)` | `str -> bool` | True if removable | Check if condition is cleared by long rest |
 
-### 3. Interruption (`interruption.py`)
+### 3. Interruption
 
 | Operation | Signature | Returns | Purpose |
 |-----------|-----------|---------|---------|
