@@ -109,29 +109,79 @@ Examples:
 
 **Why:** The user can't be creative if the scene is bare. Interactable elements are the raw material for improvised solutions — kicking barrels, collapsing platforms, using terrain for advantage. Describe the space like a real place, not an empty room with enemies in it.
 
-## Party Toolkit (MANDATORY — show at every decision point)
+## Party Toolkit
 
-Before presenting the action menu, show a concise summary of what the **entire party** can do. This gives the user the building blocks to combine into creative solutions.
+The toolkit is shown at every decision point, but **what you show depends on context.**
+
+---
+
+### Non-Combat Decision Points (exploration, social, travel, rest, challenge, merchant, party decision)
+
+Show the **full party toolkit** — one line per character. This gives the user building blocks to combine into creative solutions.
 
 Format:
 
 ```
 PARTY TOOLKIT:
-  Honu: Shell Defense (AC 21), Second Wind (1d10+2), Action Surge, STR grapple (+5), rope 50ft
-  Bron: Charge (bonus attack after 30ft), Equine Build (carry/push double), hooves (1d4+4), javelin x4
-  Raistlin: Portent (2 pre-rolled d20s), Find Familiar (scout), Mage Hand (30ft), Minor Illusion, Identify (ritual), Absorb Elements (reaction), 3 spell slots
-  Dain: Divine Sense (detect undead/fiends), Lay on Hands (10 HP), Divine Smite (2d8 on hit), shield
-  Ala: Thieves' Tools, caltrops, crowbar, rope 50ft, Cunning Action (Hide/Dash/Disengage), Darkvision 60ft, bell + string
-  Sweeney: Guidance (+1d4 any check), Spare the Dying, Healing Word (bonus action heal), Channel Divinity: Preserve Life (10 HP split), torches, rope 50ft
+  Honu: Shell Defense (AC25), Trip/Goading/Riposte (4 dice/SR), Action Surge, rope 50ft
+  Bron: Charge+Hooves, Crit 19-20, Action Surge, Boots of Speed (1/day), Equine Build
+  Raistlin: Portent (2/LR), Web, Hold Person, Faerie Fire, Mage Hand (30ft), Familiar scout
+  Dain: Vow of Enmity, Divine Smite, Bless, Lay on Hands (20HP/LR), Divine Sense (4/LR)
+  Ala: Assassinate, Invisibility (Ring), Cunning Action, Thieves' Tools, caltrops, Darkvision
+  Sweeney: Healing Word (bonus), Spiritual Weapon (no conc), Preserve Life (20HP/SR), Guidance
 ```
 
-### Toolkit Rules
-- **Show at every decision point** — not just combat. Exploration, social, travel, challenges — everywhere the user chooses what to do
-- **Include non-obvious capabilities** — racial features (Darkvision, Shell Defense, Charge), tools (thieves' tools, caltrops, rope), utility spells (Mage Hand, Find Familiar, Guidance), inventory items (oil, crowbar, bell)
-- **Skip the obvious** — don't list basic weapon attacks here (those go in the action menu). Focus on the creative building blocks
-- **Mark spent resources** — if Portent dice are used, spell slots spent, Lay on Hands depleted, show it: `Portent (0 remaining)`, `spell slots: 1/3`
-- **Keep it concise** — one line per character, comma-separated capabilities. No descriptions, just names. The user can ask for details
-- **On request** — if the user asks "what can we do?" or "remind me of our abilities," show the full toolkit even outside a decision point
+Rules:
+- **Include non-obvious capabilities** — racial features, tools, utility spells, inventory items (oil, crowbar, bell). Skip basic weapon attacks.
+- **Mark spent resources** — `Portent (1/2 remaining)`, `spell slots: 2×1st 1×2nd`, `Action Surge: spent`
+- **Keep it concise** — one line per character, comma-separated. The user can ask for details.
+- **On request** — if the user asks "what can we do?" show the full toolkit even outside a decision point.
+
+---
+
+### Combat Turns
+
+Show only the **active character's toolkit** on their turn. The full party toolkit would repeat 6 times per round — skip it.
+
+Format:
+
+```
+[NAME]'S TURN — [role one-liner]
+[AC X | HP X/X | key attack stat]
+
+TOOLKIT:
+  [Signature move]: [brief outcome] — [resource state]
+  [Signature move]: [brief outcome] — [resource state]
+  [Passive/always-on]: [brief note]
+
+SYNERGIES:
+  ← [Upstream: what a previous character already set up that helps you NOW]
+  → [Downstream: what you can do NOW that sets up the next character]
+```
+
+**Example — Honu's turn, Round 2:**
+```
+HONU'S TURN — Tank / frontline controller
+AC 21 | HP 48/48 | +8 to hit
+
+TOOLKIT:
+  Trip Attack: hit +1d8 + STR DC14 or prone — 3/4 dice remaining
+  Goading Attack: hit +1d8 + WIS DC14 or disadv vs everyone but Honu — 3/4 dice remaining
+  Riposte: reaction on enemy miss, 1d8+6+1d8 — 3/4 dice remaining
+  Action Surge: extra action — available
+  Protection: reaction, impose disadv on attack vs adjacent ally — unlimited
+
+SYNERGIES:
+  ← Sweeney's Guiding Bolt hit the bugbear — your attacks have advantage this turn
+  → Bron acts next — Trip Attack now gives him melee advantage on his swing
+```
+
+Rules:
+- **Resource state** — always show current/max: `3/4 dice remaining`, `Action Surge: available`, `Second Wind: spent`. Omit depleted resources entirely — no clutter.
+- **Synergies only when real** — don't manufacture synergies that don't exist. If nothing was set up upstream and nothing useful flows downstream, omit the SYNERGIES block entirely.
+- **Upstream examples**: Guiding Bolt giving advantage, Trip Attack leaving a target prone, Web restraining a group, Bless giving +1d4, Hold Person making a target auto-crit.
+- **Downstream examples**: Trip/prone setting up Bron's charge advantage, Thunderous Smite knocking prone for Honu's follow-up, Faerie Fire benefiting everyone who attacks after Raistlin, Guiding Bolt advantage passing to the next attacker.
+- **Reactions** — don't list on the active character's turn. Prompt them naturally as they become relevant: "Honu, the goblin just swung at Sweeney — do you want to use Protection?"
 
 ## Creative Action Resolution
 
