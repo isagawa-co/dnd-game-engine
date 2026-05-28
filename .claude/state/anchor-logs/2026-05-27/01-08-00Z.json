@@ -1,6 +1,0 @@
-{"anchor_timestamp": "2026-05-27T01:08:00Z", "actions_count": 4, "violations_found": 0, "actions": [
-  {"timestamp": "2026-05-27T01:07:32Z", "tool": "Bash", "entry": "Bash: truncate actions.jsonl"},
-  {"timestamp": "2026-05-27T01:07:35Z", "tool": "Bash", "entry": "Bash: compute protocol hash"},
-  {"timestamp": "2026-05-27T01:07:54Z", "tool": "Bash", "entry": "Bash: mkdir anchor-logs dir"},
-  {"timestamp": "2026-05-27T01:07:54Z", "tool": "Bash", "entry": "Bash: mkdir items dir"}
-]}

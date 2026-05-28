@@ -1,8 +1,0 @@
-{
-  "anchor_timestamp": "2026-05-27T17:30:00Z",
-  "actions_count": 31,
-  "violations_found": 0,
-  "actions": [
-    {"tool": "Bash", "entry": "Verification checks for pipelines 024, 025, 026 — 31 actions total, all passing"}
-  ]
-}

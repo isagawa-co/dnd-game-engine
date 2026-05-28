@@ -1,7 +1,0 @@
-{"timestamp": "2026-05-04T01:38:36Z", "tool": "Bash", "entry": "Bash: python3 << 'PYEOF'\nimport json\nimport os\nfrom datetime import datetime\nfrom path", "session": "current"}
-{"timestamp": "2026-05-04T01:39:17Z", "tool": "Write", "entry": "Write: campaign_loader.py", "session": "current"}
-{"timestamp": "2026-05-04T01:39:22Z", "tool": "Bash", "entry": "Bash: \necho \"Gate verification (ARCH-013, ARCH-014, ARCH-015):\"\necho \"\"\n\n# ARCH-013: f", "session": "current"}
-{"timestamp": "2026-05-04T01:39:26Z", "tool": "Bash", "entry": "Bash: python3 << 'PYEOF'\nimport sys\nsys.path.insert(0, 'D:/my_ai_projects/project_test", "session": "current"}
-{"timestamp": "2026-05-04T01:39:49Z", "tool": "Bash", "entry": "Bash: \necho \"Gate verification for task 005:\"\necho \"\"\n\n# ARCH-013: file_exists\necho \"A", "session": "current"}
-{"timestamp": "2026-05-04T01:40:43Z", "tool": "Bash", "entry": "Bash: python3 -c \"import hashlib; print(hashlib.sha256(open('D:/my_ai_projects/project", "session": "current"}
-{"timestamp": "2026-05-04T01:40:51Z", "tool": "Bash", "entry": "Bash: mkdir -p \"D:/my_ai_projects/project_test_repos/game-dev/.claude/state/anchor-log", "session": "current"}
