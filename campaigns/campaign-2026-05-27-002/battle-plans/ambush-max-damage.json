@@ -1,0 +1,100 @@
+{
+  "plan_id": "ambush-max-damage",
+  "name": "Standard Ambush — Maximum First-Strike Damage",
+  "goal": "Eliminate the highest-threat enemy in Round 1 and cripple the rest through surprise and control. Near-zero damage taken.",
+  "conditions_required": [
+    "Party has surprise (enemies haven't detected anyone)",
+    "Raistlin has loaded Ring of Spell Storing with Invisibility (2nd) + Bless (1st) during long rest",
+    "Ala activates Invisibility and moves to position before surprise round",
+    "Bron has a clear 30ft straight path to charge lane"
+  ],
+  "setup_before_combat": {
+    "raistlin": "Cast Mage Armor (1 Staff charge, AC 21). Load Ring of Spell Storing via 2nd-level Invisibility slot for Ala.",
+    "sweeney": "Cast Aid (+5 max HP to Dain, Bron, Honu) if a long rest or quiet period preceded combat. Cast Bless to load into Ring if Dain's slot is needed for Smites.",
+    "ala": "Activate Invisibility from Ring (bonus action). Move unseen to flanking/rear position on priority target. Ready Venom Fang in off-hand.",
+    "dain": "Stealth approach (+10). Divine Sense within 60ft to tag undead/fiends before engaging.",
+    "honu": "Stealth to chokepoint (+9). Position to protect Sweeney and Raistlin from melee reach.",
+    "bron": "Stealth to staging position (+10). Mark clear 30ft charge path to priority target."
+  },
+  "surprise_round": {
+    "note": "Surprised enemies do NOT act. Party gets one full round of free actions.",
+    "sequence": [
+      {
+        "order": 1,
+        "actor": "Ala",
+        "action": "Attack priority target (boss or highest damage dealer) — Assassinate auto-crit on surprised target. Rapier +2: +9 hit, crit = 4d8+7+4d6 sneak avg 39.",
+        "bonus_action": "Venom Fang +2 off-hand crit: 4d4+2+4d10 poison avg 34. CON DC15 or full poison.",
+        "total_expected_damage": "~73 avg on priority target",
+        "notes": "Priority target is likely dead or at 25% HP or less. Choose the enemy that ends fights fastest if alive."
+      },
+      {
+        "order": 2,
+        "actor": "Raistlin",
+        "action": "If grouped enemies remain: Web (20ft cube, DEX DC14 or restrained, concentration). If single priority target survived: Hold Person using Portent die (low roll) to guarantee WIS save fails.",
+        "bonus_action": "—",
+        "notes": "Restrained from Web = disadvantage on attacks, advantage on attacks against them. Stack Portent die use here on the most dangerous surviving enemy."
+      },
+      {
+        "order": 3,
+        "actor": "Sweeney",
+        "action": "Guiding Bolt on secondary priority target: +7 hit, 4d6 radiant. On hit: next attacker has advantage against this target (Dain/Bron benefit immediately).",
+        "bonus_action": "—",
+        "notes": "Do not heal — no ally should be damaged yet. Guiding Bolt advantage is highest-ROI action in surprise round."
+      },
+      {
+        "order": 4,
+        "actor": "Dain",
+        "action": "Vow of Enmity (bonus action, advantage all attacks vs secondary target for 1 min). Attack Blade of Drow Lord +9. On hit: Divine Smite 1st slot (+2d8 radiant, +3d8 vs undead/fiends).",
+        "bonus_action": "Vow of Enmity first, then attack",
+        "expected_damage": "With Guiding Bolt advantage already set: 1d8+9 + 2d8 radiant = avg 28. On crit: avg 40+.",
+        "notes": "Secondary target now hit for ~28 from Dain on top of Ala's earlier Guiding Bolt setup."
+      },
+      {
+        "order": 5,
+        "actor": "Honu",
+        "action": "Trip Attack on a grouped enemy (inside or near Web zone if Web was cast). Hit +1d8 extra, STR DC14 or prone.",
+        "bonus_action": "—",
+        "notes": "Webbed + prone = cannot stand (restrained means half speed, difficult terrain keeps them down). Stack control on a third enemy."
+      },
+      {
+        "order": 6,
+        "actor": "Bron",
+        "action": "Charge (30ft straight toward Guiding Bolt target or prone target). Greatsword +3: +11 hit, 2d6+9 (reroll 1s/2s). Crit on 19-20 with advantage from Vow of Enmity target overlap.",
+        "bonus_action": "Hooves after Charge (1d4+6 bludgeoning)",
+        "expected_damage": "avg 16-23 (normal-crit range). With advantage from Guiding Bolt: crit odds ~30%+.",
+        "notes": "Guiding Bolt advantage + prone (if Honu tripped) = near-guaranteed hit and elevated crit chance."
+      }
+    ]
+  },
+  "round_1": {
+    "note": "Roll initiative. Full combat begins. Party acts in initiative order.",
+    "priority": "Finish priority target if alive. Establish Bless. Spiritual Weapon goes down.",
+    "ala": "Cunning Action: Hide (bonus action) before or after attack. If hidden, next attack = advantage + Sneak Attack. Rapier +9/1d8+7+2d6. Stay mobile — don't get surrounded.",
+    "sweeney": "Cast Spiritual Weapon (2nd slot, bonus action each round = 1d8+5 force, no concentration). Action: Healing Word (bonus) if any ally was hit, otherwise Guiding Bolt or Crossbow +2 (+7/1d8+5). After Spiritual Weapon is up, it attacks every turn as bonus action.",
+    "dain": "Cast Bless (concentration, +1d4 attacks and saves to Dain + Bron + Honu) — highest ROI sustained buff. OR if priority target still alive: continue Vow attacks + Smite to finish. Decision: alive boss = keep attacking; minions only = Bless.",
+    "raistlin": "Maintain Web (concentration). Use main action: Toll the Dead cantrip (1d8/1d12 vs injured targets — free pressure). Archimedes Help action to give an ally advantage if familiar is positioned.",
+    "honu": "Trip or Goading Attack to control enemy focus. Goading Attack WIS DC14 or disadvantage vs everyone but Honu — forces enemies off Sweeney/Raistlin.",
+    "bron": "Attack with advantage (Bless +1d4, prone/Web target). Action Surge if priority target still alive at end of Bron's turn."
+  },
+  "round_2_and_beyond": {
+    "bless_active": "+1d4 all attack rolls and saves (Dain/Bron/Honu). Spiritual Weapon adds 1d8+5 free damage each round.",
+    "ala": "Hide each turn via Cunning Action. Sneak Attack from hidden = advantage every round. If Venom Fang poison is recharged next long rest, reserve for boss fights.",
+    "bron": "Action Surge if not yet used. Charge again if repositioned and 30ft lane is clear.",
+    "honu": "Goading Attack to protect squishies. Shell Defense if HP drops below 15 — AC 25 turns Honu near-invulnerable as a meatshield.",
+    "sweeney": "Healing Word (bonus action) if any ally drops below 50% HP. Preserve action for Guiding Bolt or Crossbow damage. Stay within 10ft of party for Cloak aura (+1 AC, death save advantage).",
+    "raistlin": "If Web concentration breaks: cast Faerie Fire (advantage for whole party on all targets in 60ft cube) — doesn't require concentration to maintain benefit each turn. Misty Step to escape if targeted.",
+    "dain": "Lay on Hands (20 HP pool) if ally drops to 0 HP. Continue Blade of Drow Lord attacks under Bless."
+  },
+  "expected_outcomes": {
+    "surprise_round": "Priority target: ~73 avg damage (likely dead). Secondary target: ~28+ avg.",
+    "round_1": "2-3 enemies controlled (Web restrained or prone). Bless active. Spiritual Weapon online.",
+    "end_state": "Boss dead in Round 0-1. Minions controlled, killed Round 2. Party exits with minimal damage."
+  },
+  "deviations": {
+    "no_surprise": "Raistlin opens with Faerie Fire (advantage for whole party, 60ft cube, no concentration). Ala uses Cunning Action: Hide Round 1 to regain Sneak Attack advantage. Dain leads with Bless instead of Vow of Enmity.",
+    "boss_has_legendary_resistance": "Use a low Portent die to force resistance burn before Ala attacks. Burn legendary resistance on Web or Hold Person first — then Ala's assassination is unblockable.",
+    "boss_is_undead_or_fiend": "Dain: Abjure Enemy (frighten + speed 0, undead/fiends have disadvantage on save). Divine Smite = +3d8 radiant vs undead/fiends. Honu: use Goading Attack so undead/fiend targets Honu, not squishies.",
+    "enemies_spread_out": "Drop Web, open with Faerie Fire instead (advantage for whole party across 60ft cube, hits spread enemies). Ala still assassinates priority target. Bron charges furthest threat.",
+    "ala_detected_before_combat": "Ala uses Potion of Invisibility (bonus action backup) if Ring load was not completed. Or fight without Assassinate — still +9/1d8+7+2d6 with flanking."
+  }
+}

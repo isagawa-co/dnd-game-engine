@@ -14,9 +14,10 @@
     "wisdom": 15,
     "charisma": 14
   },
-  "hp": 49,
-  "max_hp": 49,
-  "ac": 16,
+  "hp": 52,
+  "max_hp": 52,
+  "ac": 19,
+  "ac_notes": "Chain Mail 16 + Cloak of Shadowed Knight +2 + Ring of Protection +1 = 19. Stealth: +10 (DEX +2, Gloves +3, Cloak +5), advantage while stationary.",
   "speed": 40,
   "hit_dice_detail": {
     "die_type": "d10",
@@ -39,7 +40,7 @@
     },
     {
       "name": "Second Wind",
-      "description": "Bonus action: regain 1d10 + 3 HP, once per short rest.",
+      "description": "Bonus action: regain 1d10 + 4 HP (fighter level), once per short rest.",
       "uses": 1,
       "recharge": "short_rest"
     },
@@ -67,7 +68,7 @@
     },
     {
       "name": "Hooves",
-      "description": "Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit, you deal 1d4 + 5 (STR) bludgeoning damage."
+      "description": "Your hooves are natural melee weapons, which you can use to make unarmed strikes. If you hit, you deal 1d4 + 6 (STR) bludgeoning damage."
     },
     {
       "name": "Equine Build",
@@ -199,8 +200,8 @@
     },
     {
       "level": 4,
-      "hp_gained": 10,
-      "hp_calculation": "10 (max d10) + 0 (CON mod, unchanged)",
+      "hp_gained": 13,
+      "hp_calculation": "10 (max d10) + 3 (CON mod)",
       "features_gained": ["Ability Score Improvement"],
       "choices": {
         "asi_selected": "Strength +2",
@@ -214,7 +215,7 @@
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 3,
+      "current_level": 4,
       "status": "active"
     }
   ]

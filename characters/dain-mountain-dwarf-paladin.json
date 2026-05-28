@@ -193,8 +193,8 @@
       "magic": true,
       "requires_attunement": false,
       "special": "sheds dim light in 15-foot radius",
-      "attack_bonus": "+8 (STR +4, prof +2, magic +2)",
-      "damage_total": "1d8+8 with Dueling (magic +2, STR +4, Dueling +2)",
+      "attack_bonus": "+9 (STR +5, prof +2, magic +2)",
+      "damage_total": "1d8+9 with Dueling (magic +2, STR +5, Dueling +2)",
       "gp_value": 0,
       "rarity": "rare",
       "source": "Wave Echo Cave — nat 20 identification"

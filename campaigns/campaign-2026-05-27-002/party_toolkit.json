@@ -1,201 +1,210 @@
 {
-  "description": "Quick-reference of party capabilities for creative problem solving. Updated after Level 4 milestone and Wave Echo Cave completion.",
+  "description": "Compact party toolkit — role/stats/signature_moves/turn/resources. Scannable in 5 seconds.",
   "last_updated": "session_4 — Level 4 + Wave Echo Cave + Forge of Spells upgrades",
+  "battle_plans": "See campaigns/campaign-2026-05-27-002/battle-plans/",
   "toolkit": {
     "honu-tortle-fighter": {
-      "summary": "Tank/protector/tactical controller (Battle Master) — AC 21, Shell Defense AC 25, stealth +9",
-      "capabilities": [
-        "Shell Defense (AC 25 — Natural 17 + Shield +2 bonus 4 + Shell +4, prone, speed 0, near-invulnerable)",
-        "Second Wind (1d10+4 self-heal, 1/short rest)",
-        "Action Surge (extra action, 1/short rest)",
-        "Fighting Style: Protection (reaction — impose disadvantage on attack vs adjacent ally)",
-        "Combat Superiority (4 superiority dice d8, DC 14, 1/short rest)",
-        "Trip Attack (hit + 1d8 extra + STR save DC 14 or prone — all melee attacks have advantage on prone target)",
-        "Goading Attack (hit + 1d8 extra + WIS save DC 14 or disadvantage vs everyone but Honu)",
-        "Riposte (reaction on miss — +8 to hit counterattack, 1d8+6+1d8 damage)",
-        "Longsword +2 (+8 to hit, 1d8+6 damage avg 10.5)",
-        "Shield +2 (AC 21 base)",
-        "Cloak of the Tide's Shadow (+5 stealth, advantage on stealth while stationary)",
-        "Gloves of Stealth (+3 stealth, no Natural Armor stealth penalty)",
-        "Stealth total: +9 (DEX +1, Gloves +3, Cloak +5) — advantage while stationary",
-        "STR grapple (+6)",
-        "Rope 50ft"
-      ]
+      "role": "Tank / frontline controller (Battle Master)",
+      "stats": {
+        "ac": 21,
+        "ac_shell_defense": 25,
+        "hp": 48,
+        "to_hit": "+8",
+        "primary_damage": "1d8+6 avg 10.5",
+        "stealth": "+9 (adv while stationary)",
+        "initiative": "+1"
+      },
+      "signature_moves": [
+        "Trip Attack → hit +1d8 extra + STR DC14 or prone; prone = melee advantage for Bron/Dain follow-up",
+        "Goading Attack → hit +1d8 extra + WIS DC14 or disadvantage on all attacks except vs Honu",
+        "Riposte → reaction on enemy miss: counterattack +8 hit, 1d8+6+1d8 damage",
+        "Shell Defense → action: AC 25, prone, speed 0, adv STR/CON saves — chokepoint blocker or last resort"
+      ],
+      "turn": {
+        "action": "Longsword +2 (+8/1d8+6) — lead with Trip Attack on key enemy",
+        "bonus_action": "Second Wind (1d10+4 self-heal) or enter Shell Defense",
+        "reaction": "Protection (impose disadv on attack vs adjacent ally) or Riposte (on enemy miss)"
+      },
+      "resources": {
+        "superiority_dice": "4/short rest (fuels Trip, Goading, Riposte)",
+        "second_wind": "1/short rest",
+        "action_surge": "1/short rest (double Trip to prone two enemies)"
+      }
     },
     "bron-centaur-fighter": {
-      "summary": "Charger/brute/crit machine (Champion) — STR 22",
-      "capabilities": [
-        "Improved Critical (crit on 19 or 20)",
-        "Charge (bonus melee attack after 30ft move — can follow with Hooves bonus action)",
-        "Equine Build (carry/push double, counts as Large)",
-        "Hooves (1d4+6 bludgeoning bonus attack after Charge)",
-        "Second Wind (1d10+3 self-heal, 1/short rest)",
-        "Action Surge (extra action, 1/short rest)",
-        "Fighting Style: Great Weapon Fighting (reroll 1s/2s on damage)",
-        "Greatsword +3 (2d6+9, avg 16 damage — crit 4d6+9 avg 23)",
-        "Boots of Speed (double movement 60ft→120ft, 1/day 10 min)",
-        "Cloak of the Shadowed Knight (+2 AC, +2 saves, +5 stealth, advantage stealth while stationary)",
-        "Ring of Protection (+1 AC, +1 saves)",
-        "Gloves of Stealth (+3 stealth — removes heavy armor disadvantage)",
-        "AC 19 base (16 chain mail + 2 cloak + 1 ring)"
-      ]
+      "role": "Charger / crit machine / brute (Champion)",
+      "stats": {
+        "ac": 19,
+        "hp": 52,
+        "to_hit": "+11",
+        "primary_damage": "2d6+9 avg 16 (crit 19-20: 4d6+9 avg 23)",
+        "stealth": "+10 (adv while stationary)",
+        "initiative": "+2",
+        "speed": "40ft normal (Boots of Speed: 80ft)"
+      },
+      "signature_moves": [
+        "Charge → move 30ft straight, hit, then bonus Hooves attack (1d4+6 bludgeoning)",
+        "Improved Critical → crit on 19-20; with Action Surge = 4 attack rolls at crit range",
+        "Boots of Speed → double move 1/day 10min (40ft→80ft); close on priority targets or escape",
+        "Action Surge → extra action 1/short rest — use when enemy is prone or Bless is active for max crit odds"
+      ],
+      "turn": {
+        "action": "Greatsword +3 (+11/2d6+9, reroll 1s/2s on damage dice)",
+        "bonus_action": "Hooves after Charge (1d4+6), or Second Wind (1d10+4)",
+        "reaction": "Opportunity attack"
+      },
+      "resources": {
+        "action_surge": "1/short rest",
+        "second_wind": "1/short rest",
+        "boots_of_speed": "1/day"
+      }
     },
     "raistlin-high-elf-wizard": {
-      "summary": "Diviner/controller/utility — War Caster, Forge attuned",
-      "capabilities": [
-        "Portent (2 pre-rolled d20s — replace ANY roll, declare before, 1/long rest)",
-        "War Caster (advantage on CON saves to maintain concentration, cast spells as opportunity attacks)",
-        "Forge of Spells attunement — nat 20 perfect attunement (ALL Forge costs halved for party)",
-        "Find Familiar — Archimedes the owl (scout, 120ft Darkvision, Flyby, Help action for advantage)",
-        "Web (20ft cube, DEX save or restrained, concentration — best opener vs groups)",
-        "Invisibility (make any party member invisible — use on Ala for guaranteed Assassinate)",
-        "Hold Person (paralyze humanoid, WIS save — combo with Portent for guarantee)",
-        "Faerie Fire (60ft cube, advantage for ENTIRE party on affected targets, breaks invisibility)",
-        "Absorb Elements (reaction — halve elemental/breath damage, add to next attack)",
-        "Misty Step (bonus action teleport 30ft — escape/reposition)",
-        "Chill Touch (1d8 necrotic — prevents healing on target, 120ft)",
-        "Toll the Dead (1d8/1d12 necrotic vs injured targets, free cantrip)",
-        "Fire Bolt (1d10 fire, 120ft, free cantrip)",
-        "Mage Hand (30ft spectral hand — manipulate objects, open doors, distract)",
-        "Minor Illusion (sound or image — distraction, ambush setup)",
-        "Staff of Defense (10 charges, 1d6+4/dawn — Mage Armor 1 charge AC21, Shield reaction 2 charges AC26)",
-        "Wand of the Burning Phoenix (7 charges — Fireball 4d8 fire 20ft radius DC15, 1d6+1/dawn)",
-        "Scroll of Counterspell x3 (reaction — counter enemy spell, auto-cancels 3rd level and lower)",
-        "Scroll of Augury (1 use — weal/woe before a decision)",
-        "Scroll of Blindness/Deafness (1 use — CON save or blinded)",
-        "Ring (silver, runes — Identified: Ring of Spell Storing, given to Ala)",
-        "Bracers of Defense (+2 AC, no attunement)",
-        "Arcane Recovery (recover spell slot on short rest, 1/day)",
-        "Darkvision 60ft",
-        "Fey Ancestry (advantage vs charm, immune to magic sleep)"
+      "role": "Battlefield control / Portent guarantor / utility (School of Divination)",
+      "stats": {
+        "ac": 18,
+        "ac_mage_armor": 21,
+        "ac_shield_reaction": 26,
+        "hp": 32,
+        "spell_attack": "+6",
+        "spell_save_dc": 14,
+        "initiative": "+4"
+      },
+      "signature_moves": [
+        "Portent → replace ANY roll with pre-rolled d20 (2/long rest, declare before roll) — guarantee Web/Hold Person lands or turn a hit into a miss",
+        "Web → DEX DC14 or restrained in 20ft cube, concentration — best opener vs groups; restrained = disadv attacks, adv against them",
+        "Hold Person → WIS DC14 paralyze humanoid, concentration — all hits vs paralyzed target = auto-crit",
+        "Faerie Fire → advantage for entire party on affected targets, 60ft cube — stack with Trip/prone for max crit rate"
       ],
-      "spell_slots": {"1st": 4, "2nd": 2},
-      "cantrips": ["Fire Bolt", "Mage Hand", "Chill Touch", "Minor Illusion", "Toll the Dead"],
-      "prepared_spells": ["Web", "Hold Person", "Invisibility", "Faerie Fire", "Absorb Elements", "Misty Step"],
-      "ac": {"base": 18, "mage_armor": 21, "shield_reaction": 26}
+      "turn": {
+        "action": "Web or Hold Person (use Portent to guarantee) — or cantrip: Fire Bolt +6/1d10 fire, Toll the Dead 1d8/1d12 vs injured targets",
+        "bonus_action": "Misty Step (teleport 30ft, no concentration) for escape or repositioning",
+        "reaction": "Shield via Staff (2 charges → AC 26) or Absorb Elements (halve elemental/breath damage)"
+      },
+      "resources": {
+        "spell_slots": "4×1st, 2×2nd",
+        "portent_dice": "2/long rest",
+        "staff_of_defense": "10 charges (1d6+4 at dawn); Mage Armor 1 charge, Shield 2 charges",
+        "wand_burning_phoenix": "7 charges (1d6+1 at dawn); Fireball 4d8 DC15 20ft radius — NOT yet attuned",
+        "scroll_counterspell": "3 uses (reaction, auto-cancel 3rd level and below)",
+        "arcane_recovery": "recover up to 2 spell levels on short rest, 1/long rest"
+      }
     },
     "dain-mountain-dwarf-paladin": {
-      "summary": "Burst damage/off-healer/single-target hunter (Vengeance) — STR 21, AC 19, stealth +10",
-      "capabilities": [
-        "Vow of Enmity (bonus action — advantage on ALL attacks vs 1 creature for 1 min, 1/short rest)",
-        "Abjure Enemy (action — WIS save DC 13 or frightened + speed 0, disadvantage for undead/fiends, 1/short rest)",
-        "Divine Sense (detect celestial/fiend/undead within 60ft, 4 uses/long rest)",
-        "Lay on Hands (20 HP healing pool, or 5 HP per cure disease/poison, 1/long rest)",
-        "Divine Smite (2d8 radiant on hit, +1d8 vs undead/fiends, costs spell slot)",
-        "Divine Health (immune to disease)",
-        "Bless (concentration — +1d4 attacks and saves for 3 creatures — default concentration spell)",
-        "Thunderous Smite (bonus action, concentration — next hit +2d6 thunder, STR save DC 13 or knocked prone + pushed 10ft)",
-        "Hunter's Mark (oath spell — bonus 1d6 per hit on marked target, concentration)",
-        "Command (one-word order, WIS save DC 13)",
-        "Cure Wounds (1d8+3 touch heal — CHA mod)",
-        "Shield of Faith (+2 AC to target, concentration)",
-        "Blade of the Drow Lord (+2 longsword, +9 to hit, 1d8+9 with Dueling, sheds dim light 15ft)",
-        "Battleaxe Hew (+1, max damage vs plants/wood, 1d8+8 with Dueling)",
-        "Fighting Style: Dueling (+2 damage one-handed melee)",
-        "Cloak of the Iron Veil (+5 stealth, advantage on stealth while stationary)",
-        "Gloves of Stealth (+3 stealth, removes heavy armor stealth disadvantage)",
-        "Stealth total: +10 (DEX +2, Gloves +3, Cloak +5) — advantage while stationary",
-        "Dwarven Resilience (advantage on poison saves, resistance to poison damage)",
-        "Darkvision 60ft",
-        "Stonecunning (double proficiency stonework History)",
-        "AC 19 (Chain Mail +1 = 17, Shield = 2)"
+      "role": "Single-target burst / lock-down (Oath of Vengeance)",
+      "stats": {
+        "ac": 19,
+        "hp": 56,
+        "to_hit": "+9",
+        "primary_damage": "1d8+9 avg 13.5 (with Dueling style)",
+        "stealth": "+10 (adv while stationary)",
+        "initiative": "+2",
+        "spell_save_dc": 13,
+        "spell_attack": "+5"
+      },
+      "signature_moves": [
+        "Vow of Enmity + Divine Smite → bonus action advantage all attacks vs 1 target + 2d8 radiant on hit = avg 28 total; crit chance ~doubled",
+        "Thunderous Smite → bonus action concentration, next hit +2d6 thunder + STR DC13 or prone+pushed 10ft (sets up Bron melee advantage)",
+        "Bless → concentration +1d4 to all attack rolls and saves for 3 allies — DEFAULT concentration every fight",
+        "Abjure Enemy → action, WIS DC13 or frightened + speed 0 for 1 min; undead/fiends have disadvantage"
       ],
-      "spell_slots": {"1st": 3},
-      "spell_save_dc": 13,
-      "spell_attack": 5
+      "turn": {
+        "action": "Blade of Drow Lord (+9/1d8+9) — add Divine Smite on hit by spending a spell slot (+2d8 radiant, +3d8 vs undead/fiends)",
+        "bonus_action": "Vow of Enmity (advantage vs priority target) or Thunderous Smite (prone setup)",
+        "reaction": "Opportunity attack"
+      },
+      "resources": {
+        "spell_slots": "3×1st",
+        "vow_of_enmity": "1/short rest",
+        "abjure_enemy": "1/short rest",
+        "lay_on_hands": "20 HP pool/long rest (touch heal or cure poison/disease)",
+        "divine_sense": "4/long rest (detect fiends/undead/celestials within 60ft)"
+      }
     },
     "ala-half-elf-rogue": {
-      "summary": "Scout/face/infiltrator/assassin — DEX 20, Stealth +10",
-      "capabilities": [
-        "Assassinate (advantage on creatures that haven't acted; AUTO-CRIT on surprised targets)",
-        "Sneak Attack (2d6 extra — needs advantage or adjacent ally, applies on bonus action too)",
-        "Cunning Action (Hide/Dash/Disengage as BONUS action)",
-        "Ring of Spell Storing (load Invisibility from Raistlin + Bless from Dain each long rest — pre-loaded Misty Step currently inside)",
-        "Rapier +2 (1d8+7 — Sneak Attack: 1d8+7+2d6 avg 14.5 — Assassinate crit: 4d8+7+4d6 avg 39)",
-        "Venom Fang +2 (bonus action off-hand — 1d4+2+2d10 poison avg 16 — Assassinate crit: 4d4+2+4d10 avg 34)",
-        "Shortbow +2 (1d6+7, 80/320ft — ranged Sneak Attack if conditions met)",
-        "Expertise: Stealth (+10 total — DEX 5 + prof 2 + cloak 3 = +10 ... wait Expertise doubles prof)",
-        "Cloak of Elvenkind (+5 stealth, advantage on stealth while stationary)",
-        "Gloves of Stealth (+3 stealth — removes armor noise)",
-        "Potion of Invisibility (bonus action, 1 hour invisible or until attack — stacks with Ring use)",
-        "Boots of Speed (double movement 30ft→60ft, 1/day 10 min)",
-        "Thieves' Tools (pick locks, disarm traps)",
-        "Disguise Kit proficiency",
-        "Poisoner's Kit proficiency",
-        "Caltrops (bag of 20 — slow pursuers, zone control)",
-        "Crowbar (+2 STR checks to pry)",
-        "Bell + string 10ft (alarm tripwire)",
-        "Rope 50ft",
-        "Hooded lantern + 2 flasks oil",
-        "Darkvision 60ft",
-        "Fey Ancestry (advantage vs charm, immune to magic sleep)"
-      ],
-      "ring_of_spell_storing": {
-        "current_load": "Misty Step (2nd, pre-loaded by Drow mage) — 2/5 levels used",
-        "recommended_daily_load": "Invisibility (2nd, from Raistlin) + Bless (1st, from Dain or Sweeney) = 3/5 levels used",
-        "combat_usage": "Activate Invisibility before combat → invisible approach → Assassinate auto-crit. Activate Bless at start for +1d4 all attacks. Use Misty Step as emergency escape.",
-        "surprise_round_damage": "73 avg (Rapier auto-crit 39 + Venom Fang auto-crit 34)"
+      "role": "Assassin / scout / infiltrator (Assassin archetype)",
+      "stats": {
+        "ac": 18,
+        "hp": 48,
+        "to_hit": "+9",
+        "primary_damage": "1d8+7+2d6 sneak avg 18 (assassinate crit: ~73 avg total)",
+        "stealth": "+14 (DEX+5, Expertise+4, Cloak+5 — adv while stationary)",
+        "initiative": "+5"
       },
-      "stealth_total": "+10 modifier (DEX +5, Expertise doubles prof to +4, Cloak +1... recalc needed)",
-      "ac": 18
+      "signature_moves": [
+        "Assassinate → auto-crit on surprised targets; advantage vs creatures that haven't acted. Rapier crit: 4d8+7+4d6 avg 39 + Venom Fang bonus crit: 4d4+2+4d10 avg 34 = ~73 avg first strike",
+        "Ring of Spell Storing → activate Invisibility (Raistlin-loaded, 2nd) before combat for guaranteed Assassinate every fight",
+        "Venom Fang +2 → bonus action off-hand, 1d4+2 pierce + CON DC15 or 2d10 poison (1 poison charge/long rest)",
+        "Cunning Action → Hide/Dash/Disengage as bonus action every turn — reposition or vanish after each attack"
+      ],
+      "turn": {
+        "action": "Rapier +2 (+9/1d8+7) + Sneak Attack 2d6 (requires advantage or adjacent ally)",
+        "bonus_action": "Venom Fang off-hand (1d4+2+2d10 poison) or Cunning Action (Hide/Dash/Disengage) or Ring spell",
+        "reaction": "Opportunity attack"
+      },
+      "resources": {
+        "ring_of_spell_storing": "5 levels capacity — load Invisibility (2nd) + Bless (1st) after each long rest",
+        "potion_of_invisibility": "1 use (bonus action, 1 hour invisible)",
+        "boots_of_speed": "1/day (30ft→60ft)",
+        "venom_fang_poison": "1 charge/long rest"
+      }
     },
     "sweeney-human-cleric": {
-      "summary": "Primary healer/support/aura buffer (Life Domain) — WIS 21, AC 20, stealth +11",
-      "capabilities": [
-        "Cloak of the Arcane Sentinel (+2 AC, +2 all saves, AURA: allies within 10ft get +1 AC + advantage on death saves)",
-        "Spiritual Weapon (bonus action 1d8+5 force attack each turn, NO concentration, domain spell)",
-        "Healing Word (1d4+8 BONUS ACTION heal 60ft — in-combat heal without losing main action)",
-        "Prayer of Healing (10 min, up to 6 creatures each 2d6+9 avg 16 — full party recovery post-fight)",
-        "Cure Wounds (1d8+8 touch — domain, always prepared)",
-        "Channel Divinity: Preserve Life (distribute 20 HP within 30ft, no slot, 1/short rest)",
-        "Aid (pre-combat +5 max HP for 3 creatures, 8 hours)",
-        "Lesser Restoration (cure blinded/deafened/paralyzed/poisoned — domain)",
-        "Guiding Bolt (+7 hit, 4d6 radiant + advantage to next attacker — best Round 1 setup)",
-        "Silence (30ft sphere, no spells/verbal components inside — shuts down enemy casters)",
-        "Bless (concentration — +1d4 attacks and saves for 3 creatures)",
-        "Sanctuary (target can't be attacked, WIS save DC 15)",
-        "Protection from Evil and Good (disadvantage for aberrations/undead/fiends attacking target)",
-        "Light Crossbow +2 (+7 to hit, 1d8+5, 80/320ft — main combat action when not healing)",
-        "Guidance (+1d4 to any ability check, cantrip)",
-        "Sacred Flame (DEX save DC 15 or 1d8 radiant — ignores cover)",
-        "Spare the Dying (stabilize 0 HP instantly, cantrip)",
-        "Channel Divinity: Turn Undead (undead WIS save DC 15 or flee, 1/short rest)",
-        "Disciple of Life (+2+spell level HP bonus on all healing spells)",
-        "Dragonguard Breastplate (advantage on saves vs dragon breath weapons)",
-        "Cloak of the Warden's Veil (+5 stealth, advantage while stationary)",
-        "Gloves of Stealth (+3 stealth)",
-        "Stealth total: +11 (DEX +3, Gloves +3, Cloak +5) — advantage while stationary"
+      "role": "Primary healer / support / aura buffer (Life Domain)",
+      "stats": {
+        "ac": 20,
+        "ac_crossbow_mode": 18,
+        "hp": 48,
+        "spell_attack": "+7",
+        "spell_save_dc": 15,
+        "stealth": "+11 (adv while stationary)",
+        "initiative": "+3",
+        "aura": "allies within 10ft: +1 AC, advantage on death saves (Cloak of Arcane Sentinel)"
+      },
+      "signature_moves": [
+        "Healing Word → bonus action 1d4+8 avg 10 at 60ft — in-combat heal without spending main action",
+        "Spiritual Weapon → 2nd slot, bonus action 1d8+5 force each subsequent turn, NO concentration — free damage rider every round",
+        "Guiding Bolt → +7 hit, 4d6 radiant + advantage on next attacker — best Round 1 setup for Bron/Dain follow-up",
+        "Prayer of Healing → 10 min cast, 2d6+9 avg 16 to all party — full recovery between fights (Disciple of Life: +spell level bonus on all healing)"
       ],
-      "spell_slots": {"1st": 4, "2nd": 2},
-      "spell_save_dc": 15,
-      "spell_attack": 7,
-      "cantrips": ["Sacred Flame", "Spare the Dying", "Guidance"],
-      "ac": 20,
-      "ac_notes": "Breastplate 16 + Shield 2 + Cloak 2 = 20. Without shield (crossbow mode): 18. Allies within 10ft get +1 AC from Cloak aura."
+      "turn": {
+        "action": "Guiding Bolt (+7/4d6 radiant) or Light Crossbow +2 (+7/1d8+5) — or cast control/support spell",
+        "bonus_action": "Healing Word (1d4+8 at 60ft) or Spiritual Weapon (1d8+5 force, each turn after cast)",
+        "reaction": "Opportunity attack"
+      },
+      "resources": {
+        "spell_slots": "4×1st, 2×2nd",
+        "channel_divinity_preserve_life": "20 HP distributed within 30ft/short rest (emergency mid-combat heal)",
+        "prayer_of_healing": "2nd slot, 10 min cast, all party 2d6+9 avg 16 — use between encounters",
+        "disciple_of_life": "passive: +2+spell_level added to ALL healing spells"
+      }
     },
     "hamun-kost-npc-ally": {
-      "summary": "Thayan necromancer — temporary contract ally",
-      "capabilities": [
-        "Animate Dead (raise corpses as zombies — main tactical value)",
-        "Hold Person (paralyze humanoid, concentration, WIS save)",
-        "Magic Missile (auto-hit 3d4+3 — guaranteed damage)",
-        "Misty Step (bonus action teleport 30ft)",
-        "Shield (reaction +5 AC)",
-        "Commands zombie army (up to 7 raised so far)"
+      "role": "Thayan necromancer — temporary contract ally",
+      "stats": {
+        "contract": "Active through Wave Echo Cave. Gets spellbook back + Forge access after."
+      },
+      "signature_moves": [
+        "Animate Dead → raise corpses as zombies (up to 7 total, 2/long rest)",
+        "Hold Person → WIS save or paralyze humanoid, concentration",
+        "Magic Missile → auto-hit 3d4+3, no save",
+        "Shield → reaction +5 AC"
       ],
-      "contract": "Active through Wave Echo Cave. Gets spellbook back + Forge of Spells access after.",
-      "zombie_roster": [
-        {"type": "orc zombie", "count": 2, "status": "raised and active"},
-        {"type": "orc zombie", "count": 4, "status": "pending — raise 2/long rest"},
-        {"type": "ogre zombie", "count": 1, "status": "pending — requires extra day"}
-      ]
+      "turn": {
+        "action": "Animate Dead or Hold Person or Magic Missile",
+        "bonus_action": "Misty Step (teleport 30ft)",
+        "reaction": "Shield (+5 AC)"
+      },
+      "resources": {
+        "zombie_roster": "2 orc zombies active; 4 orc + 1 ogre pending (raise 2/long rest)"
+      }
     }
   },
   "party_shared_items": {
     "potions": [
-      {"name": "Potion of Healing", "quantity": 7, "healing": "2d4+2", "notes": "3 Klarg + 1 Glasstaff + 3 Garaele"},
-      {"name": "Elixir of Greater Vitality", "quantity": 4, "healing": "4d4+8 avg 18", "source": "Wave Echo Cave"},
-      {"name": "Potion of Hill Giant Strength", "quantity": 1, "effect": "STR 21 for 1 hour", "source": "Grol's chest"}
+      {"name": "Potion of Healing", "quantity": 7, "healing": "2d4+2"},
+      {"name": "Elixir of Greater Vitality", "quantity": 4, "healing": "4d4+8 avg 18"},
+      {"name": "Potion of Hill Giant Strength", "quantity": 1, "effect": "STR 21 for 1 hour"}
     ],
     "scrolls": [
       {"name": "Scroll of Planar Convergence", "rarity": "legendary", "uses": 2, "effect": "Teleport entire party up to 50 miles or between planes — EMERGENCY ONLY"},
@@ -204,7 +213,7 @@
       {"name": "Scroll of Blindness/Deafness", "uses": 1, "effect": "CON save or blinded", "held_by": "raistlin"}
     ],
     "misc": [
-      {"name": "Wave Echo Cave map", "notes": "Critical navigation item"},
+      {"name": "Wave Echo Cave map"},
       {"name": "Grol's journal", "notes": "Intel on Black Spider/Nezznar"},
       {"name": "Kost's journal", "notes": "Notes on Netherese tower builders"},
       {"name": "Black Spider's letter", "notes": "Evidence — from Glasstaff's desk"},
