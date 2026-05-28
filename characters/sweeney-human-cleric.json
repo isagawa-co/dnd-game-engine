@@ -17,7 +17,7 @@
   "hp": 48,
   "max_hp": 48,
   "ac": 20,
-  "ac_notes": "Dragonguard Breastplate 14 + 2 (DEX) + 2 (shield) + 2 (Cloak of the Arcane Sentinel) = 20. Allies within 10ft gain +1 AC from Cloak aura.",
+  "ac_notes": "Dragonguard Breastplate 16 (14+DEX 2) + Shield 2 + Cloak 2 = 20. Without shield (crossbow): 18. Allies within 10ft gain +1 AC from Cloak aura. Stealth: +11 (DEX +3, Gloves +3, Cloak +5), advantage while stationary.",
   "speed": 30,
   "hit_dice_detail": {
     "die_type": "d8",
@@ -40,7 +40,7 @@
     },
     {
       "name": "Channel Divinity: Preserve Life",
-      "description": "Action: distribute HP equal to 5x cleric level (15 HP) among creatures within 30 feet. Can't restore above half max HP. Once per short or long rest.",
+      "description": "Action: distribute HP equal to 5x cleric level (20 HP) among creatures within 30 feet. Can't restore above half max HP. Once per short or long rest.",
       "uses": 1,
       "recharge": "short_rest"
     },
@@ -68,7 +68,7 @@
     "cantrips": ["Sacred Flame", "Spare the Dying", "Guidance"],
     "domain_spells_always_prepared": ["Bless", "Cure Wounds"],
     "domain_spells_2nd": ["Lesser Restoration", "Spiritual Weapon"],
-    "prepared_spells": ["Healing Word", "Shield of Faith", "Guiding Bolt", "Sanctuary", "Detect Magic", "Protection from Evil and Good", "Aid"],
+    "prepared_spells": ["Healing Word", "Shield of Faith", "Guiding Bolt", "Sanctuary", "Detect Magic", "Protection from Evil and Good", "Aid", "Silence", "Prayer of Healing"],
     "spell_slots": {
       "1": 4,
       "2": 2
@@ -77,12 +77,17 @@
   },
   "inventory": [
     {
-      "name": "Light Crossbow",
+      "name": "Light Crossbow +2",
       "quantity": 1,
       "weight": 5,
-      "damage": "1d8 piercing",
-      "properties": ["ammunition (80/320)", "loading", "two-handed"],
-      "gp_value": 25
+      "damage": "1d8+2 piercing",
+      "properties": ["ammunition (80/320)", "loading", "two-handed", "magic"],
+      "magic": true,
+      "attack_bonus": "+7 (DEX +3, prof +2, magic +2)",
+      "damage_total": "1d8+5 (magic +2, DEX +3)",
+      "gp_value": 0,
+      "forge_cost": 1000,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
       "name": "Bolts",
@@ -132,6 +137,28 @@
       "source": "Wave Echo Cave — nat 20 identification"
     },
     {
+      "name": "Gloves of Stealth",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "stealth_bonus": 3,
+      "special": "no armor stealth penalty (Breastplate has none anyway)",
+      "gp_value": 0,
+      "forge_cost": 250,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
+      "name": "Cloak of the Warden's Veil",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "stealth_bonus": 5,
+      "special": "advantage on Stealth checks while stationary",
+      "gp_value": 0,
+      "forge_cost": 500,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
       "name": "Holy Symbol (Amulet)",
       "quantity": 1,
       "weight": 0,
@@ -159,6 +186,37 @@
     "backstory": "Sweeney grew up in a small farming village where she was the one people came to when the healer was too drunk or too far away. She learned to set bones, brew remedies, and pray — not always in that order. By fifteen she'd saved more lives than the village elder, and the people called her blessed. Then something happened that she won't speak about — something that made it impossible to stay. She left in the night with nothing but her faith and a mace she'd never swung. She found religion on the road, not in a temple — a goddess who valued action over scripture. She found the party not long after, and she found Ala. The man who trusts no one trusts her. She shares his bedroll most nights — neither of them talks about it openly, and the party knows better than to ask. She's the only person who can touch him without his hand going to a blade. Whatever secret she's running from, she's decided these people are worth staying for.",
     "relationships": {
       "ala-half-elf-rogue": "romantic — physical relationship, unspoken but known by the party"
+    }
+  },
+  "combat_role_reference": {
+    "note": "Reference guide — not prescriptive. Use situationally.",
+    "primary_role": "Primary healer / support / aura buffer (Life Domain)",
+    "secondary_role": "Ranged damage + control (Guiding Bolt, Silence)",
+    "action_economy": {
+      "bonus_action": "Healing Word (1d4+8 at 60ft) — use to stabilize allies without spending main action",
+      "action": "Guiding Bolt (+7 hit, 4d6 radiant + advantage to next attacker) OR Light Crossbow +2 (+7 hit, 1d8+5) OR spell",
+      "reaction": "None reserved — free for opportunity attacks or Shield of Faith swap"
+    },
+    "healing_toolkit": {
+      "healing_word": "Bonus action, 60ft, 1d4+8 avg 10 — use in combat without losing action",
+      "cure_wounds": "Touch, 1d8+8 avg 12 — domain, always prepared",
+      "prayer_of_healing": "10 min cast, up to 6 creatures each 2d6+9 avg 16 — full party recovery after fights",
+      "channel_divinity": "20 HP distributed within 30ft, no slot — emergency mid-combat heal",
+      "disciple_of_life": "+2+spell_level HP bonus on ALL healing spells (already included in numbers above)",
+      "lay_on_hands_equivalent": "None — Dain covers this role"
+    },
+    "key_spells": {
+      "silence": "Reaction-speed, 30ft sphere, 1 min — no spells, no verbal components inside. Cast on enemy caster = they're useless.",
+      "guiding_bolt": "4d6 radiant + advantage to next attacker. Best Round 1 on priority target for Bron/Ala follow-up.",
+      "bless": "Concentration — +1d4 attacks and saves for 3 creatures. Default concentration spell.",
+      "spiritual_weapon": "Bonus action each turn, 1d8+5 force, no concentration — free damage every round.",
+      "aid": "Pre-combat — +5 max HP for 3 creatures, 8 hours. Cast before every major fight."
+    },
+    "aura": "Cloak of the Arcane Sentinel — allies within 10ft: +1 AC, advantage on death saves. Stay near the party.",
+    "stealth_package": {
+      "total_modifier": "+11 stealth (DEX +3, Gloves +3, Cloak +5)",
+      "advantage": "While stationary (Cloak of the Warden's Veil)",
+      "note": "Breastplate has no stealth disadvantage — fully functional"
     }
   },
   "creation_metadata": {

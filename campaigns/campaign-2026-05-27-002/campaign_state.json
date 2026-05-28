@@ -92,7 +92,7 @@
   ],
   "party_gold": {
     "pooled": true,
-    "gold": 11500,
+    "gold": 9750,
     "silver": 854,
     "copper": 22,
     "gold_ledger": {
@@ -111,7 +111,8 @@
       "honu_forge_upgrades": -2000,
       "honu_stealth_package": -750,
       "honu_scale_mail_sold": 50,
-      "total": 11500
+      "sweeney_forge_upgrades": -1750,
+      "total": 9750
     }
   },
   "prisoners_captured": [

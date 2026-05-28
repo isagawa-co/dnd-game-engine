@@ -140,34 +140,38 @@
       "ac": 18
     },
     "sweeney-human-cleric": {
-      "summary": "Primary healer/support/aura buffer (Life Domain) — WIS 21",
+      "summary": "Primary healer/support/aura buffer (Life Domain) — WIS 21, AC 20, stealth +11",
       "capabilities": [
         "Cloak of the Arcane Sentinel (+2 AC, +2 all saves, AURA: allies within 10ft get +1 AC + advantage on death saves)",
         "Spiritual Weapon (bonus action 1d8+5 force attack each turn, NO concentration, domain spell)",
-        "Lesser Restoration (cure blinded/deafened/paralyzed/poisoned)",
-        "Aid (boost max HP by 5 for 3 creatures, 8 hours, no concentration — use pre-combat)",
-        "Healing Word (1d4+5 BONUS ACTION heal 60ft range — Disciple of Life adds +3 = 1d4+8)",
-        "Cure Wounds (1d8+5 touch — Disciple of Life adds +3 = 1d8+8)",
-        "Bless (concentration — +1d4 attacks and saves for 3 creatures — load into Ala's ring too)",
-        "Guiding Bolt (4d6 radiant + next attacker has advantage on target)",
-        "Sanctuary (target can't be attacked, WIS save DC 14)",
+        "Healing Word (1d4+8 BONUS ACTION heal 60ft — in-combat heal without losing main action)",
+        "Prayer of Healing (10 min, up to 6 creatures each 2d6+9 avg 16 — full party recovery post-fight)",
+        "Cure Wounds (1d8+8 touch — domain, always prepared)",
+        "Channel Divinity: Preserve Life (distribute 20 HP within 30ft, no slot, 1/short rest)",
+        "Aid (pre-combat +5 max HP for 3 creatures, 8 hours)",
+        "Lesser Restoration (cure blinded/deafened/paralyzed/poisoned — domain)",
+        "Guiding Bolt (+7 hit, 4d6 radiant + advantage to next attacker — best Round 1 setup)",
+        "Silence (30ft sphere, no spells/verbal components inside — shuts down enemy casters)",
+        "Bless (concentration — +1d4 attacks and saves for 3 creatures)",
+        "Sanctuary (target can't be attacked, WIS save DC 15)",
         "Protection from Evil and Good (disadvantage for aberrations/undead/fiends attacking target)",
+        "Light Crossbow +2 (+7 to hit, 1d8+5, 80/320ft — main combat action when not healing)",
         "Guidance (+1d4 to any ability check, cantrip)",
-        "Sacred Flame (DEX save DC 14 or 1d8 radiant — ignores cover)",
+        "Sacred Flame (DEX save DC 15 or 1d8 radiant — ignores cover)",
         "Spare the Dying (stabilize 0 HP instantly, cantrip)",
-        "Channel Divinity: Preserve Life (distribute 20 HP within 30ft, 1/short rest)",
-        "Channel Divinity: Turn Undead (undead WIS save DC 14 or flee, 1/short rest)",
+        "Channel Divinity: Turn Undead (undead WIS save DC 15 or flee, 1/short rest)",
         "Disciple of Life (+2+spell level HP bonus on all healing spells)",
         "Dragonguard Breastplate (advantage on saves vs dragon breath weapons)",
-        "Rope 50ft",
-        "Torches x10"
+        "Cloak of the Warden's Veil (+5 stealth, advantage while stationary)",
+        "Gloves of Stealth (+3 stealth)",
+        "Stealth total: +11 (DEX +3, Gloves +3, Cloak +5) — advantage while stationary"
       ],
       "spell_slots": {"1st": 4, "2nd": 2},
-      "spell_save_dc": 14,
+      "spell_save_dc": 15,
       "spell_attack": 7,
       "cantrips": ["Sacred Flame", "Spare the Dying", "Guidance"],
       "ac": 20,
-      "ac_notes": "Dragonguard Breastplate 16 + shield 2 + Cloak 2 = 20. Allies within 10ft get +1 AC from Cloak aura."
+      "ac_notes": "Breastplate 16 + Shield 2 + Cloak 2 = 20. Without shield (crossbow mode): 18. Allies within 10ft get +1 AC from Cloak aura."
     },
     "hamun-kost-npc-ally": {
       "summary": "Thayan necromancer — temporary contract ally",
@@ -209,7 +213,7 @@
     ]
   },
   "party_gold": {
-    "total": 11500,
+    "total": 9750,
     "silver": 854,
     "copper": 22
   }
