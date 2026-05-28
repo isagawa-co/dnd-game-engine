@@ -4,24 +4,25 @@
   "name": "Sweeney",
   "character_class": "cleric",
   "race": "human",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
     "strength": 17,
     "dexterity": 16,
     "constitution": 18,
     "intelligence": 16,
-    "wisdom": 19,
+    "wisdom": 21,
     "charisma": 17
   },
-  "hp": 12,
-  "max_hp": 12,
-  "ac": 18,
+  "hp": 48,
+  "max_hp": 48,
+  "ac": 20,
+  "ac_notes": "Dragonguard Breastplate 14 + 2 (DEX) + 2 (shield) + 2 (Cloak of the Arcane Sentinel) = 20. Allies within 10ft gain +1 AC from Cloak aura.",
   "speed": 30,
   "hit_dice_detail": {
     "die_type": "d8",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -38,10 +39,22 @@
       "recharge": "passive"
     },
     {
+      "name": "Channel Divinity: Preserve Life",
+      "description": "Action: distribute HP equal to 5x cleric level (15 HP) among creatures within 30 feet. Can't restore above half max HP. Once per short or long rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Channel Divinity: Turn Undead",
+      "description": "Action: each undead within 30 feet must make WIS save (DC 14) or be turned for 1 minute. Shares uses with Preserve Life.",
+      "uses": "shared",
+      "recharge": "short_rest"
+    },
+    {
       "name": "Spellcasting",
-      "description": "WIS-based divine spellcasting. Spell save DC 14, spell attack +6. Prepare WIS mod + cleric level (5) spells per long rest.",
-      "spell_save_dc": 14,
-      "spell_attack": 6
+      "description": "WIS-based divine spellcasting. Spell save DC 15, spell attack +7. Prepare WIS mod + cleric level (9) spells per long rest.",
+      "spell_save_dc": 15,
+      "spell_attack": 7
     }
   ],
   "racial_features": [
@@ -54,11 +67,13 @@
   "spellcasting": {
     "cantrips": ["Sacred Flame", "Spare the Dying", "Guidance"],
     "domain_spells_always_prepared": ["Bless", "Cure Wounds"],
-    "prepared_spells": ["Healing Word", "Shield of Faith", "Guiding Bolt", "Sanctuary", "Detect Magic"],
+    "domain_spells_2nd": ["Lesser Restoration", "Spiritual Weapon"],
+    "prepared_spells": ["Healing Word", "Shield of Faith", "Guiding Bolt", "Sanctuary", "Detect Magic", "Protection from Evil and Good", "Aid"],
     "spell_slots": {
-      "1": 2
+      "1": 4,
+      "2": 2
     },
-    "spells_prepared_max": 5
+    "spells_prepared_max": 9
   },
   "inventory": [
     {
@@ -91,12 +106,30 @@
       "gp_value": 10
     },
     {
-      "name": "Chain Mail",
+      "name": "Dragonguard Breastplate",
       "quantity": 1,
-      "weight": 55,
-      "ac": 16,
-      "properties": ["heavy"],
-      "gp_value": 75
+      "weight": 20,
+      "ac": "14 + DEX (max 2)",
+      "properties": ["medium", "magic", "advantage on saving throws against dragon breath weapons"],
+      "gp_value": 0,
+      "magic": true,
+      "source": "Venomfang's hoard"
+    },
+    {
+      "name": "Cloak of the Arcane Sentinel",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "requires_attunement": false,
+      "ac_bonus": 2,
+      "save_bonus": 2,
+      "aura": {
+        "radius": "10 feet",
+        "effect": "allies within aura gain +1 AC",
+        "secondary": "allies gain advantage on death saving throws"
+      },
+      "gp_value": 0,
+      "source": "Wave Echo Cave — nat 20 identification"
     },
     {
       "name": "Holy Symbol (Amulet)",
@@ -133,11 +166,58 @@
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 12,
+      "hp_calculation": "8 (base d8) + 4 (CON mod)",
+      "cantrips_added": ["Sacred Flame", "Spare the Dying", "Guidance"],
+      "features_gained": ["Disciple of Life", "Spellcasting"],
+      "choices": {
+        "divine_domain": "Life"
+      },
+      "notes": "Character creation — 4d6 drop lowest"
+    },
+    {
+      "level": 2,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["Channel Divinity: Preserve Life", "Channel Divinity: Turn Undead"],
+      "choices": {
+        "6th_prepared_spell": "Protection from Evil and Good",
+        "confirmed": true
+      },
+      "notes": "Protection from Evil and Good chosen for Wave Echo Cave prep (undead, drow). Spell slots 2→3, prepared max 5→6."
+    },
+    {
+      "level": 3,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["2nd-level spells", "Domain spells: Lesser Restoration, Spiritual Weapon"],
+      "choices": {
+        "new_prepared_spell": "Aid",
+        "confirmed": true
+      },
+      "notes": "Spiritual Weapon (bonus action attack each turn, no concentration) is huge action economy. Aid gives +5 max HP to 3 PCs before dragon fight. Lesser Restoration for conditions."
+    },
+    {
+      "level": 4,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["Ability Score Improvement"],
+      "choices": {
+        "asi_selected": "Wisdom +2",
+        "wisdom_new": 21,
+        "confirmed": true
+      },
+      "notes": "Wave Echo Cave completion milestone. ASI: WIS 19→21. Spell save DC 14→15, spell attack +6→+7. Healing and control spells stronger."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 4,
       "status": "active"
     }
   ]

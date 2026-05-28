@@ -4,24 +4,24 @@
   "name": "Bron",
   "character_class": "fighter",
   "race": "centaur",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
-    "strength": 20,
+    "strength": 22,
     "dexterity": 15,
     "constitution": 16,
     "intelligence": 13,
     "wisdom": 15,
     "charisma": 14
   },
-  "hp": 13,
-  "max_hp": 13,
+  "hp": 49,
+  "max_hp": 49,
   "ac": 16,
   "speed": 40,
   "hit_dice_detail": {
     "die_type": "d10",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -39,9 +39,21 @@
     },
     {
       "name": "Second Wind",
-      "description": "Bonus action: regain 1d10 + 1 HP, once per short rest.",
+      "description": "Bonus action: regain 1d10 + 3 HP, once per short rest.",
       "uses": 1,
       "recharge": "short_rest"
+    },
+    {
+      "name": "Action Surge",
+      "description": "Take one additional action on your turn. Once per short or long rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Improved Critical",
+      "description": "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+      "uses": "passive",
+      "recharge": "passive"
     }
   ],
   "racial_features": [
@@ -64,12 +76,14 @@
   ],
   "inventory": [
     {
-      "name": "Greatsword",
+      "name": "Greatsword +3",
       "quantity": 1,
       "weight": 6,
-      "damage": "2d6 slashing",
-      "properties": ["heavy", "two-handed"],
-      "gp_value": 50
+      "damage": "2d6+9 slashing",
+      "properties": ["heavy", "two-handed", "magic"],
+      "magic": true,
+      "gp_value": 0,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
       "name": "Handaxe",
@@ -92,6 +106,46 @@
       "quantity": 1,
       "weight": 40,
       "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    },
+    {
+      "name": "Cloak of the Shadowed Knight",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "ac_bonus": 2,
+      "stealth_bonus": 5,
+      "save_bonus": 2,
+      "special": "advantage on Stealth checks while stationary",
+      "gp_value": 0,
+      "source": "Forge of Spells — custom enchantment"
+    },
+    {
+      "name": "Ring of Protection",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "ac_bonus": 1,
+      "save_bonus": 1,
+      "gp_value": 0,
+      "source": "Forge of Spells"
+    },
+    {
+      "name": "Boots of Speed",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "ability": "double movement speed 1/day for 10 minutes",
+      "gp_value": 0,
+      "source": "Forge of Spells"
+    },
+    {
+      "name": "Gloves of Stealth",
+      "quantity": 1,
+      "weight": 0.5,
+      "magic": true,
+      "stealth_bonus": 3,
+      "gp_value": 0,
+      "source": "Forge of Spells"
     }
   ],
   "gold": 0,
@@ -113,11 +167,54 @@
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 13,
+      "hp_calculation": "10 (base d10) + 3 (CON mod)",
+      "features_gained": ["Fighting Style - Great Weapon Fighting", "Second Wind"],
+      "choices": {
+        "fighting_style": "Great Weapon Fighting"
+      },
+      "notes": "Character creation — 4d6 drop lowest"
+    },
+    {
+      "level": 2,
+      "hp_gained": 13,
+      "hp_calculation": "10 (max d10) + 3 (CON mod)",
+      "features_gained": ["Action Surge"],
+      "choices": {},
+      "notes": "No choices at level 2 for fighter."
+    },
+    {
+      "level": 3,
+      "hp_gained": 13,
+      "hp_calculation": "10 (max d10) + 3 (CON mod)",
+      "features_gained": ["Improved Critical (Champion)"],
+      "choices": {
+        "martial_archetype": "Champion",
+        "confirmed": true
+      },
+      "notes": "Champion for doubled crit range (19-20). Synergizes with GWF and Action Surge for max crit chance."
+    },
+    {
+      "level": 4,
+      "hp_gained": 10,
+      "hp_calculation": "10 (max d10) + 0 (CON mod, unchanged)",
+      "features_gained": ["Ability Score Improvement"],
+      "choices": {
+        "asi_selected": "Strength +2",
+        "strength_new": 22,
+        "confirmed": true
+      },
+      "notes": "Wave Echo Cave completion milestone. ASI: STR 20→22 for maximized melee damage (now +6 mod). Attack bonus increases to +7, damage +6."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 3,
       "status": "active"
     }
   ]

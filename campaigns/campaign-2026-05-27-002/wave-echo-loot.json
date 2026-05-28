@@ -1,0 +1,206 @@
+{
+  "loot_source": "Wave Echo Cave",
+  "session": "session 4 — wave echo cave completion",
+  "identification_roll": "nat 20 (Raistlin Arcana check)",
+  "discovery_method": "critical success — superior variants identified",
+  "items": [
+    {
+      "slot": 1,
+      "name": "Blade of the Drow Lord",
+      "type": "longsword",
+      "rarity": "rare",
+      "assigned_to": "dain-mountain-dwarf-paladin",
+      "mechanics": {
+        "base": "+2 to attack and damage rolls",
+        "special": "sheds dim light in 15-foot radius",
+        "weight": 3,
+        "damage": "1d8+2 slashing (versatile 1d10+2)",
+        "properties": ["magic", "light-emitting"]
+      },
+      "notes": "Dain's new primary weapon — upgrades from +1 Longsword to +2"
+    },
+    {
+      "slot": 2,
+      "name": "Venom Fang",
+      "type": "dagger",
+      "rarity": "rare",
+      "assigned_to": "ala-half-elf-rogue",
+      "mechanics": {
+        "base": "+1 to attack and damage rolls",
+        "poison": {
+          "trigger": "on hit",
+          "save": "CON save DC 15",
+          "fail": "2d10 poison damage",
+          "success": "no damage"
+        },
+        "recharge": "1/long rest",
+        "weight": 1,
+        "damage": "1d4+1 piercing",
+        "properties": ["magic", "finesse", "light", "thrown (20/60)"]
+      },
+      "notes": "Ala's backup melee/thrown weapon — devastating poison on hit"
+    },
+    {
+      "slot": 3,
+      "name": "Shadowscale Leathers",
+      "type": "leather armor",
+      "rarity": "very rare",
+      "assigned_to": "ala-half-elf-rogue",
+      "mechanics": {
+        "ac": "14 + DEX (max 2) + 2 = 16-18 AC",
+        "resistance": "choose one: fire, cold, or poison (attuned at wearing)",
+        "properties": ["magic", "light", "flexible"],
+        "weight": 10,
+        "stealth": "no disadvantage"
+      },
+      "notes": "Ala's armor upgrade — +2 AC and one damage resistance"
+    },
+    {
+      "slot": 4,
+      "name": "Cloak of the Arcane Sentinel",
+      "type": "cloak",
+      "rarity": "very rare",
+      "assigned_to": "sweeney-human-cleric",
+      "mechanics": {
+        "ac_bonus": "+2 AC",
+        "save_bonus": "+2 to all saving throws",
+        "aura": {
+          "radius": "10 feet",
+          "effect": "allies within aura gain +1 AC",
+          "secondary_effect": "allies gain advantage on death saves"
+        },
+        "attunement": "not required",
+        "properties": ["magic", "wondrous item"]
+      },
+      "notes": "Sweeney's support item — boosts party AC and saves, especially valuable in group combat"
+    },
+    {
+      "slot": 5,
+      "name": "Wand of the Burning Phoenix",
+      "type": "wand",
+      "rarity": "very rare",
+      "assigned_to": "raistlin-high-elf-wizard",
+      "mechanics": {
+        "charges": 7,
+        "spell": "fireball (3rd-level equivalent)",
+        "damage": "4d8 fire (upgraded from 3d8)",
+        "save": "DEX save DC 15",
+        "spell_attack_bonus": "+1",
+        "area": "20-foot-radius sphere",
+        "special_effect": "hit terrain ignites, becomes difficult terrain (fire)",
+        "recharge": "1d6+1 at dawn",
+        "attunement": "required by spellcaster",
+        "weight": 1
+      },
+      "notes": "Raistlin's offensive tool — 7 casts of enhanced fireball, terrain control bonus"
+    },
+    {
+      "slot": 6,
+      "name": "Tome of the Drow Archlich",
+      "type": "spellbook",
+      "rarity": "artifact (drow)",
+      "assigned_to": "raistlin-high-elf-wizard",
+      "mechanics": {
+        "spells_contained": [
+          "Faerie Fire (1st)",
+          "Darkness (2nd)",
+          "Invisibility (2nd)",
+          "Cone of Cold (5th)",
+          "Telekinesis (5th)",
+          "Counterspell (3rd)",
+          "Feeblemind (8th)",
+          "Hold Person (2nd)"
+        ],
+        "copy_mechanics": "Can be copied into Raistlin's spellbook via Forge of Spells at cost",
+        "copy_cost_per_spell": "50gp + 2 hrs (1st-2nd level), 100gp + 4 hrs (3rd-5th level), 250gp + 8 hrs (6th+)",
+        "value_estimate": "5000+ gp (high-level spells included)"
+      },
+      "notes": "Legendary source material — includes Counterspell and Feeblemind, crucial support spells"
+    },
+    {
+      "slot": 7,
+      "name": "Elixir of Greater Vitality",
+      "type": "potion",
+      "quantity": 4,
+      "rarity": "rare",
+      "assigned_to": "party-shared-resource",
+      "mechanics": {
+        "action": "drink (bonus action or action)",
+        "healing": "4d4+8 HP (average 18 HP)",
+        "effect": "instant, no concentration",
+        "shelf_life": "1 year before spoiling",
+        "notes": "Upgraded from standard Greater Healing (4d4+4 → 4d4+8)"
+      },
+      "notes": "Party healing reserves — 4 potions available for emergencies"
+    },
+    {
+      "slot": 8,
+      "name": "Scroll of Planar Convergence",
+      "type": "scroll",
+      "rarity": "legendary",
+      "assigned_to": "party-shared-resource",
+      "mechanics": {
+        "spell": "Gate (6th-level)",
+        "uses": 2,
+        "casting_requirement": "anyone can read/activate (no spellcasting needed)",
+        "effect": "open a portal to any known plane or location within 500 miles",
+        "party_size": "teleport entire party (up to 12 creatures)",
+        "distance": "up to 50 miles or between planes",
+        "material_cost": "none",
+        "reusability": "uses both charges, then scroll crumbles to ash"
+      },
+      "notes": "LEGENDARY emergency escape tool — 2 uses for planar/long-distance teleportation"
+    },
+    {
+      "slot": 9,
+      "name": "Forge of Spells",
+      "type": "legendary artifact",
+      "rarity": "legendary",
+      "assigned_to": "raistlin-high-elf-wizard",
+      "mechanics": {
+        "attunement": "required by spellcaster",
+        "attuned_by": "raistlin-high-elf-wizard",
+        "attunement_roll": "nat 20 — perfect attunement",
+        "attunement_bonus": "all enchantment costs and time requirements are HALVED",
+        "capabilities": [
+          "Enchant mundane weapons into +1, +2, +3 magical weapons",
+          "Enchant mundane armor into +1, +2, +3 magical armor",
+          "Create spell scrolls from known spells (1st-6th level)",
+          "Inscribe runes and imbue magical essence"
+        ],
+        "cost_with_attunement_bonus": {
+          "+1_weapon": "250gp (base 500gp) in 3 days (base 7 days)",
+          "+2_weapon": "1000gp (base 2000gp) in 7 days (base 14 days)",
+          "+3_weapon": "2500gp (base 5000gp) in 10 days (base 21 days)",
+          "+1_armor": "250gp in 3 days",
+          "+2_armor": "1000gp in 7 days",
+          "+3_armor": "2500gp in 10 days",
+          "spell_scroll_1st_2nd": "125gp (base 250gp) in 1 day (base 3 days)",
+          "spell_scroll_3rd_4th": "500gp (base 1000gp) in 3 days (base 7 days)",
+          "spell_scroll_5th_6th": "1250gp (base 2500gp) in 7 days (base 14 days)"
+        },
+        "materials_needed": "rare gems, magical dust, spell components (varies by item)",
+        "location": "wave-echo-cave (portable via strong magic or cart)"
+      },
+      "notes": "PRIMARY TREASURE — enables unlimited magical item creation for the party. Raistlin's perfect attunement (nat 20) cuts all costs in half."
+    }
+  ],
+  "total_loot_value": "approximately 25000+ gp (including Forge and Scroll of Planar Convergence)",
+  "summary": [
+    "Blade of the Drow Lord (Dain's new weapon)",
+    "Venom Fang (Ala's poison dagger)",
+    "Shadowscale Leathers (Ala's armor upgrade)",
+    "Cloak of the Arcane Sentinel (Sweeney's party support item)",
+    "Wand of the Burning Phoenix (Raistlin's fireball wand)",
+    "Tome of the Drow Archlich (Raistlin's spellbook source)",
+    "Elixir of Greater Vitality x4 (party healing)",
+    "Scroll of Planar Convergence (LEGENDARY emergency escape)",
+    "Forge of Spells (LEGENDARY artifact — enchantment engine)"
+  ],
+  "next_steps": [
+    "Assign items to characters (complete)",
+    "Go through each character's Level 4 breakdown with items",
+    "Plan Forge usage for party upgrades",
+    "Decide which spells to copy from Drow Archlich into Raistlin's spellbook"
+  ]
+}

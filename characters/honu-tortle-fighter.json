@@ -4,23 +4,24 @@
   "name": "Honu",
   "character_class": "fighter",
   "race": "tortle",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
-    "strength": 17,
+    "strength": 19,
     "dexterity": 13,
     "constitution": 14,
     "intelligence": 8,
     "wisdom": 13,
     "charisma": 10
   },
-  "hp": 12,
-  "max_hp": 12,
-  "ac": 19,
+  "hp": 48,
+  "max_hp": 48,
+  "ac": 21,
+  "ac_notes": "Natural Armor 17 + Shield +2 (4 AC total) = 21. Shell Defense: +4 AC on top = 25. Stealth: +9 (DEX +1, Gloves +3, Cloak +5), advantage while stationary.",
   "hit_dice_detail": {
     "die_type": "d10",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -38,8 +39,38 @@
     },
     {
       "name": "Second Wind",
-      "description": "Bonus action: regain 1d10 + 1 HP, once per short rest.",
+      "description": "Bonus action: regain 1d10 + 4 HP (fighter level), once per short rest.",
       "uses": 1,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Action Surge",
+      "description": "Take one additional action on your turn. Once per short or long rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Combat Superiority",
+      "description": "You have four superiority dice (d8) that fuel your maneuvers. You regain all expended superiority dice on a short or long rest. Save DC = 8 + proficiency + STR mod = 14.",
+      "uses": 4,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Maneuver: Trip Attack",
+      "description": "When you hit with a weapon attack, add 1d8 to damage and the target must make a STR save (DC 14) or be knocked prone. Prone targets grant advantage to melee attacks.",
+      "uses": "per superiority die",
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Maneuver: Riposte",
+      "description": "When a creature misses you with a melee attack, use your reaction to make a melee weapon attack against it (+6 to hit). If you hit, add 1d8 to damage.",
+      "uses": "per superiority die",
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Maneuver: Goading Attack",
+      "description": "When you hit with a weapon attack, add 1d8 to damage and the target must make a WIS save (DC 14) or have disadvantage on all attacks against targets other than you until end of your next turn.",
+      "uses": "per superiority die",
       "recharge": "short_rest"
     }
   ],
@@ -50,7 +81,7 @@
     },
     {
       "name": "Claws",
-      "description": "Unarmed strike: 1d4 + 3 (STR) slashing damage."
+      "description": "Unarmed strike: 1d4 + 4 (STR) slashing damage."
     },
     {
       "name": "Hold Breath",
@@ -58,7 +89,7 @@
     },
     {
       "name": "Shell Defense",
-      "description": "Action to withdraw: +4 AC, advantage on STR/CON saves, but prone and speed 0."
+      "description": "Action to withdraw: +4 AC on top of current AC (21 base → 25 total), advantage on STR/CON saves, but prone and speed 0."
     },
     {
       "name": "Survival Instinct",
@@ -67,26 +98,50 @@
   ],
   "inventory": [
     {
-      "name": "Longsword",
+      "name": "Longsword +2",
       "quantity": 1,
       "weight": 3,
-      "damage": "1d8 slashing",
-      "properties": ["versatile (1d10)"],
-      "gp_value": 15
+      "damage": "1d8+2 slashing",
+      "properties": ["versatile (1d10+2)", "magic"],
+      "magic": true,
+      "attack_bonus": "+8 (STR +4, prof +2, magic +2)",
+      "damage_total": "1d8+6 with STR (magic +2, STR +4)",
+      "gp_value": 0,
+      "forge_cost": 1000,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
-      "name": "Shield",
+      "name": "Shield +2",
       "quantity": 1,
       "weight": 6,
-      "ac_bonus": 2,
-      "gp_value": 10
+      "ac_bonus": 4,
+      "properties": ["magic"],
+      "magic": true,
+      "gp_value": 0,
+      "forge_cost": 1000,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
-      "name": "Scale Mail",
+      "name": "Gloves of Stealth",
       "quantity": 1,
-      "weight": 45,
-      "note": "Can't wear (Tortle shell), but included in equipment",
-      "gp_value": 50
+      "weight": 0,
+      "magic": true,
+      "stealth_bonus": 3,
+      "special": "no heavy armor penalty (not applicable — Natural Armor has no stealth disadvantage)",
+      "gp_value": 0,
+      "forge_cost": 250,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
+      "name": "Cloak of the Tide's Shadow",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "stealth_bonus": 5,
+      "special": "advantage on Stealth checks while stationary",
+      "gp_value": 0,
+      "forge_cost": 500,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
       "name": "Adventuring Pack",
@@ -109,16 +164,89 @@
     "appearance": "A stocky, battle-worn Tortle standing 5'10\" with a dark green-brown shell covered in deep gouges and blade scars from years of service. His eyes are steady and unblinking — the kind that can stare down a hell hound without flinching. He moves with the deliberate confidence of someone who knows strength wins. A crude grin often crosses his face before he launches into another war story, usually ending with a punchline only soldiers would laugh at. His longsword hangs across his back, his shield always within arm's reach — honor demands he be ready to protect those beside him, even when the law behind the orders makes no sense.",
     "backstory": "Honu served for decades in a coastal militia, rising through the ranks on the simple principle that the strongest shield wall holds. He followed every order without question — even the one that sent his unit into a losing position to protect a noble's trade route. They held the line, but the law that put them there served coin, not people. He left the militia not out of rebellion, but because his contract ended. He still believes in the chain of command. He just chooses his own contracts now."
   },
+  "combat_role_reference": {
+    "note": "Reference guide — not prescriptive. Use situationally.",
+    "primary_role": "Tank / frontline controller — absorb hits, lock down enemies",
+    "secondary_role": "Tactical support — prone control for ally advantage",
+    "key_actions": {
+      "trip_attack": "Hit + 1d8 extra + STR save DC 14 or prone. Prone = melee advantage for Bron/Dain follow-up. Best opener.",
+      "goading_attack": "Hit + 1d8 extra + WIS save DC 14 or disadvantage on attacks vs anyone but Honu. Forces enemy to focus you.",
+      "riposte": "Reaction when enemy misses you — immediate counterattack +8 to hit, 1d8+6+1d8 damage. Punishes reckless attackers.",
+      "protection": "Reaction when adjacent ally is attacked — impose disadvantage. Pairs with Honu staying next to Sweeney or Raistlin."
+    },
+    "shell_defense": {
+      "ac": 25,
+      "effect": "Withdraw as action — AC 25, advantage on STR/CON saves, prone, speed 0",
+      "when_to_use": "When surrounded and low HP, or to block a doorway/chokepoint. Near-invulnerable but gives up your turn.",
+      "note": "Prone from Shell Defense means attacks against you still have disadvantage from ranged (but melee gets advantage). Usually net positive at AC 25."
+    },
+    "action_surge": "Extra action 1/short rest — use for double Trip Attack to lock two enemies prone in one round.",
+    "stealth_package": {
+      "total_modifier": "+9 stealth (DEX +1, Gloves +3, Cloak +5)",
+      "advantage": "While stationary (Cloak of the Tide's Shadow)",
+      "note": "Natural Armor has no stealth disadvantage — stealth fully functional at +9"
+    },
+    "ac_breakdown": {
+      "normal": 21,
+      "shell_defense": 25,
+      "notes": "Natural Armor 17 + Shield +2 (4) = 21. Shell Defense adds +4."
+    },
+    "attack": "+8 to hit (STR +4, prof +2, magic +2), 1d8+6 damage (avg 10.5). With Trip Attack: +1d8 extra + prone."
+  },
   "creation_metadata": {
     "creation_method": "standard_array",
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 12,
+      "hp_calculation": "10 (base d10) + 2 (CON mod)",
+      "features_gained": ["Fighting Style - Protection", "Second Wind"],
+      "choices": {
+        "fighting_style": "Protection"
+      },
+      "notes": "Character creation — standard array"
+    },
+    {
+      "level": 2,
+      "hp_gained": 12,
+      "hp_calculation": "10 (max d10) + 2 (CON mod)",
+      "features_gained": ["Action Surge"],
+      "choices": {},
+      "notes": "No choices at level 2 for fighter."
+    },
+    {
+      "level": 3,
+      "hp_gained": 12,
+      "hp_calculation": "10 (max d10) + 2 (CON mod)",
+      "features_gained": ["Combat Superiority", "Trip Attack", "Riposte", "Goading Attack"],
+      "choices": {
+        "martial_archetype": "Battle Master",
+        "maneuvers": ["Trip Attack", "Riposte", "Goading Attack"],
+        "confirmed": true
+      },
+      "notes": "Battle Master for tactical tanking. Trip Attack knocks prone for ally advantage, Riposte punishes misses, Goading Attack forces enemies to focus Honu."
+    },
+    {
+      "level": 4,
+      "hp_gained": 12,
+      "hp_calculation": "10 (max d10) + 2 (CON mod)",
+      "features_gained": ["Ability Score Improvement"],
+      "choices": {
+        "asi_selected": "Strength +2",
+        "strength_new": 19,
+        "confirmed": true
+      },
+      "notes": "Wave Echo Cave completion milestone. ASI: STR 17→19 for increased attack damage. Will increase combat superiority die to d8 at higher levels."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 4,
       "status": "active"
     }
   ]

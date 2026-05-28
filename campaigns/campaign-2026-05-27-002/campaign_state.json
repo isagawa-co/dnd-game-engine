@@ -1,14 +1,14 @@
 {
   "campaign_id": "campaign-2026-05-27-002",
   "status": "active",
-  "campaign_phase": "session_1",
+  "campaign_phase": "session_3",
   "arc_number": 1,
   "arc_name": "Lost Mine of Phandelver",
   "adventure_id": "lmop",
-  "current_chapter": 2,
+  "current_chapter": 3,
   "current_act": "I",
-  "current_act_id": "ch2-act-I",
-  "chapters_completed": [1],
+  "current_act_id": "ch3-act-I",
+  "chapters_completed": [1, 2],
   "party": [
     "honu-tortle-fighter",
     "bron-centaur-fighter",
@@ -19,28 +19,142 @@
   ],
   "npcs": [
     "gundren-rockseeker",
-    "sildar-hallwinter"
+    "sildar-hallwinter",
+    "hamun-kost"
   ],
-  "campaign_time_elapsed_hours": 20,
-  "session_count": 1,
-  "last_played": "2026-05-27",
-  "current_location": "phandalin-stonehill-inn",
+  "npc_allies": [
+    {
+      "id": "hamun-kost",
+      "name": "Hamun Kost",
+      "type": "Thayan Necromancer",
+      "status": "allied — contract",
+      "hp": 22,
+      "ac": 12,
+      "spells": ["Hold Person", "Magic Missile", "Misty Step", "Shield", "Animate Dead"],
+      "contract": {
+        "terms": "Fights with party through Wyvern Tor and Thundertree. Can raise dead from kills. Spellbook returned after Thundertree. Access to Forge of Spells at Wave Echo Cave.",
+        "collateral": "Kost's spellbook held by Raistlin",
+        "expires_after": "thundertree"
+      },
+      "zombies_controlled": 2,
+      "zombies_pending": 5,
+      "zombie_roster": [
+        {"type": "orc zombie", "count": 2, "status": "raised"},
+        {"type": "orc zombie", "count": 4, "status": "pending — 2/long rest"},
+        {"type": "ogre zombie", "count": 1, "status": "pending — requires extra day"}
+      ]
+    }
+  ],
+  "campaign_time_elapsed_hours": 48,
+  "session_count": 2,
+  "last_played": "2026-05-28",
+  "current_location": "cragmaw-escape",
   "loot_collected": [
     {"item": "potion-of-healing", "quantity": 3, "source": "Klarg's cave"},
     {"item": "local area map", "quantity": 1, "source": "Yeemik's den — crude goblin map of trails"},
-    {"item": "Black Spider note", "quantity": 1, "source": "Klarg's cave — orders to bring dwarf and map to King Grol at Cragmaw Castle"}
+    {"item": "Black Spider note", "quantity": 1, "source": "Klarg's cave — orders to bring dwarf and map to King Grol at Cragmaw Castle"},
+    {"item": "scarlet cloak", "quantity": 4, "source": "Sleeping Giant — stolen from Redbrands"},
+    {"item": "Staff of Defense", "quantity": 1, "source": "Glasstaff's quarters — equipped by Raistlin"},
+    {"item": "Iarno's spellbook", "quantity": 1, "source": "Glasstaff's quarters — held by Raistlin for copying"},
+    {"item": "Scroll of Augury", "quantity": 1, "source": "Glasstaff's lab"},
+    {"item": "potion-of-healing", "quantity": 1, "source": "Glasstaff's quarters"},
+    {"item": "Black Spider's letter", "quantity": 1, "source": "Glasstaff's desk — from Nezznar"},
+    {"item": "Iarno's journal", "quantity": 1, "source": "Glasstaff's desk — Forge of Spells, Wave Echo Cave intel"},
+    {"item": "shortsword", "quantity": 6, "source": "Redbrand hideout — SOLD 30gp"},
+    {"item": "dagger", "quantity": 6, "source": "Redbrand hideout — SOLD 6gp"},
+    {"item": "scarlet cloak", "quantity": 10, "source": "Redbrand hideout — SOLD 10gp"},
+    {"item": "pearl", "quantity": 1, "source": "Kost's tent — 100gp spell component"},
+    {"item": "Kost's spellbook", "quantity": 1, "source": "Old Owl Well — Thayan necromancy spells, held by Raistlin"},
+    {"item": "Kost's journal", "quantity": 1, "source": "Old Owl Well — notes on Netherese tower builders"},
+    {"item": "Scroll of Blindness/Deafness", "quantity": 1, "source": "Old Owl Well — 2nd level necromancy"},
+    {"item": "Scroll of Misty Step", "quantity": 1, "source": "Old Owl Well — 2nd level conjuration"},
+    {"item": "Ring of Protection", "quantity": 1, "source": "Old Owl Well — extorted from Kost, +1 AC and saves, attuned by Raistlin"},
+    {"item": "spell component pouch", "quantity": 1, "source": "Old Owl Well — 50gp value from Kost"},
+    {"item": "Dragonguard Breastplate", "quantity": 1, "source": "Venomfang's hoard — AC 14+DEX(max 2), advantage on saves vs dragon breath, equipped by Sweeney"},
+    {"item": "Battleaxe Hew", "quantity": 1, "source": "Venomfang's hoard — +1 magic weapon, max damage vs plants/wood, equipped by Dain"},
+    {"item": "Scroll of Lightning Bolt", "quantity": 1, "source": "Venomfang's hoard — 3rd level, 8d6 lightning, 100ft line"},
+    {"item": "silver goblets with moonstones", "quantity": 4, "source": "Venomfang's hoard — 60gp each, SOLD 240gp"},
+    {"item": "gemstones", "quantity": 1, "source": "Venomfang's hoard — SOLD 50gp"},
+    {"item": "emerald necklace", "quantity": 1, "source": "Thundertree herb shop — Mirna Dendrar's family heirloom, 200gp value"},
+    {"item": "Dagger +1", "quantity": 1, "source": "Drow mage at Cragmaw Castle"},
+    {"item": "Potion of Hill Giant Strength", "quantity": 1, "source": "Grol's chest at Cragmaw Castle"},
+    {"item": "Potion of Invisibility", "quantity": 1, "source": "Drow mage at Cragmaw Castle"},
+    {"item": "Spellbook (Drow)", "quantity": 1, "source": "Drow mage — contains drow spells"},
+    {"item": "Morningstar", "quantity": 1, "source": "Grol at Cragmaw Castle"},
+    {"item": "Leather Armor (Grol)", "quantity": 1, "source": "Grol at Cragmaw Castle"},
+    {"item": "Ring (iron, mundane)", "quantity": 1, "source": "Grol at Cragmaw Castle"},
+    {"item": "Shortsword (Drow)", "quantity": 1, "source": "Drow mage at Cragmaw Castle"},
+    {"item": "Hand Crossbow + 20 bolts", "quantity": 1, "source": "Drow mage at Cragmaw Castle"},
+    {"item": "Ring (silver, runes)", "quantity": 1, "source": "Drow mage at Cragmaw Castle"},
+    {"item": "Jade statue", "quantity": 1, "source": "Grol's chest — 75gp value"},
+    {"item": "Grol's journal", "quantity": 1, "source": "Grol's chest — intel on Black Spider"},
+    {"item": "Wave Echo Cave map", "quantity": 1, "source": "Gundren's pack — critical for finding the forge"}
   ],
   "party_gold": {
     "pooled": true,
-    "gold": 273,
-    "silver": 23,
-    "copper": 22
+    "gold": 11500,
+    "silver": 854,
+    "copper": 22,
+    "gold_ledger": {
+      "post_forge_upgrades_bron_ala_raistlin": 10500,
+      "sold_emerald_necklace": 200,
+      "sold_dagger_plus_1": 600,
+      "sold_hand_crossbow_bolts": 75,
+      "sold_jade_statue": 75,
+      "sold_mundane_weapons_armor": 50,
+      "sold_scroll_misty_step_duplicate": 100,
+      "collected_harbin_wester_quest": 100,
+      "raistlin_copy_tome_spells": -750,
+      "raistlin_craft_counterspell_scrolls_x3": -750,
+      "sold_tome_of_drow_archlich": 5000,
+      "dain_forge_upgrades": -1000,
+      "honu_forge_upgrades": -2000,
+      "honu_stealth_package": -750,
+      "honu_scale_mail_sold": 50,
+      "total": 11500
+    }
+  },
+  "prisoners_captured": [
+    {"name": "King Grol", "race": "bugbear", "status": "subdued/unconscious", "location": "with party"},
+    {"name": "Drow Mage (Black Spider agent)", "race": "drow", "status": "subdued/unconscious", "location": "with party"}
+  ],
+  "party_inventory": {
+    "note": "Shared party items — not assigned to individual characters. Distributed as needed.",
+    "potions": [
+      {"name": "Potion of Healing", "quantity": 7, "healing": "2d4+2", "source": "3 from Klarg + 1 from Glasstaff + 3 from Sister Garaele (Agatha quest reward collected)"},
+      {"name": "Elixir of Greater Vitality", "quantity": 4, "healing": "4d4+8 avg 18 HP", "source": "Wave Echo Cave — nat 20 identification"},
+      {"name": "Potion of Hill Giant Strength", "quantity": 1, "effect": "STR 21 for 1 hour", "source": "Grol's chest at Cragmaw Castle"}
+    ],
+    "scrolls": [
+      {"name": "Scroll of Planar Convergence", "rarity": "legendary", "spell": "Gate (6th level)", "uses": 2, "effect": "Teleport entire party up to 50 miles or between planes", "source": "Wave Echo Cave"},
+      {"name": "Scroll of Lightning Bolt", "rarity": "uncommon", "spell": "Lightning Bolt (3rd level)", "damage": "8d6 lightning", "area": "100ft line", "source": "Venomfang's hoard"}
+    ],
+    "pending_identification": [
+      {"name": "Ring (silver, runes)", "held_by": "raistlin-high-elf-wizard", "note": "Raistlin to cast Identify — likely magical (Drow mage's ring)"}
+    ],
+    "quest_rewards_collected": [
+      {"quest": "Wyvern Tor", "from": "Harbin Wester", "reward": "100 gp", "status": "collected — added to party gold"},
+      {"quest": "Agatha's Bargain", "from": "Sister Garaele", "reward": "3 potions of healing", "status": "collected — added to party potions"}
+    ],
+    "returned_items": [
+      {"name": "Kost's spellbook", "returned_to": "Hamun Kost", "note": "Returned per contract terms after Thundertree completion"}
+    ]
   },
   "sold_items": [
     {"item": "shortbow", "quantity": 6, "sold_for": 15},
     {"item": "scimitar", "quantity": 6, "sold_for": 15},
     {"item": "jade statuette of a frog", "quantity": 1, "sold_for": 40},
-    {"item": "gold tooth", "quantity": 1, "sold_for": 1}
+    {"item": "gold tooth", "quantity": 1, "sold_for": 1},
+    {"item": "Emerald necklace", "quantity": 1, "sold_for": 200, "note": "Mirna Dendrar's heirloom — sold"},
+    {"item": "Dagger +1", "quantity": 1, "sold_for": 600, "note": "Magic weapon from Drow mage — sold"},
+    {"item": "Hand Crossbow + 20 bolts", "quantity": 1, "sold_for": 75},
+    {"item": "Jade statue", "quantity": 1, "sold_for": 75, "note": "From Grol's chest"},
+    {"item": "Morningstar (Grol)", "quantity": 1, "sold_for": 10},
+    {"item": "Leather Armor (Grol)", "quantity": 1, "sold_for": 20},
+    {"item": "Ring (iron, mundane)", "quantity": 1, "sold_for": 5},
+    {"item": "Shortsword (Drow)", "quantity": 1, "sold_for": 15},
+    {"item": "Scroll of Misty Step (duplicate)", "quantity": 1, "sold_for": 100, "note": "Raistlin already has Misty Step in spellbook"},
+    {"item": "Tome of the Drow Archlich", "quantity": 1, "sold_for": 5000, "note": "All 6 spells copied first: Darkness, Invisibility, Counterspell, Cone of Cold, Telekinesis, Feeblemind (750gp copy cost). 3 Counterspell scrolls crafted via Forge (750gp). Net: +3500gp after costs."}
   ],
   "quests": [
     {
@@ -53,7 +167,8 @@
       "name": "Rescue Gundren Rockseeker",
       "objective": "Find Cragmaw Castle and rescue Gundren — he has a map to Wave Echo Cave. King Grol has him. The Black Spider is behind it.",
       "reward": "Sildar will pay the party well",
-      "status": "active"
+      "status": "completed",
+      "resolution": "Rescued from Cragmaw Castle, subdued King Grol and drow agent"
     },
     {
       "name": "Escort Sildar to Phandalin",
@@ -65,7 +180,8 @@
       "name": "Find Iarno Albrek",
       "objective": "Sildar is looking for Iarno Albrek, a Lords' Alliance agent who disappeared near Phandalin two months ago",
       "reward": "unknown",
-      "status": "active"
+      "status": "completed",
+      "resolution": "Iarno Albrek IS Glasstaff — captured alive at Redbrand hideout. Turned over to Sildar."
     },
     {
       "name": "Return Lionshield Coster Supplies",
@@ -77,13 +193,53 @@
       "name": "Deal with the Redbrands",
       "objective": "Clear the Redbrand gang from Phandalin. Leader is Glasstaff, hideout under Tresendar Manor. Secret tunnel entrance south of manor.",
       "reward": "town's gratitude + hideout loot",
-      "status": "active"
+      "status": "completed"
     },
     {
       "name": "Rescue Dendrar Family",
       "objective": "Thel Dendrar was murdered by Redbrands. His wife Mirna and children are missing — likely held in the hideout.",
-      "reward": "unknown",
-      "status": "active"
+      "reward": "Emerald necklace location — herb shop in Thundertree",
+      "status": "completed"
+    },
+    {
+      "name": "Agatha's Bargain",
+      "objective": "Bring Sister Garaele's silver comb to the banshee Agatha near Conyberry. Ask about Bowgentle's spellbook location. DO NOT fight her.",
+      "reward": "3 potions of healing",
+      "status": "completed",
+      "source": "Sister Garaele",
+      "resolution": "Agatha answered: Bowgentle's spellbook was traded to necromancer Tsernoth in Iriaebor, 100+ years ago. Potions to collect from Garaele on return."
+    },
+    {
+      "name": "Old Owl Well",
+      "objective": "Investigate undead activity at the Old Owl Well ruins northeast of Phandalin. A necromancer named Hamun Kost may be responsible.",
+      "reward": "XP + possible intel",
+      "status": "completed",
+      "source": "Daran Edermath",
+      "resolution": "Kost captured alive (Bron crit KO). 12 zombies destroyed via Turn Undead + radiant damage. Kost's tent looted: spellbook, pearl, gold, 2 scrolls, journal."
+    },
+    {
+      "name": "Wyvern Tor",
+      "objective": "Drive off the orc band camped at Wyvern Tor in the eastern foothills.",
+      "reward": "100 gp",
+      "status": "completed",
+      "source": "Harbin Wester",
+      "resolution": "All 6 orcs + ogre killed. Caltrops+oil trap at entrance, surprise round. Bron took 9 damage from Brughor (healed). Kost raising all 7 as zombies. 100gp to collect from Harbin on return."
+    },
+    {
+      "name": "Find Reidoth the Druid",
+      "objective": "Locate Reidoth in Thundertree. He knows where Cragmaw Castle is.",
+      "reward": "Cragmaw Castle location",
+      "status": "completed",
+      "source": "Qelline Alderleaf",
+      "resolution": "Found in Thundertree. Provided locations of Cragmaw Castle (NW in Neverwinter Wood) and Wave Echo Cave (SE in hills). Intel: King Grol (bugbear) leads Cragmaw, Black Spider (Nezznar, drow) has agents inside, Grol and Nezznar don't trust each other."
+    },
+    {
+      "name": "Emerald Necklace",
+      "objective": "Retrieve Mirna Dendrar's family heirloom from the ruined herb shop in Thundertree.",
+      "reward": "Emerald necklace (200 gp)",
+      "status": "completed",
+      "source": "Mirna Dendrar",
+      "resolution": "Retrieved from ruined herb shop in Thundertree."
     }
   ],
   "combat": {
@@ -91,24 +247,26 @@
     "enemies": [],
     "round": 0,
     "last_combat": {
-      "encounter": "klarg-cave-ch1-act-III",
+      "encounter": "cragmaw-castle-grol-drow",
       "result": "victory",
       "rounds": 1,
-      "enemies_killed": 4,
-      "enemies_captured": 1,
-      "xp_earned": 400,
-      "xp_per_pc": 66
+      "enemies_subdued": 2,
+      "prisoners_captured": 2,
+      "xp_earned": 500,
+      "xp_per_pc": 83
     }
   },
   "travel": {
-    "active": false,
-    "destination": "",
-    "hours_remaining": 0
+    "active": true,
+    "destination": "wyvern-tor",
+    "hours_remaining": 8,
+    "route": ["phandalin", "triboar-trail", "conyberry", "old-owl-well", "wyvern-tor", "thundertree", "cragmaw-castle"],
+    "completed_stops": ["conyberry", "old-owl-well", "wyvern-tor", "thundertree", "cragmaw-castle"]
   },
   "social": {
-    "active": true,
-    "npc_id": "toblen-stonehill",
-    "npc_attitude": "friendly"
+    "active": false,
+    "npc_id": "",
+    "npc_attitude": ""
   },
   "challenge": {
     "active": false,
@@ -120,31 +278,115 @@
     "hours_remaining": 0
   },
   "exploration": {
-    "active": true
+    "active": false
   },
   "party_xp": {
-    "honu-tortle-fighter": 116,
-    "bron-centaur-fighter": 116,
-    "raistlin-high-elf-wizard": 116,
-    "dain-mountain-dwarf-paladin": 116,
-    "ala-half-elf-rogue": 116,
-    "sweeney-human-cleric": 116
+    "honu-tortle-fighter": 1700,
+    "bron-centaur-fighter": 1700,
+    "raistlin-high-elf-wizard": 1700,
+    "dain-mountain-dwarf-paladin": 1700,
+    "ala-half-elf-rogue": 1700,
+    "sweeney-human-cleric": 1700
   },
   "spell_slots_used": {
-    "raistlin-high-elf-wizard": {"1": 0},
-    "sweeney-human-cleric": {"1": 0}
+    "raistlin-high-elf-wizard": {"1": 0, "2": 0},
+    "sweeney-human-cleric": {"1": 0, "2": 0},
+    "dain-mountain-dwarf-paladin": {"1": 0}
   },
   "ammo": {
-    "ala-half-elf-rogue": {"arrows": 20},
+    "ala-half-elf-rogue": {"arrows": 19},
     "sweeney-human-cleric": {"bolts": 20}
   },
   "npcs_met": [
     "elmar-barthen",
     "linene-graywind",
     "toblen-stonehill",
-    "sildar-hallwinter"
+    "sildar-hallwinter",
+    "nothic-crevasse",
+    "halia-thornton",
+    "sister-garaele",
+    "daran-edermath",
+    "qelline-alderleaf",
+    "reidoth-druid",
+    "venomfang",
+    "king-grol-bugbear",
+    "drow-agent-black-spider",
+    "gundren-rockseeker"
   ],
-  "session_notes": "Chapter 1 complete. Chapter 2 Act I: arrived in Phandalin. Delivered wagon to Barthen (60gp). Returned Lionshield supplies to Linene (50gp). Sold gear (71gp). Collected Sildar escort fee (50gp). Total treasury: 273gp 23sp 22cp. Stonehill Inn: learned about Redbrands — gang led by Glasstaff, hideout under Tresendar Manor, secret tunnel south of manor. Thel Dendrar murdered, family kidnapped. Iarno Albrek still missing. No magic shop in town. Party fully rested, all slots recovered.",
+  "session_notes": "Ch1: complete. Ch2: complete (Redbrands cleared, Glasstaff captured, Dendrars freed). Ch3 Act I (session 3): Phandalin quest pickup — Halia (200gp for letter copies, Zhentarim contact), Garaele (Agatha quest), Daran (Old Owl Well), Harbin (Wyvern Tor), Qelline (Reidoth at Thundertree). Sold loot 46gp. Sildar paid 200gp for Iarno. Route: Conyberry > Old Owl Well > Wyvern Tor > Thundertree > Cragmaw. Agatha: Sweeney presented comb, learned Bowgentle's spellbook traded to Tsernoth in Iriaebor (3 potions to collect on return). Old Owl Well: Turn Undead scattered 12 zombies, Bron crit KO'd Kost in surprise round (25 non-lethal). Zombies destroyed with radiant. Loot: Ring of Protection, pearl (100gp), 2 scrolls (Blindness/Deafness, Misty Step), Kost's spellbook+journal, 35gp. Kost recruited as NPC ally — contract: fights through Thundertree, can raise dead, gets spellbook back + Forge of Spells access. Kost intel: Cragmaw Castle NW in Neverwinter Wood, Venomfang at Thundertree, orcs at Wyvern Tor. Dragon plan: zombie screen + surprise alpha strike. 0 HP lost, Dain 2 spell slots used (smite), Dain+Sweeney Channel Divinity used. XP: 690/pc. Thundertree: killed Venomfang in 1 surprise round (0 damage taken). Bron Portent crit 46dmg, Ala Assassinate crit 32dmg, Dain Smite 30dmg, Honu Trip Attack prone, Raistlin Shatter 12dmg, Sweeney Guiding Bolt kill. Hoard: Dragonguard (Sweeney), Hew +1 battleaxe (Dain), Scroll of Lightning Bolt, 150gp+800sp+290gp gems/goblets. Reidoth: Cragmaw Castle NW Neverwinter Wood (King Grol bugbear + Black Spider agents, Grol/Nezznar distrust), Wave Echo Cave SE. Emerald necklace retrieved. XP 1233/pc. Cragmaw Castle: infiltrated via north breach, subdued Grol and drow agent in surprise round (Web restrain → Ala/Sweeney non-lethal). Rescued Gundren. Loot: Dagger +1, Potion of Hill Giant Strength, Potion of Invisibility, Drow spellbook, 350gp, jade statue 75gp, Wave Echo Cave map (critical). Prisoners: Grol and drow agent. Next: Wave Echo Cave (SE in hills) for Forge of Spells.",
+  "campaign_time_elapsed_hours": 48,
+  "nothic_deal": {
+    "status": "fulfilled",
+    "owed": [],
+    "delivered": ["one Redbrand body", "Raistlin read Detect Magic aloud"],
+    "received": ["3 fresh rats", "all 4 secrets + layout"],
+    "nothic_disposition": "friendly — welcome back anytime"
+  },
+  "hideout_intel": {
+    "layout": {
+      "left_path": ["pit_trap (hug left wall)", "common_room (3 ruffians)", "slave_pens (Mirna + 2 children)"],
+      "right_path": ["barracks (3 ruffians sleeping)", "glasstaff_quarters (Iarno Albrek, wizard, secret escape door behind bookcase)"]
+    },
+    "enemies_remaining": {
+      "common_room_ruffians": 0,
+      "barracks_ruffians": 0,
+      "glasstaff": 0,
+      "total": 0
+    },
+    "glasstaff_real_name": "Iarno Albrek",
+    "glasstaff_escape_route": "hidden door behind bookcase in study",
+    "black_spider_identity": "Nezznar, a drow",
+    "black_spider_letter": "on Glasstaff's desk"
+  },
+  "battle_plans": {
+    "venomfang_alpha_strike": {
+      "status": "finalized — level 3",
+      "target": "Young Green Dragon — Venomfang (AC 18, 136 HP, flees at 68)",
+      "strategy": "Zombie screen alpha strike. Surprise round — party hidden, zombies charge WITH party as body shield. Dragon can't act Round 1. Round 2 dragon breaths on zombie cluster, not PCs. Spread positioning, maximize damage.",
+      "pre_combat": [
+        "Long rest before engagement",
+        "Sweeney: Aid on Raistlin, Ala, Sweeney (+5 max HP each)",
+        "Dain: Bless on Bron, Honu, Dain (+1d4 attacks/saves)",
+        "Raistlin: fresh Portent dice",
+        "Ala scouts tower, party hides in spread ambush positions",
+        "Zombies line up as body shield — charge simultaneously with party",
+        "Scroll of Augury: weal/woe check before committing"
+      ],
+      "round_1_surprise": {
+        "Ala": "Assassinate auto-crit from hiding (2d8+4d6+4) — ~28 damage",
+        "Bron": "Charge + Action Surge (3 attacks, Bless, crit 19-20) — ~30 damage",
+        "Dain": "Vow of Enmity + Warhammer + Divine Smite + Hunter's Mark — ~22 damage",
+        "Honu": "Trip Attack + longsword (Bless) — ~12 damage, prone if STR save fails",
+        "Raistlin": "Shatter 2nd level (3d8) or hold Web for Round 2 — ~13 damage",
+        "Sweeney": "Guiding Bolt (4d6 + advantage to next attack) — ~14 damage",
+        "Kost": "Magic Missile (auto-hit 3d4+3) — ~10 damage",
+        "Zombies": "Slam attacks, cluster on dragon — ~8 damage"
+      },
+      "expected_damage_round_1": "~137 (expected) — exceeds 136 HP total, guarantees 68 HP flee threshold",
+      "round_2_if_needed": {
+        "dragon_action": "Breath weapon on zombie cluster (not PCs — spread formation)",
+        "party": "Full attacks + Spiritual Weapon (bonus action 1d8+4) — ~80 more damage",
+        "contingency_web": "If dragon tries to fly, Raistlin Web — restrained, speed 0, advantage on attacks",
+        "contingency_trip": "Honu Trip Attack — prone, can't fly, melee advantage"
+      },
+      "key_resources": [
+        "Portent (guarantee key hit or force dragon to fail save)",
+        "Scroll of Augury (weal/woe before engaging)",
+        "Scroll of Blindness/Deafness (CON save or blinded — backup)",
+        "Absorb Elements (Raistlin halves breath, +damage next attack)",
+        "Staff of Defense Shield charges (Raistlin AC 24 for 1 round)",
+        "Ring of Protection (Raistlin +1 AC and saves, attuned)",
+        "Aid (+5 HP to Raistlin 29, Ala 41, Sweeney 41)"
+      ],
+      "risks": [
+        "Stealth check — dragon passive Perception 14. Heavy armor PCs need Portent backup",
+        "Breath on PCs if dragon ignores zombies — 42 avg, Raistlin dies without Absorb Elements",
+        "Dragon flies out of melee — Web or Trip Attack needed to ground it",
+        "Frightful Presence DC 14 WIS — decide on the fly"
+      ],
+      "zombie_value": "Body shield + breath sponge. Dragon wastes its best attack on dead meat. 6-7 zombies absorb one full breath."
+    }
+  },
   "scaling": {
     "party_size": 6,
     "encounter_scaling": "+50% enemy count",

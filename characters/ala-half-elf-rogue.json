@@ -4,24 +4,25 @@
   "name": "Ala",
   "character_class": "rogue",
   "race": "half-elf",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
     "strength": 15,
-    "dexterity": 18,
+    "dexterity": 20,
     "constitution": 18,
     "intelligence": 15,
     "wisdom": 18,
     "charisma": 20
   },
-  "hp": 12,
-  "max_hp": 12,
-  "ac": 15,
+  "hp": 48,
+  "max_hp": 48,
+  "ac": 18,
+  "ac_notes": "Shadowscale Leathers: 14 + 2 (DEX capped) + 2 (magic) = 18. Resistance to fire/cold/poison (choose 1 at attunement).",
   "speed": 30,
   "hit_dice_detail": {
     "die_type": "d8",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -35,8 +36,8 @@
   "class_features": [
     {
       "name": "Sneak Attack",
-      "description": "Once per turn, deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll, or if another enemy of the target is within 5 feet of it. Must use a finesse or ranged weapon.",
-      "damage": "1d6",
+      "description": "Once per turn, deal an extra 2d6 damage to one creature you hit with an attack if you have advantage on the attack roll, or if another enemy of the target is within 5 feet of it. Must use a finesse or ranged weapon.",
+      "damage": "2d6",
       "uses": "once per turn",
       "recharge": "passive"
     },
@@ -50,6 +51,30 @@
       "name": "Expertise",
       "description": "Double proficiency bonus for Stealth and Persuasion checks.",
       "skills": ["stealth", "persuasion"],
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Cunning Action",
+      "description": "Use a bonus action to Dash, Disengage, or Hide on each of your turns in combat.",
+      "uses": "unlimited",
+      "recharge": "passive"
+    },
+    {
+      "name": "Roguish Archetype: Assassin",
+      "description": "You focus on stealth and delivering deadly strikes before your enemies can react.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Assassinate",
+      "description": "You have advantage on attack rolls against any creature that hasn't taken a turn in combat yet. In addition, any hit you score against a surprised creature is a critical hit.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Bonus Proficiency: Disguise Kit & Poisoner's Kit",
+      "description": "You gain proficiency with the disguise kit and the poisoner's kit.",
       "uses": "passive",
       "recharge": "passive"
     }
@@ -70,20 +95,24 @@
   ],
   "inventory": [
     {
-      "name": "Rapier",
+      "name": "Rapier +2",
       "quantity": 1,
       "weight": 2,
-      "damage": "1d8 piercing",
-      "properties": ["finesse"],
-      "gp_value": 25
+      "damage": "1d8+7 piercing",
+      "properties": ["finesse", "magic"],
+      "magic": true,
+      "gp_value": 0,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
-      "name": "Shortbow",
+      "name": "Shortbow +2",
       "quantity": 1,
       "weight": 2,
-      "damage": "1d6 piercing",
-      "properties": ["ammunition (80/320)", "two-handed"],
-      "gp_value": 25
+      "damage": "1d6+7 piercing",
+      "properties": ["ammunition (80/320)", "two-handed", "magic"],
+      "magic": true,
+      "gp_value": 0,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
       "name": "Arrows",
@@ -92,19 +121,34 @@
       "gp_value": 1
     },
     {
-      "name": "Dagger",
-      "quantity": 2,
-      "weight": 2,
+      "name": "Venom Fang +2",
+      "quantity": 1,
+      "weight": 1,
+      "damage": "1d4+2 piercing",
+      "properties": ["finesse", "light", "thrown (20/60)", "magic"],
+      "gp_value": 0,
+      "magic": true,
+      "special": "poison: CON save DC 15 or 2d10 poison damage, recharge 1/long rest",
+      "source": "Forge of Spells — upgraded from Wave Echo Cave loot"
+    },
+    {
+      "name": "Dagger (mundane)",
+      "quantity": 1,
+      "weight": 1,
       "damage": "1d4 piercing",
       "properties": ["finesse", "light", "thrown (20/60)"],
       "gp_value": 4
     },
     {
-      "name": "Leather Armor",
+      "name": "Shadowscale Leathers",
       "quantity": 1,
       "weight": 10,
-      "ac": "11 + DEX",
-      "gp_value": 10
+      "ac": "14 + DEX (max 2) + 2 (magic) = 18",
+      "properties": ["magic", "light", "flexible"],
+      "magic": true,
+      "resistance": "one damage type (fire, cold, or poison — choose at attunement)",
+      "gp_value": 0,
+      "source": "Wave Echo Cave — critical identification (nat 20)"
     },
     {
       "name": "Thieves' Tools",
@@ -117,6 +161,69 @@
       "quantity": 1,
       "weight": 44,
       "contents": ["backpack", "caltrops (bag of 20)", "string (10 ft)", "bell", "candles (5)", "crowbar", "hammer", "pitons (10)", "hooded lantern", "oil (2 flasks)", "rations (5 days)", "tinderbox", "waterskin", "rope (50 ft)"]
+    },
+    {
+      "name": "Cloak of Elvenkind",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "stealth_bonus": 5,
+      "special": "advantage on Stealth checks while stationary",
+      "gp_value": 0,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
+      "name": "Ring of Spell Storing",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "requires_attunement": true,
+      "attuned": true,
+      "rarity": "rare",
+      "gp_value": 3500,
+      "source": "Drow mage at Cragmaw Castle — identified by Raistlin (nat 20)",
+      "mechanics": {
+        "capacity": "5 spell levels total",
+        "current_load": [
+          {"spell": "Misty Step", "level": 2, "loaded_by": "Drow mage (pre-loaded)", "levels_used": 2}
+        ],
+        "levels_remaining": 3,
+        "casting": "Any spell stored can be cast by Ala using the ring — uses original caster's spell save DC and attack bonus, not Ala's"
+      },
+      "daily_loadout": {
+        "note": "Reload after every long rest",
+        "recommended_load": [
+          {"spell": "Invisibility", "level": 2, "loaded_by": "Raistlin", "effect": "Ala turns invisible before combat = guaranteed Assassinate auto-crits every fight"},
+          {"spell": "Bless", "level": 1, "loaded_by": "Dain or Sweeney", "effect": "+1d4 to all attack rolls and saving throws for 1 minute"}
+        ],
+        "total_levels_used": 3,
+        "levels_remaining": 2,
+        "alternate_load": "Swap Bless for Misty Step (2nd) = 4/5 levels — gives Ala emergency teleport escape on top of Invisibility"
+      },
+      "combat_usage": {
+        "pre_combat": "Activate Invisibility from ring (bonus action). Ala is invisible. Move into position unseen.",
+        "round_1": "Attack from invisibility = advantage. Assassinate = auto-crit on surprised target. Sneak Attack applies. Venom Fang poison bonus action.",
+        "emergency": "Misty Step from ring = teleport 30ft as bonus action. Escape grapples, reposition behind cover.",
+        "bless_timing": "Activate Bless at start of combat (bonus action) for +1d4 on all attacks that fight."
+      }
+    },
+    {
+      "name": "Potion of Invisibility",
+      "quantity": 1,
+      "weight": 0.5,
+      "magic": true,
+      "description": "Drink as bonus action. Invisible for 1 hour or until you attack/cast a spell. Perfect for Assassinate setup.",
+      "gp_value": 0,
+      "source": "Drow mage at Cragmaw Castle"
+    },
+    {
+      "name": "Boots of Speed",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "ability": "double movement speed 1/day for 10 minutes",
+      "gp_value": 0,
+      "source": "Forge of Spells — Wave Echo Cave"
     }
   ],
   "gold": 0,
@@ -138,11 +245,54 @@
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 12,
+      "hp_calculation": "8 (base d8) + 4 (CON mod)",
+      "features_gained": ["Sneak Attack", "Thieves' Cant", "Expertise"],
+      "choices": {
+        "expertise": ["stealth", "persuasion"]
+      },
+      "notes": "Character creation — 4d6 drop lowest"
+    },
+    {
+      "level": 2,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["Cunning Action"],
+      "choices": {},
+      "notes": "No choices at level 2 for rogue."
+    },
+    {
+      "level": 3,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["Assassinate", "Bonus Proficiency: Disguise Kit & Poisoner's Kit", "Sneak Attack 2d6"],
+      "choices": {
+        "roguish_archetype": "Assassin",
+        "confirmed": true
+      },
+      "notes": "Assassin for auto-crit on surprised targets. Party's surprise-focused playstyle maximizes this. Sneak Attack increases to 2d6."
+    },
+    {
+      "level": 4,
+      "hp_gained": 12,
+      "hp_calculation": "8 (max d8) + 4 (CON mod)",
+      "features_gained": ["Ability Score Improvement"],
+      "choices": {
+        "asi_selected": "Dexterity +2",
+        "dexterity_new": 20,
+        "confirmed": true
+      },
+      "notes": "Wave Echo Cave completion milestone. ASI: DEX 18→20 (maxes ability). Attack bonus +8, AC 18 with Shadowscale Leathers, initiative +5."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 3,
       "status": "active"
     }
   ]

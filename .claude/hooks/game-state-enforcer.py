@@ -70,12 +70,19 @@ def is_campaign_state_file(file_path: str) -> bool:
 
 
 def is_game_file(file_path: str) -> bool:
-    """Check if file is a game-related file (not .claude infrastructure)."""
+    """Check if file is a game-related file that should trigger periodic save enforcement.
+
+    Excludes character template files — editing characters/*.json during leveling
+    is a progression update, not a gameplay state change requiring campaign_state save.
+    """
     normalized = file_path.replace('\\', '/')
     if '/.claude/' in normalized:
         return False
-    # Game files: campaigns/, adventures/, characters/
-    return any(segment in normalized for segment in ['/campaigns/', '/adventures/', '/characters/'])
+    # Exclude character template files from periodic save gate
+    if '/characters/' in normalized:
+        return False
+    # Game files that require periodic saves: campaigns/, adventures/
+    return any(segment in normalized for segment in ['/campaigns/', '/adventures/'])
 
 
 def is_gameplay_active() -> bool:

@@ -4,24 +4,25 @@
   "name": "Dain",
   "character_class": "paladin",
   "race": "mountain-dwarf",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
-    "strength": 19,
+    "strength": 21,
     "dexterity": 14,
     "constitution": 18,
     "intelligence": 13,
     "wisdom": 15,
     "charisma": 17
   },
-  "hp": 14,
-  "max_hp": 14,
-  "ac": 18,
+  "hp": 56,
+  "max_hp": 56,
+  "ac": 19,
+  "ac_notes": "Chain Mail +1 (17) + Shield (2) = 19. Gloves of Stealth remove heavy armor stealth disadvantage. Stealth: +10 (DEX +2, Gloves +3, Cloak +5), advantage while stationary.",
   "speed": 25,
   "hit_dice_detail": {
     "die_type": "d10",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -33,17 +34,65 @@
   "class_features": [
     {
       "name": "Divine Sense",
-      "description": "As an action, detect the location of any celestial, fiend, or undead within 60 feet not behind total cover. Also detect consecrated or desecrated places/objects. Uses: 1 + CHA modifier (4) per long rest.",
+      "description": "As an action, detect the location of any celestial, fiend, or undead within 60 feet not behind total cover. Also detect consecrated or desecrated places/objects. Uses: 1 + CHA modifier (3) = 4 per long rest.",
       "uses": 4,
       "recharge": "long_rest"
     },
     {
       "name": "Lay on Hands",
-      "description": "Touch a creature to restore HP from a pool of 5 HP (paladin level x 5). Can also expend 5 HP from pool to cure one disease or neutralize one poison.",
-      "uses": 5,
+      "description": "Touch a creature to restore HP from a pool of 20 HP (paladin level x 5). Can also expend 5 HP from pool to cure one disease or neutralize one poison.",
+      "uses": 20,
       "recharge": "long_rest"
+    },
+    {
+      "name": "Fighting Style - Dueling",
+      "description": "When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Divine Smite",
+      "description": "When you hit with a melee weapon attack, expend one spell slot to deal 2d8 radiant damage in addition to weapon damage. +1d8 per slot level above 1st (max 5d8). +1d8 against undead or fiends.",
+      "uses": "per spell slot",
+      "recharge": "long_rest"
+    },
+    {
+      "name": "Spellcasting",
+      "description": "CHA-based divine spellcasting. Spell save DC 13, spell attack +5. Prepare CHA mod + half paladin level (5 total) spells per long rest.",
+      "spell_save_dc": 13,
+      "spell_attack": 5
+    },
+    {
+      "name": "Divine Health",
+      "description": "The divine magic flowing through you makes you immune to disease.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Sacred Oath: Vengeance",
+      "description": "Oath of Vengeance. Tenets: Fight the Greater Evil, No Mercy for the Wicked, By Any Means Necessary, Restitution.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Channel Divinity: Vow of Enmity",
+      "description": "As a bonus action, choose one creature within 10 feet. You gain advantage on attack rolls against that creature for 1 minute or until it drops to 0 HP. Once per short or long rest.",
+      "uses": 1,
+      "recharge": "short_rest"
+    },
+    {
+      "name": "Channel Divinity: Abjure Enemy",
+      "description": "As an action, choose one creature within 60 feet. It must make a WIS save (DC 13) or be frightened for 1 minute. Its speed is 0 while frightened. Fiends and undead have disadvantage on the save.",
+      "uses": 1,
+      "recharge": "short_rest"
     }
   ],
+  "spellcasting": {
+    "spell_slots": {"1": 3},
+    "spells_prepared_max": 5,
+    "prepared_spells": ["Bless", "Shield of Faith", "Cure Wounds", "Command", "Thunderous Smite"],
+    "oath_spells": ["Bane", "Hunter's Mark"]
+  },
   "racial_features": [
     {
       "name": "Darkvision",
@@ -91,12 +140,37 @@
       "gp_value": 10
     },
     {
-      "name": "Chain Mail",
+      "name": "Chain Mail +1",
       "quantity": 1,
       "weight": 55,
-      "ac": 16,
-      "properties": ["heavy"],
-      "gp_value": 75
+      "ac": "17 (16 base + 1 magic)",
+      "properties": ["heavy", "magic"],
+      "magic": true,
+      "gp_value": 0,
+      "forge_cost": 250,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
+      "name": "Gloves of Stealth",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "stealth_bonus": 3,
+      "special": "removes heavy armor stealth disadvantage",
+      "gp_value": 0,
+      "forge_cost": 250,
+      "source": "Forge of Spells — Wave Echo Cave"
+    },
+    {
+      "name": "Cloak of the Iron Veil",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "stealth_bonus": 5,
+      "special": "advantage on Stealth checks while stationary",
+      "gp_value": 0,
+      "forge_cost": 500,
+      "source": "Forge of Spells — Wave Echo Cave"
     },
     {
       "name": "Holy Symbol (Bronze Clasp on Shield)",
@@ -109,6 +183,31 @@
       "quantity": 1,
       "weight": 40,
       "contents": ["bedroll", "rope (50 ft)", "tinderbox", "torches (10)", "waterskin", "rations (10 days)"]
+    },
+    {
+      "name": "Blade of the Drow Lord",
+      "quantity": 1,
+      "weight": 3,
+      "damage": "1d8+2 slashing",
+      "properties": ["versatile (1d10+2)", "magic", "light-emitting"],
+      "magic": true,
+      "requires_attunement": false,
+      "special": "sheds dim light in 15-foot radius",
+      "attack_bonus": "+8 (STR +4, prof +2, magic +2)",
+      "damage_total": "1d8+8 with Dueling (magic +2, STR +4, Dueling +2)",
+      "gp_value": 0,
+      "rarity": "rare",
+      "source": "Wave Echo Cave — nat 20 identification"
+    },
+    {
+      "name": "Battleaxe \"Hew\"",
+      "quantity": 1,
+      "weight": 4,
+      "damage": "1d8+1 slashing",
+      "properties": ["versatile (1d10+1)", "magic", "max damage vs plant creatures and wooden objects"],
+      "gp_value": 0,
+      "magic": true,
+      "source": "Venomfang's hoard"
     }
   ],
   "gold": 0,
@@ -125,16 +224,93 @@
     "appearance": "A stocky Mountain Dwarf built like a granite block, standing 4'5\" but wider than most humans at the shoulders. His ruddy, weathered face is framed by a thick iron-gray beard braided with bronze clasps — each clasp earned, not bought. His eyes burn with quiet conviction, the look of someone who's already decided what's right before you've finished talking. He carries his warhammer like it's part of his arm and his shield like a sermon — both say the same thing: get behind me. His armor is practical, dented, well-maintained. He walks with the unhurried certainty of a dwarf who knows exactly where he's going, even when he doesn't.",
     "backstory": "Dain was a common miner in the deep halls of Khundrukar until the day a cave-in trapped thirty workers behind a wall of collapsed stone. While the foremen argued about cost and risk, Dain picked up his hammer and started digging. He dug for two days straight, broke through, and carried the injured out on his back. The hold called him a hero. He felt something else — a calling, a voice in the stone itself telling him he was meant for more. He took the oath of a Paladin not in a temple but in the mine shaft, kneeling in dust and blood. He protects the weak because he believes it's right. But in the quiet moments, when he watches leaders fumble and people suffer from bad decisions, a thought creeps in that he can't quite silence: they'd all be better off if someone strong just took charge. Someone like him."
   },
+  "combat_role_reference": {
+    "note": "Reference guide — not prescriptive. Use situationally.",
+    "primary_role": "Single-target burst damage + lock-down",
+    "secondary_role": "Off-healer / party stabilizer",
+    "opener": {
+      "vow_of_enmity": "Bonus action — advantage on ALL attacks vs one target for 1 min (1/short rest). Use every fight on the biggest threat.",
+      "thunderous_smite": "Bonus action (concentration) — next hit deals +2d6 thunder, STR save DC 13 or pushed 10ft + prone. Prone grants melee advantage to Bron/Honu follow-up.",
+      "attack": "Blade of the Drow Lord — +9 to hit (STR +5, prof +2, magic +2), 1d8+9 damage with Dueling."
+    },
+    "burst_combo": {
+      "setup": "Vow of Enmity (advantage) + attack + Divine Smite (spend 1st slot)",
+      "damage": "1d8+9 (weapon) + 2d8 radiant (smite) = avg 28 damage",
+      "vs_undead_fiends": "1d8+9 + 3d8 radiant = avg 32 damage",
+      "note": "With Vow of Enmity advantage, crit chance doubles — crit smite = 4d8 radiant extra"
+    },
+    "support_toolkit": {
+      "bless": "Concentration — +1d4 to attacks AND saves for 3 allies. Best sustained buff in party.",
+      "lay_on_hands": "20 HP pool, touch heal or cure poison/disease. Emergency stabilizer.",
+      "hunters_mark": "Oath spell — +1d6/hit on marked target. Concentration competes with Bless/Thunderous Smite.",
+      "divine_sense": "4 uses/long rest — detect fiends/undead/celestials within 60ft before engaging."
+    },
+    "stealth_package": {
+      "total_modifier": "+10 stealth (DEX +2, Gloves +3, Cloak +5)",
+      "advantage": "While stationary (Cloak of the Iron Veil)",
+      "heavy_armor_note": "Gloves of Stealth remove Chain Mail disadvantage — stealth fully functional"
+    },
+    "ac_breakdown": {
+      "base": 19,
+      "notes": "Chain Mail +1 (17) + Shield (2) = 19"
+    },
+    "concentration_priority": "Bless > Thunderous Smite > Hunter's Mark. Bless is the default — only swap off for a specific takedown combo."
+  },
   "creation_metadata": {
     "creation_method": "4d6_drop_lowest",
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 14,
+      "hp_calculation": "10 (base d10) + 4 (CON mod)",
+      "features_gained": ["Divine Sense", "Lay on Hands"],
+      "choices": {},
+      "notes": "Character creation — 4d6 drop lowest"
+    },
+    {
+      "level": 2,
+      "hp_gained": 14,
+      "hp_calculation": "10 (max d10) + 4 (CON mod)",
+      "features_gained": ["Fighting Style - Dueling", "Divine Smite", "Spellcasting"],
+      "choices": {
+        "fighting_style": "Dueling",
+        "prepared_spells": ["Bless", "Shield of Faith", "Cure Wounds", "Command"],
+        "confirmed": true
+      },
+      "notes": "Dueling for +2 damage with warhammer+shield. Bless over Thunderous Smite for party-wide buff. Divine Smite handles burst without concentration."
+    },
+    {
+      "level": 3,
+      "hp_gained": 14,
+      "hp_calculation": "10 (max d10) + 4 (CON mod)",
+      "features_gained": ["Divine Health", "Sacred Oath: Vengeance", "Vow of Enmity", "Abjure Enemy"],
+      "choices": {
+        "sacred_oath": "Vengeance",
+        "confirmed": true
+      },
+      "notes": "Vengeance for Vow of Enmity — advantage on all attacks vs one target (dragon killer). Oath spells: Bane, Hunter's Mark. Fits Dain's ruthless streak."
+    },
+    {
+      "level": 4,
+      "hp_gained": 14,
+      "hp_calculation": "10 (max d10) + 4 (CON mod)",
+      "features_gained": ["Ability Score Improvement"],
+      "choices": {
+        "asi_selected": "Strength +2",
+        "strength_new": 21,
+        "confirmed": true
+      },
+      "notes": "Wave Echo Cave completion milestone. ASI: STR 19→21 (+5 mod). Offense first — +1 to every attack roll and damage roll. Attack bonus with Blade: +9 to hit, 1d8+9 damage with Dueling. Blade of the Drow Lord found at Wave Echo Cave (nat 20 ID, rare +2 longsword)."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 4,
       "status": "active"
     }
   ]

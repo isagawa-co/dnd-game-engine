@@ -4,24 +4,25 @@
   "name": "Raistlin",
   "character_class": "wizard",
   "race": "high-elf",
-  "level": 1,
-  "xp": 0,
+  "level": 4,
+  "xp": 2033,
   "ability_scores": {
     "strength": 11,
     "dexterity": 18,
     "constitution": 15,
-    "intelligence": 17,
+    "intelligence": 19,
     "wisdom": 15,
     "charisma": 14
   },
-  "hp": 8,
-  "max_hp": 8,
-  "ac": 11,
+  "hp": 32,
+  "max_hp": 32,
+  "ac": 18,
+  "ac_notes": "10 + 4 (DEX) + 1 (Staff of Defense) + 1 (Ring of Protection) + 2 (Bracers of Defense) = 18. With Mage Armor: 21. Shield reaction: 26.",
   "speed": 30,
   "hit_dice_detail": {
     "die_type": "d6",
-    "number": 1,
-    "remaining": 1
+    "number": 4,
+    "remaining": 4
   },
   "proficiency_bonus": 2,
   "proficiencies": {
@@ -30,12 +31,31 @@
     "weapons": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows", "longswords", "shortswords", "shortbows", "longbows"],
     "armor": []
   },
+  "arcane_tradition": "School of Divination",
   "class_features": [
     {
       "name": "Arcane Recovery",
-      "description": "Once per day during a short rest, recover spell slots with combined level equal to half wizard level (rounded up). At level 1, recover one 1st-level slot.",
+      "description": "Once per day during a short rest, recover spell slots with combined level equal to half wizard level (rounded up). At level 3, recover up to one 2nd-level slot or one 1st-level slot.",
       "uses": 1,
       "recharge": "long_rest"
+    },
+    {
+      "name": "Divination Savant",
+      "description": "The gold and time to copy a divination spell into your spellbook is halved.",
+      "uses": "passive",
+      "recharge": "passive"
+    },
+    {
+      "name": "Portent",
+      "description": "After a long rest, roll 2d20 and record the numbers. You can replace any attack roll, saving throw, or ability check made by you or a creature you can see with one of these rolls. Must declare before the roll. Each portent roll can be used only once.",
+      "uses": 2,
+      "recharge": "long_rest"
+    },
+    {
+      "name": "War Caster",
+      "description": "Feat (Level 4 ASI). Advantage on CON saving throws to maintain concentration when taking damage. Can perform somatic components even with weapons/shield in hands. Can cast a spell as an opportunity attack reaction.",
+      "uses": "passive",
+      "recharge": "passive"
     }
   ],
   "racial_features": [
@@ -61,12 +81,29 @@
     }
   ],
   "spellcasting": {
-    "cantrips": ["Fire Bolt", "Mage Hand", "Prestidigitation", "Minor Illusion"],
-    "spellbook": ["Mage Armor", "Shield", "Magic Missile", "Thunderwave", "Detect Magic", "Find Familiar"],
-    "spell_slots": {
-      "1": 2
+    "cantrips": ["Fire Bolt", "Mage Hand", "Chill Touch", "Minor Illusion", "Toll the Dead"],
+    "cantrip_swap_note": "Prestidigitation swapped for Chill Touch at Level 4 — prevents healing on targets, stops boss/undead regeneration",
+    "spellbook": [
+      "Mage Armor", "Shield", "Magic Missile", "Thunderwave", "Detect Magic", "Find Familiar", "Faerie Fire",
+      "Identify", "Absorb Elements", "Web", "Shatter", "Misty Step", "Hold Person", "Scorching Ray", "Levitate",
+      "Darkness", "Invisibility",
+      "Counterspell",
+      "Cone of Cold", "Telekinesis",
+      "Feeblemind"
+    ],
+    "spellbook_notes": {
+      "castable_now_1st_2nd": ["Mage Armor", "Shield", "Magic Missile", "Thunderwave", "Detect Magic", "Find Familiar", "Faerie Fire", "Identify", "Absorb Elements", "Web", "Shatter", "Misty Step", "Hold Person", "Scorching Ray", "Levitate", "Darkness", "Invisibility"],
+      "available_at_level_5": ["Counterspell"],
+      "available_at_level_9": ["Cone of Cold", "Telekinesis"],
+      "available_at_level_15": ["Feeblemind"],
+      "tome_source": "Tome of the Drow Archlich — Wave Echo Cave. All 6 copied (750gp total). Tome sold for 5000gp."
     },
-    "spells_prepared_max": 4
+    "spell_slots": {
+      "1": 4,
+      "2": 2
+    },
+    "spells_prepared_max": 6,
+    "prepared_spells": ["Web", "Hold Person", "Invisibility", "Faerie Fire", "Absorb Elements", "Misty Step"]
   },
   "inventory": [
     {
@@ -94,6 +131,106 @@
       "quantity": 1,
       "weight": 40,
       "contents": ["backpack", "book of lore", "ink", "ink pen", "parchment (10 sheets)", "small knife", "little bag of sand"]
+    },
+    {
+      "name": "Staff of Defense",
+      "quantity": 1,
+      "weight": 4,
+      "damage": "1d6 bludgeoning",
+      "properties": ["versatile (1d8)", "requires attunement by a wizard"],
+      "gp_value": 0,
+      "magic": true,
+      "description": "While holding, +1 AC. 10 charges, regains 1d6+4 at dawn. Spend charges to cast: Mage Armor (1 charge) or Shield (2 charges). Crumbles if all charges spent.",
+      "charges": 10,
+      "charges_max": 10,
+      "source": "Glasstaff's quarters"
+    },
+    {
+      "name": "Scroll of Counterspell",
+      "quantity": 3,
+      "weight": 0,
+      "magic": true,
+      "spell": "Counterspell (3rd level)",
+      "description": "Reaction: counter a spell being cast within 60ft. Spells 3rd level or lower auto-cancelled. 4th level+: Arcana check DC 10 + spell level. If Raistlin's slot level exceeds spell level he knows, DC 13 Arcana or scroll fails.",
+      "forge_cost_each": 250,
+      "forge_cost_total": 750,
+      "source": "Forge of Spells — crafted by Raistlin (3 scrolls x 250gp = 750gp)",
+      "note": "Temporary until Level 5 when Raistlin can prepare Counterspell directly"
+    },
+    {
+      "name": "Wand of the Burning Phoenix",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "requires_attunement": true,
+      "attuned": false,
+      "attunement_note": "Requires attunement by spellcaster. All 3 slots currently full — swap Ring of Protection if desired.",
+      "charges": 7,
+      "charges_max": 7,
+      "recharge": "1d6+1 at dawn",
+      "spell": "Fireball (enhanced — 4d8 fire, DC 15 DEX save, 20ft radius)",
+      "special": "Hit terrain ignites — becomes difficult terrain (fire)",
+      "gp_value": 0,
+      "source": "Wave Echo Cave — nat 20 identification"
+    },
+    {
+      "name": "Pearl (spell component)",
+      "quantity": 1,
+      "weight": 0,
+      "gp_value": 100,
+      "description": "100gp pearl — material component for Identify spell. Consumed on cast.",
+      "source": "Old Owl Well — Kost's tent"
+    },
+    {
+      "name": "Scroll of Augury",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "spell": "Augury (2nd level divination)",
+      "description": "Cast Augury once. Receive weal/woe omen for a course of action within 30 minutes. No concentration.",
+      "gp_value": 150,
+      "source": "Glasstaff's lab"
+    },
+    {
+      "name": "Scroll of Blindness/Deafness",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "spell": "Blindness/Deafness (2nd level necromancy)",
+      "description": "Target creature CON save or blinded/deafened for 1 minute. Repeats save each turn.",
+      "gp_value": 150,
+      "source": "Old Owl Well — Kost's tent"
+    },
+    {
+      "name": "Ring (silver, runes) — UNIDENTIFIED",
+      "quantity": 1,
+      "weight": 0,
+      "magic": "unknown — pending Identify",
+      "description": "Silver ring with arcane runes. From Drow mage at Cragmaw Castle. Likely magical. Raistlin to cast Identify.",
+      "gp_value": "unknown",
+      "source": "Drow mage at Cragmaw Castle"
+    },
+    {
+      "name": "Ring of Protection",
+      "quantity": 1,
+      "weight": 0,
+      "magic": true,
+      "requires_attunement": true,
+      "attuned": true,
+      "description": "+1 bonus to AC and all saving throws while wearing this ring.",
+      "source": "Old Owl Well — extorted from Kost"
+    },
+    {
+      "name": "Bracers of Defense",
+      "quantity": 1,
+      "weight": 1,
+      "magic": true,
+      "requires_attunement": false,
+      "ac_bonus": 2,
+      "description": "+2 bonus to AC while not wearing armor or using a shield. No attunement required.",
+      "gp_value": 0,
+      "forge_cost": 750,
+      "source": "Forge of Spells — Wave Echo Cave (750gp, Raistlin halved cost)"
     }
   ],
   "gold": 0,
@@ -110,16 +247,97 @@
     "appearance": "A gaunt High Elf with obsidian-dark skin and sharp cheekbones that catch shadows like they were carved for it. His pale amber eyes are always half-narrowed, studying everything like it's a page he hasn't finished reading. Long white hair is pulled back and tied with a leather cord stained with ink. His robes hang loose on a thin frame — he forgets to eat when he's researching, which is always. His fingers are perpetually ink-stained, and he carries his spellbook the way a soldier carries a sword — never out of arm's reach. Between the albino Centaur and the dark-skinned Elf, the party turns heads in every tavern. When others speak, he listens with unsettling patience, weighing every word. When he speaks, it's deliberate and quiet — the kind of voice that makes people lean in, which is exactly what he wants.",
     "backstory": "Raistlin was born into a minor High Elf noble house but spent his childhood in the libraries, not the courts. His dark complexion marked him as unusual among his kin — whispered about but never explained. He didn't care. Books were better company than elves who judged by appearance. He devoured every tome in the family archive by his twentieth year, then moved to a cloistered scriptorium where he studied for decades. It wasn't enough. When he hit the limits of sanctioned knowledge, he found other sources — older, darker, with a price. He traded something he can't quite name for access to texts that shouldn't exist. Now he travels to do enough good to earn back what he lost, taking notes on every horror he encounters along the way. He doesn't run from demons. He indexes them."
   },
+  "combat_role_reference": {
+    "note": "Reference guide — not prescriptive. Use situationally.",
+    "primary_role": "Battlefield control + Portent manipulation",
+    "secondary_role": "Damage + party buff (Faerie Fire)",
+    "optimal_prepared_spells": ["Web", "Hold Person", "Faerie Fire", "Scorching Ray", "Absorb Elements", "Misty Step"],
+    "portent_priority": {
+      "high_roll": "Replace enemy saving throw vs Hold Person or Web — guarantee the spell lands",
+      "low_roll": "Replace enemy attack roll — turn a hit into a miss on Raistlin or an ally"
+    },
+    "key_synergies": [
+      "Portent + Hold Person = guaranteed paralyze on any humanoid",
+      "Faerie Fire + Bron/Dain = whole-party advantage on affected targets",
+      "Web + War Caster = concentration stays up even when Raistlin is hit",
+      "Archimedes Help action = advantage on Raistlin spell attacks"
+    ],
+    "ac_sequence": {
+      "base": 18,
+      "with_mage_armor": 21,
+      "with_shield_reaction": 26,
+      "staff_charges_per_day": "1 for Mage Armor (morning) + up to 4 Shield reactions"
+    }
+  },
   "creation_metadata": {
     "creation_method": "4d6_drop_lowest",
     "created_date": "2026-05-27",
     "source_campaign": "campaign-2026-05-27-002"
   },
+  "level_history": [
+    {
+      "level": 1,
+      "hp_gained": 8,
+      "hp_calculation": "6 (base d6) + 2 (CON mod)",
+      "spells_added": ["Mage Armor", "Shield", "Magic Missile", "Thunderwave", "Detect Magic", "Find Familiar"],
+      "cantrips_added": ["Fire Bolt", "Mage Hand", "Prestidigitation", "Minor Illusion"],
+      "features_gained": ["Arcane Recovery"],
+      "choices": {},
+      "notes": "Character creation — 4d6 drop lowest"
+    },
+    {
+      "level": 2,
+      "hp_gained": 8,
+      "hp_calculation": "6 (max d6) + 2 (CON mod)",
+      "spells_added": ["Identify", "Absorb Elements"],
+      "features_gained": ["Divination Savant", "Portent"],
+      "choices": {
+        "arcane_tradition": "School of Divination",
+        "confirmed": true
+      },
+      "notes": "Divination chosen for Portent synergy with party tactics. Identify (ritual, free item ID) and Absorb Elements (survival vs elemental damage)."
+    },
+    {
+      "level": 3,
+      "hp_gained": 8,
+      "hp_calculation": "6 (max d6) + 2 (CON mod)",
+      "spells_added": ["Web", "Shatter", "Misty Step"],
+      "features_gained": [],
+      "choices": {
+        "free_spells": ["Web", "Shatter"],
+        "copied_from_iarno": ["Misty Step"],
+        "copy_cost": "100gp",
+        "confirmed": true
+      },
+      "notes": "Web for battlefield control, Shatter for AoE damage. Misty Step copied from Iarno's spellbook (100gp) for emergency escape vs dragon."
+    },
+    {
+      "level": 4,
+      "hp_gained": 8,
+      "hp_calculation": "6 (max d6) + 2 (CON mod)",
+      "spells_added": ["Faerie Fire", "Hold Person", "Scorching Ray", "Levitate"],
+      "features_gained": ["War Caster (feat)"],
+      "choices": {
+        "asi_selected": "War Caster feat",
+        "confirmed": true,
+        "spells_copied": {
+          "faerie_fire": {"source": "Drow spellbook", "cost": 50, "hours": 2},
+          "hold_person": {"source": "Iarno's spellbook", "cost": 100, "hours": 4},
+          "scorching_ray": {"source": "Drow spellbook", "cost": 100, "hours": 4},
+          "levitate": {"source": "Drow spellbook", "cost": 100, "hours": 4},
+          "total_copy_cost": 350,
+          "spellbooks_sold": 200,
+          "net_cost": 150
+        }
+      },
+      "notes": "War Caster for concentration advantage — critical for maintaining Web/Mage Armor in combat. 4 new spells from Iarno and Drow spellbooks. Both spellbooks sold after copying (net cost 150gp)."
+    }
+  ],
   "campaign_history": [
     {
       "campaign_id": "campaign-2026-05-27-002",
       "joined_at_level": 1,
-      "current_level": 1,
+      "current_level": 4,
       "status": "active"
     }
   ]

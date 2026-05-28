@@ -88,6 +88,17 @@ Each combatant per turn receives:
 
 At each PC's turn, use the **action-prompt** skill (`.claude/skills/action-prompt/SKILL.md`) with `combat_turn` context. Personalize attacks with the PC's actual weapons, damage dice, and modifiers. Present bonus actions separately after the main action resolves.
 
+## Party Summary in Combat
+
+At the start of each combat round, show the **Party Toolkit** (from action-prompt skill) plus **combat-specific info** for each PC:
+- Current HP / max HP
+- AC
+- Weapons with damage and modifiers
+- Conditions (poisoned, prone, concentrating on X)
+- Spell slots remaining for casters
+
+This combines with the action-prompt's Party Toolkit (which covers non-obvious abilities and creative building blocks) to give the user full tactical visibility.
+
 ## Integration
 
 - **Scene Loop (007)** — Combat loop is invoked by scene loop when combat encounter triggers

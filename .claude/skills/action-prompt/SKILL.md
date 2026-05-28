@@ -97,6 +97,57 @@ Modify the defaults based on the actual game state:
 
 Use the mandatory format from above. Ensure hints are included for any action that will trigger a roll.
 
+## Environment Detail Rule (MANDATORY)
+
+Every scene description — combat, exploration, social, travel, any context — MUST include **3+ interactable elements** in the environment. These are things the party can use, manipulate, or exploit creatively.
+
+Examples:
+- Combat: "Oil barrels against the wall, a rickety wooden platform above, a narrow choke point between two pillars"
+- Exploration: "A rusted iron gate, thick vines covering the east wall, a stream running through a crack in the floor"
+- Social: "A crowded tavern with a bard performing, a back exit behind the bar, a drunk guard at the next table"
+- Travel: "Dense tree cover on both sides, a steep ravine to the left, an abandoned cart blocking half the road"
+
+**Why:** The user can't be creative if the scene is bare. Interactable elements are the raw material for improvised solutions — kicking barrels, collapsing platforms, using terrain for advantage. Describe the space like a real place, not an empty room with enemies in it.
+
+## Party Toolkit (MANDATORY — show at every decision point)
+
+Before presenting the action menu, show a concise summary of what the **entire party** can do. This gives the user the building blocks to combine into creative solutions.
+
+Format:
+
+```
+PARTY TOOLKIT:
+  Honu: Shell Defense (AC 21), Second Wind (1d10+2), Action Surge, STR grapple (+5), rope 50ft
+  Bron: Charge (bonus attack after 30ft), Equine Build (carry/push double), hooves (1d4+4), javelin x4
+  Raistlin: Portent (2 pre-rolled d20s), Find Familiar (scout), Mage Hand (30ft), Minor Illusion, Identify (ritual), Absorb Elements (reaction), 3 spell slots
+  Dain: Divine Sense (detect undead/fiends), Lay on Hands (10 HP), Divine Smite (2d8 on hit), shield
+  Ala: Thieves' Tools, caltrops, crowbar, rope 50ft, Cunning Action (Hide/Dash/Disengage), Darkvision 60ft, bell + string
+  Sweeney: Guidance (+1d4 any check), Spare the Dying, Healing Word (bonus action heal), Channel Divinity: Preserve Life (10 HP split), torches, rope 50ft
+```
+
+### Toolkit Rules
+- **Show at every decision point** — not just combat. Exploration, social, travel, challenges — everywhere the user chooses what to do
+- **Include non-obvious capabilities** — racial features (Darkvision, Shell Defense, Charge), tools (thieves' tools, caltrops, rope), utility spells (Mage Hand, Find Familiar, Guidance), inventory items (oil, crowbar, bell)
+- **Skip the obvious** — don't list basic weapon attacks here (those go in the action menu). Focus on the creative building blocks
+- **Mark spent resources** — if Portent dice are used, spell slots spent, Lay on Hands depleted, show it: `Portent (0 remaining)`, `spell slots: 1/3`
+- **Keep it concise** — one line per character, comma-separated capabilities. No descriptions, just names. The user can ask for details
+- **On request** — if the user asks "what can we do?" or "remind me of our abilities," show the full toolkit even outside a decision point
+
+## Creative Action Resolution
+
+When the user describes an improvised or creative action not covered by standard rules:
+
+1. **Never say no** — find a way to attempt it. If truly impossible, explain why in-character
+2. **Pick the closest skill** — map the action to the most relevant ability check (Athletics for physical feats, Arcana for magical improvisation, etc.)
+3. **Set DC by difficulty:**
+   - Trivial (auto-success): no roll needed
+   - Easy (DC 10): reasonable idea, minor risk
+   - Medium (DC 15): clever but uncertain
+   - Hard (DC 20): ambitious, requires skill
+   - Near-impossible (DC 25): desperate long shot
+4. **Grant advantage for clever combos** — if the user combines multiple party capabilities in a smart way (e.g., "Raistlin uses Mage Hand to pull the lever while Ala sneaks past with caltrops behind her"), give advantage on the key roll
+5. **Narrate the attempt cinematically** — creative actions deserve creative narration, whether they succeed or fail
+
 ## Handling User Response
 
 ### Numbered Selection
