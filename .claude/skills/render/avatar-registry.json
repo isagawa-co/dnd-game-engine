@@ -22,7 +22,7 @@
     "wolf": "🐺",
     "dire-wolf": "🐺",
     "giant-rat": "🐀",
-    "giant-spider": "🕷️",
+    "giant-spider": "🦂",
     "stirge": "🦇",
     "black-bear": "🐻",
     "owlbear": "🐻",
@@ -88,7 +88,7 @@
   "notes": [
     "Lookup order for an enemy token: monsters[monster_id] -> category_fallbacks[type] -> category_fallbacks.default.",
     "Party lookup: party[character_id] -> npc_default.",
-    "giant-spider (🕷️) is the ONE token that carries a variation selector because no full-width spider glyph exists; if a terminal renders it narrow, substitute 🦂. Everything else is clean full-width.",
+    "giant-spider uses 🦂 (scorpion) because no clean full-width spider glyph exists — the natural 🕷️ carries a variation selector (U+FE0F) that would skew columns. Every token in this registry is now clean full-width, no variation selectors.",
     "New adventure packs may add pack-specific monster_ids here or rely on category_fallbacks."
   ]
 }
