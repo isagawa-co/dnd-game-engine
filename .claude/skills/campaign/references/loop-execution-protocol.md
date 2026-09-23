@@ -46,11 +46,15 @@ Read the acting character's **sheet** for static numbers (max_hp, mods, dice, AC
 
 **On entry:** set this loop's `*.active = true`, clear all other loop flags, set `active_loop.loop` to this loop, `step = 1`. (Mutual exclusion — see campaign-loop-contract `dispatch_invariants`.)
 
-**Each iteration:** read `active_loop` → re-read SKILL step → read sheet+state (compute) + toolkit (display) → resolve via atomic-ops → write state → advance `active_loop.step`.
+**Each iteration:** read `active_loop` → re-read SKILL step → read sheet+state (compute) + toolkit (display) → **render step (spatial loops)** → resolve via atomic-ops → write state → advance `active_loop.step`.
 
 **On exit (Return Outcome):** complete the loop's mandatory return steps (e.g., combat 5a–5e: result → XP math → loot → SAVE → then narrate), clear this loop's `*.active`, set `active_loop.loop` to the parent context (usually `exploration` or the next dispatched loop), and return control up.
 
 ---
+
+## Map rendering (spatial loops)
+
+Spatial loops — **combat** (each round), **scene/exploration** (on entering a location), **travel** (on arrival / when an encounter triggers), and **positional challenge** — MUST call the **render skill** (`.claude/skills/render/SKILL.md`) as a render step to draw the current situation as an emoji grid ABOVE the action-prompt menu. Render also fires on demand ("show map"). It is a **modular helper, not a dispatch loop** — it has no `*.active` flag and never competes in mutual exclusion. Token positions live in `campaign_state.map`; avatars come from `render/avatar-registry.json`. Non-spatial beats (pure conversation, a shop) may skip it.
 
 ## Output formatting
 

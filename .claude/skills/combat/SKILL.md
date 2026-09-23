@@ -11,6 +11,7 @@ Run this loop per the canonical protocol — resume from `active_loop`, re-read 
 - **Display (derived):** `party_toolkit.json` turn-card + `battle-plans/` (signature moves, synergies).
 - **On entry:** set `combat.active = true`, clear all other loop flags, set `active_loop.loop = "combat"`, `round = 1`.
 - **On exit:** complete Return Outcome 5a–5e (result → XP math → loot → SAVE) THEN narrate; set `combat.active = false`, hand control back to scene.
+- **Render:** call the render skill (`.claude/skills/render/SKILL.md`) each round to draw the battle map (tokens from `campaign_state.map`) above the turn menu.
 - **Output format:** `.claude/skills/action-prompt/SKILL.md`.
 
 ## What

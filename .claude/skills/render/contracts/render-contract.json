@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Map Render Contract",
+  "description": "Schema + rules for the standalone render skill. The render skill draws an emoji grid of the CURRENT situation from campaign_state.map, the active act's location/positions, and the avatar-registry. It is DISPLAY-ONLY: it never resolves an encounter and never sets a loop flag. It is invoked as a render STEP by spatial loops (combat, scene/exploration, travel, positional challenge) and on the player's explicit request.",
+  "map_state_schema": {
+    "description": "Shape of the `map` object stored in campaign_state.json. Regenerated/updated by the render skill each render.",
+    "type": "object",
+    "properties": {
+      "frame": {
+        "type": "array",
+        "items": { "type": "integer" },
+        "minItems": 2,
+        "maxItems": 2,
+        "default": [20, 10],
+        "description": "[width, height] in tiles. Default 20x10. May shrink (e.g. [12,8] for a cramped corridor) or grow as needed; keep width so the row fits the terminal (~2 columns per emoji)."
+      },
+      "scene": { "type": "string", "description": "Short label of what is being rendered (e.g. 'Foundry chokepoint')." },
+      "terrain_key": {
+        "type": "string",
+        "description": "Environment archetype used to pick default tiles: 'dungeon' | 'cavern' | 'town' | 'forest' | 'road' | 'interior' | 'wilderness'. Derived from the act's location.environment."
+      },
+      "tokens": {
+        "type": "array",
+        "description": "Every creature/object on the grid.",
+        "items": {
+          "type": "object",
+          "required": ["id", "type", "x", "y"],
+          "properties": {
+            "id": { "type": "string", "description": "character_id for PCs, or a unique enemy id like 'orc-1'." },
+            "type": { "type": "string", "enum": ["pc", "npc", "enemy", "object"] },
+            "monster_id": { "type": "string", "description": "For enemies: the stat-block id used for avatar lookup." },
+            "category": { "type": "string", "description": "Fallback creature category if monster_id has no explicit avatar." },
+            "x": { "type": "integer", "description": "0-indexed column." },
+            "y": { "type": "integer", "description": "0-indexed row." },
+            "down": { "type": "boolean", "default": false, "description": "true if unconscious/dead (render dimmed or as 💀)." }
+          }
+        }
+      },
+      "features": {
+        "type": "array",
+        "description": "Static terrain features placed on the grid.",
+        "items": {
+          "type": "object",
+          "required": ["terrain", "x", "y"],
+          "properties": {
+            "terrain": { "type": "string", "description": "A key in avatar-registry.terrain (wall, water, door, loot, stairs_down, ...)." },
+            "x": { "type": "integer" },
+            "y": { "type": "integer" }
+          }
+        }
+      }
+    }
+  },
+  "generation_rules": {
+    "layout_source": "OPTION A (state-tracked, generated). On first render of a scene, generate the grid from the act file: use location.environment -> terrain_key for the base tile, walls around the border, and place enemy tokens from the encounter `position` strings (e.g. 'behind the arrow slits' -> near a wall edge; 'on the dais' -> far side). Place the party at the entrance. Persist the result to campaign_state.map.",
+    "movement": "On later renders, move tokens per what happened (combat movement, travel). Update campaign_state.map.tokens x/y — do NOT regenerate the whole layout unless the scene changes.",
+    "anti_drift": "Terrain and creatures come from the act file + tracked state — do not invent creatures. Enemy avatars resolve via avatar-registry (monster_id -> category fallback).",
+    "frame_default": "20x10 unless the scene is clearly smaller/larger; never exceed a width that wraps the terminal."
+  },
+  "render_rules": {
+    "one_emoji_per_tile": "Each tile renders exactly one full-width emoji: the topmost token if present, else its terrain feature, else the base floor tile. No variation-selector glyphs (they skew columns).",
+    "no_coordinates": "Do NOT print row numbers or column letters around the grid (per design).",
+    "legend": "Print a one-line legend under the grid listing only the tokens/terrain actually shown (party avatars + which enemies + key terrain).",
+    "placement": "The map renders ABOVE the action-prompt menu, as part of the same view.",
+    "output_format": "Follows .claude/skills/action-prompt/SKILL.md — narration, then the map, then the ACTIONS block."
+  },
+  "invocation": {
+    "not_a_dispatch_loop": "render has NO *.active flag and is NEVER dispatched by state-evaluation-contract. It does not compete in the one-flag mutual-exclusion invariant.",
+    "called_by": "Invoked as a render step by spatial loops (combat every round; scene/exploration on entering a location; travel on arrival/encounter; positional challenge) and on explicit player request ('show map' / 'map').",
+    "returns": "Nothing to resolve — it emits the drawn grid + legend and returns control to the calling loop."
+  }
+}

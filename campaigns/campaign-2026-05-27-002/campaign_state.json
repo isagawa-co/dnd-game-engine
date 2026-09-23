@@ -250,6 +250,24 @@
     "turn_actor": null,
     "resume_hint": "Travel loop step 1 — en route to Wyvern Tor (8h remaining). Re-read travel/SKILL.md, check for random encounter this leg, then present travel decision via action-prompt."
   },
+  "map": {
+    "frame": [20, 10],
+    "scene": "Triboar Trail — en route to Wyvern Tor",
+    "terrain_key": "road",
+    "tokens": [
+      {"id": "bron-centaur-fighter", "type": "pc", "x": 7, "y": 4},
+      {"id": "honu-tortle-fighter", "type": "pc", "x": 6, "y": 5},
+      {"id": "dain-mountain-dwarf-paladin", "type": "pc", "x": 6, "y": 4},
+      {"id": "ala-half-elf-rogue", "type": "pc", "x": 8, "y": 5},
+      {"id": "raistlin-high-elf-wizard", "type": "pc", "x": 5, "y": 5},
+      {"id": "sweeney-human-cleric", "type": "pc", "x": 5, "y": 4}
+    ],
+    "features": [
+      {"terrain": "tree", "x": 2, "y": 1}, {"terrain": "tree", "x": 4, "y": 1}, {"terrain": "tree", "x": 15, "y": 2},
+      {"terrain": "rock", "x": 17, "y": 5},
+      {"terrain": "tree", "x": 3, "y": 8}, {"terrain": "tree", "x": 12, "y": 8}, {"terrain": "tree", "x": 16, "y": 9}
+    ]
+  },
   "combat": {
     "active": false,
     "enemies": [],

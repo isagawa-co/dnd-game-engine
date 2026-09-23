@@ -86,8 +86,8 @@
     },
     "volatile_in_campaign_state": {
       "source": "campaigns/<id>/campaign_state.json",
-      "fields": "current_hp (map: character_id -> int), hit_dice_used (map: character_id -> int), spell_slots_used (map), ammo (map), conditions (map: character_id -> [condition]), party_xp, loot_collected.",
-      "writers": ["combat", "rest", "item-use", "challenge", "social", "travel", "merchant"]
+      "fields": "current_hp (map: character_id -> int), hit_dice_used (map: character_id -> int), spell_slots_used (map), ammo (map), conditions (map: character_id -> [condition]), party_xp, loot_collected, map (grid frame + token positions — see .claude/skills/render/contracts/render-contract.json, owned by the render skill).",
+      "writers": ["combat", "rest", "item-use", "challenge", "social", "travel", "merchant", "render"]
     },
     "rule": "Loops COMPUTE from the sheet (max_hp, mods, dice) + campaign_state (current values), and WRITE current_hp/hit_dice_used/conditions/slots/ammo ONLY to campaign_state. rest recovers by lowering hit_dice_used and raising current_hp toward max_hp — it does NOT edit the sheet. Only level-up and creation write the sheet."
   },

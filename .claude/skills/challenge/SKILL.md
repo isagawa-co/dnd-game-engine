@@ -17,6 +17,7 @@ Run this loop per the canonical protocol — resume from `active_loop`, re-read 
 - **Display (derived):** `party_toolkit.json` (who has the relevant skill/tool).
 - **On entry:** set `challenge.active = true`, clear all other loop flags, set `active_loop.loop = "challenge"`, `step = 1`.
 - **On exit:** save outcome (damage/conditions/flags), clear `challenge.active`, hand control back to scene.
+- **Render:** call the render skill (`.claude/skills/render/SKILL.md`) when the challenge is positional (chase, hazard field) to draw the map above the menu.
 - **Output format:** `.claude/skills/action-prompt/SKILL.md`.
 
 ## Vocabulary
