@@ -1,0 +1,47 @@
+{
+  "act_id": "ch5-act-I",
+  "chapter": 5,
+  "act": "I",
+  "title": "Icespire Hold",
+  "level_range": [6, 7],
+  "location": {
+    "name": "Icespire Hold",
+    "description": "A ruined dwarven fortress crowning the frozen summit of Icespire Peak — now the lair of the young white dragon Cryovain. Ice-sheathed ramparts, a collapsed keep open to the sky, and a frozen hoard mark the dragon's domain. The finale of the adventure.",
+    "environment": "dungeon, frozen mountaintop fortress, open to the sky, deadly cold"
+  },
+  "read_aloud": "The climb to Icespire Hold is brutal — thin air, screaming wind, and a killing cold. The old dwarven fortress crowns the summit, its walls sheathed in blue ice, its keep torn open to the sky. Frost-rimed bones litter the courtyard. And there, coiled atop a glittering reef of frozen treasure with steam hissing from its nostrils, waits Cryovain — the young white dragon whose shadow has hung over this whole land. Its head rises. The air turns to knives.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party enters the courtyard / disturbs the hoard",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "orc", "count": 4, "position": "cowed orc servitors sheltering in the ruins", "special": "Optional pre-fight or add — they serve the dragon out of terror and may flee or switch sides if Cryovain is clearly losing." },
+        { "monster_id": "young-white-dragon", "count": 1, "position": "atop the frozen hoard in the open keep — uses flight, Ice Walk, and the ramparts", "special": "Cryovain. Cold Breath (30-ft cone, DC 15, 10d8) recharges 5-6. Strafes from the air, lands to maul, uses altitude constantly. Can be SLAIN or DRIVEN OFF (flees below ~half HP if the fight is clearly lost) — driven off, it returns to menace the region later." }
+      ],
+      "tactics": "Cryovain opens from the air with Cold Breath on the clustered party, then strafes — landing only to maul an isolated target before taking off again. It uses Ice Walk on the icy ramparts and the open sky for the aerial advantage. The Hammer of the Dragon (Dragon Barrow) and Dragonguard (Woodland Manse) dramatically swing this fight. This is a DEADLY finale for a 6-PC party — ground the dragon, deny it the sky, and burst it down.",
+      "difficulty": "deadly",
+      "reward_xp": 3900,
+      "description": "The final battle with Cryovain, young white dragon of Icespire Peak."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "gold pieces", "quantity": 3000, "location": "Cryovain's frozen hoard" },
+    { "item": "dragonguard-breastplate", "quantity": 1, "location": "frozen in the hoard (if not already claimed at the Woodland Manse)" },
+    { "item": "spell-scroll", "quantity": 3, "location": "a frost-sealed dwarven case in the hoard, Investigation DC 12" },
+    { "item": "ring-of-protection", "quantity": 1, "location": "on a frozen adventurer's remains in the hoard" }
+  ],
+  "skill_checks": [
+    { "skill": "survival", "dc": 13, "success": "Endure the killing cold and thin air of the summit (avoid exhaustion/penalty during the climb and fight).", "failure": "Suffer a level of exhaustion or disadvantage from the cold.", "context": "Fighting at the frozen summit." },
+    { "skill": "athletics", "dc": 14, "success": "Scale the icy ramparts to reach Cryovain's altitude / deny it the high ground.", "failure": "Slip on the ice (Ice Walk gives the dragon the edge).", "context": "Denying the dragon the sky." }
+  ],
+  "transitions": {
+    "dragon_slain": "adventure-complete",
+    "dragon_driven_off": "ch1-act-I",
+    "victory": "adventure-complete",
+    "default": "adventure-complete"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): Cryovain (young white dragon, CR6) kept as-written with max HP (133) + 4 orc servitors as terrain/adds — for 6 high-power PCs this is a real but winnable finale. Do NOT inflate the dragon's to-hit/DC; use terrain (ramparts, open sky, cold) and its strafe tactics. The Hammer of the Dragon and Dragonguard are the intended equalizers — a party that skipped those will find this brutal. If Cryovain is driven off rather than slain, it returns later (transition back to hub); slaying it completes the adventure. 3+ interactables: icy ramparts (Ice Walk terrain / high ground), collapsed keep beams (drop on the dragon when grounded), the frozen hoard (footing hazard / loot)."
+}

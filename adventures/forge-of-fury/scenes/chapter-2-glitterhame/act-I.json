@@ -1,0 +1,45 @@
+{
+  "act_id": "ch2-act-I",
+  "chapter": 2,
+  "act": "I",
+  "title": "The Glitterhame",
+  "level_range": [3, 4],
+  "location": {
+    "name": "The Glitterhame Caverns",
+    "description": "A vast natural cavern network beneath the stronghold, its walls veined with silver that catches any light and glitters. Stalactites drip; fungus glows in patches; a troglodyte warren fouls the deeper galleries with its stench.",
+    "environment": "dungeon, natural caverns, damp, glittering mineral walls"
+  },
+  "read_aloud": "The stair spills into a cathedral of stone. Silver veins thread the walls, throwing back your torchlight in a thousand cold sparks — the Glitterhame. Water drips somewhere in the dark. Then the smell hits: a choking, reptilian musk. Something lives down here, and it has marked its territory.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party enters the central cavern or disturbs the fungus beds",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "troglodyte", "count": 6, "position": "hidden among stalagmites (Chameleon Skin — Stealth advantage)", "special": "Stench aura (DC 12 CON or poisoned). Ambush from concealment." },
+        { "monster_id": "stirge", "count": 4, "position": "roosting on the ceiling, drop when blood is spilled", "special": "Attach and drain (blood drain 1d4+3/turn once attached)." }
+      ],
+      "tactics": "Troglodytes ambush from concealment using their Stench to weaken the party, then swarm. Stirges drop from the ceiling once combat starts and latch onto whoever's bleeding. The trogs fight recklessly but a routed few flee toward the Black Lake shore (ch2-act-II) to warn their shaman.",
+      "difficulty": "hard",
+      "reward_xp": 400,
+      "description": "The troglodyte warren guards the way deeper. Glowing fungus provides dim light; some patches are shriekers that alert the shore encounter."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "silver ore", "quantity": 1, "location": "a rich silver vein — 50 gp of ore with an hour's mining, or note it for later", "requires": "mining tools or an hour" },
+    { "item": "gold pieces", "quantity": 35, "location": "troglodyte nest, amid the filth, Investigation DC 12" }
+  ],
+  "skill_checks": [
+    { "skill": "survival", "dc": 12, "success": "Read the tracks — count the troglodytes and find the concealed path to the lake shore, avoiding the shriekers.", "failure": "Blunder into a shrieker fungus (loud fungal wail alerts ch2-act-II).", "context": "Navigating the caverns." },
+    { "skill": "constitution", "dc": 12, "success": "Endure the troglodyte stench without penalty.", "failure": "Poisoned while within 5 ft of a troglodyte.", "context": "Fighting in the warren." }
+  ],
+  "transitions": {
+    "reach_the_lake_shore": "ch2-act-II",
+    "clear_the_warren": "ch2-act-II",
+    "retreat": "ch1-act-II",
+    "default": "ch2-act-II"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): troglodytes 6 (from ~4), plus 4 stirges. Emphasize the dungeon-crawl senses — stench, darkness, dripping water, shrieker fungus as an alarm mechanic. 3+ interactables: shrieker fungus (alarm), silver veins (mineable/reflective — light tricks), narrow flooded crevices (squeeze-through DC to flank). Deeper galleries lead to the Black Lake shore."
+}

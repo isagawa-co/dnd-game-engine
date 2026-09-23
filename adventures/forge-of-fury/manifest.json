@@ -1,0 +1,36 @@
+{
+  "pack_id": "forge-of-fury",
+  "name": "The Forge of Fury",
+  "version": "1.0.0",
+  "level_range": [3, 5],
+  "type": "dungeon-crawl",
+  "summary": "Khundrukar, the lost stronghold of the smith Durgeddin the Black. Four descending dungeon levels — the Mountain Door, the Glitterhame, the Foundry, and the Black Lake — culminating in the young black dragon Nightscale. Built for a 6-PC party (encounters pre-scaled +50%).",
+  "monsters": [
+    { "id": "orc", "name": "Orc" },
+    { "id": "half-ogre", "name": "Half-Ogre (Great Ulfe)" },
+    { "id": "wolf", "name": "Wolf (Orc War Dog)" },
+    { "id": "troglodyte", "name": "Troglodyte" },
+    { "id": "stirge", "name": "Stirge" },
+    { "id": "giant-rat", "name": "Giant Rat" },
+    { "id": "duergar", "name": "Duergar (Gray Dwarf)" },
+    { "id": "roper", "name": "Roper" },
+    { "id": "grimlock", "name": "Grimlock" },
+    { "id": "specter", "name": "Specter (Dwarven Ghost)" },
+    { "id": "skeleton", "name": "Skeleton" },
+    { "id": "young-black-dragon", "name": "Young Black Dragon (Nightscale)" }
+  ],
+  "spells": [],
+  "items": [
+    { "id": "nightfang", "name": "Nightfang (+2 short sword, Durgeddin masterwork — extra damage vs orcs/goblinoids)" },
+    { "id": "urgosh-of-the-forge", "name": "Dwarven Urgrosh +1 (Durgeddin masterwork)" },
+    { "id": "masterwork-warhammer", "name": "Warhammer +1 (Durgeddin masterwork)" },
+    { "id": "dwarven-plate", "name": "Dwarven Plate (heavy armor, +2 AC over plate)" },
+    { "id": "ring-of-protection", "name": "Ring of Protection" },
+    { "id": "potion-of-healing", "name": "Potion of Healing" },
+    { "id": "gauntlets-of-ogre-power", "name": "Gauntlets of Ogre Power (STR 19)" },
+    { "id": "boots-of-the-winterlands", "name": "Boots of the Winterlands" }
+  ],
+  "classes": [],
+  "races": [],
+  "conditions": []
+}

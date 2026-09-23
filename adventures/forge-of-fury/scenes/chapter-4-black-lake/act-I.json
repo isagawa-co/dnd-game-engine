@@ -1,0 +1,46 @@
+{
+  "act_id": "ch4-act-I",
+  "chapter": 4,
+  "act": "I",
+  "title": "Nightscale's Lair",
+  "level_range": [5, 5],
+  "location": {
+    "name": "The Lower Black Lake",
+    "description": "The deepest cavern of Khundrukar, where the underground lake pools into a vast flooded chamber. Acid-etched stone, half-submerged dwarven ruins, and a glittering hoard beneath the black water mark the lair of the young black dragon Nightscale, who slithered up from the Underdark and claimed the drowned heart of the stronghold.",
+    "environment": "dungeon, flooded cavern, dragon lair, deep dark water"
+  },
+  "read_aloud": "The final stair drowns into black water. Beyond, a immense flooded cavern stretches into the dark, its walls pitted and smoking where acid has eaten the stone. Half-sunk dwarven statues loom from the shallows. And there, coiled atop a reef of drowned treasure with the water sheeting off its oily black scales, waits the thing that has haunted this whole descent — Nightscale, the young black dragon. Its eyes open. The water begins to churn.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "young-black-dragon", "count": 1, "position": "atop the hoard-reef, Amphibious — uses the deep water to dive and reposition", "special": "Nightscale. Acid Breath (30-ft line, DC 14, 11d8) recharges 5-6. Dives underwater (blindsight 30 ft) to break line of sight and set up breath. Fights to the death for its hoard." },
+        { "monster_id": "stirge", "count": 6, "position": "roosting in the cavern ceiling, drawn to blood mid-fight", "special": "Optional adds — release on round 2 if the fight is going easily for a 6-PC party; otherwise omit." }
+      ],
+      "tactics": "Nightscale opens with Acid Breath on the clustered party, then dives. It surfaces to bite the biggest threat, then submerges again to recharge — using the deep water and darkness constantly. Fliers/ranged attackers deny it the water's safety. The half-sunk statues give cover from breath. This is a DEADLY finale for a 6-PC L5 party; the drowned terrain is the party's friend if used well.",
+      "difficulty": "deadly",
+      "reward_xp": 3200,
+      "description": "The boss of the Forge of Fury. Nightscale's hoard is the reward for the entire dungeon."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "gold pieces", "quantity": 2400, "location": "Nightscale's drowned hoard-reef (Investigation/diving to recover fully)" },
+    { "item": "boots-of-the-winterlands", "quantity": 1, "location": "a frozen adventurer's remains in the hoard (if not already found)" },
+    { "item": "spell-scroll", "quantity": 3, "location": "a sealed dwarven case in the hoard — 2nd/3rd level scrolls, Investigation DC 12" },
+    { "item": "dwarven-plate", "quantity": 1, "location": "Durgeddin's own masterwork plate, lost to the lake — the dungeon's capstone prize", "requires": "recover from the deep water (Athletics/swim)" }
+  ],
+  "skill_checks": [
+    { "skill": "athletics", "dc": 13, "success": "Swim/dive effectively in the flooded cavern to recover sunken hoard or reposition against the diving dragon.", "failure": "Struggle in the deep water — half movement, disadvantage vs the dragon's underwater attacks.", "context": "Fighting and looting in the flooded lair." },
+    { "skill": "nature", "dc": 13, "success": "Recall black dragon lore — acid immunity, amphibious ambush tactics — and coach the party's approach (advantage on the first save vs Acid Breath if acted on).", "failure": "No tactical insight.", "context": "Facing Nightscale." }
+  ],
+  "transitions": {
+    "dragon_slain": "adventure-complete",
+    "victory": "adventure-complete",
+    "retreat": "ch3-act-II",
+    "default": "adventure-complete"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): Nightscale (young black dragon, CR7) kept as-written — a deadly fight for 6 L5 PCs given their high-power items — with 6 optional stirge adds released only if the party is steamrolling. Do NOT inflate the dragon's numbers; use terrain (deep water, breath line, statue cover) and its dive-and-breath tactics to make it threatening. This is the finale — after victory, the pack is complete; the party surfaces with Durgeddin's legacy. 3+ interactables: half-sunk statues (breath cover), deep water (dragon's advantage / drowning risk / hidden hoard), acid-pitted ledges (crumble under weight — DEX save)."
+}

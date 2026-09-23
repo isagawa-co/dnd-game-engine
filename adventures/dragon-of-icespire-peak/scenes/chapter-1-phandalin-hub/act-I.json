@@ -1,0 +1,65 @@
+{
+  "act_id": "ch1-act-I",
+  "chapter": 1,
+  "act": "I",
+  "title": "Falcon's Quest Board",
+  "level_range": [1, 2],
+  "location": {
+    "name": "Phandalin — Falcon's Hunting Lodge",
+    "description": "The frontier town of Phandalin, now with a new fixture: Falcon the Hunter's lodge, where a quest board posts jobs from townsfolk too frightened to handle their own troubles. A white dragon has been seen circling Icespire Peak, and the whole region is on edge.",
+    "environment": "frontier town, daytime, tense"
+  },
+  "read_aloud": "Phandalin is much as you remember it — muddy streets, log buildings, the ring of the smithy — but a new tension hangs in the air. Townsfolk glance nervously at the sky. At Falcon's Hunting Lodge, a broad quest board bristles with jobs, and Falcon himself, a rangy retired adventurer, looks you over. 'You've the look of folk who can handle trouble,' he says. 'Good — because there's a DRAGON on the peak, and half the countryside needs saving.' As if on cue, a vast white shape wheels across the distant sky above Icespire, and every head in the street turns to watch it pass.",
+  "encounters": [
+    {
+      "type": "social",
+      "trigger": "player_action",
+      "description": "The quest board and Falcon's briefing. This is the hub — the party picks which jobs to pursue. Each posting maps to a later act. Cryovain's flyover establishes the looming threat without a fight.",
+      "enemies": []
+    }
+  ],
+  "npcs": [
+    {
+      "id": "falcon-the-hunter",
+      "name": "Falcon the Hunter",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Runs the quest board; pays out rewards for completed jobs",
+        "Warns that a young white dragon, Cryovain, has driven monsters down out of the peak",
+        "Suggests starting with the nearer jobs (Dwarven Excavation, Umbrage Hill, Gnomengarde)",
+        "Knows Icespire Hold is the dragon's lair but says it's suicide to go there unprepared"
+      ]
+    },
+    {
+      "id": "harbin-wester-doip",
+      "name": "Townmaster Harbin Wester",
+      "attitude": "neutral",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Cowardly townmaster; posts the higher-bounty jobs (Axeholm, Woodland Manse)",
+        "Will pay well to have the dragon problem simply 'go away'"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "potion-of-healing", "quantity": 3, "location": "Falcon advances the party supplies for taking the contract" }
+  ],
+  "skill_checks": [
+    { "skill": "insight", "dc": 12, "success": "Read Falcon as genuine — he truly wants the region saved, not just profit.", "failure": "He seems like just another job-broker.", "context": "Sizing up Falcon." }
+  ],
+  "transitions": {
+    "take_dwarven_excavation": "ch2-act-I",
+    "take_umbrage_hill": "ch2-act-II",
+    "take_gnomengarde": "ch2-act-III",
+    "take_butterskull_ranch": "ch3-act-I",
+    "take_loggers_camp": "ch3-act-II",
+    "take_mountains_toe": "ch3-act-III",
+    "take_axeholm": "ch4-act-I",
+    "take_dragon_barrow": "ch4-act-II",
+    "take_woodland_manse": "ch4-act-III",
+    "assault_icespire_hold": "ch5-act-I",
+    "default": "ch2-act-I"
+  },
+  "dm_notes": "SANDBOX HUB. Present the quest board via action-prompt as numbered jobs; the party's pick sets the transition. Return here between quests (each quest act transitions back to ch1-act-I unless the party chains onward). Gate the finale: discourage assaulting Icespire Hold (ch5) until the party is ~level 5-6 and ideally has the Hammer of the Dragon (Dragon Barrow) or Dragonguard. SCALING note applies to all combat acts (6 PCs, +50%). 3+ interactables: the quest board, the lodge's trophy wall (lore), the townsfolk (rumors)."
+}

@@ -1,0 +1,53 @@
+{
+  "act_id": "ch2-act-II",
+  "chapter": 2,
+  "act": "II",
+  "title": "Umbrage Hill",
+  "level_range": [1, 2],
+  "location": {
+    "name": "Umbrage Hill",
+    "description": "A lonely windmill atop a wind-scoured hill, home to the herbalist Adabra Gwynn. A manticore, driven down from Icespire by Cryovain, has decided the windmill would make a fine new lair — with Adabra as its first meal.",
+    "environment": "exposed hilltop, windmill, open sky"
+  },
+  "read_aloud": "The wind never stops on Umbrage Hill. A lone stone windmill turns against the grey sky — and something is circling it. A winged, lion-bodied beast with a face like a cruel man's rakes the air, loosing volleys of iron spikes from its lashing tail. Below, a woman's voice cries out from the barred windmill door: 'Help! It won't leave — it's been at me all morning!'",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "manticore", "count": 1, "position": "airborne, circling the windmill", "special": "Stays aloft, raining tail spikes (3/turn, range 100 ft). Only lands to bite a weakened target. Flees to Icespire if reduced below ~15 HP." }
+      ],
+      "tactics": "This is a flying skirmish on open ground — the manticore punishes parties with no ranged/reach answer. It kites at range, using the windmill and hill for line-of-sight breaks. Grounding it (net, Web, grapple on a landing, difficult flight conditions) is the key. Protect Adabra.",
+      "difficulty": "hard",
+      "reward_xp": 700,
+      "description": "A single dangerous flyer versus a party on open terrain. Adabra Gwynn is the protect-the-NPC objective."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "adabra-gwynn",
+      "name": "Adabra Gwynn",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Herbalist and midwife; rewards the party with potions of healing she brews",
+        "If saved, becomes a friendly supplier of healing potions for the campaign",
+        "Knows the surrounding wilds and can point the way to other quest sites"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "potion-of-healing", "quantity": 4, "location": "Adabra's gratitude (she brews them)" },
+    { "item": "gold pieces", "quantity": 50, "location": "Falcon's bounty for clearing Umbrage Hill" }
+  ],
+  "skill_checks": [
+    { "skill": "animal-handling", "dc": 15, "success": "Read the manticore's flight pattern to predict its dives (advantage to ready an attack against it).", "failure": "It stays unpredictable.", "context": "Fighting the airborne manticore." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): a single manticore is under-tuned for 6 PCs; give it max HP (68) and, if the party has strong ranged output, a second manticore mate arriving round 3 (mention circling shapes). Reward grounding tactics. Protect Adabra (~9 HP behind the door). 3+ interactables: turning windmill sails (cover/knock a flyer), exposed hill wind (ranged disadvantage in gusts), windmill roof (a perch to reach the manticore)."
+}

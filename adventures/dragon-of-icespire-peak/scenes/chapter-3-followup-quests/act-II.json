@@ -1,0 +1,54 @@
+{
+  "act_id": "ch3-act-II",
+  "chapter": 3,
+  "act": "II",
+  "title": "Loggers' Camp",
+  "level_range": [2, 3],
+  "location": {
+    "name": "The Loggers' Camp",
+    "description": "A timber camp at the forest edge where woodcutters have been vanishing. The culprits: ankhegs — burrowing acid-spitting predators driven up from below — that erupt from the ground to seize prey and drag it underground.",
+    "environment": "forest edge, logging camp, churned earth"
+  },
+  "read_aloud": "The loggers' camp is too quiet. Saws lie abandoned mid-cut; a felled trunk still rocks. The ground is churned and cratered, and a foreman crouches on a stacked woodpile, refusing to set foot on open earth. 'They come up from BELOW,' he hisses. 'Grabbed Toblin right off his feet and pulled him down into the dirt. Don't stand still!'",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party crosses the open, churned ground (or is detected via tremorsense)",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "ankheg", "count": 3, "position": "burrowed beneath the camp (tremorsense 60 ft), erupting under the party", "special": "Burst up, bite-and-grapple, then burrow away dragging victims. Spit acid (3d6 line) when nothing is grappled." }
+      ],
+      "tactics": "The ankhegs use their burrow speed and tremorsense to hit-and-retreat, dragging grappled PCs underground (rescue = kill the ankheg or Strength escape DC 13). Staying on the woodpiles/logs (not open earth) denies them ambush. A genuine terrain puzzle as much as a fight.",
+      "difficulty": "hard",
+      "reward_xp": 600,
+      "description": "Burrowing ankheg ambush at the logging camp."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "logger-foreman",
+      "name": "Logger Foreman",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Terrified survivor; pays the party and the camp reopens once the ankhegs are cleared",
+        "Can point out where the ground is most disturbed (ankheg tunnels)"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "gold pieces", "quantity": 80, "location": "Falcon's bounty + the camp's pooled pay" },
+    { "item": "potion-of-healing", "quantity": 1, "location": "a swallowed logger's pack, recovered from an ankheg tunnel" }
+  ],
+  "skill_checks": [
+    { "skill": "perception", "dc": 13, "success": "Read the churned earth to predict where an ankheg will surface (advantage on the first attack against it / avoid being grabbed).", "failure": "Get ambushed from below.", "context": "Navigating the camp's open ground." },
+    { "skill": "survival", "dc": 12, "success": "Find and collapse an ankheg tunnel to trap or expose one.", "failure": "No progress.", "context": "Hunting the burrowers." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 3 ankhegs (from ~2). Emphasize the terrain-puzzle nature — open ground is deadly, high ground/logs are safe. Reward Perception to pre-empt eruptions. 3+ interactables: stacked woodpiles (safe high ground), a running sawmill blade (hazard to shove an ankheg into), churned tunnel-mouths (collapse to trap)."
+}

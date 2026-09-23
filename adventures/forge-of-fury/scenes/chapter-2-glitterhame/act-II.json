@@ -1,0 +1,44 @@
+{
+  "act_id": "ch2-act-II",
+  "chapter": 2,
+  "act": "II",
+  "title": "The Black Lake Shore",
+  "level_range": [4, 4],
+  "location": {
+    "name": "Shore of the Black Lake",
+    "description": "The caverns open onto the edge of a vast, still, black underground lake whose far shore is lost in darkness. A troglodyte shaman holds court here amid bone-fetishes. Somewhere out in that black water, something very large sometimes stirs.",
+    "environment": "dungeon, underground lakeshore, oppressive dark"
+  },
+  "read_aloud": "The passage opens onto a shore of black sand at the edge of an underground lake so still and dark it looks like a hole in the world. You cannot see the far side. Bone-fetishes and a crude altar mark this as sacred ground to the troglodytes — and their shaman turns from the water to hiss at you. Far out on the lake, something breaks the surface with a slow, heavy ripple, then is gone.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "troglodyte", "count": 5, "position": "arrayed before the altar", "special": "One is the shaman — treat as a troglodyte with 20 HP that can cast a 1/day fear-hiss (DC 12 WIS or frightened 1 round)." },
+        { "monster_id": "giant-rat", "count": 6, "position": "swarming from crevices when blood is spilled", "special": "Pack tactics." }
+      ],
+      "tactics": "The shaman fights defensively near the altar, sending trogs and rats forward. IMPORTANT: loud combat or fire on the shore has a chance to draw Nightscale (see dm_notes) — the dragon may surface for one Acid Breath pass before submerging, a warning of what waits in Chapter 4. The shore is the last safe place to long-rest before the Foundry.",
+      "difficulty": "medium",
+      "reward_xp": 450,
+      "description": "The troglodyte holy site. A hidden dwarven stair behind the altar descends to the Foundry (Chapter 3)."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "boots-of-the-winterlands", "quantity": 1, "location": "an old dwarven corpse half-buried in the black sand, clutching them", "requires": "Investigation DC 12" },
+    { "item": "gold pieces", "quantity": 60, "location": "the shaman's fetish-hoard at the altar" }
+  ],
+  "skill_checks": [
+    { "skill": "investigation", "dc": 13, "success": "Find the concealed dwarven stair behind the altar leading down to the Foundry.", "failure": "The way deeper stays hidden — the party must search longer (risking a wandering encounter).", "context": "Finding the route to Chapter 3." },
+    { "skill": "arcana", "dc": 14, "success": "Recognize the ripples and acid-etched stones as signs of a black dragon lairing in the lake — forewarned for Chapter 4.", "failure": "The signs go unread.", "context": "Examining the lake and shore." }
+  ],
+  "transitions": {
+    "descend_to_foundry": "ch3-act-I",
+    "find_hidden_stair": "ch3-act-I",
+    "long_rest": "ch2-act-II",
+    "default": "ch3-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 5 trogs incl. shaman + 6 giant rats. FORESHADOW Nightscale here — if the party is loud/uses fire, have the dragon surface for a single Acid Breath (30-ft line, DC 14, do NOT let it fully engage yet) then dive; this telegraphs the Chapter 4 boss and rewards a stealthy approach. This shore is the sanctioned long-rest point. 3+ interactables: the altar (topple for cover/relics), black sand (difficult terrain), the lake edge (creatures can be shoved in — deep water)."
+}

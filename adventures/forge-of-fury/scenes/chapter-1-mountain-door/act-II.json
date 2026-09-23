@@ -1,0 +1,45 @@
+{
+  "act_id": "ch1-act-II",
+  "chapter": 1,
+  "act": "II",
+  "title": "The Great Hall",
+  "level_range": [3, 4],
+  "location": {
+    "name": "The Orc Great Hall",
+    "description": "A pillared dwarven hall the orcs have fouled into a warren — cook-fires, bone piles, and hide bedding between soot-stained columns. Trophy skulls hang from the pillars. A raised dais at the far end holds the warband's chief.",
+    "environment": "dungeon, large pillared hall, smoky"
+  },
+  "read_aloud": "Beyond the gatehouse the passage opens into a great pillared hall, thick with smoke and the reek of unwashed bodies. Cook-fires gutter between soot-blackened columns; gnawed bones litter the floor. On a raised dais at the far end squats a hulking brute a head taller than the rest — Great Ulfe, the orc chief — flanked by snarling war dogs. A dozen eyes turn toward you at once.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "half-ogre", "count": 1, "position": "on the dais", "special": "Great Ulfe — warband chief. While he lives, orcs use Aggressive to close every turn. If he falls, surviving orcs must make a morale check (DC 12 WIS) or flee." },
+        { "monster_id": "orc", "count": 6, "position": "spread through the pillars", "special": "Use pillars for cover; charge with Aggressive." },
+        { "monster_id": "wolf", "count": 3, "position": "chained near the dais, released turn 1", "special": "Orc war dogs — pack tactics." }
+      ],
+      "tactics": "Ulfe charges the sturdiest-looking PC. Orcs use pillars for cover and flank; war dogs harry spellcasters and archers. The cook-fires can be kicked/exploded (see interactables). If the ch1-act-I alarm was raised, add 2 orcs.",
+      "difficulty": "hard",
+      "reward_xp": 1100,
+      "description": "The warband's heart. Winning here clears the upper level and opens the stair down to the Glitterhame."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "gold pieces", "quantity": 120, "location": "Great Ulfe's trophy chest behind the dais" },
+    { "item": "potion-of-healing", "quantity": 2, "location": "looted gear in the bone piles, Investigation DC 12" },
+    { "item": "gauntlets-of-ogre-power", "quantity": 1, "location": "Great Ulfe wears them — he uses them (STR 19 already reflected). A prize for a martial PC.", "requires": "defeat Great Ulfe" }
+  ],
+  "skill_checks": [
+    { "skill": "intimidation", "dc": 15, "success": "After Ulfe falls, cow the survivors into fleeing without further fighting.", "failure": "They fight to the last.", "context": "Breaking orc morale once the chief is down." }
+  ],
+  "transitions": {
+    "descend_to_glitterhame": "ch2-act-I",
+    "clear_the_hall": "ch2-act-I",
+    "retreat_to_surface": "ch1-act-I",
+    "default": "ch2-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): orcs 6 (from ~4), war dogs 3, Ulfe as boss. This is the level-1 climax. 3+ interactables: cook-fires (kick into a square — DEX save DC12 or 1d6 fire + prone), loose pillars (Athletics to topple onto a line), the chained war dogs (can be kept chained with a lock/hold). A stone stair behind the dais descends to the Glitterhame (Chapter 2)."
+}

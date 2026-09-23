@@ -81,8 +81,13 @@ def is_game_file(file_path: str) -> bool:
     # Exclude character template files from periodic save gate
     if '/characters/' in normalized:
         return False
-    # Game files that require periodic saves: campaigns/, adventures/
-    return any(segment in normalized for segment in ['/campaigns/', '/adventures/'])
+    # Exclude adventures/ — static authored content (adventure packs), not volatile
+    # gameplay state. Authoring an adventure pack is not a play action; act-file READS
+    # during play are still governed by the scene-transition gate (Gate 1).
+    if '/adventures/' in normalized:
+        return False
+    # Only campaigns/ holds volatile per-session state requiring periodic campaign_state saves.
+    return '/campaigns/' in normalized
 
 
 def is_gameplay_active() -> bool:

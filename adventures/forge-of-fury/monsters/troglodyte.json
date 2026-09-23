@@ -1,0 +1,59 @@
+{
+  "id": "troglodyte",
+  "name": "Troglodyte",
+  "size_type": "medium",
+  "alignment": "chaotic evil",
+  "armor_class": 11,
+  "hp": {
+    "maximum": 13,
+    "hit_dice": "2d8+4"
+  },
+  "ability_scores": {
+    "strength": 14,
+    "dexterity": 10,
+    "constitution": 14,
+    "intelligence": 6,
+    "wisdom": 10,
+    "charisma": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": ["Troglodyte"],
+  "challenge": "1/4",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Stench",
+      "description": "Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a DC 12 Constitution saving throw or be poisoned until the start of its next turn. On a successful save, the creature is immune to the stench of all troglodytes for 1 hour."
+    },
+    {
+      "name": "Chameleon Skin",
+      "description": "The troglodyte has advantage on Dexterity (Stealth) checks made to hide."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The troglodyte makes three attacks: one with its bite and two with its claws."
+    },
+    {
+      "name": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d4+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Claw",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (2d4 + 2) slashing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "2d4+2",
+      "damage_type": "slashing"
+    }
+  ],
+  "tactics": "Troglodytes swarm in the dark caverns, relying on Stench to weaken the party and Chameleon Skin to ambush. They fight recklessly but flee if badly outnumbered."
+}

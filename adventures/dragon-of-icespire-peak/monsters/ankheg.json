@@ -1,0 +1,49 @@
+{
+  "id": "ankheg",
+  "name": "Ankheg",
+  "size_type": "large",
+  "alignment": "unaligned",
+  "armor_class": 14,
+  "hp": {
+    "maximum": 39,
+    "hit_dice": "6d10+6"
+  },
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 1,
+    "wisdom": 13,
+    "charisma": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "challenge": "2",
+  "speed": {
+    "walk": 30,
+    "burrow": 10
+  },
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so.",
+      "attack_bonus": 5,
+      "damage_roll": "2d6+3",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Acid Spray (Recharge 6)",
+      "description": "The ankheg spits acid in a 30-foot line that is 5 feet wide, provided it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much on a success.",
+      "damage_roll": "3d6",
+      "damage_type": "acid",
+      "save_dc": 13,
+      "save_ability": "dexterity"
+    }
+  ],
+  "tactics": "Ankhegs burrow beneath their prey (tremorsense) and erupt to grab and drag victims underground. At the Loggers' Camp they ambush from the tree-line and tunnels. Use their burrow to hit-and-retreat; they spit acid at clustered foes when nothing is grappled."
+}

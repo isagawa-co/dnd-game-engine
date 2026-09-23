@@ -1,0 +1,67 @@
+{
+  "act_id": "ch2-act-I",
+  "chapter": 2,
+  "act": "I",
+  "title": "The Dwarven Excavation",
+  "level_range": [1, 2],
+  "location": {
+    "name": "Dwarven Excavation",
+    "description": "A hillside dig where the dwarves Dazlyn Grayshard and Norbus Ironrune have unearthed the entrance to an ancient ruin. Kobolds boiled out of the deep passages when Cryovain's arrival stirred the mountain, and now besiege the dwarves.",
+    "environment": "hillside dig, ruined tunnels, daytime"
+  },
+  "read_aloud": "A scar of fresh earth marks the hillside where two dwarves have been digging into an ancient ruin. But the dig is a battlefield: crude kobold barricades, scattered tools, and one of the dwarves crouched behind a boulder, crossbow in hand. 'Took ye long enough!' she barks. 'The little scaled devils came up out of the deep tunnels — and there's somethin' worse oozing down there behind 'em!'",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "kobold", "count": 9, "position": "behind barricades and in the tunnel mouths", "special": "Pack Tactics; set simple pit/rockfall traps. Flee if over half are dropped." }
+      ],
+      "tactics": "Kobolds swarm with Pack Tactics from cover and behind traps, focusing whoever chases them into the tunnels. They break and flee when their numbers thin.",
+      "difficulty": "medium",
+      "reward_xp": 225,
+      "description": "The kobold siege of the dig."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party pursues into the deeper ruin",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "ochre-jelly", "count": 1, "position": "oozing through the lower ruin", "special": "Splits when hit with slashing/lightning (spawn 2 Medium jellies at half HP). Corrosive." },
+        { "monster_id": "kobold", "count": 3, "position": "cornered survivors", "special": "Optional — the last of the swarm." }
+      ],
+      "tactics": "The ochre jelly is the 'something worse' — it splits under slashing damage, so fire/bludgeoning/force is best. It's slow; a party can disengage. Guards a small cache in the ruin.",
+      "difficulty": "medium",
+      "reward_xp": 450,
+      "description": "The deep-ruin threat behind the kobolds."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "dazlyn-grayshard",
+      "name": "Dazlyn Grayshard",
+      "attitude": "friendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Grateful dwarf excavator; pays the party for clearing the dig",
+        "Lets the party keep any ancient relics found in the ruin",
+        "Has heard the dragon Cryovain lairs in the old dwarven fortress of Icespire Hold"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "spell-scroll", "quantity": 1, "location": "an ancient dwarven reliquary in the deep ruin", "requires": "Investigation DC 12" },
+    { "item": "gold pieces", "quantity": 90, "location": "kobold hoard + Dazlyn's reward" }
+  ],
+  "skill_checks": [
+    { "skill": "history", "dc": 13, "success": "Recognize the ruin as pre-Phandalin dwarven work tied to Khundrukar and the old mines.", "failure": "The carvings remain a mystery.", "context": "Examining the ancient ruin." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): kobolds 9 (from ~6), ochre jelly + 3 kobolds in the deep. Teach the jelly's split mechanic — punish mindless slashing. Returns to the hub. 3+ interactables: kobold barricades (cover/kick over), unstable tunnel props (Athletics to collapse on pursuers), the dig's mine cart."
+}

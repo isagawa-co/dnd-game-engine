@@ -1,0 +1,57 @@
+{
+  "id": "grick",
+  "name": "Grick",
+  "size_type": "medium",
+  "alignment": "neutral",
+  "armor_class": 14,
+  "hp": {
+    "maximum": 27,
+    "hit_dice": "6d8"
+  },
+  "ability_scores": {
+    "strength": 14,
+    "dexterity": 14,
+    "constitution": 11,
+    "intelligence": 3,
+    "wisdom": 14,
+    "charisma": 5
+  },
+  "damage_resistances": ["bludgeoning, piercing, and slashing from nonmagical attacks"],
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "challenge": "2",
+  "speed": {
+    "walk": 30,
+    "climb": 30
+  },
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "description": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The grick makes one attack with its tentacles. If that attack hits, the grick can make one beak attack against the same target."
+    },
+    {
+      "name": "Tentacles",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "2d6+2",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Beak",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+4",
+      "damage_type": "piercing"
+    }
+  ],
+  "tactics": "The grick coils on walls and ceilings (Stone Camouflage, climb 30), dropping on prey and dragging it away with its tentacles. It lurks in the ruined tunnels near the Woodland Manse. Nonmagical weapons are resisted — a nasty surprise for under-equipped parties."
+}

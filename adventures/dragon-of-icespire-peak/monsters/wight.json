@@ -1,0 +1,71 @@
+{
+  "id": "wight",
+  "name": "Wight",
+  "size_type": "medium",
+  "alignment": "neutral evil",
+  "armor_class": 14,
+  "hp": {
+    "maximum": 45,
+    "hit_dice": "6d8+18"
+  },
+  "ability_scores": {
+    "strength": 15,
+    "dexterity": 14,
+    "constitution": 16,
+    "intelligence": 10,
+    "wisdom": 13,
+    "charisma": 15
+  },
+  "skills": {
+    "perception": 3,
+    "stealth": 4
+  },
+  "damage_resistances": ["necrotic", "bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered"],
+  "damage_immunities": ["poison"],
+  "condition_immunities": ["exhaustion", "poisoned"],
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": ["the languages it knew in life"],
+  "challenge": "3",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Sunlight Sensitivity",
+      "description": "While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "description": "The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack."
+    },
+    {
+      "name": "Life Drain",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain by this attack rises 24 hours later as a zombie under the wight's control.",
+      "attack_bonus": 4,
+      "damage_roll": "1d6+2",
+      "damage_type": "necrotic",
+      "save_dc": 13,
+      "save_ability": "constitution"
+    },
+    {
+      "name": "Longsword",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) if used with two hands.",
+      "attack_bonus": 4,
+      "damage_roll": "1d8+2",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Longbow",
+      "description": "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d8+2",
+      "damage_type": "piercing"
+    }
+  ],
+  "tactics": "The wight commands the undead of Axeholm, drawing on Life Drain to weaken and raise foes. It fights from the front of its skeleton and ghoul retainers, retreating from sunlight. Silvered/magic weapons are needed to hit it reliably."
+}

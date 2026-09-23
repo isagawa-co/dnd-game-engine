@@ -1,0 +1,62 @@
+{
+  "act_id": "ch4-act-I",
+  "chapter": 4,
+  "act": "I",
+  "title": "Axeholm",
+  "level_range": [4, 5],
+  "location": {
+    "name": "Axeholm",
+    "description": "A ruined dwarven fortress dug into the hills, sealed for centuries. Behind its great bronze doors lies a haunted warren of halls and flooded chambers, ruled by a wight who commands the restless dead of the dwarves who died here. A pure dungeon crawl.",
+    "environment": "dungeon, ruined dwarven fortress, flooded halls, undead"
+  },
+  "read_aloud": "Great bronze doors, green with age, stand ajar in the hillside — Axeholm, a dwarven hold lost to some ancient calamity. Cold air breathes out of the dark, carrying the smell of stagnant water and old death. Your torchlight falls on dwarven carvings defaced by claw marks, and somewhere deep inside, something drags a blade slowly across stone.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party enters the great hall / disturbs the crypts",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "skeleton", "count": 8, "position": "rising from alcoves along the great hall", "special": "The wight's front line." },
+        { "monster_id": "ghoul", "count": 4, "position": "boiling out of the flooded lower chambers", "special": "Paralyzing claws (DC 10 CON) — a paralyzed PC is auto-crit fodder." }
+      ],
+      "tactics": "Skeletons hold the line while ghouls flank through the water to paralyze and isolate. Bludgeoning breaks skeletons; keep the party out of deep water where ghouls lurk. This is the softening wave before the wight.",
+      "difficulty": "hard",
+      "reward_xp": 800,
+      "description": "The undead garrison of Axeholm's upper halls."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party reaches the wight's throne chamber",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "wight", "count": 1, "position": "on a dwarven throne", "special": "Commander. Life Drain reduces max HP and raises the slain as zombies. Needs magic/silvered weapons to hit reliably. Flees deeper if reduced low, dragging the fight out." },
+        { "monster_id": "specter", "count": 3, "position": "phasing through the throne-room walls", "special": "Incorporeal; Life Drain; ignore nonmagical weapons." }
+      ],
+      "tactics": "The wight fights from the throne with specter support, using Life Drain and its undead. Magic damage is near-mandatory (specters/wight resist/ignore nonmagical). A water-lever trap can flood the room (see traps) — a double-edged tool.",
+      "difficulty": "deadly",
+      "reward_xp": 1200,
+      "description": "The wight lord of Axeholm and its specter guard — the dungeon boss."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "ring-of-protection", "quantity": 1, "location": "the wight's throne, on a mummified dwarven hand" },
+    { "item": "gold pieces", "quantity": 350, "location": "Axeholm's sealed treasury (Investigation DC 14 for the vault door)" },
+    { "item": "spell-scroll", "quantity": 2, "location": "a drowned dwarven library, 2nd/3rd level" }
+  ],
+  "skill_checks": [
+    { "skill": "religion", "dc": 13, "success": "Identify the undead and their weaknesses (radiant, magic weapons, sunlight sensitivity) before engaging.", "failure": "Fight them blind.", "context": "Entering Axeholm." }
+  ],
+  "traps": [
+    { "name": "Flood Lever", "trigger_description": "An ancient dwarven mechanism can flood the lower halls — used by the party to drown enemies or by careless PCs to drown themselves.", "dc": 13, "damage": "drowning risk; sweeps Medium creatures 20 ft", "effect": "Floods a chamber over 2 rounds — deep water (ghoul territory).", "detection": "Perception DC 12 (dwarven runes on the lever)", "disarm": "Intelligence (History) DC 13 to operate safely" }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "long_rest": "ch4-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 8 skeletons + 4 ghouls wave, then wight + 3 specters. This is the most dungeon-crawl act of DoIP — lean into exploration, undead dread, and the magic-weapon requirement. Warn parties without magic damage. 3+ interactables: the flood lever (tactical flooding), defaced dwarven statues (cover/topple), deep water (ghoul ambush / drowning). Reward reaching the sealed treasury."
+}

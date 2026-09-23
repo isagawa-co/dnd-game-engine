@@ -1,0 +1,55 @@
+{
+  "id": "kobold",
+  "name": "Kobold",
+  "size_type": "small",
+  "alignment": "lawful evil",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 5,
+    "hit_dice": "2d6-2"
+  },
+  "ability_scores": {
+    "strength": 7,
+    "dexterity": 15,
+    "constitution": 9,
+    "intelligence": 8,
+    "wisdom": 7,
+    "charisma": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": ["Common", "Draconic"],
+  "challenge": "1/8",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Sunlight Sensitivity",
+      "description": "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+    },
+    {
+      "name": "Pack Tactics",
+      "description": "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d4+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Sling",
+      "description": "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d4+2",
+      "damage_type": "bludgeoning"
+    }
+  ],
+  "tactics": "Kobolds rely on Pack Tactics and traps, swarming with numbers and fleeing when the swarm breaks. They set snares and pit traps in the Dwarven Excavation. Dangerous in a pack, trivial alone."
+}

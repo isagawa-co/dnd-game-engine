@@ -1,0 +1,46 @@
+{
+  "act_id": "ch3-act-II",
+  "chapter": 3,
+  "act": "II",
+  "title": "The Vault of the Fallen",
+  "level_range": [4, 5],
+  "location": {
+    "name": "Durgeddin's Vault",
+    "description": "The sealed vault where Durgeddin's finest blades were hidden before Khundrukar fell — and where his kin made their last stand. Grimlocks have crept up from the deep dark to nest here, and the vengeful ghosts of the slain dwarves still walk, unable to rest until their masterwork weapons are reclaimed by worthy hands.",
+    "environment": "dungeon, sealed dwarven vault, haunted, pitch dark"
+  },
+  "read_aloud": "Behind a great stone door, scored with the marks of a desperate last defense, lies the vault. Dwarven blades — dark, beautiful, and cruel — rest in racks along the walls, untouched by rust. But the air is wrong: cold, heavy, grieving. Pale shapes drift between the weapon racks, and from the black cracks in the floor come things with no eyes, sniffing toward the sound of your breathing.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "grimlock", "count": 6, "position": "climbing up from floor cracks, hunting by sound (blindsight — darkness/blindness doesn't stop them)", "special": "Stone Camouflage ambush; immune to blinded; can't be foiled by darkness spells." },
+        { "monster_id": "specter", "count": 3, "position": "drifting through the walls among the weapon racks", "special": "Life Drain reduces max HP; incorporeal (nonmagical weapons ineffective). Durgeddin's kin — they cease attacking anyone who takes up a masterwork blade with respect (see skill check)." }
+      ],
+      "tactics": "Grimlocks swarm and flank, unhindered by darkness. The specters phase through walls to drain life. KEY: the ghosts are Durgeddin's kin — a PC who reclaims a masterwork blade and vows to wield it against orc-kind (Persuasion/Religion DC 14) causes the specters to stop attacking and fade to rest, ending their part of the fight. Otherwise fight them as undead (magical weapons/damage only).",
+      "difficulty": "hard",
+      "reward_xp": 1050,
+      "description": "The haunted climax of the Foundry level. The vault holds Durgeddin's legendary blades — the reward for the whole descent."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "nightfang", "quantity": 1, "location": "the central rack — Durgeddin's masterwork (+2 short sword, bonus damage vs orcs & goblinoids)", "requires": "clear or calm the vault" },
+    { "item": "urgosh-of-the-forge", "quantity": 1, "location": "weapon rack — Dwarven Urgrosh +1" },
+    { "item": "ring-of-protection", "quantity": 1, "location": "on the skeletal hand of Durgeddin's steward, Investigation DC 13" },
+    { "item": "gold pieces", "quantity": 300, "location": "the vault's true strongbox, behind a false wall (Investigation DC 15)" }
+  ],
+  "skill_checks": [
+    { "skill": "religion", "dc": 14, "success": "Speak the proper dwarven rites (or vow to wield Durgeddin's blades against orc-kind) — the specters cease hostilities and fade to their rest, ending the ghost threat.", "failure": "The ghosts fight on as hostile undead.", "context": "Calming Durgeddin's kin." },
+    { "skill": "investigation", "dc": 15, "success": "Find the false wall concealing the true strongbox and the stair down to the Black Lake.", "failure": "The way to Chapter 4 stays hidden until found.", "context": "Searching the vault." }
+  ],
+  "transitions": {
+    "descend_to_black_lake": "ch4-act-I",
+    "reclaim_the_blades": "ch4-act-I",
+    "long_rest": "ch3-act-II",
+    "default": "ch4-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 6 grimlocks + 3 specters. Two ways to resolve the ghosts (fight as undead, or the Religion/vow route) — reward roleplay. Grimlocks punish parties that rely on darkness/blindness. This is the emotional heart of the dungeon: Durgeddin's legacy. 3+ interactables: weapon racks (grab a magic blade mid-fight to hurt specters/make the vow), floor cracks (grimlock spawn points — can be blocked), the false wall. Stair down leads to Nightscale."
+}

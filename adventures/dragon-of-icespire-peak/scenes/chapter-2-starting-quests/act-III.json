@@ -1,0 +1,75 @@
+{
+  "act_id": "ch2-act-III",
+  "chapter": 2,
+  "act": "III",
+  "title": "Gnomengarde",
+  "level_range": [1, 2],
+  "location": {
+    "name": "Gnomengarde",
+    "description": "A rock gnome warren built into a cliff beside a waterfall, ruled jointly by two gnome kings. One king, Gnerkli, has been driven mad by a whispering magic item — and a mimic has crept into the warren's treasury, wearing the shape of a chest.",
+    "environment": "gnome warren, cliffside tunnels, whimsical machinery"
+  },
+  "read_aloud": "Gnomengarde clings to a cliff beside a silver waterfall, its tunnels alive with clockwork whimsy — chiming doors, self-stirring pots, tiny mechanical birds. But something is wrong. The gnomes whisper of their king Gnerkli, who has locked himself away and raves at a voice only he can hear. And in the treasury, a fat wooden chest sits where the gnomes swear no chest used to be. Three jellyfish-like creatures drift down a side tunnel, and a voice speaks gently inside your mind: 'Beware. Two dangers here, little warm-bloods. The mad king... and the thing that is not a chest.'",
+  "encounters": [
+    {
+      "type": "social",
+      "trigger": "player_action",
+      "description": "The mad king Gnerkli. He clutches a whispering magic wand and won't be reasoned with easily. Resolve via persuasion, trickery, or (last resort) subduing him — NOT killing. The flumphs telepathically aid the party with warnings and lore.",
+      "enemies": [],
+      "difficulty": "medium",
+      "reward_xp": 150
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "a PC opens or touches the 'chest' in the treasury",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "mimic", "count": 1, "position": "disguised as a treasure chest (False Appearance)", "special": "Adhesive — grapples the first hand that touches it (escape DC 13), then bites. Cannot pursue (speed 15)." }
+      ],
+      "tactics": "The mimic is a gotcha: it adheres and grapples the greedy PC, biting for acid while allies scramble to free them. It can't chase — a ranged party can whittle it safely. Perception/Investigation vs its Stealth spots the too-new chest first.",
+      "difficulty": "medium",
+      "reward_xp": 450,
+      "description": "The treasury mimic."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "king-gnerkli",
+      "name": "King Gnerkli",
+      "attitude": "unfriendly",
+      "role": "quest_giver",
+      "dialog_hooks": [
+        "Mad rock gnome king clutching a whispering magic wand",
+        "Can be calmed (Persuasion/Insight), tricked, or subdued — the gnomes beg you not to kill him",
+        "Cured/subdued, he rewards the party with gnomish devices and a Wand of Magic Detection"
+      ]
+    },
+    {
+      "id": "gnomengarde-flumphs",
+      "name": "The Flumphs of Gnomengarde",
+      "attitude": "friendly",
+      "role": "ally",
+      "dialog_hooks": [
+        "Peaceful telepathic drifters who warn the party about the mimic and the mad king",
+        "Provide lore about Cryovain and the region via telepathy",
+        "Never hostile unless attacked"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "wand-of-magic-detection", "quantity": 1, "location": "reward from the grateful gnomes if Gnerkli is saved" },
+    { "item": "gnomengarde-grenade", "quantity": 3, "location": "the gnomish armory" },
+    { "item": "gold pieces", "quantity": 70, "location": "the treasury (once the mimic is dealt with)" }
+  ],
+  "skill_checks": [
+    { "skill": "persuasion", "dc": 14, "success": "Talk Gnerkli down / separate him from the whispering wand without violence.", "failure": "He raves and flees deeper, or the gnomes turn wary.", "context": "Handling the mad king." },
+    { "skill": "investigation", "dc": 13, "success": "Spot the mimic — the 'chest' that is too new, faintly breathing.", "failure": "Someone touches it (mimic surprise).", "context": "Examining the treasury." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): mimic gets max HP (58); add a second 'chest' mimic if the party is strong. Mostly SOCIAL + a gotcha — a change of pace. Flumphs are ALLIES (telepathy), not enemies. Do not let the party murder Gnerkli — the reward hinges on saving him. 3+ interactables: whimsical clockwork (distractions/tools), the waterfall (escape/wash off mimic acid), the whispering wand (a cursed temptation)."
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cultist",
+  "name": "Dragon Cultist",
+  "size_type": "medium",
+  "alignment": "neutral evil",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 9,
+    "hit_dice": "2d8"
+  },
+  "ability_scores": {
+    "strength": 11,
+    "dexterity": 12,
+    "constitution": 10,
+    "intelligence": 10,
+    "wisdom": 11,
+    "charisma": 10
+  },
+  "skills": {
+    "deception": 2,
+    "religion": 2
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": ["Common", "Draconic"],
+  "challenge": "1/8",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "description": "The cultist has advantage on saving throws against being charmed or frightened."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) slashing damage.",
+      "attack_bonus": 3,
+      "damage_roll": "1d6+1",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Light Crossbow",
+      "description": "Ranged Weapon Attack: +3 to hit, range 80/320 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
+      "attack_bonus": 3,
+      "damage_roll": "1d8+1",
+      "damage_type": "piercing"
+    }
+  ],
+  "tactics": "Dragon cultists (found at the Woodland Manse and among Cryovain's would-be worshippers) fight in numbers and flee when their leader falls. Fanatical but weak — dangerous only as a mob or with a stronger ally."
+}

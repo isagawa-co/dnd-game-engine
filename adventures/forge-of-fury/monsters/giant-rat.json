@@ -1,0 +1,47 @@
+{
+  "id": "giant-rat",
+  "name": "Giant Rat",
+  "size_type": "small",
+  "alignment": "unaligned",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 7,
+    "hit_dice": "2d6"
+  },
+  "ability_scores": {
+    "strength": 7,
+    "dexterity": 15,
+    "constitution": 11,
+    "intelligence": 2,
+    "wisdom": 10,
+    "charisma": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "challenge": "1/8",
+  "speed": {
+    "walk": 30
+  },
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "description": "The rat has advantage on Wisdom (Perception) checks that rely on smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "description": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+      "attack_bonus": 4,
+      "damage_roll": "1d4+2",
+      "damage_type": "piercing"
+    }
+  ]
+}

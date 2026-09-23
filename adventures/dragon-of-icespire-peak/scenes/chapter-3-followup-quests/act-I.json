@@ -1,0 +1,53 @@
+{
+  "act_id": "ch3-act-I",
+  "chapter": 3,
+  "act": "I",
+  "title": "Butterskull Ranch",
+  "level_range": [2, 3],
+  "location": {
+    "name": "Butterskull Ranch",
+    "description": "A homestead and dairy ranch on the plains, its farmhouse smashed and its owners the Anchorite family missing. A band of orcs, pushed out of the hills by Cryovain, has occupied the ranch and is butchering the livestock.",
+    "environment": "farmstead, plains, daytime"
+  },
+  "read_aloud": "Smoke rises from Butterskull Ranch — not from a chimney, but from a smashed farmhouse. Orcs lounge in the yard amid slaughtered cattle, and a great brute of one bellows orders. From the root cellar comes a muffled thumping: someone is trapped down there, alive.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "orc", "count": 6, "position": "spread across the yard and farmhouse", "special": "Aggressive; use the buildings for cover." },
+        { "monster_id": "ogre", "count": 1, "position": "by the barn — the orcs' muscle", "special": "Boss of the band. If it falls, surviving orcs may rout (DC 12 WIS)." }
+      ],
+      "tactics": "Orcs charge (Aggressive); the ogre smashes through cover to reach the party. Rescuing the Anchorites (locked in the root cellar) is a secondary objective — orcs may threaten them if losing. Kicking over the smoldering farmhouse timbers or spooking the remaining cattle are usable tricks.",
+      "difficulty": "hard",
+      "reward_xp": 800,
+      "description": "Orc raiders occupying the ranch, with the Anchorite family held in the cellar."
+    }
+  ],
+  "npcs": [
+    {
+      "id": "anchorite-family",
+      "name": "The Anchorite Family",
+      "attitude": "friendly",
+      "role": "captive",
+      "dialog_hooks": [
+        "Farmers locked in the root cellar; freed, they reward the party and rebuild",
+        "Grateful — offer the party free lodging and dairy goods, and word travels (reputation)"
+      ]
+    }
+  ],
+  "loot": [
+    { "item": "gold pieces", "quantity": 100, "location": "orc loot pile + Falcon's bounty" },
+    { "item": "potion-of-healing", "quantity": 2, "location": "the Anchorites' cellar stores, offered in thanks" }
+  ],
+  "skill_checks": [
+    { "skill": "athletics", "dc": 12, "success": "Force the barred cellar door quickly to free the Anchorites mid-fight.", "failure": "The door holds; the family stays trapped until the fight ends.", "context": "Rescuing the captives." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 6 orcs + 1 ogre (from ~4 orcs). Straightforward brawl with a rescue objective. 3+ interactables: smoldering farmhouse timbers (fire hazard/cover collapse), panicked cattle (stampede lane — Animal Handling to direct), the cellar door (rescue)."
+}

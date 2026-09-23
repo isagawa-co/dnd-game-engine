@@ -1,0 +1,49 @@
+{
+  "act_id": "ch1-act-I",
+  "chapter": 1,
+  "act": "I",
+  "title": "The Mountain Door",
+  "level_range": [3, 4],
+  "location": {
+    "name": "The Gatehouse of Khundrukar",
+    "description": "A fortified doorway set into a cliff beside a plunging waterfall, high in the Stone Tooth mountain. Worn dwarven steps climb to a stone landing before an iron-bound door flanked by arrow slits. Moss, spray, and centuries of neglect cover everything.",
+    "environment": "dungeon, mountain cliff, damp stone"
+  },
+  "read_aloud": "The trail ends at a roaring waterfall that spills from a cleft in the mountainside. Behind the curtain of spray, a set of worn stone steps climbs to a landing — and a great iron-bound door set into the living rock. Two narrow arrow slits flank it at eye height. This is the Mountain Door of Khundrukar, sealed since Durgeddin the Black and his kin were slaughtered here generations ago. Somewhere below, orcs have made it their den.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party approaches the landing or is spotted through the arrow slits",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "orc", "count": 4, "position": "behind the arrow slits and the door, firing javelins", "special": "Sentries. One will try to flee down to warn the Great Hall (ch1-act-II) if a fight goes badly." }
+      ],
+      "tactics": "The orcs use the arrow slits for cover (half cover, +2 AC/DEX) and throw javelins, refusing to open the door until forced. If the party breaches, they fall back toward the Great Hall. One sentry attempts to flee and raise the alarm — if it escapes, the Great Hall encounter loses surprise and adds 2 orcs.",
+      "difficulty": "medium",
+      "reward_xp": 400,
+      "description": "The orc watch guards the only easy way in. There is also a chimney/murder-hole above the landing the orcs may drop rocks through."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "javelins", "quantity": 8, "location": "the orc sentries" },
+    { "item": "silver pieces", "quantity": 40, "location": "a crude strongbox in the guard nook, Investigation DC 10" }
+  ],
+  "skill_checks": [
+    { "skill": "athletics", "dc": 13, "success": "A climber scales the wet cliff beside the waterfall to reach a second entrance, bypassing the door.", "failure": "Slip on the spray-slick rock — 1d6 falling damage and the noise alerts the sentries.", "context": "Bypassing the front door via the cliff." },
+    { "skill": "perception", "dc": 12, "success": "Spot the murder-hole above the landing and the second cliffside entrance.", "failure": "Miss the overhead threat.", "context": "Surveying the gatehouse before approaching." }
+  ],
+  "traps": [
+    { "name": "Portcullis Deadfall", "trigger_description": "A rusted crank inside the gatehouse drops an iron portcullis to split the party.", "dc": 12, "damage": "4 (1d8) bludgeoning if caught beneath", "effect": "Separates the party; DC 15 Strength to lift, or disable the crank.", "detection": "Perception DC 12 (fresh scrape marks on the floor)", "disarm": "Thieves' Tools DC 12 or jam the crank (Strength DC 13)" }
+  ],
+  "secrets": [
+    { "check": "Investigation", "dc": 15, "info": "A concealed niche holds a dwarven waterskin and a scrap of a map showing three levels below — the Glitterhame, the Foundry, and a great underground lake." }
+  ],
+  "transitions": {
+    "breach_the_door": "ch1-act-II",
+    "descend": "ch1-act-II",
+    "default": "ch1-act-II"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): sentries raised from the module's ~2 to 4; if the alarm is raised, add 2 orcs to ch1-act-II. This is the dungeon's front gate — reward smart approaches (cliff climb, silencing the fleeing sentry). Keep the tone grim and claustrophobic. 3+ interactables: the crank, the murder-hole, the slick cliff by the waterfall."
+}

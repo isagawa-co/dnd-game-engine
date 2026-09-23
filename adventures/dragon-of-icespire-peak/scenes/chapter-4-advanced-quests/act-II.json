@@ -1,0 +1,45 @@
+{
+  "act_id": "ch4-act-II",
+  "chapter": 4,
+  "act": "II",
+  "title": "The Dragon Barrow",
+  "level_range": [4, 5],
+  "location": {
+    "name": "The Dragon Barrow",
+    "description": "An ancient burial mound on the moors, raised over a hero who once slew a dragon. Ghostly lights drift among the standing stones at dusk — will-o'-wisps luring the greedy to their deaths. Within the barrow rests the hero's weapon: the Hammer of the Dragon, the key to facing Cryovain.",
+    "environment": "moor, ancient barrow, standing stones, dusk"
+  },
+  "read_aloud": "Out on the lonely moor rises the Dragon Barrow — a grassy mound ringed by leaning standing stones, older than any kingdom. As the light fails, pale blue flames kindle among the stones and drift toward you, beautiful and cold. Legend says a dragon-slayer lies entombed here with the weapon that felled a wyrm. Legend also says none who chase the lights come back.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party follows the lights or enters the barrow at dusk/night",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "will-o-wisp", "count": 4, "position": "drifting among the standing stones and inside the barrow", "special": "AC 19, heavy resistances — lure with false lights, Shock for lightning, Consume Life on the dying. Flee if lures fail and the party is strong." },
+        { "monster_id": "skeleton", "count": 6, "position": "the barrow's honor guard, rising from the burial chamber", "special": "Guardians of the tomb." }
+      ],
+      "tactics": "The wisps lure PCs onto hazardous ground (bog, drops between stones) then shock and feed. They're frustrating for martials (AC 19, resist nonmagical) — magic and area effects are the answer. The skeleton honor guard rises when the barrow is breached. Respecting the tomb (see skill check) can pacify the guardians.",
+      "difficulty": "hard",
+      "reward_xp": 900,
+      "description": "Will-o'-wisp lure and the barrow's skeletal guardians, protecting the Hammer of the Dragon."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "hammer-of-the-dragon", "quantity": 1, "location": "the dragon-slayer's sarcophagus at the barrow's heart — bonus damage vs dragons; THE key prize for facing Cryovain", "requires": "clear or pacify the barrow" },
+    { "item": "gold pieces", "quantity": 150, "location": "grave-goods in the burial chamber" },
+    { "item": "potion-of-healing", "quantity": 2, "location": "the honor guard's offerings" }
+  ],
+  "skill_checks": [
+    { "skill": "religion", "dc": 14, "success": "Perform the proper rites at the sarcophagus — the skeleton honor guard lowers their arms and let a worthy hand take the Hammer without further fight.", "failure": "The guardians attack.", "context": "Claiming the Hammer of the Dragon." },
+    { "skill": "wisdom", "dc": 13, "success": "See through the wisps' false lights and refuse the lure (avoid being led onto hazardous ground).", "failure": "Drawn toward a bog or a drop.", "context": "Resisting the will-o'-wisps." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "claimed_the_hammer": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 4 wisps + 6 skeletons. KEY QUEST: the Hammer of the Dragon is the intended tool for the Cryovain finale — strongly signpost this. The Religion route lets a respectful party skip the guardian fight. Wisps punish all-martial parties (AC 19, resistances). 3+ interactables: standing stones (cover/line-of-sight), the moor bog (difficult terrain/hazard the wisps lure toward), the sarcophagus lid (Strength to open)."
+}

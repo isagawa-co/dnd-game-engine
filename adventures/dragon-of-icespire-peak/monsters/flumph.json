@@ -1,0 +1,58 @@
+{
+  "id": "flumph",
+  "name": "Flumph",
+  "size_type": "small",
+  "alignment": "lawful good",
+  "armor_class": 12,
+  "hp": {
+    "maximum": 7,
+    "hit_dice": "2d6"
+  },
+  "ability_scores": {
+    "strength": 6,
+    "dexterity": 15,
+    "constitution": 10,
+    "intelligence": 14,
+    "wisdom": 14,
+    "charisma": 11
+  },
+  "skills": {
+    "arcana": 4,
+    "history": 4,
+    "religion": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": ["understands Undercommon but can't speak, telepathy 60 ft"],
+  "challenge": "1/8",
+  "speed": {
+    "walk": 5,
+    "fly": 30
+  },
+  "traits": [
+    {
+      "name": "Advanced Telepathy",
+      "description": "The flumph can perceive the content of any telepathic communication used within 60 feet of it, and it can't be surprised by creatures with any form of telepathy."
+    },
+    {
+      "name": "Telepathic Shroud",
+      "description": "The flumph is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. All divination spells cast by the flumph reveal what it wants to reveal."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tendrils",
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage plus 2 (1d4) acid damage.",
+      "attack_bonus": 2,
+      "damage_roll": "1d4+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Stench Spray (1/Day)",
+      "description": "The flumph sprays a 15-foot cone of foul-smelling liquid if it takes damage. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be coated in a stinking, oily liquid for 1d4 hours (poisoned/socially penalized until washed off)."
+    }
+  ],
+  "tactics": "Flumphs are peaceful, lawful-good telepaths — NOT enemies. At Gnomengarde they drift the tunnels and can WARN the party (via telepathy) about the mad king Gnerkli and the mimic. Treat as a helpful NPC/omen; they defend themselves only if attacked. Included so the DM can run them from a stat block if needed."
+}

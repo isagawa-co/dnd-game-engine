@@ -1,0 +1,42 @@
+{
+  "pack_id": "dragon-of-icespire-peak",
+  "name": "Dragon of Icespire Peak",
+  "version": "1.0.0",
+  "level_range": [1, 7],
+  "type": "sandbox-quest-board",
+  "summary": "A Sword Coast sandbox run from Falcon's quest board in Phandalin, culminating in the young white dragon Cryovain at Icespire Hold. Quests can be tackled in any order; act files return to the Phandalin hub between jobs. Built for a 6-PC party (encounters pre-scaled +50%). Continues directly from Lost Mine of Phandelver's setting.",
+  "monsters": [
+    { "id": "young-white-dragon", "name": "Young White Dragon (Cryovain)" },
+    { "id": "orc", "name": "Orc" },
+    { "id": "ogre", "name": "Ogre" },
+    { "id": "kobold", "name": "Kobold" },
+    { "id": "ochre-jelly", "name": "Ochre Jelly" },
+    { "id": "manticore", "name": "Manticore" },
+    { "id": "ankheg", "name": "Ankheg" },
+    { "id": "wight", "name": "Wight" },
+    { "id": "ghoul", "name": "Ghoul" },
+    { "id": "skeleton", "name": "Skeleton" },
+    { "id": "specter", "name": "Specter" },
+    { "id": "will-o-wisp", "name": "Will-o'-Wisp" },
+    { "id": "grick", "name": "Grick" },
+    { "id": "cultist", "name": "Dragon Cultist" },
+    { "id": "mimic", "name": "Mimic" },
+    { "id": "flumph", "name": "Flumph (neutral/helpful)" },
+    { "id": "black-bear", "name": "Black Bear" },
+    { "id": "stirge", "name": "Stirge" }
+  ],
+  "spells": [],
+  "items": [
+    { "id": "hammer-of-the-dragon", "name": "Hammer of the Dragon (dragon-slayer warhammer — bonus damage vs dragons)" },
+    { "id": "dragonguard-breastplate", "name": "Dragonguard (breastplate, +1 AC, advantage on saves vs dragon breath)" },
+    { "id": "potion-of-healing", "name": "Potion of Healing" },
+    { "id": "potion-of-fire-breath", "name": "Potion of Fire Breath" },
+    { "id": "wand-of-magic-detection", "name": "Wand of Magic Detection" },
+    { "id": "spell-scroll", "name": "Spell Scroll" },
+    { "id": "gnomengarde-grenade", "name": "Gnomengarde Grenade (alchemical bomb, 2d6 fire, 5-ft radius)" },
+    { "id": "ring-of-protection", "name": "Ring of Protection" }
+  ],
+  "classes": [],
+  "races": [],
+  "conditions": []
+}

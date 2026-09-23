@@ -1,0 +1,57 @@
+{
+  "act_id": "ch3-act-I",
+  "chapter": 3,
+  "act": "I",
+  "title": "Durgeddin's Forge",
+  "level_range": [4, 4],
+  "location": {
+    "name": "The Foundry",
+    "description": "The industrial heart of Khundrukar — cold forges, quenching pools, ore chutes, and a great central smithy where Durgeddin the Black once hammered out blades of legendary hatred. Gray dwarves (duergar) have since claimed it, relighting a few forges for their own grim work.",
+    "environment": "dungeon, dwarven foundry, forges and flooded galleries"
+  },
+  "read_aloud": "The stair descends into heat and the ring of hammers. This is the Foundry — Durgeddin's great smithy, its forges cold for generations but for a few now relit. Quenching pools steam in the dark; chains and half-finished blades hang from the rafters. The smiths who work here now are no dwarves of honor: gray-skinned, red-eyed duergar, who down tools and reach for weapons the moment your light falls across them.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "duergar", "count": 5, "position": "at the forges and quenching pools", "special": "Enlarge before melee; one uses Invisibility to flank the back line. Fight from chokepoints." }
+      ],
+      "tactics": "The duergar Enlarge and hold the forge chokepoints, using the quenching-pool steam for concealment. One turns invisible to ambush casters. They fight to hold the Foundry but will not chase into the flooded gallery (the roper's territory — they know better).",
+      "difficulty": "hard",
+      "reward_xp": 1000,
+      "description": "The duergar occupation of the smithy. The flooded gallery to the side hides a roper (see the second encounter) — a lurking trap for the careless."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party enters the flooded side gallery to reach the vault stair",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "roper", "count": 1, "position": "disguised as a stalagmite in the flooded gallery (False Appearance)", "special": "Grapples with tendrils (reach 50 ft) and reels victims into bite range. Solo lurker." }
+      ],
+      "tactics": "The roper waits motionless until a PC comes within tendril reach, then grapples and reels. Kill the tendrils (AC 20, 10 HP each) or the body (AC 20, 93 HP). It cannot pursue — a party that retreats can choose to avoid it, but the vault stair lies beyond it.",
+      "difficulty": "deadly",
+      "reward_xp": 1800,
+      "description": "A classic dungeon lurker. Perceptive parties (Perception vs its Stealth +5) may spot the 'stalagmite' that has no twin and avoid or ambush it."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "masterwork-warhammer", "quantity": 1, "location": "a duergar foreman wields a Durgeddin-forged Warhammer +1" },
+    { "item": "silver pieces", "quantity": 200, "location": "the duergar pay-chest by the main forge, Investigation DC 12" },
+    { "item": "dwarven-plate", "quantity": 1, "location": "a suit hanging in the smithy, unfinished but wearable (heavy armor, superior craft)" }
+  ],
+  "skill_checks": [
+    { "skill": "perception", "dc": 15, "success": "Spot the roper — the lone 'stalagmite' in the flooded gallery that doesn't match the others.", "failure": "Walk into tendril range unaware (roper gets surprise).", "context": "Approaching the flooded gallery." },
+    { "skill": "smiths-tools", "dc": 13, "success": "Relight and use a forge to repair a broken weapon or free a stuck mechanism.", "failure": "No progress.", "context": "Using the Foundry's forges." }
+  ],
+  "transitions": {
+    "reach_the_vault": "ch3-act-II",
+    "clear_the_foundry": "ch3-act-II",
+    "retreat": "ch2-act-II",
+    "default": "ch3-act-II"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 5 duergar (from ~3-4) + the roper as a deadly optional lurker guarding the vault route. The roper is beatable at L4 by 6 optimized PCs but punishing to the careless — reward Perception and ranged focus-fire on tendrils. 3+ interactables: quenching pools (shove for steam/scalding), forge bellows (gout of flame — DEX save), hanging chains (swing/entangle)."
+}

@@ -1,0 +1,68 @@
+{
+  "act_id": "ch3-act-III",
+  "chapter": 3,
+  "act": "III",
+  "title": "Mountain's Toe Gold Mine",
+  "level_range": [3, 4],
+  "location": {
+    "name": "Mountain's Toe Gold Mine",
+    "description": "A working gold mine on the lower slopes of Icespire Peak, now silent. Orcs overran the miners — but the mine sits in Cryovain's shadow, and the dragon itself sometimes visits, scouring the entrance with frost. A festering ochre jelly clogs one of the lower shafts.",
+    "environment": "mine, mountain slope, cold, dungeon shafts"
+  },
+  "read_aloud": "The Mountain's Toe mine gapes in the slope of Icespire Peak, its ore carts overturned, its winch-house cold. Orc sign is everywhere — but so is something else: long gouges raked into the frozen rock beside the entrance, and a rime of unnatural frost. Whatever holds this mine, the dragon has been here too.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "orc", "count": 7, "position": "the winch-house and upper shafts", "special": "Aggressive; a leader tries to collapse a shaft prop to split the party." }
+      ],
+      "tactics": "Orcs fight from the mine buildings and shafts, using carts and props. If losing, one may flee deeper toward the jelly's shaft (bad idea for it).",
+      "difficulty": "hard",
+      "reward_xp": 700,
+      "description": "Orc occupiers of the mine surface works."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party descends into the lower shafts",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "ochre-jelly", "count": 1, "position": "oozing through a flooded lower gallery", "special": "Splits on slashing/lightning. Blocks the richest ore vein and a small cache." }
+      ],
+      "tactics": "Slow corrosive hazard guarding the deep ore. Fire/bludgeoning avoids the split. Optional — a party can grab surface loot and leave.",
+      "difficulty": "medium",
+      "reward_xp": 450,
+      "description": "The ochre jelly in the flooded shaft."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "OPTIONAL — the party is loud/uses fire at the exposed entrance and rolls poorly on the dragon-check",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "young-white-dragon", "count": 1, "position": "swooping the entrance for a single Cold Breath pass", "special": "Cryovain — do NOT run the full boss here. One flyby (Cold Breath 30-ft cone, DC 15) then it wheels back toward Icespire. A DEADLY warning, not the finale." }
+      ],
+      "tactics": "This is FORESHADOW only: if triggered, Cryovain makes one breath pass and leaves. It establishes the dragon's power and territory. The real fight is Chapter 5.",
+      "difficulty": "deadly",
+      "reward_xp": 0,
+      "description": "Optional Cryovain flyby — a scare, not a kill."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "gold pieces", "quantity": 220, "location": "the mine's strongbox + raw gold ore in the deep vein" },
+    { "item": "potion-of-fire-breath", "quantity": 1, "location": "an orc shaman's satchel, Investigation DC 12" }
+  ],
+  "skill_checks": [
+    { "skill": "perception", "dc": 14, "success": "Notice Cryovain's approach in time to take cover before its breath pass (avoid the flyby encounter).", "failure": "Caught in the open if the dragon comes.", "context": "Working the exposed mine entrance." },
+    { "skill": "investigation", "dc": 13, "success": "Locate the mine's hidden strongbox and the richest ore vein.", "failure": "Recover only surface loot.", "context": "Searching the mine." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 7 orcs + the jelly. The Cryovain flyby is OPTIONAL foreshadowing — use it to build dread and teach the party to respect the dragon before Chapter 5. Never run the full dragon here. 3+ interactables: ore carts (cover/ram down the rails), shaft props (collapse to block/trap), the winch (raise/lower to reach shafts or drop a load)."
+}

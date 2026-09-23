@@ -1,0 +1,56 @@
+{
+  "act_id": "ch4-act-III",
+  "chapter": 4,
+  "act": "III",
+  "title": "The Woodland Manse",
+  "level_range": [4, 5],
+  "location": {
+    "name": "The Woodland Manse",
+    "description": "A grand old manor house lost in the deep forest, once a noble's retreat, now seized by a cell of dragon cultists who mean to lure Cryovain into their service. Tentacled gricks lair in the collapsed cellars and tunnels beneath.",
+    "environment": "forest, overgrown manor, dungeon cellars"
+  },
+  "read_aloud": "Deep in the forest, ivy-choked and half-swallowed by the trees, stands a once-grand manor. Black-robed figures move behind its broken windows, and a crude altar to a dragon has been raised in the overgrown garden. From the collapsed cellar comes a wet, chittering sound — something with too many limbs lives in the dark below.",
+  "encounters": [
+    {
+      "type": "combat",
+      "trigger": "automatic",
+      "surprise": false,
+      "enemies": [
+        { "monster_id": "cultist", "count": 8, "position": "throughout the manor and garden altar", "special": "Dark Devotion (adv vs charm/fear). Flee if their leader falls." },
+        { "monster_id": "ogre", "count": 1, "position": "the cult's enforcer in the great room", "special": "A captured/allied ogre the cult uses as muscle." }
+      ],
+      "tactics": "Cultists fight in numbers from cover (windows, furniture) with crossbows, backed by the ogre. They defend the altar and their ritual notes. Break their morale by dropping the ogre and any obvious leader.",
+      "difficulty": "hard",
+      "reward_xp": 800,
+      "description": "The dragon-cult cell occupying the manor."
+    },
+    {
+      "type": "combat",
+      "trigger": "conditional",
+      "trigger_condition": "party descends into the collapsed cellars/tunnels",
+      "surprise": true,
+      "enemies": [
+        { "monster_id": "grick", "count": 2, "position": "coiled on the cellar walls/ceiling (Stone Camouflage, climb 30)", "special": "Drop-ambush with tentacles; resist nonmagical weapons." }
+      ],
+      "tactics": "Gricks ambush from above in the cramped tunnels, dragging a PC off with tentacles. Nonmagical resistance surprises melee. Guarding a hidden cache and the cult's true correspondence (evidence of who backs them).",
+      "difficulty": "medium",
+      "reward_xp": 900,
+      "description": "The gricks lairing beneath the manse."
+    }
+  ],
+  "npcs": [],
+  "loot": [
+    { "item": "dragonguard-breastplate", "quantity": 1, "location": "the cult leader's quarters — Dragonguard armor (advantage on saves vs dragon breath) — a second key prize for the Cryovain finale", "requires": "defeat the cult" },
+    { "item": "gold pieces", "quantity": 200, "location": "cult treasury + noble's hidden safe (Investigation DC 14)" },
+    { "item": "spell-scroll", "quantity": 1, "location": "the ritual notes cache in the cellar" }
+  ],
+  "skill_checks": [
+    { "skill": "investigation", "dc": 13, "success": "Recover the cult's correspondence — evidence they serve a larger draconic power, and a warning of Cryovain's habits (advantage on planning the finale).", "failure": "Miss the intel.", "context": "Searching the manor." }
+  ],
+  "transitions": {
+    "quest_complete": "ch1-act-I",
+    "return_to_phandalin": "ch1-act-I",
+    "default": "ch1-act-I"
+  },
+  "dm_notes": "SCALING (6 PCs, +50%): 8 cultists + 1 ogre above, 2 gricks below. The Dragonguard breastplate here (and the Hammer from the Barrow) are the two prizes that make the Cryovain finale survivable — signpost both. Gricks resist nonmagical weapons. 3+ interactables: the garden altar (topple/desecrate to shake cult morale), rotten manor floors (collapse — DEX save into the cellar), chandeliers/furniture (cover, drop on foes)."
+}
