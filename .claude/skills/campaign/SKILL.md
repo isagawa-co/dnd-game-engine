@@ -47,7 +47,7 @@ The campaign loop executes 5 sequential steps per campaign session:
 - **ANTI-DRIFT RULE: Do not narrate events, NPCs, or encounters not defined in the act file. If the player takes an unexpected action, resolve it within the act's context or transition to the appropriate act.**
 
 ### Step 4: Check Arc Completion
-- Evaluate arc completion conditions via arc-transition module
+- Evaluate arc completion conditions per the arc-progression contract
 - Check if arc meets completion criteria (encounter threshold or explicit marking)
 - If arc complete: trigger transition to next arc
 - If arc ongoing: prepare for next session

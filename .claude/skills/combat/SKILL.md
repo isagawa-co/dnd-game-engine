@@ -54,8 +54,8 @@ Scene Loop (007)
 3. **Execute Turns** — For each combatant in turn_order:
    - Receive action_request (actor_id, action_type, target_id, parameters)
    - Resolve action via action_type_rules in combat-action-contract
-   - Apply damage/healing via atomic_ops/damage_operations
-   - Apply conditions via atomic_ops/effect_operations
+   - Apply damage/healing per the atomic-ops damage-roll contract
+   - Apply conditions per the atomic-ops condition-application contract
    - Check concentration (DC = max(10, damage/2)) on damage taken
    - Advance condition durations (reduce by 1, remove if 0)
 4. **Check Outcomes** — After each turn, check:
@@ -113,7 +113,7 @@ This combines with the action-prompt's Party Toolkit (which covers non-obvious a
 ## Integration
 
 - **Scene Loop (007)** — Combat loop is invoked by scene loop when combat encounter triggers
-- **Atomic Ops (003)** — Attack rolls via attack_operations, damage via damage_operations, effects via effect_operations, checks via check_operations
+- **Atomic Ops (003)** — Attack rolls, damage, effects, and checks per the atomic-ops contracts (attack-roll, damage-roll, condition-application, ability-check/saving-throw)
 - **Party State** — Reads max_hp/AC/attacks from `characters/<id>.json` (static) and `current_hp`/`conditions` from `campaign_state.json` (volatile); writes HP changes, condition changes, and death results to `campaign_state.json` ONLY (never the shared sheet)
 - **Action Prompt** — Uses action-prompt skill for standardized PC turn presentation
 

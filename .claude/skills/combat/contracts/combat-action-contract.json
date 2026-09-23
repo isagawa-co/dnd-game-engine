@@ -68,9 +68,9 @@
   },
 
   "action_type_rules": {
-    "attack": "Roll d20 + attack_bonus vs target AC. Hit = roll damage. Natural 20 = critical (double damage dice). Natural 1 = auto-miss. Dispatches to atomic_ops/attack_operations.",
+    "attack": "Roll d20 + attack_bonus vs target AC. Hit = roll damage. Natural 20 = critical (double damage dice). Natural 1 = auto-miss. Applies the atomic-ops attack-roll and damage-roll contracts.",
     "cast_spell": "Check spell slot availability, range, components. Target rolls saving throw vs spell_dc if applicable. On fail, apply damage/effect. Concentration spells replace existing concentration.",
-    "ability_check": "Roll d20 + ability modifier (+ proficiency if proficient) vs DC. Dispatches to atomic_ops/check_operations.",
+    "ability_check": "Roll d20 + ability modifier (+ proficiency if proficient) vs DC. Applies the atomic-ops ability-check contract.",
     "dodge": "Until next turn, attacks against this combatant have disadvantage. Grants advantage on DEX saving throws. Costs action.",
     "disengage": "Movement this turn does not provoke opportunity attacks. Costs action.",
     "dash": "Doubles remaining movement for this turn. Costs action.",
