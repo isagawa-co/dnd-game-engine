@@ -54,5 +54,15 @@
   ],
   "classes": [],
   "races": [],
-  "conditions": []
+  "conditions": [],
+  "random_encounters": {
+    "region": "Triboar Trail / Sword Coast wilderness",
+    "note": "Travel loop: roll d12 per segment; on 9+ run a wandering encounter drawn from this table. ALL enemies reference monsters/ here — never invent (anti-drift). Scale counts +50% for the 6-PC party.",
+    "table": [
+      { "roll": "1-8", "result": "no encounter" },
+      { "roll": "9-10", "monster_id": "goblin", "count": "1d4+3", "desc": "a goblin ambush from the brush" },
+      { "roll": "11", "monster_id": "wolf", "count": "1d4+2", "desc": "a hungry wolf pack" },
+      { "roll": "12", "monster_id": "orc", "count": "1d4+1", "desc": "orc raiders on the road" }
+    ]
+  }
 }

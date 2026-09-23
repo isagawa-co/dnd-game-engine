@@ -296,6 +296,23 @@
     "ala-half-elf-rogue": 1700,
     "sweeney-human-cleric": 1700
   },
+  "current_hp": {
+    "honu-tortle-fighter": 48,
+    "bron-centaur-fighter": 52,
+    "raistlin-high-elf-wizard": 32,
+    "dain-mountain-dwarf-paladin": 56,
+    "ala-half-elf-rogue": 48,
+    "sweeney-human-cleric": 48
+  },
+  "hit_dice_used": {
+    "honu-tortle-fighter": 0,
+    "bron-centaur-fighter": 0,
+    "raistlin-high-elf-wizard": 0,
+    "dain-mountain-dwarf-paladin": 0,
+    "ala-half-elf-rogue": 0,
+    "sweeney-human-cleric": 0
+  },
+  "conditions": {},
   "spell_slots_used": {
     "raistlin-high-elf-wizard": {"1": 0, "2": 0},
     "sweeney-human-cleric": {"1": 0, "2": 0},

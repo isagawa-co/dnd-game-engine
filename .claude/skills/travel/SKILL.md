@@ -50,7 +50,7 @@ Run this loop per the canonical protocol — resume from `active_loop`, re-read 
 3. Present travel options via action-prompt: set pace, set watch order, forage, forced march
 4. For each travel segment (per 4 hours or per hex):
    - Roll for random encounter (d20; encounter threshold varies by terrain safety)
-   - If encounter triggers: dispatch to combat-loop or social-loop, then resume travel
+   - If an encounter triggers: draw the enemies from the adventure pack's `manifest.json` → `random_encounters` table (roll on that table for which entry). **ANTI-DRIFT: enemies MUST come from the pack's random_encounters table / monsters/ — never invent monsters. If the pack has NO random_encounters table, skip the encounter (treat as "no encounter").** Then dispatch to combat-loop (or social-loop), and resume travel.
    - Navigation check if off-road (Survival DC based on terrain: road=auto, trail=10, wilderness=15)
    - Optional foraging (Survival DC 10; success = 1d6 + WIS mod rations found)
 5. On arrival: update location in campaign state
@@ -72,7 +72,7 @@ Run this loop per the canonical protocol — resume from `active_loop`, re-read 
 3. **Set watch** — ask party watch order for camp and travel
 4. **Narrate travel** — describe terrain, weather, landmarks
 5. **Roll encounters** — for each segment, "Roll d20 for random encounter"
-6. **If encounter:** dispatch to appropriate loop (combat/social), then resume
+6. **If encounter:** roll on the pack's `manifest.json` → `random_encounters` table for the enemies (never invent them); if the pack has no such table, skip. Then dispatch to the appropriate loop (combat/social) and resume
 7. **Navigation:** if off-road, prompt "Make a Survival check (DC 15)"
 8. **Arrival:** describe destination, update campaign_state.json location
 

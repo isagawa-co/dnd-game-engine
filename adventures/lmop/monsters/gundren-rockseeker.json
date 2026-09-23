@@ -24,8 +24,12 @@
     "darkvision": 60,
     "passive_perception": 10
   },
-  "languages": ["Common", "Dwarvish"],
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
   "challenge": "0",
+  "xp_value": 10,
   "speed": {
     "walk": 25
   },
@@ -35,7 +39,9 @@
       "description": "Gundren has advantage on saving throws against poison, and resistance against poison damage."
     }
   ],
-  "damage_resistances": ["poison"],
+  "damage_resistances": [
+    "poison"
+  ],
   "actions": [
     {
       "name": "Handaxe",

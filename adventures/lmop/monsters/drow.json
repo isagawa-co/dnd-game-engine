@@ -24,8 +24,12 @@
     "darkvision": 120,
     "passive_perception": 12
   },
-  "languages": ["Elvish", "Undercommon"],
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
   "challenge": "1/4",
+  "xp_value": 50,
   "speed": {
     "walk": 30
   },

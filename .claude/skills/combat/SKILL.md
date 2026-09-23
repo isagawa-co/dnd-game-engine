@@ -70,8 +70,8 @@ Scene Loop (007)
      - Set `combat.active = false`
      - Write `combat.last_combat` with encounter id, result, rounds, xp_earned, xp_per_pc
      - Append items to `loot_collected`
-     - Update `party_xp` for each PC
-     - Update `spell_slots_used` for any casters who spent slots
+     - Update `party_xp` for each PC (XP = sum of defeated enemies' `xp_value` from their monster stat blocks ÷ party size)
+     - Update `current_hp`, `conditions`, `spell_slots_used`, and `ammo` in campaign_state for every PC whose values changed. **Volatile state (HP, conditions, slots, ammo) is written to campaign_state ONLY — never to the shared character sheet. See campaign-loop-contract `state_ownership`.**
    - e. Only AFTER saving state, proceed to post-combat narration
    - **ANTI-DRIFT RULE: Do NOT narrate post-combat scenes, present action menus, or transition to the next act until steps 5a-5d are complete. The user must see XP and loot before the scene moves on.**
 
@@ -113,7 +113,7 @@ This combines with the action-prompt's Party Toolkit (which covers non-obvious a
 
 - **Scene Loop (007)** — Combat loop is invoked by scene loop when combat encounter triggers
 - **Atomic Ops (003)** — Attack rolls via attack_operations, damage via damage_operations, effects via effect_operations, checks via check_operations
-- **Party State** — Reads combatant HP, AC, conditions; writes HP changes, condition changes, death results
+- **Party State** — Reads max_hp/AC/attacks from `characters/<id>.json` (static) and `current_hp`/`conditions` from `campaign_state.json` (volatile); writes HP changes, condition changes, and death results to `campaign_state.json` ONLY (never the shared sheet)
 - **Action Prompt** — Uses action-prompt skill for standardized PC turn presentation
 
 ## Error Handling

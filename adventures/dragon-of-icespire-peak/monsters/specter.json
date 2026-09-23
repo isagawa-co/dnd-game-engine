@@ -16,15 +16,38 @@
     "wisdom": 10,
     "charisma": 11
   },
-  "damage_resistances": ["acid", "cold", "fire", "lightning", "thunder", "bludgeoning, piercing, and slashing from nonmagical attacks"],
-  "damage_immunities": ["necrotic", "poison"],
-  "condition_immunities": ["charmed", "exhaustion", "grappled", "paralyzed", "petrified", "poisoned", "prone", "restrained", "unconscious"],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder",
+    "bludgeoning, piercing, and slashing from nonmagical attacks"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": {
     "darkvision": 60,
     "passive_perception": 10
   },
-  "languages": ["understands the languages it knew in life but can't speak"],
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
   "challenge": "1",
+  "xp_value": 200,
   "speed": {
     "walk": 0,
     "fly": 50

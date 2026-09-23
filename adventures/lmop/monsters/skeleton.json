@@ -21,10 +21,16 @@
     "passive_perception": 9
   },
   "damage_resistances": [],
-  "damage_immunities": ["poison"],
-  "condition_immunities": ["exhaustion", "poisoned"],
+  "damage_immunities": [
+    "poison"
+  ],
+  "condition_immunities": [
+    "exhaustion",
+    "poisoned"
+  ],
   "languages": [],
   "challenge": "1/4",
+  "xp_value": 50,
   "speed": {
     "walk": 30
   },

@@ -23,8 +23,12 @@
   "senses": {
     "passive_perception": 10
   },
-  "languages": ["Common", "Draconic"],
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
   "challenge": "1/8",
+  "xp_value": 25,
   "speed": {
     "walk": 30
   },
@@ -50,5 +54,5 @@
       "damage_type": "piercing"
     }
   ],
-  "tactics": "Dragon cultists (found at the Woodland Manse and among Cryovain's would-be worshippers) fight in numbers and flee when their leader falls. Fanatical but weak — dangerous only as a mob or with a stronger ally."
+  "tactics": "Dragon cultists (found at the Woodland Manse and among Cryovain's would-be worshippers) fight in numbers and flee when their leader falls. Fanatical but weak \u2014 dangerous only as a mob or with a stronger ally."
 }

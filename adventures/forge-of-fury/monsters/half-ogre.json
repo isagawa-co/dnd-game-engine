@@ -20,8 +20,12 @@
     "darkvision": 60,
     "passive_perception": 9
   },
-  "languages": ["Common", "Giant"],
+  "languages": [
+    "Common",
+    "Giant"
+  ],
   "challenge": "1",
+  "xp_value": 200,
   "speed": {
     "walk": 30
   },

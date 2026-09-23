@@ -20,8 +20,12 @@
     "darkvision": 60,
     "passive_perception": 10
   },
-  "languages": ["Common", "Goblin"],
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
   "challenge": "1/2",
+  "xp_value": 100,
   "speed": {
     "walk": 30
   },

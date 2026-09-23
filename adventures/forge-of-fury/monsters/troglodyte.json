@@ -20,8 +20,11 @@
     "darkvision": 60,
     "passive_perception": 10
   },
-  "languages": ["Troglodyte"],
+  "languages": [
+    "Troglodyte"
+  ],
   "challenge": "1/4",
+  "xp_value": 50,
   "speed": {
     "walk": 30
   },

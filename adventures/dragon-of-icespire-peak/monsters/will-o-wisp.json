@@ -16,15 +16,37 @@
     "wisdom": 14,
     "charisma": 11
   },
-  "damage_immunities": ["lightning", "poison"],
-  "damage_resistances": ["acid", "cold", "fire", "necrotic", "thunder", "bludgeoning, piercing, and slashing from nonmagical attacks"],
-  "condition_immunities": ["exhaustion", "grappled", "paralyzed", "petrified", "poisoned", "prone", "restrained", "unconscious"],
+  "damage_immunities": [
+    "lightning",
+    "poison"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "necrotic",
+    "thunder",
+    "bludgeoning, piercing, and slashing from nonmagical attacks"
+  ],
+  "condition_immunities": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": {
     "darkvision": 120,
     "passive_perception": 12
   },
-  "languages": ["the languages it knew in life"],
+  "languages": [
+    "the languages it knew in life"
+  ],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 0,
     "fly": 50
@@ -56,5 +78,5 @@
       "damage_type": "lightning"
     }
   ],
-  "tactics": "The wisps of the Dragon Barrow lure travelers to their deaths with false lights, then shock and feed on the dying (Consume Life). With AC 19 and heavy resistances they are frustrating to hit — magic damage and area effects are the answer. They flee if a lure fails and the party is strong."
+  "tactics": "The wisps of the Dragon Barrow lure travelers to their deaths with false lights, then shock and feed on the dying (Consume Life). With AC 19 and heavy resistances they are frustrating to hit \u2014 magic damage and area effects are the answer. They flee if a lure fails and the party is strong."
 }

@@ -25,6 +25,7 @@
   },
   "languages": [],
   "challenge": "1",
+  "xp_value": 200,
   "speed": {
     "walk": 50
   },

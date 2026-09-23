@@ -20,8 +20,11 @@
     "darkvision": 60,
     "passive_perception": 11
   },
-  "languages": ["Common"],
+  "languages": [
+    "Common"
+  ],
   "challenge": "3",
+  "xp_value": 700,
   "speed": {
     "walk": 30,
     "fly": 50
@@ -59,5 +62,5 @@
       "damage_type": "piercing"
     }
   ],
-  "tactics": "The manticore stays airborne, raking targets with volleys of tail spikes from range, and only closes to bite when a target is weakened. At Umbrage Hill it circles Adabra Gwynn's windmill — a flying skirmish that punishes parties with no ranged answer."
+  "tactics": "The manticore stays airborne, raking targets with volleys of tail spikes from range, and only closes to bite when a target is weakened. At Umbrage Hill it circles Adabra Gwynn's windmill \u2014 a flying skirmish that punishes parties with no ranged answer."
 }

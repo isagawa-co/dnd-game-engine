@@ -20,8 +20,12 @@
     "darkvision": 60,
     "passive_perception": 8
   },
-  "languages": ["Common", "Giant"],
+  "languages": [
+    "Common",
+    "Giant"
+  ],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 40
   },
@@ -42,5 +46,5 @@
       "damage_type": "piercing"
     }
   ],
-  "tactics": "Ogres wade into melee and smash the nearest target. Slow-witted — easily baited, lured into hazards, or turned on allies with clever ruses."
+  "tactics": "Ogres wade into melee and smash the nearest target. Slow-witted \u2014 easily baited, lured into hazards, or turned on allies with clever ruses."
 }

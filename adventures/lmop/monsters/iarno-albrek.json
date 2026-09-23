@@ -28,8 +28,14 @@
   "senses": {
     "passive_perception": 13
   },
-  "languages": ["Common", "Draconic", "Dwarvish", "Elvish"],
+  "languages": [
+    "Common",
+    "Draconic",
+    "Dwarvish",
+    "Elvish"
+  ],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 30
   },

@@ -26,6 +26,7 @@
   },
   "languages": [],
   "challenge": "5",
+  "xp_value": 1800,
   "speed": {
     "walk": 10,
     "climb": 10

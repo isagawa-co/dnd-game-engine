@@ -16,7 +16,7 @@ Run this loop per the canonical protocol — resume from `active_loop`, re-read 
 - **Compute (canonical):** acting PC `characters/<id>.json` (the item + relevant mods) + `campaign_state` (charges/conditions).
 - **Display (derived):** `party_toolkit.json` (`party_shared_items` — potions, scrolls, charges).
 - **On entry:** set `active_loop.loop = "item-use"` (dispatched via scene `encounter_type`, no top-level flag), `step = 1`.
-- **On exit:** consume the item (update sheet/state), apply the effect, hand control back to scene.
+- **On exit:** consume the item from campaign-scoped storage (`campaign_state`/`party_toolkit` consumables — NOT the shared sheet), apply the effect to `campaign_state` (e.g., `current_hp`), hand control back to scene.
 - **Output format:** `.claude/skills/action-prompt/SKILL.md`.
 
 ## Vocabulary

@@ -23,6 +23,7 @@
   },
   "languages": [],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 30,
     "burrow": 10

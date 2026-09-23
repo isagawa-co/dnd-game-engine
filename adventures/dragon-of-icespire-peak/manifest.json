@@ -38,5 +38,16 @@
   ],
   "classes": [],
   "races": [],
-  "conditions": []
+  "conditions": [],
+  "random_encounters": {
+    "region": "Sword Coast wilderness (Icespire environs)",
+    "note": "Travel loop: roll d12 per segment; on 8+ run a wandering encounter drawn from this table. ALL enemies reference monsters/ here — never invent new ones (anti-drift). Scale counts +50% for the 6-PC party.",
+    "table": [
+      { "roll": "1-7", "result": "no encounter" },
+      { "roll": "8-9", "monster_id": "orc", "count": "1d4+3", "desc": "orc raiders displaced from the peak by Cryovain" },
+      { "roll": "10", "monster_id": "ankheg", "count": "1d2", "desc": "burrowing ankheg(s) hunting the trail" },
+      { "roll": "11", "monster_id": "stirge", "count": "2d4", "desc": "a stirge swarm from a bog" },
+      { "roll": "12", "monster_id": "ogre", "count": "1", "desc": "a lone ogre marauder" }
+    ]
+  }
 }

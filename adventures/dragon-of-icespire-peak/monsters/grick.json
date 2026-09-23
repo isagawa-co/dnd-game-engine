@@ -16,13 +16,16 @@
     "wisdom": 14,
     "charisma": 5
   },
-  "damage_resistances": ["bludgeoning, piercing, and slashing from nonmagical attacks"],
+  "damage_resistances": [
+    "bludgeoning, piercing, and slashing from nonmagical attacks"
+  ],
   "senses": {
     "darkvision": 60,
     "passive_perception": 12
   },
   "languages": [],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 30,
     "climb": 30
@@ -53,5 +56,5 @@
       "damage_type": "piercing"
     }
   ],
-  "tactics": "The grick coils on walls and ceilings (Stone Camouflage, climb 30), dropping on prey and dragging it away with its tentacles. It lurks in the ruined tunnels near the Woodland Manse. Nonmagical weapons are resisted — a nasty surprise for under-equipped parties."
+  "tactics": "The grick coils on walls and ceilings (Stone Camouflage, climb 30), dropping on prey and dragging it away with its tentacles. It lurks in the ruined tunnels near the Woodland Manse. Nonmagical weapons are resisted \u2014 a nasty surprise for under-equipped parties."
 }

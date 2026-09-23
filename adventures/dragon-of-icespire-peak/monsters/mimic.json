@@ -19,13 +19,16 @@
   "skills": {
     "stealth": 5
   },
-  "condition_immunities": ["prone"],
+  "condition_immunities": [
+    "prone"
+  ],
   "senses": {
     "darkvision": 60,
     "passive_perception": 11
   },
   "languages": [],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 15
   },
@@ -63,5 +66,5 @@
       "damage_type": "piercing"
     }
   ],
-  "tactics": "The mimic in Gnomengarde disguises itself as a treasure chest or door, adhering to the first greedy hand and grappling the victim while it bites. It cannot pursue (speed 15) — a grappled PC's allies must free them. A classic gotcha, not a chase."
+  "tactics": "The mimic in Gnomengarde disguises itself as a treasure chest or door, adhering to the first greedy hand and grappling the victim while it bites. It cannot pursue (speed 15) \u2014 a grappled PC's allies must free them. A classic gotcha, not a chase."
 }

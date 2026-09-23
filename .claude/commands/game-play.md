@@ -52,7 +52,7 @@ Arguments:
      - Build the chapter's act files from training knowledge before proceeding
    - Read the current act file: `adventures/[id]/scenes/chapter-N-*/act-[numeral].json`
    - This act file is the **script** for this iteration
-   - **ANTI-DRIFT CONSTRAINT:** All encounters, NPCs, locations, and plot beats come from the act file. The agent may add flavor text and dialog but MUST NOT invent new encounters, NPCs, or plot points not defined in the act. If the act file doesn't exist, build it before proceeding.
+   - **ANTI-DRIFT CONSTRAINT:** All encounters, NPCs, locations, and plot beats come from the act file. The agent may add flavor text and dialog but MUST NOT invent new encounters, NPCs, or plot points not defined in the act. If the act file doesn't exist, build it before proceeding. **The one sanctioned exception is travel random encounters, which MUST be drawn from the pack's `manifest.json` → `random_encounters` table (never invented); if the pack has no such table, the travel loop skips the encounter.**
 
 3. **Evaluate state against decision rules:**
    - Read `contracts/state-evaluation-contract.json`

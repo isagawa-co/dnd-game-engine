@@ -26,14 +26,20 @@
     "perception": 6,
     "stealth": 3
   },
-  "damage_immunities": ["cold"],
+  "damage_immunities": [
+    "cold"
+  ],
   "senses": {
     "blindsight": 30,
     "darkvision": 120,
     "passive_perception": 16
   },
-  "languages": ["Common", "Draconic"],
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
   "challenge": "6",
+  "xp_value": 2300,
   "speed": {
     "walk": 40,
     "burrow": 20,
@@ -74,5 +80,5 @@
       "save_ability": "constitution"
     }
   ],
-  "tactics": "Cryovain is a territorial predator, not a schemer. It strafes with Cold Breath from the air, then lands to maul the strongest fighter. It uses altitude and Ice Walk on the frozen ramparts of Icespire Hold. Cunning parties can drive it off (flees below half HP if the fight is clearly lost) rather than kill it — it will return later if not slain."
+  "tactics": "Cryovain is a territorial predator, not a schemer. It strafes with Cold Breath from the air, then lands to maul the strongest fighter. It uses altitude and Ice Walk on the frozen ramparts of Icespire Hold. Cunning parties can drive it off (flees below half HP if the fight is clearly lost) rather than kill it \u2014 it will return later if not slain."
 }

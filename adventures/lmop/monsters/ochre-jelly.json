@@ -20,11 +20,24 @@
     "blindsight": 60,
     "passive_perception": 8
   },
-  "damage_resistances": ["acid"],
-  "damage_immunities": ["lightning", "slashing"],
-  "condition_immunities": ["blinded", "charmed", "deafened", "exhaustion", "frightened", "prone"],
+  "damage_resistances": [
+    "acid"
+  ],
+  "damage_immunities": [
+    "lightning",
+    "slashing"
+  ],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "prone"
+  ],
   "languages": [],
   "challenge": "2",
+  "xp_value": 450,
   "speed": {
     "walk": 10,
     "climb": 10

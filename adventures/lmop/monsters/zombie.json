@@ -23,10 +23,15 @@
     "darkvision": 60,
     "passive_perception": 8
   },
-  "damage_immunities": ["poison"],
-  "condition_immunities": ["poisoned"],
+  "damage_immunities": [
+    "poison"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
   "languages": [],
   "challenge": "1/4",
+  "xp_value": 50,
   "speed": {
     "walk": 20
   },

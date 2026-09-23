@@ -31,12 +31,14 @@ Campaign (load state + act file)  →  Scene (read encounter → identify → va
 | **COMPUTE** mechanics (rolls, to-hit, damage, save DC, AC, recovery) | `characters/<id>.json` + `campaign_state.json` | numbers |
 | **DECIDE & DISPLAY** tactics (options, signature moves, synergies) | `campaigns/<id>/party_toolkit.json` + `battle-plans/` | strategy |
 
-Read the acting character's **sheet** for exact numbers and their **live state** (HP, `spell_slots_used`, `ammo`, conditions) — then render the **toolkit** turn-card for options/synergies. Never resolve math off the toolkit; never treat the toolkit as the source of truth.
+Read the acting character's **sheet** for static numbers (max_hp, mods, dice, AC, attacks) and **campaign_state** for their current volatile values (`current_hp`, `hit_dice_used`, `spell_slots_used`, `ammo`, `conditions`) — then render the **toolkit** turn-card for options/synergies. Never resolve math off the toolkit; never treat the toolkit as the source of truth.
 
-### 5. Single-source each fact
-- **Numbers** (HP, AC, to-hit, damage, DCs) are canonical in the **character sheet**. The toolkit *mirrors* them and must not disagree.
+### 5. Single-source each fact — and never write volatile state to the shared sheet
+`characters/<id>.json` is a **SHARED POOL** referenced by multiple campaigns. Writing per-play state to it corrupts every other campaign using that character. See campaign-loop-contract `state_ownership`.
+- **Static numbers** (max_hp, ability mods, AC formula, to-hit, damage dice, total hit dice) are canonical on the **sheet**. Changed ONLY by creation and level-up.
+- **Volatile numbers** (`current_hp`, `hit_dice_used`, `spell_slots_used`, `ammo`, `conditions`, `party_xp`) are canonical in **campaign_state.json**. Every gameplay loop writes these HERE, never to the sheet.
 - **Strategy** (move framing, party synergies, battle plans) is canonical in the **toolkit**.
-- When a sheet changes (level-up, new item, long rest), REGENERATE the toolkit from the sheets + state. Never hand-edit a number into only one of them.
+- The toolkit *mirrors* static numbers and must not disagree; regenerate it from sheet + state on level-up / new item. Never hand-edit a number into only one place.
 
 ---
 

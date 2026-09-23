@@ -77,6 +77,21 @@
     "resume_hint": "string — human-readable exact next step to execute"
   },
 
+  "state_ownership": {
+    "description": "CRITICAL: characters/<id>.json is a SHARED POOL referenced by multiple campaigns. Per-play volatile state MUST live in this campaign's campaign_state.json, NEVER be written back to the shared sheet — writing volatile state to the sheet corrupts every other campaign using that character.",
+    "static_on_sheet": {
+      "source": "characters/<id>.json",
+      "fields": "ability_scores, class/subclass, features, proficiencies, inventory, max_hp, total hit dice, AC formula, attack bonuses/damage. Changed ONLY by character creation and level-up (durable progression).",
+      "writers": ["character-creation-loop", "level-up"]
+    },
+    "volatile_in_campaign_state": {
+      "source": "campaigns/<id>/campaign_state.json",
+      "fields": "current_hp (map: character_id -> int), hit_dice_used (map: character_id -> int), spell_slots_used (map), ammo (map), conditions (map: character_id -> [condition]), party_xp, loot_collected.",
+      "writers": ["combat", "rest", "item-use", "challenge", "social", "travel", "merchant"]
+    },
+    "rule": "Loops COMPUTE from the sheet (max_hp, mods, dice) + campaign_state (current values), and WRITE current_hp/hit_dice_used/conditions/slots/ammo ONLY to campaign_state. rest recovers by lowering hit_dice_used and raising current_hp toward max_hp — it does NOT edit the sheet. Only level-up and creation write the sheet."
+  },
+
   "dispatch_invariants": {
     "one_loop_flag_active": {
       "rule": "At most one of {combat,social,challenge,rest,travel,exploration}.active may be true at a time. Entering a loop sets its flag true AND clears all others.",

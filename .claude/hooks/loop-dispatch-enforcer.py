@@ -120,12 +120,26 @@ def main():
     if not is_campaign_state_file(file_path):
         sys.exit(0)
 
-    # Only validate Write (full content). Edit is a partial patch — best-effort skip.
-    if tool_name != 'Write':
-        sys.exit(0)
+    # Reconstruct the resulting state for BOTH Write (full content) and Edit
+    # (disk content + the old->new replacement), so partial patches can't bypass
+    # the invariants. PreToolUse runs before the edit applies, so the on-disk file
+    # is still the pre-edit version — we simulate the replacement here.
+    if tool_name == 'Write':
+        content = tool_input.get('content', '{}')
+    else:  # Edit
+        try:
+            disk = Path(file_path).read_text(encoding='utf-8')
+        except Exception:
+            sys.exit(0)  # Can't read pre-edit file — best effort, don't block.
+        old_str = tool_input.get('old_string', '')
+        new_str = tool_input.get('new_string', '')
+        if tool_input.get('replace_all'):
+            content = disk.replace(old_str, new_str)
+        else:
+            content = disk.replace(old_str, new_str, 1)
 
     try:
-        new_state = json.loads(tool_input.get('content', '{}'))
+        new_state = json.loads(content)
     except Exception:
         sys.exit(0)  # Don't block on unparseable content — best effort.
 

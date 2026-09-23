@@ -25,8 +25,11 @@
     "darkvision": 60,
     "passive_perception": 12
   },
-  "languages": ["understands Undercommon but can't speak, telepathy 60 ft"],
+  "languages": [
+    "understands Undercommon but can't speak, telepathy 60 ft"
+  ],
   "challenge": "1/8",
+  "xp_value": 25,
   "speed": {
     "walk": 5,
     "fly": 30
@@ -54,5 +57,5 @@
       "description": "The flumph sprays a 15-foot cone of foul-smelling liquid if it takes damage. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be coated in a stinking, oily liquid for 1d4 hours (poisoned/socially penalized until washed off)."
     }
   ],
-  "tactics": "Flumphs are peaceful, lawful-good telepaths — NOT enemies. At Gnomengarde they drift the tunnels and can WARN the party (via telepathy) about the mad king Gnerkli and the mimic. Treat as a helpful NPC/omen; they defend themselves only if attacked. Included so the DM can run them from a stat block if needed."
+  "tactics": "Flumphs are peaceful, lawful-good telepaths \u2014 NOT enemies. At Gnomengarde they drift the tunnels and can WARN the party (via telepathy) about the mad king Gnerkli and the mimic. Treat as a helpful NPC/omen; they defend themselves only if attacked. Included so the DM can run them from a stat block if needed."
 }

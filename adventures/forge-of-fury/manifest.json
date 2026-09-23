@@ -32,5 +32,15 @@
   ],
   "classes": [],
   "races": [],
-  "conditions": []
+  "conditions": [],
+  "random_encounters": {
+    "region": "Khundrukar dungeon (wandering monsters)",
+    "note": "Travel/exploration loop: roll d12 when the party lingers or makes noise; on 9+ run a wandering encounter drawn from this table. ALL enemies reference monsters/ here — never invent (anti-drift). Scale counts +50% for the 6-PC party.",
+    "table": [
+      { "roll": "1-8", "result": "no encounter" },
+      { "roll": "9-10", "monster_id": "giant-rat", "count": "2d4", "desc": "a rat swarm from the deep tunnels" },
+      { "roll": "11", "monster_id": "stirge", "count": "1d4+2", "desc": "stirges roused from a side cavern" },
+      { "roll": "12", "monster_id": "troglodyte", "count": "1d3+1", "desc": "a troglodyte patrol from the Glitterhame" }
+    ]
+  }
 }

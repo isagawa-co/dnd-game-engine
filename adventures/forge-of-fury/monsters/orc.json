@@ -23,8 +23,12 @@
     "darkvision": 60,
     "passive_perception": 10
   },
-  "languages": ["Common", "Orc"],
+  "languages": [
+    "Common",
+    "Orc"
+  ],
   "challenge": "1/2",
+  "xp_value": 100,
   "speed": {
     "walk": 30
   },

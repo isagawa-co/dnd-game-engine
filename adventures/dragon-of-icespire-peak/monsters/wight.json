@@ -20,15 +20,26 @@
     "perception": 3,
     "stealth": 4
   },
-  "damage_resistances": ["necrotic", "bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered"],
-  "damage_immunities": ["poison"],
-  "condition_immunities": ["exhaustion", "poisoned"],
+  "damage_resistances": [
+    "necrotic",
+    "bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "condition_immunities": [
+    "exhaustion",
+    "poisoned"
+  ],
   "senses": {
     "darkvision": 60,
     "passive_perception": 13
   },
-  "languages": ["the languages it knew in life"],
+  "languages": [
+    "the languages it knew in life"
+  ],
   "challenge": "3",
+  "xp_value": 700,
   "speed": {
     "walk": 30
   },

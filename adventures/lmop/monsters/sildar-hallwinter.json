@@ -27,8 +27,11 @@
   "senses": {
     "passive_perception": 12
   },
-  "languages": ["Common"],
+  "languages": [
+    "Common"
+  ],
   "challenge": "1",
+  "xp_value": 200,
   "speed": {
     "walk": 30
   },

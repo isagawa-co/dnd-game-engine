@@ -168,8 +168,14 @@ def main():
         if is_act_file(file_path):
             last_act_read = enforcer_state.get('last_act_read_time', 0)
             last_state_save = enforcer_state.get('last_state_save_time', 0)
+            unsaved_actions = enforcer_state.get('game_actions_since_save', 0)
 
-            if last_act_read > 0 and last_state_save < last_act_read:
+            # Only block if there are ACTUAL unsaved gameplay changes since the last
+            # act read. This ties the gate to real in-progress play and prevents a
+            # stale cross-session last_act_read_time (e.g., a prior content-authoring
+            # session) from blocking the FIRST legitimate act read of a new session
+            # (which game-play Step 2.5 must do before any save).
+            if last_act_read > 0 and last_state_save < last_act_read and unsaved_actions > 0:
                 sys.stderr.write("""BLOCKED: Scene transition without state save.
 
 You read an act file but haven't saved campaign_state.json since then.
