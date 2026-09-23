@@ -45,6 +45,15 @@
             "command": "python .claude/hooks/game-state-enforcer.py"
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/loop-dispatch-enforcer.py"
+          }
+        ]
       }
     ],
     "PostToolUse": [

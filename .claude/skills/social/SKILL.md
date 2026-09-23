@@ -9,6 +9,16 @@
 | Parent | scene-loop |
 | Purpose | Resolve NPC conversations, persuasion, deception, intimidation, and information gathering |
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read these steps each exchange, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** acting PC `characters/<id>.json` (CHA + relevant skill proficiency/expertise) + NPC data from the act file + `campaign_state` (attitude, conditions).
+- **Display (derived):** `party_toolkit.json` (best face for the check, party leverage).
+- **On entry:** set `social.active = true`, clear all other loop flags, set `active_loop.loop = "social"`, `step = 1`.
+- **On exit:** save NPC attitude + quest changes, clear `social.active`, hand control back to scene.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Vocabulary
 
 | Term | Definition |

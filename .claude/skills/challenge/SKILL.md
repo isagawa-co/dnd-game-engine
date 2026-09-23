@@ -9,6 +9,16 @@
 | Parent | scene-loop |
 | Purpose | Resolve environmental obstacles and skill challenges via ability checks |
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read these steps each attempt, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** acting PC `characters/<id>.json` (ability mod + proficiency/expertise for the check) + `campaign_state` (conditions, resources).
+- **Display (derived):** `party_toolkit.json` (who has the relevant skill/tool).
+- **On entry:** set `challenge.active = true`, clear all other loop flags, set `active_loop.loop = "challenge"`, `step = 1`.
+- **On exit:** save outcome (damage/conditions/flags), clear `challenge.active`, hand control back to scene.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Vocabulary
 
 | Term | Definition |

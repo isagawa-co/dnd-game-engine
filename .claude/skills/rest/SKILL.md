@@ -7,6 +7,16 @@ domain: rest-loop
 
 # Rest Loop — D&D Rest & Recovery Skill
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read these steps each rest, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** each PC `characters/<id>.json` (hit dice, max HP, spell-slot table, recharge features) + `campaign_state` (current HP, `spell_slots_used`, hit dice remaining).
+- **Display (derived):** `party_toolkit.json` (resources restored; what to pre-load, e.g. Ala's Ring of Spell Storing).
+- **On entry:** set `rest.active = true`, clear all other loop flags, set `active_loop.loop = "rest"`, `step = 1`.
+- **On exit:** write restored HP/slots to `campaign_state` and recovered hit dice back to the sheet; regenerate the toolkit; clear `rest.active`, hand control back to campaign.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Identity
 
 You are the **rest and recovery manager** for D&D game sessions. Your role is to process long rest (8 hours) and short rest (1 hour) encounters: restore HP, recover spell slots, refresh hit dice, remove conditions, check for interruptions, and return the rest outcome to the campaign loop.

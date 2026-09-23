@@ -243,6 +243,13 @@
       "resolution": "Retrieved from ruined herb shop in Thundertree."
     }
   ],
+  "active_loop": {
+    "loop": "travel",
+    "step": 1,
+    "round": 0,
+    "turn_actor": null,
+    "resume_hint": "Travel loop step 1 — en route to Wyvern Tor (8h remaining). Re-read travel/SKILL.md, check for random encounter this leg, then present travel decision via action-prompt."
+  },
   "combat": {
     "active": false,
     "enemies": [],

@@ -39,9 +39,20 @@
       "priority": 6
     },
     {
+      "condition": "exploration.active == true",
+      "output": "narration-skill",
+      "priority": 7
+    },
+    {
       "condition": "else",
       "output": "narration-skill",
       "priority": 99
     }
-  ]
+  ],
+  "invariants": {
+    "mutual_exclusion": "At most ONE of {combat,social,challenge,rest,travel,exploration}.active is true at any time. On loop entry, set that loop's flag true and clear all others. Priority ordering is a safety net, never the primary router.",
+    "active_loop_sync": "campaign_state.active_loop.loop MUST equal the single active flag (or 'exploration' when none of the encounter flags are set). See campaign-loop-contract.json dispatch_invariants.",
+    "two_router_relationship": "This contract is the ENTRY router (by state flag, on load/resume: 'which loop resumes?'). scene/contracts/scene-dispatch-contract.json is the WITHIN-SCENE router (by encounter_type: 'which sub-loop fires?'). merchant and item-use have no top-level flag; they are reached only via the scene encounter_type path, then tracked with active_loop while running.",
+    "no_stub_dispatch": "Only dispatch a loop whose skill directory exists under .claude/skills/<loop>/. Never route to a missing handler."
+  }
 }

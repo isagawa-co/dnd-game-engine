@@ -1,5 +1,14 @@
 # Scene Loop — Skill Definition
 
+## Loop Execution Protocol (MANDATORY)
+
+The scene loop is the WITHIN-SCENE router. Run it per the canonical protocol — strict outer→inner layering, re-read each step, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Layering:** finish read → identify `encounter_type` → validate BEFORE dispatching a sub-loop. Only dispatch a sub-loop whose skill directory exists (no stub/missing handler).
+- **On dispatch:** set the sub-loop's flag + `active_loop.loop` per that sub-loop's entry rule; wait for its Return Outcome before processing.
+- **On sub-loop return:** apply state mutations (step 6), then re-evaluate for the next encounter or return up to campaign.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Identity
 
 | Key | Value |

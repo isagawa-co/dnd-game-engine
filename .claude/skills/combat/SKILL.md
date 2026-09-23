@@ -3,6 +3,16 @@
 **Type:** Reference
 **Domain:** D&D Game Engine
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read the Flow steps each round, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** acting PC `characters/<id>.json` (weapons, to-hit, damage dice, saves, features) + `campaign_state` (HP, `spell_slots_used`, `ammo`, conditions) + monster stat blocks from the adventure pack.
+- **Display (derived):** `party_toolkit.json` turn-card + `battle-plans/` (signature moves, synergies).
+- **On entry:** set `combat.active = true`, clear all other loop flags, set `active_loop.loop = "combat"`, `round = 1`.
+- **On exit:** complete Return Outcome 5a–5e (result → XP math → loot → SAVE) THEN narrate; set `combat.active = false`, hand control back to scene.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## What
 
 Combat loop sub-skill managing tactical combat encounters: roll initiative, execute rounds with action economy, resolve attacks and spells via atomic-ops, apply damage and conditions, track death saves, and return combat outcome to scene loop.

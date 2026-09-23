@@ -2,6 +2,13 @@
 
 **Tier:** Level 0 (Campaign Orchestration)
 
+## Loop Execution Protocol (MANDATORY)
+
+The campaign loop is the OUTER loop. Run it — and every inner loop it dispatches — per the canonical protocol: resume from `active_loop`, re-read each step, strict outer→inner layering, compute from canonical sources and display from derived, never from memory. → [[references/loop-execution-protocol.md]]
+
+- **Dispatch invariant:** exactly one loop flag active at a time; `active_loop.loop` must match it. See `contracts/campaign-loop-contract.json` → `dispatch_invariants`.
+- **Output format:** all player-facing output follows `.claude/skills/action-prompt/SKILL.md`.
+
 **Identity:** Campaign loop manages the 5-tier state hierarchy and orchestrates gameplay progression from campaign start through arc completion and transition.
 
 ## 5-Step Campaign Loop

@@ -9,6 +9,16 @@
 | Parent | scene-loop |
 | Purpose | Handle overland movement between locations with random encounters, navigation, and time tracking |
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read these steps each leg, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** party `characters/<id>.json` (speed, Survival/Perception mods) + `campaign_state` (time, location, route, `hours_remaining`).
+- **Display (derived):** `party_toolkit.json` (scouts, navigation, utility).
+- **On entry:** set `travel.active = true`, clear all other loop flags, set `active_loop.loop = "travel"`, `step = 1`.
+- **On exit / random encounter:** a random encounter dispatches the combat sub-loop (set `active_loop.loop = "combat"`); on arrival save location + time, clear `travel.active`, hand control back to scene.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Vocabulary
 
 | Term | Definition |

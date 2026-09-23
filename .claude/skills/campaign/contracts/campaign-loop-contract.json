@@ -68,6 +68,38 @@
 
   "scene_types": ["combat", "social", "challenge", "merchant", "rest", "travel", "item-use"],
 
+  "active_loop_schema": {
+    "description": "Position pointer written to campaign_state.active_loop. Records exactly which loop owns control and which step it is on, so the agent RESUMES the precise step instead of improvising from memory.",
+    "loop": "string — one of: combat|social|challenge|rest|travel|merchant|item-use|exploration|null (null only between sessions)",
+    "step": "integer >= 1 — current step number within that loop's SKILL.md Flow",
+    "round": "integer >= 0 — combat round (0 when not in combat)",
+    "turn_actor": "string|null — character_id whose turn it is (combat/initiative), else null",
+    "resume_hint": "string — human-readable exact next step to execute"
+  },
+
+  "dispatch_invariants": {
+    "one_loop_flag_active": {
+      "rule": "At most one of {combat,social,challenge,rest,travel,exploration}.active may be true at a time. Entering a loop sets its flag true AND clears all others.",
+      "why": "Prevents stale flags from routing the wrong loop. Priority ordering must never be the thing that saves a malformed state."
+    },
+    "active_loop_matches_flag": {
+      "rule": "active_loop.loop MUST equal the single loop whose .active flag is true (or 'exploration' when none of the encounter flags are set).",
+      "why": "The pointer and the flags are two views of one fact; they may not disagree."
+    },
+    "every_active_flag_has_a_rule": {
+      "rule": "Any *.active flag that can be true must have a matching rule in contracts/state-evaluation-contract.json (includes exploration).",
+      "why": "A flag with no dispatch rule silently falls through to narration — a ghost state."
+    },
+    "no_dispatch_to_missing_handler": {
+      "rule": "A loop may only be dispatched if its skill directory exists under .claude/skills/<loop>/. Never route to a stub or a nonexistent handler.",
+      "why": "Routing social/travel/merchant/item-use to a stub is why steps were skipped pre-build."
+    },
+    "compute_canonical_display_derived": {
+      "rule": "Resolve all mechanics (rolls, saves, damage, AC, recovery) from characters/<id>.json + campaign_state.json (canonical). Display tactics from party_toolkit.json + battle-plans/ (derived). Read BOTH each loop iteration.",
+      "why": "Numbers single-sourced in the sheet; strategy single-sourced in the toolkit. Neither may hold a different number for the same fact."
+    }
+  },
+
   "win_conditions": {
     "arc_complete": {
       "conditions": ["all_quests_done", "story_goal_reached"],

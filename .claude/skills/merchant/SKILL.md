@@ -9,6 +9,16 @@
 | Parent | scene-loop |
 | Purpose | Handle buying, selling, and bartering with NPCs including inventory browsing and price negotiation |
 
+## Loop Execution Protocol (MANDATORY)
+
+Run this loop per the canonical protocol — resume from `active_loop`, re-read these steps each transaction, never from memory: → [[../campaign/references/loop-execution-protocol.md]]
+
+- **Compute (canonical):** `campaign_state` (`party_gold`) + PC `characters/<id>.json` inventory + NPC merchant stock/attitude.
+- **Display (derived):** `party_toolkit.json` (`party_shared_items`, gold).
+- **On entry:** set `active_loop.loop = "merchant"` (dispatched via scene `encounter_type`, no top-level flag), `step = 1`.
+- **On exit:** write gold to `campaign_state` and inventory to the PC sheet(s), hand control back to scene.
+- **Output format:** `.claude/skills/action-prompt/SKILL.md`.
+
 ## Vocabulary
 
 | Term | Definition |
