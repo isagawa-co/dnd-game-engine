@@ -244,34 +244,55 @@
     }
   ],
   "active_loop": {
-    "loop": "travel",
-    "step": 1,
-    "round": 0,
-    "turn_actor": null,
-    "resume_hint": "Travel loop step 1 — en route to Wyvern Tor (8h remaining). Re-read travel/SKILL.md, check for random encounter this leg, then present travel decision via action-prompt."
+    "loop": "combat",
+    "step": 3,
+    "round": 1,
+    "turn_actor": "raistlin-high-elf-wizard",
+    "resume_hint": "Combat round 1, Wyvern Tor. Turn order: Ala(23)>Raistlin(22)>Sweeney(21)>Bron(20)>Dain(20)>Honu(19)>orcs(13)>ogre(5). Ala DONE (killed orc-2 sentry, rapier+Venom Fang bite, poison charge SAVED for the ogre). NOW: Raistlin's turn — awaiting action (Web/Faerie Fire/Hold Person/Portent)."
   },
   "map": {
     "frame": [20, 10],
-    "scene": "Triboar Trail — en route to Wyvern Tor",
-    "terrain_key": "road",
+    "scene": "Wyvern Tor — orc cave (full charge, round 1)",
+    "terrain_key": "wilderness",
     "tokens": [
-      {"id": "bron-centaur-fighter", "type": "pc", "x": 7, "y": 4},
-      {"id": "honu-tortle-fighter", "type": "pc", "x": 6, "y": 5},
-      {"id": "dain-mountain-dwarf-paladin", "type": "pc", "x": 6, "y": 4},
-      {"id": "ala-half-elf-rogue", "type": "pc", "x": 8, "y": 5},
-      {"id": "raistlin-high-elf-wizard", "type": "pc", "x": 5, "y": 5},
-      {"id": "sweeney-human-cleric", "type": "pc", "x": 5, "y": 4}
+      {"id": "honu-tortle-fighter", "type": "pc", "x": 3, "y": 3},
+      {"id": "bron-centaur-fighter", "type": "pc", "x": 4, "y": 4},
+      {"id": "dain-mountain-dwarf-paladin", "type": "pc", "x": 3, "y": 4},
+      {"id": "ala-half-elf-rogue", "type": "pc", "x": 4, "y": 5},
+      {"id": "sweeney-human-cleric", "type": "pc", "x": 2, "y": 5},
+      {"id": "raistlin-high-elf-wizard", "type": "pc", "x": 2, "y": 4},
+      {"id": "ogre-1", "type": "enemy", "monster_id": "ogre", "x": 15, "y": 2},
+      {"id": "brughor", "type": "enemy", "monster_id": "orc", "x": 16, "y": 5},
+      {"id": "orc-1", "type": "enemy", "monster_id": "orc", "x": 9, "y": 2},
+      {"id": "orc-3", "type": "enemy", "monster_id": "orc", "x": 14, "y": 3},
+      {"id": "orc-4", "type": "enemy", "monster_id": "orc", "x": 15, "y": 4},
+      {"id": "orc-5", "type": "enemy", "monster_id": "orc", "x": 14, "y": 5}
     ],
     "features": [
-      {"terrain": "tree", "x": 2, "y": 1}, {"terrain": "tree", "x": 4, "y": 1}, {"terrain": "tree", "x": 15, "y": 2},
-      {"terrain": "rock", "x": 17, "y": 5},
-      {"terrain": "tree", "x": 3, "y": 8}, {"terrain": "tree", "x": 12, "y": 8}, {"terrain": "tree", "x": 16, "y": 9}
+      {"terrain":"wall","x":13,"y":1},{"terrain":"wall","x":14,"y":1},{"terrain":"wall","x":15,"y":1},{"terrain":"wall","x":16,"y":1},{"terrain":"wall","x":17,"y":1},{"terrain":"wall","x":18,"y":1},
+      {"terrain":"wall","x":12,"y":2},{"terrain":"wall","x":18,"y":2},
+      {"terrain":"door","x":12,"y":3},{"terrain":"wall","x":18,"y":3},
+      {"terrain":"wall","x":12,"y":4},{"terrain":"wall","x":18,"y":4},
+      {"terrain":"wall","x":12,"y":5},{"terrain":"wall","x":18,"y":5},
+      {"terrain":"wall","x":12,"y":6},{"terrain":"wall","x":13,"y":6},{"terrain":"wall","x":14,"y":6},{"terrain":"wall","x":15,"y":6},{"terrain":"wall","x":16,"y":6},{"terrain":"wall","x":17,"y":6},{"terrain":"wall","x":18,"y":6},
+      {"terrain":"rock","x":6,"y":1},{"terrain":"rock","x":10,"y":7},{"terrain":"rock","x":3,"y":8}
     ]
   },
   "combat": {
-    "active": false,
-    "enemies": [],
-    "round": 0,
+    "active": true,
+    "round": 1,
+    "encounter": "wyvern-tor-orcs-ch3-act-I",
+    "enemy_initiative": {"orcs": 13, "ogre": 5},
+    "enemies": [
+      {"id": "ogre-1", "monster_id": "ogre", "name": "Ogre", "ac": 11, "hp": 59, "max_hp": 59, "status": "alive"},
+      {"id": "brughor", "monster_id": "orc", "name": "Brughor Axe-Biter (chief)", "ac": 13, "hp": 15, "max_hp": 15, "status": "alive"},
+      {"id": "orc-1", "monster_id": "orc", "name": "Orc sentry", "ac": 13, "hp": 15, "max_hp": 15, "status": "alive"},
+      {"id": "orc-2", "monster_id": "orc", "name": "Orc sentry", "ac": 13, "hp": 0, "max_hp": 15, "status": "dead"},
+      {"id": "orc-3", "monster_id": "orc", "name": "Orc", "ac": 13, "hp": 15, "max_hp": 15, "status": "alive"},
+      {"id": "orc-4", "monster_id": "orc", "name": "Orc", "ac": 13, "hp": 15, "max_hp": 15, "status": "alive"},
+      {"id": "orc-5", "monster_id": "orc", "name": "Orc", "ac": 13, "hp": 15, "max_hp": 15, "status": "alive"}
+    ],
+    "initiative_order": [],
     "last_combat": {
       "encounter": "cragmaw-castle-grol-drow",
       "result": "victory",
@@ -283,7 +304,7 @@
     }
   },
   "travel": {
-    "active": true,
+    "active": false,
     "destination": "wyvern-tor",
     "hours_remaining": 8,
     "route": ["phandalin", "triboar-trail", "conyberry", "old-owl-well", "wyvern-tor", "thundertree", "cragmaw-castle"],

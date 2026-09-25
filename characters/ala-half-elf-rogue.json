@@ -228,6 +228,9 @@
   ],
   "gold": 0,
   "personality": {
+    "gender": "male",
+    "pronouns": "he/him",
+    "party_role": "party leader",
     "alignment": "chaotic good",
     "background": "urchin",
     "traits": [

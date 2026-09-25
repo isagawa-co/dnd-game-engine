@@ -1,0 +1,50 @@
+{
+  "id": "ogre",
+  "name": "Ogre",
+  "size_type": "large",
+  "alignment": "chaotic evil",
+  "armor_class": 11,
+  "hp": {
+    "maximum": 59,
+    "hit_dice": "7d10+21"
+  },
+  "ability_scores": {
+    "strength": 19,
+    "dexterity": 8,
+    "constitution": 16,
+    "intelligence": 5,
+    "wisdom": 7,
+    "charisma": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "challenge": "2",
+  "xp_value": 450,
+  "speed": {
+    "walk": 40
+  },
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.",
+      "attack_bonus": 6,
+      "damage_roll": "2d8+4",
+      "damage_type": "bludgeoning"
+    },
+    {
+      "name": "Javelin",
+      "description": "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
+      "attack_bonus": 6,
+      "damage_roll": "2d6+4",
+      "damage_type": "piercing"
+    }
+  ],
+  "tactics": "Ogres wade into melee and smash the nearest target. Slow-witted \u2014 easily baited, lured into hazards, or turned on allies with clever ruses."
+}
